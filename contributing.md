@@ -13,12 +13,12 @@
     - [Bug Reporting Template](#bug-reporting-template)
     - [Requesting A Feature](#requesting-a-feature)
     - [Enhancement Request](#enhancement-request)
-    - [Unit Testing](#unit-testing)
     - [Code Styling/Linting](#code-stylinglinting)
   
 ## 1. Project summary
 
 Building a new CODE PDX website with react and vite, current planning is for a static 3 page site.
+All assets for contributors can be pulled from the [Figma Board](https://www.figma.com/file/QWycOkxNJmtiyZ3v8imIzx/Code-PDX-website?type=design&node-id=0%3A1&mode=design&t=npSHzjSeJuwAa1vc-1)
 
 ## 2. Tech Stack & Resources
 
@@ -33,9 +33,8 @@ By participating in this project, you are expected to uphold our [Code of Conduc
 
 ## 4. Connect With the Team
 
--  Join [Code for PDX Discord](https://discord.gg/uwqrPpyuap). If you run into any issues, email our CodeForPDX brigade leader, Hugh: Hugh@codeforpdx.org or join the discord and drop a message in [introductions](https://discord.com/channels/1068260532806766733/1075286322530484256) or [general-chat](https://discord.com/channels/1068260532806766733/1068260535080063028).
--  Post your GitHub name in the [**#github-access-request**](https://discord.com/channels/1068260532806766733/1078124139983945858) channel and we’ll add you to our [GitHub](https://github.com/codeforpdx/PASS). We keep track of technical and non-technical tasks in [GitHub Projects](https://github.com/orgs/codeforpdx/projects/3).
--  Reach out to Flo (Project Manager) on Discord or florian@codeforpdx.org to introduce yourself and share how you wish to contribute.
+-  Join [Code for PDX Discord](https://discord.gg/uwqrPpyuap). If you run into any issues join the discord and drop a message in [introductions](https://discord.com/channels/1068260532806766733/1075286322530484256) or [general-chat](https://discord.com/channels/1068260532806766733/1068260535080063028).
+-  Post your GitHub name in the [**#github-access-request**](https://discord.com/channels/1068260532806766733/1078124139983945858) channel and we’ll add you to our [GitHub](https://github.com/codeforpdx).
 
 ## 5. Development Process
 
@@ -52,11 +51,11 @@ By participating in this project, you are expected to uphold our [Code of Conduc
    - Open terminal & change working directory to the location you want the repository cloned to.
    - `gh repo clone codeforpdx/codepdx_website` [learn more about git clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository?platform=linux) This will set the git origin to `https://github.com/codeforpdx/codepdx_website`. By default the branch is set to Main.
  [learn more about git remote](https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories)
-   - Change directory to the cloned directory, in this case /PASS: `cd ./PASS`
+   - Change directory to the cloned directory, in this case /codepdx_website: `cd ./codepdx_website`
    - Origin can be verified by running `git remote -v` which should show:
       ```
-     origin https://github.com/codeforpdx/PASS.git (fetch)
-     origin https://github.com/codeforpdx/PASS.git (push)
+     origin https://github.com/codeforpdx/codepdx_website.git (fetch)
+     origin https://github.com/codeforpdx/codepdx_website.git (push)
       ```
 
 1. Create a new branch to work on your feature (We recommend doing this via terminal) Branches should all be based off of `Development`:
@@ -80,7 +79,7 @@ By participating in this project, you are expected to uphold our [Code of Conduc
   >
   >  <img src="https://drive.google.com/uc?id=1rqRkau7lxTVEcwRFc8NcHRf-Z4U_lVxb" width="200">
 
-  - Work on feature in your own branch. Setup instructions to locally run PASS can be found in the [readme](../README.md).
+  - Work on feature in your own branch.
 
   - When feature is ready:
     - run `git add .` to add all changed files in commit. or `git add <fileName>` to include an individual file.
@@ -114,14 +113,5 @@ By participating in this project, you are expected to uphold our [Code of Conduc
 
   - Enhancements are requested via the GitHub built-in issues page for the repository https://github.com/codeforpdx/PASS/issues. 
   - Current bug reporting template can be found [here](../.github/ISSUE_TEMPLATE/enhancement_request.md) and will automatically populate when creating an issue in GitHub.
-  
-- ## Unit Testing 
-  
-   *UNDER CONSTRUCTION🚧*
-  - All PASS unit tests are done with [Vitest](https://vitest.dev/).
-  - In Vitest, tests are simply async functions that throw errors for failures.
-  - To run all repository unit tests `npm run test`
-  - To run a single test `npm run test "<filename>.test.js"` 
-    > Example: `npm run test "navBar.test.js"`
 
 **[⬆️ Back to Top](#contributing-to-pass)**
