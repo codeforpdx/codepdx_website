@@ -42,8 +42,8 @@ By participating in this project, you are expected to uphold our [Code of Conduc
   
 1. Search through open [issues](https://github.com/codeforpdx/codepdx_website/issues).
 2. Find an issue that interests you.
-3. Check if someone is currently working on that issue and if a [pull request](https://github.com/codeforpdx/codepdx_website/pulls) exists.
-4. Assign yourself to issue and leave a comment stating your intentions.  
+3. Check if someone is currently working on that issue and if a [pull request](https://github.com/codeforpdx/codepdx_website/pulls) exists. If someone is working on an issue they should also have a branch created for it and be assigned to the issue.
+4. Assign yourself to an issue leave a comment stating your plans and create a branch for your issue.  
   
 - ## Clone the repo
 
@@ -58,12 +58,14 @@ By participating in this project, you are expected to uphold our [Code of Conduc
      origin https://github.com/codeforpdx/codepdx_website.git (push)
       ```
 
-1. Create a new branch to work on your feature (We recommend doing this via terminal) Branches should all be based off of `Development`:
+2. Create a new branch to work on your feature (We recommend doing this via terminal) Branches should all be based off of `Development`:
     
     A. `git switch Development` or `git checkout Development` - to switch to the Development branch.
 
     B. `git checkout -b "<your branch name>"` [learn more about git branches](https://www.atlassian.com/git/tutorials/using-branches/git-checkout) using the recommended naming convention:`<issue number><branch name>` with a concise title.
       > Example: `112/delete-client-modal`
+
+  <!-- This section will need images reflecting the website repo not pass, cant do because on flight -->
   
   > This can also be done directly from an issue in GitHub with the following three steps(Default branch is Master and will need to be changed to Development). If done manually via command line, link branch to corresponding GitHub issue.
   >
@@ -85,10 +87,6 @@ By participating in this project, you are expected to uphold our [Code of Conduc
     - run `git add .` to add all changed files in commit. or `git add <fileName>` to include an individual file.
     - run `git commit -m "some message abut changes in commit"` with a concise message to describe what changes are included in the push.
     -  push to GitHub in terminal: `git push origin <your branch name>`
-  
-1. Code Styling/Linting
-
-   Linting and formatting for this project has also been setup using ESlint and Prettier. They are included as dependencies and will be installed while following the instructions of the readme. To lint your changes with ESLint follow the instructions [here](./README.md#linting)
 
 - ## Submitting a Pull Request
   
@@ -99,19 +97,24 @@ By participating in this project, you are expected to uphold our [Code of Conduc
 
 - ## Bug Reporting Template
   
-  - Bugs are reported via the GitHub built-in issues page for the repository https://github.com/codeforpdx/PASS/issues. 
+  - Bugs are reported via the GitHub built-in issues page for the repository [here](https://github.com/codeforpdx/codepdx_website/issues). 
   - Current bug reporting template can be found [here](../.github/ISSUE_TEMPLATE/bug_report.md) and will automatically populate when creating an issue in GitHub.
 
   Provide information requested in the template.
 
 - ## Requesting a Feature
   
-  - Features are requested via the GitHub built-in issue page for the repository https://github.com/codeforpdx/PASS/issues.
+  - Features are requested via the GitHub built-in issue page for the repository [here](https://github.com/codeforpdx/codepdx_website/issues).
   - Current feature request template can be found [here](../.github/ISSUE_TEMPLATE/feature_request.md) and will automatically populate when creating an issue in GitHub.
 
 - ## Enhancement Request
 
-  - Enhancements are requested via the GitHub built-in issues page for the repository https://github.com/codeforpdx/PASS/issues. 
+  - Enhancements are requested via the GitHub built-in issues page for the repository [here](https://github.com/codeforpdx/codepdx_website/issues). 
   - Current bug reporting template can be found [here](../.github/ISSUE_TEMPLATE/enhancement_request.md) and will automatically populate when creating an issue in GitHub.
 
-**[⬆️ Back to Top](#contributing-to-pass)**
+- ## Code Styling/Linting
+
+  Website code is formatted with ESLint and Prettier. see repo prettierrc.js and eslintrc.cjs for formatting settings. They are included as dependencies and will be installed while following the instructions of the readme. To lint your changes with ESLint follow the instructions 
+   <!-- update link to website formatting guide which needs to be written[here](./README.md#linting) -->
+
+**[⬆️ Back to Top](#-Contributing-to-CODE-PDX-WEBSITE)**
