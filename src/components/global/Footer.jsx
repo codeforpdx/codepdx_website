@@ -5,6 +5,10 @@ import Divider from "@mui/material/Divider";
 import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
+// import FacebookIcon from "@mui/icons-material/Facebook";
+// import InstagramIcon from "@mui/icons-material/Instagram";
+import LogoDevIcon from "@mui/icons-material/LogoDev";
+// import SvgIcon from "@mui/material/SvgIcon";
 import { useTheme } from "@mui/material/styles";
 // Other Library Imports
 import dayjs from "dayjs";
@@ -30,6 +34,34 @@ const legalLinks = [
     ml: 0.5,
     text: `©${dayjs().year()}`,
     title: "CODE PDX",
+  },
+];
+
+// Social media links
+const socialMediaLinks = [
+  {
+    href: "https://github.com/codeforpdx/",
+    icon: <LogoDevIcon />,
+    target: "_blank",
+    rel: "noopenner",
+  },
+  {
+    href: "https://www.linkedin.com/company/code-pdx/",
+    icon: <LogoDevIcon fontSize="large" />,
+    target: "_blank",
+    rel: "noopenner",
+  },
+  {
+    href: "https://www.meetup.com/Code-for-PDX/",
+    icon: <LogoDevIcon fontSize="large" />,
+    target: "_blank",
+    rel: "noopenner",
+  },
+  {
+    href: "https://discord.gg/x6b573et",
+    icon: <LogoDevIcon fontSize="large" />,
+    target: "_blank",
+    rel: "noopenner",
   },
 ];
 
@@ -69,6 +101,7 @@ const Footer = () => {
             <Link
               href={link.href}
               underline="none"
+              // color="tertiary.main"
               target={link.target ?? null}
               rel={link.rel ?? null}
               ml={link.ml ?? null}
@@ -77,6 +110,19 @@ const Footer = () => {
             </Link>
           </Typography>
         ))}
+        <Stack direction="row" spacing={3} alignItems="center">
+          {socialMediaLinks.map(({ href, icon }) => (
+            <Link
+              key={href}
+              href={href}
+              target="_blank"
+              rel="noopener"
+              color="#fff"
+            >
+              {icon}
+            </Link>
+          ))}
+        </Stack>
       </Stack>
     </Container>
   </Box>;
