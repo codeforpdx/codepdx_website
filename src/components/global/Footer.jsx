@@ -41,7 +41,7 @@ const legalLinks = [
 const socialMediaLinks = [
   {
     href: "https://github.com/codeforpdx/",
-    icon: <LogoDevIcon />,
+    icon: <LogoDevIcon fontSize="large" />,
     target: "_blank",
     rel: "noopenner",
   },
@@ -68,64 +68,80 @@ const socialMediaLinks = [
 const Footer = () => {
   const theme = useTheme();
 
-  <Box
-    component="footer"
-    py={5}
-    sx={{
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      position: "sticky",
-      top: "100%",
-      textAlign: "center",
-      bgcolor: "primary.main",
-    }}
-  >
-    <Container>
-      <Stack
-        alignItems="center"
-        direction={"column"}
-        spacing={1}
-        divider={
-          <Divider
-            orientation={"horizontal"}
-            flexItem={null}
-            color={theme.palette.tertiary.main}
-            sx={{ height: "3px", width: 3 / 4 }}
-          />
-        }
-      >
-        {legalLinks.map((link) => (
-          <Typography key={link.title} variant="body2" color="tertiary.main">
-            {link.text ?? null}
-            <Link
-              href={link.href}
-              underline="none"
-              // color="tertiary.main"
-              target={link.target ?? null}
-              rel={link.rel ?? null}
-              ml={link.ml ?? null}
-            >
-              {link.title}
-            </Link>
-          </Typography>
-        ))}
-        <Stack direction="row" spacing={3} alignItems="center">
-          {socialMediaLinks.map(({ href, icon }) => (
-            <Link
-              key={href}
-              href={href}
-              target="_blank"
-              rel="noopener"
-              color="#fff"
-            >
-              {icon}
-            </Link>
-          ))}
+  return (
+    <Box
+      component="footer"
+      py={5}
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "sticky",
+        top: "100%",
+        textAlign: "center",
+        // bgcolor: "primary.main",
+      }}
+    >
+      <Container>
+        <Stack
+          alignItems="center"
+          direction={"column"}
+          spacing={1}
+          divider={
+            <Divider
+              orientation={"horizontal"}
+              flexItem={null}
+              color={theme.palette.tertiary.main}
+              sx={{ height: "3px", width: 3 / 4 }}
+            />
+          }
+        >
+          <Stack direction="row" alignItems="center">
+            <LogoDevIcon fontSize="large" />
+            <Typography variant="body2" color="tertiary.main">
+              CODE PDX
+            </Typography>
+          </Stack>
+
+          <Stack direction="row" spacing={3} alignItems="center">
+            {socialMediaLinks.map(({ href, icon }) => (
+              <Link
+                key={href}
+                href={href}
+                target="_blank"
+                rel="noopener"
+                // color="#fff"
+              >
+                {icon}
+              </Link>
+            ))}
+          </Stack>
+
+          <Stack>
+            {legalLinks.map((link) => (
+              <Typography
+                key={link.title}
+                variant="body2"
+                color="tertiary.main"
+              >
+                {link.text ?? null}
+                <Link
+                  href={link.href}
+                  underline="none"
+                  // color="tertiary.main"
+                  target={link.target ?? null}
+                  rel={link.rel ?? null}
+                  ml={link.ml ?? null}
+                >
+                  {link.title}
+                </Link>
+              </Typography>
+            ))}
+          </Stack>
         </Stack>
-      </Stack>
-    </Container>
-  </Box>;
+      </Container>
+    </Box>
+  );
 };
 
 export default Footer;
