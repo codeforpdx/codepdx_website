@@ -7,12 +7,9 @@
 3. [Code of Conduct](#3-code-of-conduct)
 4. [Connect With the Team](#4-connect-with-the-team)
 5. [Development Process](#5-development-process)
-   - [Choosing an Issue](#choosing-an-issue)
+   - [Github Issues](#github-issues)
    - [Clone the Repo](#clone-the-repo)
    - [Submitting a Pull Request](#submitting-a-pull-request)
-   - [Bug Reporting Template](#bug-reporting-template)
-   - [Requesting A Feature](#requesting-a-feature)
-   - [Enhancement Request](#enhancement-request)
    - [Code Styling/Linting](#code-stylinglinting)
 
 ## 1. Project summary
@@ -38,12 +35,15 @@ By participating in this project, you are expected to uphold our [Code of Conduc
 
 ## 5. Development Process
 
-- ## Choosing an Issue
+- ## Github Issues
 
 1. Search through open [issues](https://github.com/codeforpdx/codepdx_website/issues).
 2. Find an issue that interests you.
 3. Check if someone is currently working on that issue and if a [pull request](https://github.com/codeforpdx/codepdx_website/pulls) exists. If someone is working on an issue they should also have a branch created for it and be assigned to the issue.
 4. Assign yourself to an issue leave a comment stating your plans and create a branch for your issue.
+
+  - All bug reporting, feature requests, or enhancements can be found in [issues](https://github.com/codeforpdx/codepdx_website/issues)
+  - Templates for each one can be found [here](./.github/ISSUE_TEMPLATE/) in the .github/ISSUE_TEMPLATE folder. These will automatically populate when using github issues.
 
 - ## Clone the repo
 
@@ -97,26 +97,9 @@ By participating in this project, you are expected to uphold our [Code of Conduc
 
 - Make a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/requesting-a-pull-request-review) to the `Development` branch. Request reviews from members of the team - you’ll need their approval to merge. \*\*Make sure to close your branch once merged.
 
-- ## Bug Reporting Template
-
-  - Bugs are reported via the GitHub built-in issues page for the repository [here](https://github.com/codeforpdx/codepdx_website/issues).
-  - Current bug reporting template can be found [here](./.github/ISSUE_TEMPLATE/bug_report.md) and will automatically populate when creating an issue in GitHub.
-
-  Provide information requested in the template.
-
-- ## Requesting a Feature
-
-  - Features are requested via the GitHub built-in issue page for the repository [here](https://github.com/codeforpdx/codepdx_website/issues).
-  - Current feature request template can be found [here](./.github/ISSUE_TEMPLATE/feature_request.md) and will automatically populate when creating an issue in GitHub.
-
-- ## Enhancement Request
-
-  - Enhancements are requested via the GitHub built-in issues page for the repository [here](https://github.com/codeforpdx/codepdx_website/issues).
-  - Current bug reporting template can be found [here](./.github/ISSUE_TEMPLATE/enhancement_request.md) and will automatically populate when creating an issue in GitHub.
-
 - ## Code Styling/Linting
 
   Website code is formatted with ESLint and Prettier. see repo prettierrc.js and eslintrc.cjs for formatting settings. They are included as dependencies and will be installed while following the instructions of the readme. To lint your changes with ESLint follow the instructions
    <!-- update link to website formatting guide which needs to be written[here](./README.md#linting) -->
 
-**[⬆️ Back to Top](#-Contributing-to-CODE-PDX-WEBSITE)**
+**[⬆️ Back to Top](#contributing-to-code-pdx-website)**
