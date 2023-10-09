@@ -100,19 +100,19 @@ By participating in this project, you are expected to uphold our [Code of Conduc
 - ## Bug Reporting Template
 
   - Bugs are reported via the GitHub built-in issues page for the repository [here](https://github.com/codeforpdx/codepdx_website/issues).
-  - Current bug reporting template can be found [here](../.github/ISSUE_TEMPLATE/bug_report.md) and will automatically populate when creating an issue in GitHub.
+  - Current bug reporting template can be found [here](./.github/ISSUE_TEMPLATE/bug_report.md) and will automatically populate when creating an issue in GitHub.
 
   Provide information requested in the template.
 
 - ## Requesting a Feature
 
   - Features are requested via the GitHub built-in issue page for the repository [here](https://github.com/codeforpdx/codepdx_website/issues).
-  - Current feature request template can be found [here](../.github/ISSUE_TEMPLATE/feature_request.md) and will automatically populate when creating an issue in GitHub.
+  - Current feature request template can be found [here](./.github/ISSUE_TEMPLATE/feature_request.md) and will automatically populate when creating an issue in GitHub.
 
 - ## Enhancement Request
 
   - Enhancements are requested via the GitHub built-in issues page for the repository [here](https://github.com/codeforpdx/codepdx_website/issues).
-  - Current bug reporting template can be found [here](../.github/ISSUE_TEMPLATE/enhancement_request.md) and will automatically populate when creating an issue in GitHub.
+  - Current bug reporting template can be found [here](./.github/ISSUE_TEMPLATE/enhancement_request.md) and will automatically populate when creating an issue in GitHub.
 
 - ## Code Styling/Linting
 
