@@ -1,15 +1,14 @@
 // Material UI Imports
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
-import Divider from "@mui/material/Divider";
 import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-// import FacebookIcon from "@mui/icons-material/Facebook";
-// import InstagramIcon from "@mui/icons-material/Instagram";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import LogoDevIcon from "@mui/icons-material/LogoDev";
 // import SvgIcon from "@mui/material/SvgIcon";
-import { useTheme } from "@mui/material/styles";
+// import { useTheme } from "@mui/material/styles";
 // Other Library Imports
 import dayjs from "dayjs";
 
@@ -41,13 +40,13 @@ const legalLinks = [
 const socialMediaLinks = [
   {
     href: "https://github.com/codeforpdx/",
-    icon: <LogoDevIcon fontSize="large" />,
+    icon: <GitHubIcon fontSize="large" />,
     target: "_blank",
     rel: "noopenner",
   },
   {
     href: "https://www.linkedin.com/company/code-pdx/",
-    icon: <LogoDevIcon fontSize="large" />,
+    icon: <LinkedInIcon fontSize="large" />,
     target: "_blank",
     rel: "noopenner",
   },
@@ -66,12 +65,12 @@ const socialMediaLinks = [
 ];
 
 const Footer = () => {
-  const theme = useTheme();
+  // const theme = useTheme();
 
   return (
     <Box
       component="footer"
-      py={5}
+      py={2}
       sx={{
         display: "flex",
         justifyContent: "center",
@@ -79,30 +78,24 @@ const Footer = () => {
         position: "sticky",
         top: "100%",
         textAlign: "center",
-        // bgcolor: "primary.main",
+        bgcolor: "primary.main",
+        flexDirection: "column",
       }}
     >
-      <Container>
+      <Container
+      >
         <Stack
           alignItems="center"
-          direction={"column"}
+          direction={"row"}
           spacing={1}
-          divider={
-            <Divider
-              orientation={"horizontal"}
-              flexItem={null}
-              color={theme.palette.tertiary.main}
-              sx={{ height: "3px", width: 3 / 4 }}
-            />
-          }
         >
           <Stack direction="row" alignItems="center">
-            <LogoDevIcon fontSize="large" />
-            <Typography variant="body2" color="tertiary.main">
-              CODE PDX
-            </Typography>
+            <LogoDevIcon
+              fontSize="large"
+            />
+            <Typography>CODE PDX</Typography>
           </Stack>
-
+          <Box sx={{ flexGrow: 1 }} />
           <Stack direction="row" spacing={3} alignItems="center">
             {socialMediaLinks.map(({ href, icon }) => (
               <Link
@@ -110,13 +103,13 @@ const Footer = () => {
                 href={href}
                 target="_blank"
                 rel="noopener"
-                // color="#fff"
+                color="#000"
               >
                 {icon}
               </Link>
             ))}
           </Stack>
-
+          <Box sx={{ flexGrow: 1 }} />
           <Stack>
             {legalLinks.map((link) => (
               <Typography
@@ -128,7 +121,7 @@ const Footer = () => {
                 <Link
                   href={link.href}
                   underline="none"
-                  // color="tertiary.main"
+                  color="#000"
                   target={link.target ?? null}
                   rel={link.rel ?? null}
                   ml={link.ml ?? null}
