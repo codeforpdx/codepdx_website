@@ -1,14 +1,18 @@
 // Material UI Imports
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
+// import Divider from "@mui/material/Divider";
+import {
+  FaDiscord,
+  FaGithub,
+  FaLinkedin,
+  FaMeetup,
+} from "react-icons/fa";
 import Link from "@mui/material/Link";
+import LogoDevIcon from "@mui/icons-material/LogoDev";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import LogoDevIcon from "@mui/icons-material/LogoDev";
-// import SvgIcon from "@mui/material/SvgIcon";
-// import { useTheme } from "@mui/material/styles";
+import { useTheme } from "@mui/material/styles";
 // Other Library Imports
 import dayjs from "dayjs";
 
@@ -40,32 +44,32 @@ const legalLinks = [
 const socialMediaLinks = [
   {
     href: "https://github.com/codeforpdx/",
-    icon: <GitHubIcon fontSize="large" />,
+    icon: <FaGithub fontSize="large" />,
     target: "_blank",
     rel: "noopenner",
   },
   {
     href: "https://www.linkedin.com/company/code-pdx/",
-    icon: <LinkedInIcon fontSize="large" />,
+    icon: <FaLinkedin fontSize="large" />,
     target: "_blank",
     rel: "noopenner",
   },
   {
     href: "https://www.meetup.com/Code-for-PDX/",
-    icon: <LogoDevIcon fontSize="large" />,
+    icon: <FaMeetup fontSize="large" />,
     target: "_blank",
     rel: "noopenner",
   },
   {
     href: "https://discord.gg/x6b573et",
-    icon: <LogoDevIcon fontSize="large" />,
+    icon: <FaDiscord fontSize="large" />,
     target: "_blank",
     rel: "noopenner",
   },
 ];
 
 const Footer = () => {
-  // const theme = useTheme();
+  const theme = useTheme();
 
   return (
     <Box
@@ -80,18 +84,31 @@ const Footer = () => {
         textAlign: "center",
         bgcolor: "primary.main",
         flexDirection: "column",
+        // minHeight: "100vh",
       }}
     >
       <Container
+      // maxWidth={"lg"}
+      // maxWidth={false}
+      // disableGutters
       >
         <Stack
           alignItems="center"
           direction={"row"}
           spacing={1}
+          // divider={
+          //   <Divider
+          //     // orientation={"horizontal"}
+          //     flexItem={null}
+          //     color={theme.palette.tertiary.main}
+          //     sx={{ height: "2px", width: 3 / 4 }}
+          //   />
+          // }
         >
           <Stack direction="row" alignItems="center">
             <LogoDevIcon
               fontSize="large"
+              // color="primary.main"
             />
             <Typography>CODE PDX</Typography>
           </Stack>
