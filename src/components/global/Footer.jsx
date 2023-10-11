@@ -1,12 +1,10 @@
 // Material UI Imports
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-// import Divider from "@mui/material/Divider";
 import { FaDiscord, FaGithub, FaLinkedin, FaMeetup } from 'react-icons/fa6';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-// import { useTheme } from '@mui/material/styles';
 // Other Library Imports
 import dayjs from 'dayjs';
 
@@ -62,11 +60,7 @@ const socialMediaLinks = [
   }
 ];
 
-// <SvgIcon src="/assets/rose_logo.png" />
-
 const Footer = () => {
-  // const theme = useTheme();
-
   return (
     <Box
       component="footer"
