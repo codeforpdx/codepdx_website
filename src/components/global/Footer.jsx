@@ -38,25 +38,25 @@ const legalLinks = [
 const socialMediaLinks = [
   {
     href: 'https://github.com/codeforpdx/',
-    icon: <FaGithub size={40} />,
+    icon: <FaGithub size={45} />,
     target: '_blank',
     rel: 'noopener'
   },
   {
     href: 'https://www.linkedin.com/company/code-pdx/',
-    icon: <FaLinkedin size={40} />,
+    icon: <FaLinkedin size={45} />,
     target: '_blank',
     rel: 'noopener'
   },
   {
     href: 'https://www.meetup.com/Code-for-PDX/',
-    icon: <FaMeetup size={40} />,
+    icon: <FaMeetup size={45} />,
     target: '_blank',
     rel: 'noopener'
   },
   {
     href: 'https://discord.gg/x6b573et',
-    icon: <FaDiscord size={40} />,
+    icon: <FaDiscord size={45} />,
     target: '_blank',
     rel: 'noopener'
   }
@@ -89,8 +89,8 @@ const Footer = () => {
             <Box
               component="img"
               sx={{
-                height: 64,
-                width: 100,
+                height: 56,
+                width: 88,
                 marginRight: 2
               }}
               alt="CODE PDX logo"
@@ -106,7 +106,7 @@ const Footer = () => {
               </Link>
             ))}
           </Stack>
-          <Box sx={{ flexGrow: 1 }} />
+          <Box sx={{ flexGrow: 1.5 }} />
           <Stack>
             {legalLinks.map((link) => (
               <Typography
