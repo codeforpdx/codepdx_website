@@ -4,7 +4,6 @@ import Container from '@mui/material/Container';
 // import Divider from "@mui/material/Divider";
 import { FaDiscord, FaGithub, FaLinkedin, FaMeetup } from 'react-icons/fa6';
 import Link from '@mui/material/Link';
-import LogoDevIcon from '@mui/icons-material/LogoDev';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 // import { useTheme } from '@mui/material/styles';
@@ -63,6 +62,8 @@ const socialMediaLinks = [
   }
 ];
 
+// <SvgIcon src="/assets/rose_logo.png" />
+
 const Footer = () => {
   // const theme = useTheme();
 
@@ -75,23 +76,26 @@ const Footer = () => {
         justifyContent: 'center',
         alignItems: 'center',
         position: 'sticky',
-        top: '100%',
         textAlign: 'center',
         bgcolor: 'primary.main',
         flexDirection: 'column',
-        width: '100vw'
+        width: '100vw',
+        minHeight: '10vh'
       }}
     >
-      <Container
-      maxWidth={false}
-      >
-        <Stack
-          alignItems="center"
-          direction={'row'}
-          spacing={1}
-        >
+      <Container maxWidth={false}>
+        <Stack alignItems="center" direction={'row'} spacing={1}>
           <Stack direction="row" alignItems="center">
-            <LogoDevIcon color="primary.main" />
+            <Box
+              component="img"
+              sx={{
+                height: 64,
+                width: 100,
+                marginRight: 2
+              }}
+              alt="CODE PDX logo"
+              src="/assets/rose_logo.png"
+            />
             <Typography variant="h5">CODE PDX</Typography>
           </Stack>
           <Box sx={{ flexGrow: 1 }} />
