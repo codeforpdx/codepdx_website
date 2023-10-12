@@ -1,5 +1,6 @@
 // Material UI Imports
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import Container from '@mui/material/Container';
 import {
@@ -42,7 +43,7 @@ import {
   // RxAvatar,
   // HiOutlineSpeakerphone,
 } from 'react-icons/fa6';
-// import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
@@ -105,7 +106,8 @@ const Steps = () => {
         // flexDirection: 'column',
         // width: '100vw',
         // minHeight: '10vh',
-        backgroundColor: 'black'
+        backgroundColor: 'black',
+        padding: 10
         // height: '500px',
         // width: '500px'
       }}
@@ -117,30 +119,60 @@ const Steps = () => {
             Looking to use your skills for the greater good or build your resume?
           </Typography>
           <Stack>
-            {volunteerGrid.map(({ icon, label, alt }) => (
-              // <Grid></Grid>
-              <Typography
-                key={alt}
-                // variant="body2"
-                // color="tertiary.main"
-                sx={{
-                  display: 'flex',
-                  backgroundColor: 'green',
-                  width: 100,
-                  height: 50
-                  // justifyContent: 'flex-end'
-                }}
-              >
-                {/* {link.text ?? null} */}
-                {icon} {label}
-              </Typography>
-            ))}
+            <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+              {volunteerGrid.map(({ icon, label, alt }) => (
+                <Grid item xs={3} key={alt}>
+                  <Typography
+                    variant="body2"
+                    color="tertiary.main"
+                    sx={{
+                      display: 'inline-block',
+                      justifyContent: 'center',
+                      backgroundColor: 'green',
+                      // alignItems: 'center',
+                      width: 125,
+                      height: 100
+                    }}
+                  >
+                    {icon ?? null}
+                    <br />
+                    {label ?? null}
+                  </Typography>
+                </Grid>
+              ))}
+            </Grid>
             {/* {socialMediaLinks.map(({ href, icon }) => (
               <Link key={href} href={href} target="_blank" rel="noopener" color="#000">
                 {icon}
               </Link>
             ))} */}
+
+            {/* <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+              <Grid item xs={6}>
+                <Typography>1</Typography>
+              </Grid>
+              <Grid item xs={6}>
+                <Typography>2</Typography>
+              </Grid>
+              <Grid item xs={6}>
+                <Typography>3</Typography>
+              </Grid>
+              <Grid item xs={6}>
+                <Typography>4</Typography>
+              </Grid>
+            </Grid> */}
           </Stack>
+          <Button
+            variant="contained"
+            aria-label="volunteer"
+            color="secondary"
+            href="mailto:hugh@codeforpdx.org"
+            target="_blank"
+            rel="noopener"
+            sx={{ my: '1rem', width: 1 / 3 }}
+          >
+            Volunteer
+          </Button>
         </Card>
         {/* <FaRegHandshake size={45} />
         ...
