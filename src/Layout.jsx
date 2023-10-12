@@ -1,11 +1,11 @@
 // React Imports
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route } from 'react-router-dom';
 // Component Imports
-import Footer from "./components/global/Footer";
-import Home from "./pages/Home";
-import Navbar from "./components/global/Navbar";
-import Projects from "./pages/Projects";
-import Volunteer from "./pages/Volunteer";
+import Footer from './components/global/Footer';
+import Home from './pages/Home';
+import Navbar from './components/global/Navbar';
+import Projects from './pages/Projects';
+import Volunteer from './pages/Volunteer';
 
 const Layout = () => {
   // any logic needed
@@ -19,6 +19,7 @@ const Layout = () => {
           <Route path="/volunteer" element={<Volunteer />} />
         </Routes>
       </main>
+      <Volunteer />
       <Footer />
     </>
   );
