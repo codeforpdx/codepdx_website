@@ -4,10 +4,9 @@ import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-// React-icons imports
-import { FaDiscord, FaGithub, FaLinkedin, FaMeetup } from 'react-icons/fa6';
-// Other library Imports
+// Other Library Imports
 import dayjs from 'dayjs';
+import { FaDiscord, FaGithub, FaLinkedin, FaMeetup } from 'react-icons/fa6';
 
 // Legal links
 const legalLinks = [
@@ -113,7 +112,7 @@ const Footer = () => {
                 color="#000"
                 sx={{
                   '&:hover': {
-                    color: 'lightblue'
+                    color: 'secondary.main'
                   }
                 }}
               >
@@ -140,7 +139,7 @@ const Footer = () => {
                   ml={link.ml ?? null}
                   sx={{
                     '&:hover': {
-                      color: 'lightblue'
+                      color: 'primary.main'
                     }
                   }}
                 >
