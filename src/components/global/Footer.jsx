@@ -1,10 +1,11 @@
 // Material UI Imports
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import { FaDiscord, FaGithub, FaLinkedin, FaMeetup } from 'react-icons/fa6';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+// React-icons imports
+import { FaDiscord, FaGithub, FaLinkedin, FaMeetup } from 'react-icons/fa6';
 // Other Library Imports
 import dayjs from 'dayjs';
 
@@ -64,36 +65,50 @@ const Footer = () => {
   return (
     <Box
       component="footer"
-      py={2}
+      // py={2}
       sx={{
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         position: 'sticky',
         textAlign: 'center',
-        bgcolor: 'primary.main',
-        flexDirection: 'column',
-        width: '100vw',
-        minHeight: '10vh'
+        // bgcolor: 'primary.main',
+        flexDirection: 'column'
+        // width: '100vw',
+        // minHeight: '10vh'
       }}
     >
       <Container maxWidth={false}>
-        <Stack alignItems="center" direction={'row'} spacing={1}>
+        <Stack
+          alignItems="center"
+          direction={'row'}
+          // spacing={1}
+        >
           <Stack direction="row" alignItems="center">
             <Box
               component="img"
               sx={{
-                height: 56,
-                width: 88,
-                marginRight: 2
+                // height: 56,
+                // width: 88,
+                // marginRight: 2,
+                backgroundImage: 'url(/assets/logoBlob.svg)'
               }}
               alt="CODE PDX logo"
               src="/assets/rose_logo.png"
             />
+
+            {/* <img src={mainBlob}></img> */}
+            {/* <img src={logoBlob}></img> */}
+
             <Typography variant="h5">CODE PDX</Typography>
           </Stack>
           <Box sx={{ flexGrow: 1 }} />
-          <Stack direction="row" spacing={3} alignItems="center" sx={{ ml: '50px', mr: '50px' }}>
+          <Stack
+            direction="row"
+            spacing={3}
+            alignItems="center"
+            sx={{ ml: '50px', mr: '50px', backgroundImage: 'url(/assets/mainBlob.svg)' }}
+          >
             {socialMediaLinks.map(({ href, icon }) => (
               <Link key={href} href={href} target="_blank" rel="noopener" color="#000">
                 {icon}
