@@ -6,7 +6,7 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 // React-icons imports
 import { FaDiscord, FaGithub, FaLinkedin, FaMeetup } from 'react-icons/fa6';
-// Other Library Imports
+// Other library Imports
 import dayjs from 'dayjs';
 
 // Legal links
@@ -72,9 +72,8 @@ const Footer = () => {
         alignItems: 'center',
         position: 'sticky',
         textAlign: 'center',
-        // bgcolor: 'primary.main',
-        flexDirection: 'column'
-        // width: '100vw',
+        flexDirection: 'column',
+        width: '100vw'
         // minHeight: '10vh'
       }}
     >
@@ -90,16 +89,12 @@ const Footer = () => {
               sx={{
                 // height: 56,
                 // width: 88,
-                // marginRight: 2,
+                marginRight: 2,
                 backgroundImage: 'url(/assets/logoBlob.svg)'
               }}
               alt="CODE PDX logo"
               src="/assets/rose_logo.png"
             />
-
-            {/* <img src={mainBlob}></img> */}
-            {/* <img src={logoBlob}></img> */}
-
             <Typography variant="h5">CODE PDX</Typography>
           </Stack>
           <Box sx={{ flexGrow: 1 }} />
@@ -110,12 +105,23 @@ const Footer = () => {
             sx={{ ml: '50px', mr: '50px', backgroundImage: 'url(/assets/mainBlob.svg)' }}
           >
             {socialMediaLinks.map(({ href, icon }) => (
-              <Link key={href} href={href} target="_blank" rel="noopener" color="#000">
+              <Link
+                key={href}
+                href={href}
+                target="_blank"
+                rel="noopener"
+                color="#000"
+                sx={{
+                  '&:hover': {
+                    color: 'lightblue'
+                  }
+                }}
+              >
                 {icon}
               </Link>
             ))}
           </Stack>
-          <Box sx={{ flexGrow: 1.5 }} />
+          <Box sx={{ flexGrow: 2 }} />
           <Stack>
             {legalLinks.map((link) => (
               <Typography
@@ -132,6 +138,11 @@ const Footer = () => {
                   target={link.target ?? null}
                   rel={link.rel ?? null}
                   ml={link.ml ?? null}
+                  sx={{
+                    '&:hover': {
+                      color: 'lightblue'
+                    }
+                  }}
                 >
                   {link.title}
                 </Link>
