@@ -7,6 +7,8 @@ import Typography from '@mui/material/Typography';
 // Other Library Imports
 import dayjs from 'dayjs';
 import { FaDiscord, FaGithub, FaLinkedin, FaMeetup } from 'react-icons/fa6';
+// Image Imports
+import roseLogo from '/assets/rose_logo.png';
 
 // Legal links
 const legalLinks = [
@@ -60,6 +62,70 @@ const socialMediaLinks = [
   }
 ];
 
+// maps legalLinks used for placement in stack below
+const renderLegalLinks = legalLinks.map((link) => (
+  <Typography
+    key={link.title}
+    variant="body2"
+    color="tertiary.main"
+    sx={{ display: 'flex', justifyContent: 'flex-end' }}
+  >
+    {link.text ?? null}
+    <Link
+      href={link.href}
+      underline="none"
+      color="#000"
+      target={link.target ?? null}
+      rel={link.rel ?? null}
+      ml={link.ml ?? null}
+      sx={{
+        '&:hover': {
+          color: 'primary.main'
+        }
+      }}
+    >
+      {link.title}
+    </Link>
+  </Typography>
+));
+
+// renders socialMediaLinks for placement in stack below
+const renderSocialLinks = socialMediaLinks.map(({ href, icon }) => (
+  <Link
+    key={href}
+    href={href}
+    target="_blank"
+    rel="noopener"
+    color="#000"
+    sx={{
+      '&:hover': {
+        color: 'secondary.main'
+      }
+    }}
+  >
+    {icon}
+  </Link>
+));
+
+const socialBlobStyle = {
+  backgroundImage: 'url(/assets/socialsBlob.svg)',
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat',
+  backgroundPosition: 'center',
+  overflow: 'visible',
+  minWidth: '42%',
+  minHeight: '175px'
+};
+
+const logoBlobStyle = {
+  backgroundImage: 'url(/assets/logoBlob.svg)',
+  backgroundRepeat: 'no-repeat',
+  // backgroundPosition: 'left',
+  overflow: 'visible'
+  // minWidth: '100vh',
+  // minHeight: '100vh'
+};
+
 const Footer = () => {
   return (
     <Box
@@ -92,7 +158,7 @@ const Footer = () => {
                 backgroundImage: 'url(/assets/logoBlob.svg)'
               }}
               alt="CODE PDX logo"
-              src="/assets/rose_logo.png"
+              src={roseLogo}
             />
             <Typography variant="h5">CODE PDX</Typography>
           </Stack>
@@ -101,53 +167,12 @@ const Footer = () => {
             direction="row"
             spacing={3}
             alignItems="center"
-            sx={{ ml: '50px', mr: '50px', backgroundImage: 'url(/assets/mainBlob.svg)' }}
+            sx={{ ml: '50px', mr: '50px', socialBlobStyle }}
           >
-            {socialMediaLinks.map(({ href, icon }) => (
-              <Link
-                key={href}
-                href={href}
-                target="_blank"
-                rel="noopener"
-                color="#000"
-                sx={{
-                  '&:hover': {
-                    color: 'secondary.main'
-                  }
-                }}
-              >
-                {icon}
-              </Link>
-            ))}
+            {renderSocialLinks}
           </Stack>
           <Box sx={{ flexGrow: 2 }} />
-          <Stack>
-            {legalLinks.map((link) => (
-              <Typography
-                key={link.title}
-                variant="body2"
-                color="tertiary.main"
-                sx={{ display: 'flex', justifyContent: 'flex-end' }}
-              >
-                {link.text ?? null}
-                <Link
-                  href={link.href}
-                  underline="none"
-                  color="#000"
-                  target={link.target ?? null}
-                  rel={link.rel ?? null}
-                  ml={link.ml ?? null}
-                  sx={{
-                    '&:hover': {
-                      color: 'primary.main'
-                    }
-                  }}
-                >
-                  {link.title}
-                </Link>
-              </Typography>
-            ))}
-          </Stack>
+          <Stack>{renderLegalLinks}</Stack>
         </Stack>
       </Container>
     </Box>
