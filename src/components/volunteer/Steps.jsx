@@ -95,10 +95,10 @@ const volunteerGrid = [
 const Steps = () => {
   return (
     <Container
-      maxWidth="md"
+      maxWidth="lg"
       sx={{
         display: 'flex',
-        justifyContent: 'center',
+        // justifyContent: 'center',
         // alignItems: 'center',
         // position: 'sticky',
         textAlign: 'center',
@@ -107,19 +107,28 @@ const Steps = () => {
         // width: '100vw',
         // minHeight: '10vh',
         backgroundColor: 'black',
-        padding: 10
+        padding: 20
         // height: '500px',
         // width: '500px'
       }}
     >
-      <Box sx={{ backgroundColor: 'white' }}>
+      <Box sx={{ backgroundColor: 'lightblue' }}>
         <Typography variant="h4">Volunteer with Us</Typography>
-        <Card sx={{ backgroundColor: 'grey', ml: 10, mr: 10 }}>
+        <Card
+          sx={{
+            backgroundColor: 'grey'
+            // margin: 10
+          }}
+        >
           <Typography>
             Looking to use your skills for the greater good or build your resume?
           </Typography>
           <Stack>
-            <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+            <Grid
+              container
+              rowSpacing={1}
+              // columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+            >
               {volunteerGrid.map(({ icon, label, alt }) => (
                 <Grid item xs={3} key={alt}>
                   <Typography
@@ -166,10 +175,13 @@ const Steps = () => {
             variant="contained"
             aria-label="volunteer"
             color="secondary"
-            href="mailto:hugh@codeforpdx.org"
+            // href="mailto:hugh@codeforpdx.org"
             target="_blank"
             rel="noopener"
-            sx={{ my: '1rem', width: 1 / 3 }}
+            sx={{
+              my: '1rem',
+              width: 1 / 3
+            }}
           >
             Volunteer
           </Button>
