@@ -1,6 +1,6 @@
 // Material UI Imports
 import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
+// import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
@@ -117,14 +117,14 @@ const socialBlobStyle = {
   minHeight: '175px'
 };
 
-const logoBlobStyle = {
-  backgroundImage: 'url(/assets/logoBlob.svg)',
-  backgroundRepeat: 'no-repeat',
-  // backgroundPosition: 'left',
-  overflow: 'visible'
-  // minWidth: '100vh',
-  // minHeight: '100vh'
-};
+// const logoBlobStyle = {
+//   backgroundImage: 'url(/assets/logoBlob.svg)',
+//   backgroundRepeat: 'no-repeat',
+//   // backgroundPosition: 'left',
+//   overflow: 'visible'
+//   // minWidth: '100vh',
+//   // minHeight: '100vh'
+// };
 
 const Footer = () => {
   return (

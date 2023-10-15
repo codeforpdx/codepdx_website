@@ -3,7 +3,6 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import Grid from '@mui/material/Grid';
-import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 // Other Library Imports
 import {
@@ -63,62 +62,56 @@ const volunteerGrid = [
 
 const Steps = () => {
   return (
-    <>
-      <Box
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        textAlign: 'center',
+        width: '100vw'
+      }}
+    >
+      <Typography variant="h3">Volunteer with Us</Typography>
+      <Card
         sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          textAlign: 'center',
-          width: '100vw'
+          py: 5,
+          mt: 5,
+          mb: 5,
+          backgroundColor: 'lightgrey'
         }}
       >
-        <Typography variant="h3">Volunteer with Us</Typography>
-        <Card
+        <Typography variant="h6">
+          Looking to use your skills for the greater good or build your resume?
+        </Typography>
+        <>
+          <Grid container rowSpacing={1} columnSpacing={{ xs: 0 }} sx={{ margin: 0 }}>
+            {volunteerGrid.map(({ icon, label, alt }) => (
+              <Grid item xs={6} sm={3} key={alt}>
+                <Typography variant="body2">
+                  {icon ?? null}
+                  <br />
+                  {label ?? null}
+                </Typography>
+              </Grid>
+            ))}
+          </Grid>
+        </>
+        <Button
+          variant="contained"
+          aria-label="volunteer"
+          color="primary"
+          // href="mailto:hugh@codeforpdx.org"
+          target="_blank"
+          rel="noopener"
           sx={{
-            padding: 3,
-            mt: 5,
-            backgroundColor: 'lightgrey'
+            my: '1rem',
+            width: 1 / 3
           }}
         >
-          <Typography variant="h6">
-            Looking to use your skills for the greater good or build your resume?
-          </Typography>
-          <Stack>
-            <Grid
-              container
-              rowSpacing={1}
-              columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-              sx={{ margin: 3 }}
-            >
-              {volunteerGrid.map(({ icon, label, alt }) => (
-                <Grid item xs={6} md={3} key={alt}>
-                  <Typography variant="body2" color="#000">
-                    {icon ?? null}
-                    <br />
-                    {label ?? null}
-                  </Typography>
-                </Grid>
-              ))}
-            </Grid>
-          </Stack>
-          <Button
-            variant="contained"
-            aria-label="volunteer"
-            color="primary"
-            // href="mailto:hugh@codeforpdx.org"
-            target="_blank"
-            rel="noopener"
-            sx={{
-              my: '1rem',
-              width: 1 / 3
-            }}
-          >
-            Volunteer
-          </Button>
-        </Card>
-      </Box>
-    </>
+          Volunteer
+        </Button>
+      </Card>
+    </Box>
   );
 };
 
