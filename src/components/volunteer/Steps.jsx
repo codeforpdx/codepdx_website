@@ -2,7 +2,7 @@
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
-import Container from '@mui/material/Container';
+// import Container from '@mui/material/Container';
 import {
   // FaChalkboardUser,
   // FaChartLine,
@@ -94,29 +94,29 @@ const volunteerGrid = [
 
 const Steps = () => {
   return (
-    <Container
-      maxWidth="lg"
-      sx={{
-        display: 'flex',
-        // justifyContent: 'center',
-        // alignItems: 'center',
-        // position: 'sticky',
-        textAlign: 'center',
-        // bgcolor: 'primary.main',
-        // flexDirection: 'column',
-        // width: '100vw',
-        // minHeight: '10vh',
-        backgroundColor: 'black',
-        padding: 20
-        // height: '500px',
-        // width: '500px'
-      }}
-    >
-      <Box sx={{ backgroundColor: 'lightblue' }}>
+    <>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          // justifyContent: 'center',
+          alignItems: 'center',
+          // position: 'sticky',
+          textAlign: 'center',
+          // bgcolor: 'primary.main',
+          width: '100vw',
+          // minHeight: '10vh',
+          // backgroundColor: 'blue',
+          border: 2,
+          py: 5
+          // height: '500px',
+          // width: '500px'
+        }}
+      >
         <Typography variant="h4">Volunteer with Us</Typography>
         <Card
           sx={{
-            backgroundColor: 'grey'
+            backgroundColor: 'lightgrey'
             // margin: 10
           }}
         >
@@ -124,24 +124,23 @@ const Steps = () => {
             Looking to use your skills for the greater good or build your resume?
           </Typography>
           <Stack>
-            <Grid
-              container
-              rowSpacing={1}
-              // columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-            >
+            <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
               {volunteerGrid.map(({ icon, label, alt }) => (
                 <Grid item xs={3} key={alt}>
                   <Typography
                     variant="body2"
-                    color="tertiary.main"
-                    sx={{
-                      display: 'inline-block',
-                      justifyContent: 'center',
-                      backgroundColor: 'green',
-                      // alignItems: 'center',
-                      width: 125,
-                      height: 100
-                    }}
+                    color="#000"
+                    sx={
+                      {
+                        // display: 'flex',
+                        // flexDirection: 'column',
+                        // justifyContent: 'center',
+                        // backgroundColor: 'green',
+                        // alignItems: 'center',
+                        // width: '50%',
+                        // height: '100%'
+                      }
+                    }
                   >
                     {icon ?? null}
                     <br />
@@ -174,7 +173,7 @@ const Steps = () => {
           <Button
             variant="contained"
             aria-label="volunteer"
-            color="secondary"
+            color="primary"
             // href="mailto:hugh@codeforpdx.org"
             target="_blank"
             rel="noopener"
@@ -234,7 +233,7 @@ const Steps = () => {
         ...
         <FaChartLine size={45} /> */}
       </Box>
-    </Container>
+    </>
   );
 };
 
