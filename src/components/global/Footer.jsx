@@ -1,12 +1,14 @@
 // Material UI Imports
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import { FaDiscord, FaGithub, FaLinkedin, FaMeetup } from 'react-icons/fa6';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 // Other Library Imports
 import dayjs from 'dayjs';
+import { FaDiscord, FaGithub, FaLinkedin, FaMeetup } from 'react-icons/fa6';
+// Image Imports
+import roseLogo from '/assets/rose_logo.png';
 
 // Legal links
 const legalLinks = [
@@ -60,71 +62,109 @@ const socialMediaLinks = [
   }
 ];
 
-const Footer = () => {
-  return (
-    <Box
-      component="footer"
-      py={2}
+// maps legalLinks used for placement in stack below
+const renderLegalLinks = legalLinks.map((link) => (
+  <Typography
+    key={link.title}
+    variant="body2"
+    color="tertiary.main"
+    sx={{ display: 'flex', justifyContent: 'flex-end' }}
+  >
+    {link.text ?? null}
+    <Link
+      href={link.href}
+      underline="none"
+      color="#000"
+      target={link.target ?? null}
+      rel={link.rel ?? null}
+      ml={link.ml ?? null}
       sx={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        position: 'sticky',
-        textAlign: 'center',
-        bgcolor: 'primary.main',
-        flexDirection: 'column',
-        width: '100vw',
-        minHeight: '10vh'
+        '&:hover': {
+          color: 'primary.main'
+        }
       }}
     >
-      <Container maxWidth={false}>
-        <Stack alignItems="center" direction={'row'} spacing={1}>
-          <Stack direction="row" alignItems="center">
-            <Box
-              component="img"
-              sx={{
-                height: 56,
-                width: 88,
-                marginRight: 2
-              }}
-              alt="CODE PDX logo"
-              src="/assets/rose_logo.png"
-            />
-            <Typography variant="h5">CODE PDX</Typography>
-          </Stack>
-          <Box sx={{ flexGrow: 1 }} />
-          <Stack direction="row" spacing={3} alignItems="center" sx={{ ml: '50px', mr: '50px' }}>
-            {socialMediaLinks.map(({ href, icon }) => (
-              <Link key={href} href={href} target="_blank" rel="noopener" color="#000">
-                {icon}
-              </Link>
-            ))}
-          </Stack>
-          <Box sx={{ flexGrow: 1.5 }} />
-          <Stack>
-            {legalLinks.map((link) => (
-              <Typography
-                key={link.title}
-                variant="body2"
-                color="tertiary.main"
-                sx={{ display: 'flex', justifyContent: 'flex-end' }}
-              >
-                {link.text ?? null}
-                <Link
-                  href={link.href}
-                  underline="none"
-                  color="#000"
-                  target={link.target ?? null}
-                  rel={link.rel ?? null}
-                  ml={link.ml ?? null}
-                >
-                  {link.title}
-                </Link>
-              </Typography>
-            ))}
-          </Stack>
-        </Stack>
-      </Container>
+      {link.title}
+    </Link>
+  </Typography>
+));
+
+// renders socialMediaLinks for placement in stack below
+const renderSocialLinks = socialMediaLinks.map(({ href, icon }) => (
+  <Link
+    key={href}
+    href={href}
+    target="_blank"
+    rel="noopener"
+    color="#000"
+    sx={{
+      '&:hover': {
+        color: 'secondary.main'
+      }
+    }}
+  >
+    {icon}
+  </Link>
+));
+
+const socialBlobStyle = {
+  backgroundImage: 'url(/assets/socialsBlob.svg)',
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat',
+  backgroundPosition: 'center',
+  overflow: 'visible',
+  minWidth: '42%',
+  minHeight: '175px'
+};
+
+const logoBlobStyle = {
+  backgroundImage: 'url(/assets/logoBlob.svg)',
+  backgroundRepeat: 'no-repeat',
+  // backgroundPosition: 'left',
+  overflow: 'visible'
+  // minWidth: '100vh',
+  // minHeight: '100vh'
+};
+
+const Footer = () => {
+  return (
+    // this box contains the entire footer
+    <Box
+      component="footer"
+      sx={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        position: 'fixed',
+        bottom: 0,
+        flexDirection: 'row',
+        width: '100%',
+        background: 'lightgray'
+      }}
+    >
+      <Stack direction="row" alignItems="center">
+        <Box
+          component="img"
+          sx={{
+            marginRight: 2,
+            backgroundImage: 'url(/assets/logoBlob.svg)'
+          }}
+          alt="CODE PDX logo"
+          src={roseLogo}
+        />
+        <Typography variant="h5">CODE PDX</Typography>
+      </Stack>
+      {/* <Box sx={{ flexGrow: 1 }} /> */}
+      <Stack
+        direction="row"
+        spacing={3}
+        alignItems="center"
+        sx={{ ml: '50px', mr: '50px', socialBlobStyle }}
+      >
+        {renderSocialLinks}
+      </Stack>
+      {/* <Box sx={{ flexGrow: 2 }} /> */}
+      <Stack>{renderLegalLinks}</Stack>
     </Box>
   );
 };

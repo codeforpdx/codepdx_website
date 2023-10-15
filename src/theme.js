@@ -1,28 +1,29 @@
-import { createTheme } from "@mui/material/styles";
+import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
-  typography: { fontFamily: "Roboto, sans-serif" },
+  typography: { fontFamily: 'Mathilda, Monserrat, Roboto, sans-serif' },
   palette: {
     primary: {
-      light: "#039686",
-      main: "#017969",
-      dark: "#004d3e",
-      slight: "#8fc2bb",
-      contrastText: "#fff",
+      main: '#56B6A1',
+      contrastText: '#fff'
     },
     secondary: {
-      light: "#b32126",
-      main: "#961020",
-      dark: "#790111",
-      contrastText: "#fff",
+      main: '#B6ECE2',
+      contrastText: '#fff'
     },
     tertiary: {
-      light: "#dbc584",
-      main: "#DEBC59",
-      dark: "#dbb032",
-      contrastText: "#fff",
+      main: '#CC6566',
+      contrastText: '#fff'
     },
-  },
+    quaternary: {
+      main: '#304C46',
+      contrastText: '#fff'
+    },
+    quinary: {
+      main: '#1F2725',
+      contrastText: '#fff'
+    }
+  }
 });
 
 export default theme;
