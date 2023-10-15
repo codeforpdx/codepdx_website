@@ -107,26 +107,33 @@ const Steps = () => {
           width: '100vw',
           // minHeight: '10vh',
           // backgroundColor: 'blue',
-          border: 2,
+          // border: 2,
           py: 5
           // height: '500px',
           // width: '500px'
         }}
       >
-        <Typography variant="h4">Volunteer with Us</Typography>
+        <Typography variant="h3">Volunteer with Us</Typography>
         <Card
           sx={{
+            padding: 3,
+            mt: 5,
             backgroundColor: 'lightgrey'
             // margin: 10
           }}
         >
-          <Typography>
+          <Typography variant="h6">
             Looking to use your skills for the greater good or build your resume?
           </Typography>
           <Stack>
-            <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+            <Grid
+              container
+              rowSpacing={1}
+              columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+              sx={{ margin: 3 }}
+            >
               {volunteerGrid.map(({ icon, label, alt }) => (
-                <Grid item xs={3} key={alt}>
+                <Grid item xs={6} md={3} key={alt}>
                   <Typography
                     variant="body2"
                     color="#000"
