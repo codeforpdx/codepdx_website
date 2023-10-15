@@ -2,51 +2,20 @@
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
-// import Container from '@mui/material/Container';
-import {
-  // FaChalkboardUser,
-  // FaChartLine,
-  FaChartPie,
-  // FaCode,
-  // FaCubesStacked,
-  FaDatabase,
-  // FaDesktop,
-  // FaDiagramProject,
-  // FaDiagramSuccessor,
-  // FaEarthAmericas,
-  FaHandHoldingHeart,
-  // FaLightbulb,
-  // FaLanguage,
-  FaLaptopCode,
-  // FaLayerGroup,
-  // FaFolderTree,
-  // FaHardDrive,
-  // FaHandshake,
-  FaHandshakeSimple,
-  // FaNetworkWired,
-  FaPenRuler,
-  FaPeopleLine,
-  // FaRegHandshake,
-  // FaRegLightbulb,
-  // FaRulerCombined,
-  // FaServer,
-  // FaSitemap,
-  FaUser
-  // FaUsers,
-  // FaUsersLine,
-  // FaUsersRectangle
-  // HiOutlineSpeakerphone,
-  // IoServerOutline,
-  // MdDeveloperMode,
-  // MdOutlineDesignServices,
-  // RiPresentationFill,
-  // RxAvatar,
-  // HiOutlineSpeakerphone,
-} from 'react-icons/fa6';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-
+// Other Library Imports
+import {
+  FaChartPie,
+  FaDatabase,
+  FaHandHoldingHeart,
+  FaLaptopCode,
+  FaHandshakeSimple,
+  FaPenRuler,
+  FaPeopleLine,
+  FaUser
+} from 'react-icons/fa6';
 // https://react-icons.github.io/react-icons/icons?name=fa6
 
 const volunteerGrid = [
@@ -99,18 +68,9 @@ const Steps = () => {
         sx={{
           display: 'flex',
           flexDirection: 'column',
-          // justifyContent: 'center',
           alignItems: 'center',
-          // position: 'sticky',
           textAlign: 'center',
-          // bgcolor: 'primary.main',
-          width: '100vw',
-          // minHeight: '10vh',
-          // backgroundColor: 'blue',
-          // border: 2,
-          py: 5
-          // height: '500px',
-          // width: '500px'
+          width: '100vw'
         }}
       >
         <Typography variant="h3">Volunteer with Us</Typography>
@@ -119,7 +79,6 @@ const Steps = () => {
             padding: 3,
             mt: 5,
             backgroundColor: 'lightgrey'
-            // margin: 10
           }}
         >
           <Typography variant="h6">
@@ -134,21 +93,7 @@ const Steps = () => {
             >
               {volunteerGrid.map(({ icon, label, alt }) => (
                 <Grid item xs={6} md={3} key={alt}>
-                  <Typography
-                    variant="body2"
-                    color="#000"
-                    sx={
-                      {
-                        // display: 'flex',
-                        // flexDirection: 'column',
-                        // justifyContent: 'center',
-                        // backgroundColor: 'green',
-                        // alignItems: 'center',
-                        // width: '50%',
-                        // height: '100%'
-                      }
-                    }
-                  >
+                  <Typography variant="body2" color="#000">
                     {icon ?? null}
                     <br />
                     {label ?? null}
@@ -156,26 +101,6 @@ const Steps = () => {
                 </Grid>
               ))}
             </Grid>
-            {/* {socialMediaLinks.map(({ href, icon }) => (
-              <Link key={href} href={href} target="_blank" rel="noopener" color="#000">
-                {icon}
-              </Link>
-            ))} */}
-
-            {/* <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-              <Grid item xs={6}>
-                <Typography>1</Typography>
-              </Grid>
-              <Grid item xs={6}>
-                <Typography>2</Typography>
-              </Grid>
-              <Grid item xs={6}>
-                <Typography>3</Typography>
-              </Grid>
-              <Grid item xs={6}>
-                <Typography>4</Typography>
-              </Grid>
-            </Grid> */}
           </Stack>
           <Button
             variant="contained"
@@ -192,53 +117,6 @@ const Steps = () => {
             Volunteer
           </Button>
         </Card>
-        {/* <FaRegHandshake size={45} />
-        ...
-        <FaRegLightbulb size={45} />
-        ...
-        <FaServer size={45} />
-        ...
-        <FaUser size={45} />
-        ...
-        <FaPeopleLine size={45} />
-        ...
-        <FaLayerGroup size={45} />
-        ...
-        <FaLightbulb size={45} />
-        ...
-        <FaUsersLine size={45} />
-        ...
-        <FaLaptopCode size={45} />
-        ...
-        <FaLanguage size={45} />
-        ...
-        <FaHardDrive size={45} />
-        ...
-        <FaHandshake size={45} />
-        ...
-        <FaHandshakeSimple size={45} />
-        ...
-        <FaFolderTree size={45} />
-        ...
-        <FaDiagramSuccessor size={45} />
-        ...
-        <FaDesktop size={45} />
-        ...
-        <FaDiagramProject size={45} />
-        ...
-        <FaCode size={45} />
-        ...
-        <FaChalkboardUser size={45} />
-        ...
-        <FaSitemap size={45} /> ...
-        <FaRulerCombined size={45} /> ...
-        <FaCubesStacked size={45} /> ...
-        <FaUsersRectangle size={45} /> ...
-        <FaUsers size={45} /> ...
-        <FaNetworkWired size={45} /> ...
-        <FaEarthAmericas size={45} />
-        ...
-        <FaChartLine size={45} /> */}
       </Box>
     </>
   );
