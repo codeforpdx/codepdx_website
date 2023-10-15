@@ -19,7 +19,6 @@ const Layout = () => {
           <Route path="/volunteer" element={<Volunteer />} />
         </Routes>
       </main>
-      <Volunteer />
       <Footer />
     </>
   );
