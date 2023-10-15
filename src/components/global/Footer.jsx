@@ -128,53 +128,43 @@ const logoBlobStyle = {
 
 const Footer = () => {
   return (
+    // this box contains the entire footer
     <Box
       component="footer"
-      // py={2}
       sx={{
         display: 'flex',
-        justifyContent: 'center',
+        justifyContent: 'space-between',
         alignItems: 'center',
-        position: 'sticky',
-        textAlign: 'center',
-        flexDirection: 'column',
-        width: '100vw'
-        // minHeight: '10vh'
+        position: 'fixed',
+        bottom: 0,
+        flexDirection: 'row',
+        width: '100%',
+        background: 'lightgray'
       }}
     >
-      <Container maxWidth={false}>
-        <Stack
-          alignItems="center"
-          direction={'row'}
-          // spacing={1}
-        >
-          <Stack direction="row" alignItems="center">
-            <Box
-              component="img"
-              sx={{
-                // height: 56,
-                // width: 88,
-                marginRight: 2,
-                backgroundImage: 'url(/assets/logoBlob.svg)'
-              }}
-              alt="CODE PDX logo"
-              src={roseLogo}
-            />
-            <Typography variant="h5">CODE PDX</Typography>
-          </Stack>
-          <Box sx={{ flexGrow: 1 }} />
-          <Stack
-            direction="row"
-            spacing={3}
-            alignItems="center"
-            sx={{ ml: '50px', mr: '50px', socialBlobStyle }}
-          >
-            {renderSocialLinks}
-          </Stack>
-          <Box sx={{ flexGrow: 2 }} />
-          <Stack>{renderLegalLinks}</Stack>
-        </Stack>
-      </Container>
+      <Stack direction="row" alignItems="center">
+        <Box
+          component="img"
+          sx={{
+            marginRight: 2,
+            backgroundImage: 'url(/assets/logoBlob.svg)'
+          }}
+          alt="CODE PDX logo"
+          src={roseLogo}
+        />
+        <Typography variant="h5">CODE PDX</Typography>
+      </Stack>
+      {/* <Box sx={{ flexGrow: 1 }} /> */}
+      <Stack
+        direction="row"
+        spacing={3}
+        alignItems="center"
+        sx={{ ml: '50px', mr: '50px', socialBlobStyle }}
+      >
+        {renderSocialLinks}
+      </Stack>
+      {/* <Box sx={{ flexGrow: 2 }} /> */}
+      <Stack>{renderLegalLinks}</Stack>
     </Box>
   );
 };
