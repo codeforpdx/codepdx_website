@@ -28,8 +28,6 @@ const legalLinks = [
   },
   {
     href: 'https://www.codepdx.org/',
-    target: '_blank',
-    rel: 'noopener',
     ml: 0.5,
     text: `©${dayjs().year()}`,
     title: 'CODE PDX'
@@ -40,27 +38,19 @@ const legalLinks = [
 const socialMediaLinks = [
   {
     href: 'https://github.com/codeforpdx/',
-    icon: <FaGithub size={45} />,
-    target: '_blank',
-    rel: 'noopener'
+    icon: <FaGithub size={45} />
   },
   {
     href: 'https://www.linkedin.com/company/code-pdx/',
-    icon: <FaLinkedin size={45} />,
-    target: '_blank',
-    rel: 'noopener'
+    icon: <FaLinkedin size={45} />
   },
   {
     href: 'https://www.meetup.com/Code-for-PDX/',
-    icon: <FaMeetup size={45} />,
-    target: '_blank',
-    rel: 'noopener'
+    icon: <FaMeetup size={45} />
   },
   {
     href: 'https://discord.gg/x6b573et',
-    icon: <FaDiscord size={45} />,
-    target: '_blank',
-    rel: 'noopener'
+    icon: <FaDiscord size={45} />
   }
 ];
 
@@ -73,6 +63,10 @@ const renderSocialLinks = socialMediaLinks.map(({ href, icon }) => (
     rel="noopener"
     color="#000"
     sx={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      alignContent: 'center',
       '&:hover': {
         color: 'secondary.main'
       }
@@ -88,18 +82,15 @@ const socialBlobStyle = {
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',
   overflow: 'visible',
-  minWidth: '42%',
-  minHeight: '175px'
+  minWidth: '55%',
+  minHeight: '150px'
 };
 
 const logoBlobStyle = {
   backgroundImage: 'url(/assets/logoBlob.svg)',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',
-  backgroundSize: 'cover',
-  overflow: 'visible',
-  minHeight: '40vh',
-  minWidth: '40vh'
+  overflow: 'visible'
 };
 
 const Footer = () => {
@@ -112,6 +103,7 @@ const Footer = () => {
         key={link.title}
         variant="body2"
         color="tertiary.main"
+        mr={'10px'}
         sx={{
           display: 'flex',
           justifyContent: 'flex-end',
@@ -125,8 +117,6 @@ const Footer = () => {
           href={link.href}
           underline="none"
           color="#000"
-          target={link.target ?? null}
-          rel={link.rel ?? null}
           ml={link.ml ?? null}
           sx={{
             '&:hover': {
@@ -150,52 +140,59 @@ const Footer = () => {
         alignItems: 'center',
         position: 'fixed',
         bottom: 0,
-        flexDirection: 'row',
         width: '100%',
-        background: 'lightgray',
+        mb: '15px',
         [theme.breakpoints.down('sm')]: {
           flexDirection: 'column'
         }
       }}
     >
+      {/* this stack holds logo, blob and brand text */}
       <Stack direction="row" alignItems="center">
-        <Box
-          sx={{
-            marginRight: 2,
-            background: logoBlobStyle,
-            [theme.breakpoints.down('sm')]: {
-              p: '40px'
-            }
-          }}
-          component="img"
-          alt="CODE PDX logo"
-          src={roseLogo}
-        />
+        <Box sx={logoBlobStyle}>
+          <Box
+            sx={{
+              marginRight: 2,
+              ml: '10px',
+              // background: 'url(/assets/logoBlob.svg)',
+              [theme.breakpoints.down('sm')]: {
+                p: '40px'
+              }
+            }}
+            component="img"
+            alt="CODE PDX logo"
+            src={roseLogo}
+          />
+        </Box>
         <Box>
           <Typography variant="h5">CODE PDX</Typography>
         </Box>
       </Stack>
-      {/* <Box sx={{ flexGrow: 1 }} /> */}
+      {/* this stack contains the social icons and blob with a hook to add padding on viewport scale down */}
+      <Box sx={socialBlobStyle}>
+        <Stack
+          direction="row"
+          spacing={3}
+          // display={'flex'}
+          alignItems="center"
+          sx={{
+            direction: 'row',
+            display: 'flex',
+            justifyContent: 'center',
+            alignContent: 'center',
+            [theme.breakpoints.down('sm')]: {
+              p: '40px'
+            }
+          }}
+        >
+          {renderSocialLinks}
+        </Stack>
+      </Box>
+      {/* this stack contains the legal links and hook to add padding on viewport scale down */}
       <Stack
-        direction="row"
-        spacing={3}
-        alignItems="center"
-        sx={{
-          ml: '50px',
-          mr: '50px',
-          socialBlobStyle,
-          [theme.breakpoints.down('sm')]: {
-            p: '40px'
-          }
-        }}
-      >
-        {renderSocialLinks}
-      </Stack>
-      {/* <Box sx={{ flexGrow: 2 }} /> */}
-      <Stack
         sx={{
           [theme.breakpoints.down('sm')]: {
-            p: '4vh'
+            p: '8px'
           }
         }}
       >
