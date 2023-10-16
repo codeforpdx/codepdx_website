@@ -9,8 +9,8 @@ import {
   FaChartPie,
   FaDatabase,
   FaHandHoldingHeart,
-  FaLaptopCode,
   FaHandshakeSimple,
+  FaLaptopCode,
   FaPenRuler,
   FaPeopleLine,
   FaUser
@@ -100,7 +100,7 @@ const Steps = () => {
           variant="contained"
           aria-label="volunteer"
           color="primary"
-          // href="mailto:hugh@codeforpdx.org"
+          href="mailto:hugh@codeforpdx.org"
           target="_blank"
           rel="noopener"
           sx={{
