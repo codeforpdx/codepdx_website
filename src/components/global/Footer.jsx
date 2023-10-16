@@ -99,7 +99,7 @@ const renderSocialLinks = socialMediaLinks.map(({ href, icon }) => (
     color="#000"
     sx={{
       '&:hover': {
-        color: 'secondary.main'
+        color: 'primary.main'
       }
     }}
   >

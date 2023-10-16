@@ -15,6 +15,8 @@ import {
   FaPeopleLine,
   FaUser
 } from 'react-icons/fa6';
+
+// react-icons source
 // https://react-icons.github.io/react-icons/icons?name=fa6
 
 const volunteerGrid = [
@@ -99,13 +101,16 @@ const Steps = () => {
         <Button
           variant="contained"
           aria-label="volunteer"
-          color="primary"
+          // color="primary"
           href="mailto:hugh@codeforpdx.org"
           target="_blank"
           rel="noopener"
           sx={{
             my: '1rem',
-            width: 1 / 3
+            width: 1 / 3,
+            '&:hover': {
+              color: 'white'
+            }
           }}
         >
           Volunteer
