@@ -1,6 +1,5 @@
 // Material UI Imports
 import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
@@ -8,9 +7,6 @@ import { useTheme } from '@mui/material/styles';
 // Other Library Imports
 import dayjs from 'dayjs';
 import { FaDiscord, FaGithub, FaLinkedin, FaMeetup } from 'react-icons/fa6';
-// Image Imports
-import roseLogo from '/assets/rose_logo.png';
-import logoBlob from '/assets/logoBlob.svg';
 
 // Legal links
 const legalLinks = [
@@ -66,7 +62,6 @@ const renderSocialLinks = socialMediaLinks.map(({ href, icon }) => (
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      alignContent: 'center',
       '&:hover': {
         color: 'secondary.main'
       }
@@ -81,9 +76,12 @@ const socialBlobStyle = {
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
   overflow: 'visible',
   minWidth: '55%',
-  minHeight: '150px'
+  minHeight: '200px'
 };
 
 const logoBlobStyle = {
@@ -135,51 +133,43 @@ const Footer = () => {
     <Box
       component="footer"
       sx={{
-        display: 'inline-flex',
+        display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
         position: 'fixed',
         bottom: 0,
         width: '100%',
-        mb: '15px',
+        padding: '10 40',
+
         [theme.breakpoints.down('sm')]: {
           flexDirection: 'column'
         }
       }}
     >
       {/* this stack holds logo, blob and brand text */}
-      <Stack direction="row" alignItems="center">
-        <Box sx={logoBlobStyle}>
+      <Stack direction="row" spacing={1} alignItems="center" justifyContent={'space-between'}>
+        <Box sx={{ logoBlobStyle }}>
           <Box
             sx={{
               marginRight: 2,
               ml: '10px',
-              // background: 'url(/assets/logoBlob.svg)',
               [theme.breakpoints.down('sm')]: {
                 p: '40px'
               }
             }}
             component="img"
             alt="CODE PDX logo"
-            src={roseLogo}
+            src={'/assets/rose_logo.png'}
           />
-        </Box>
-        <Box>
           <Typography variant="h5">CODE PDX</Typography>
         </Box>
       </Stack>
-      {/* this stack contains the social icons and blob with a hook to add padding on viewport scale down */}
+      {/* this box and stack contain the social icons and blob with a hook to add padding on viewport scale down */}
       <Box sx={socialBlobStyle}>
         <Stack
           direction="row"
           spacing={3}
-          // display={'flex'}
-          alignItems="center"
           sx={{
-            direction: 'row',
-            display: 'flex',
-            justifyContent: 'center',
-            alignContent: 'center',
             [theme.breakpoints.down('sm')]: {
               p: '40px'
             }
