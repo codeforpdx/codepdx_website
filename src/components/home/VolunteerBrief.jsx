@@ -73,40 +73,36 @@ const VolunteerBrief = () => {
         width: '100vw'
       }}
     >
-      <Typography variant="h3">Volunteer with Us</Typography>
+      <Typography variant="h2">Volunteer with Us</Typography>
       <Card
         sx={{
           py: 5,
-          mt: 5,
-          mb: 5,
-          backgroundColor: 'lightgrey'
+          my: 5,
+          backgroundColor: 'lightgrey',
+          borderRadius: '10px'
         }}
       >
-        <Typography variant="h6">
-          Looking to use your skills for the greater good or build your resume?
+        <Typography variant="h3">
+          Use your skills for the greater good or build your resume!
         </Typography>
-        <>
-          <Grid container rowSpacing={1} columnSpacing={{ xs: 0 }} sx={{ margin: 0 }}>
-            {volunteerGrid.map(({ icon, label, alt }) => (
-              <Grid item xs={6} sm={3} key={alt}>
-                <Typography variant="body2">
-                  {icon ?? null}
-                  <br />
-                  {label ?? null}
-                </Typography>
-              </Grid>
-            ))}
-          </Grid>
-        </>
+        <Grid container rowSpacing={5} columnSpacing={{ xs: 0 }} sx={{ margin: 0 }}>
+          {volunteerGrid.map(({ icon, label, alt }) => (
+            <Grid item xs={6} sm={3} key={alt}>
+              <Typography variant="body2">
+                {icon ?? null}
+                <br />
+                {label ?? null}
+              </Typography>
+            </Grid>
+          ))}
+        </Grid>
         <Button
           variant="contained"
-          aria-label="volunteer"
-          // color="primary"
           href="mailto:hugh@codeforpdx.org"
           target="_blank"
           rel="noopener"
           sx={{
-            my: '1rem',
+            mt: '2rem',
             width: 1 / 3,
             '&:hover': {
               color: 'white'
