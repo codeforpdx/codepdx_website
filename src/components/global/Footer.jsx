@@ -110,12 +110,12 @@ const Footer = () => {
         key={link.title}
         variant="body2"
         color="tertiary.main"
-        mr={'10px'}
+        mr={{ sm: '10px' }}
         sx={{
           display: 'flex',
           justifyContent: 'flex-end',
           [theme.breakpoints.down('sm')]: {
-            p: '20px'
+            p: '10px'
           }
         }}
       >
@@ -182,9 +182,10 @@ const Footer = () => {
             width: '75px',
             height: '75px',
             ml: '30px',
-            // possibly pushing content toward the right and needs to be fixed.
             [theme.breakpoints.down('sm')]: {
-              p: '40px'
+              justifyContent: 'space-around',
+              alignContent: 'center',
+              ml: '0px'
             }
           }}
           component="img"
