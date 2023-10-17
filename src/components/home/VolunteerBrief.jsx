@@ -65,15 +65,19 @@ const volunteerGrid = [
 const VolunteerBrief = () => {
   return (
     <Box
+      as="section"
       sx={{
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         textAlign: 'center',
-        width: '100vw'
+        width: '100vw',
+        my: '40px'
       }}
     >
-      <Typography variant="h2">Volunteer with Us</Typography>
+      <Typography variant="h3" component="h2">
+        Volunteer with Us
+      </Typography>
       <Card
         sx={{
           py: 5,
@@ -82,7 +86,7 @@ const VolunteerBrief = () => {
           borderRadius: '10px'
         }}
       >
-        <Typography variant="h3">
+        <Typography variant="h6" component="h3">
           Use your skills for the greater good or build your resume!
         </Typography>
         <Grid container rowSpacing={5} columnSpacing={{ xs: 0 }} sx={{ margin: 0 }}>
