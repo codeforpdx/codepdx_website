@@ -62,6 +62,7 @@ const renderSocialLinks = socialMediaLinks.map(({ href, icon }) => (
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
+      padding: '25px',
       '&:hover': {
         color: 'secondary.main'
       }
@@ -71,9 +72,9 @@ const renderSocialLinks = socialMediaLinks.map(({ href, icon }) => (
   </Link>
 ));
 
-const socialBlobStyle = {
+const socialBlobStyle = (theme) => ({
   backgroundImage: 'url(/assets/socialsBlob.svg)',
-  backgroundSize: 'cover',
+  // backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',
   display: 'flex',
@@ -81,15 +82,23 @@ const socialBlobStyle = {
   justifyContent: 'center',
   overflow: 'visible',
   minWidth: '55%',
-  minHeight: '200px'
-};
+  minHeight: '200px',
+  ml: '-200px',
+  [theme.breakpoints.down('sm')]: {
+    backgroundImage: 'none',
+    ml: '0'
+  }
+});
 
-const logoBlobStyle = {
-  backgroundImage: 'url(/assets/logoBlob.svg)',
-  backgroundRepeat: 'no-repeat',
-  backgroundPosition: 'center',
-  overflow: 'visible'
-};
+// const logoBlobStyle = {
+//   backgroundImage: 'url(/assets/logoBlob.svg)',
+//   backgroundRepeat: 'no-repeat',
+//   backgroundPosition: 'center',
+//   overflow: 'visible',
+//   minHeight: '200px'
+//   // position: 'absolute',
+//   // ml: '30px'
+// };
 
 const Footer = () => {
   const theme = useTheme();
@@ -130,7 +139,8 @@ const Footer = () => {
 
   return (
     // this box contains the entire footer
-    <Box
+    <Stack
+      direction="row"
       component="footer"
       sx={{
         display: 'flex',
@@ -138,48 +148,65 @@ const Footer = () => {
         alignItems: 'center',
         position: 'fixed',
         bottom: 0,
-        width: '100%',
-        padding: '10 40',
-
+        width: '100vw',
         [theme.breakpoints.down('sm')]: {
           flexDirection: 'column'
         }
       }}
     >
-      {/* this stack holds logo, blob and brand text */}
-      <Stack direction="row" spacing={1} alignItems="center" justifyContent={'space-between'}>
-        <Box sx={{ logoBlobStyle }}>
-          <Box
-            sx={{
-              marginRight: 2,
-              ml: '10px',
-              [theme.breakpoints.down('sm')]: {
-                p: '40px'
-              }
-            }}
-            component="img"
-            alt="CODE PDX logo"
-            src={'/assets/rose_logo.png'}
-          />
-          <Typography variant="h5">CODE PDX</Typography>
-        </Box>
-      </Stack>
-      {/* this box and stack contain the social icons and blob with a hook to add padding on viewport scale down */}
-      <Box sx={socialBlobStyle}>
-        <Stack
-          direction="row"
-          spacing={3}
+      {/* logoBlob box*/}
+      <Box
+        sx={{
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          top: 0,
+          backgroundImage: 'url(/assets/logoBlob.svg)',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'left bottom',
+          zIndex: '-1',
+          [theme.breakpoints.down('sm')]: {
+            backgroundImage: 'none'
+          }
+        }}
+      ></Box>
+      <Box
+        sx={{
+          display: 'flex'
+        }}
+      >
+        {/* roseLogo box */}
+        <Box
           sx={{
+            width: '75px',
+            height: '75px',
+            ml: '30px',
+            // possibly pushing content toward the right and needs to be fixed.
             [theme.breakpoints.down('sm')]: {
               p: '40px'
             }
           }}
+          component="img"
+          alt="CODE PDX logo"
+          src={'/assets/rose_logo.png'}
+        />
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center'
+          }}
         >
-          {renderSocialLinks}
-        </Stack>
+          <Typography sx={{ ml: '100px' }} variant="h5">
+            CODE PDX
+          </Typography>
+        </Box>
       </Box>
+
+      {/* this box and stack contain the social icons and blob with a hook to add padding on viewport scale down */}
+      <Box sx={socialBlobStyle}>{renderSocialLinks}</Box>
       {/* this stack contains the legal links and hook to add padding on viewport scale down */}
-      <Stack
+      <Box
         sx={{
           [theme.breakpoints.down('sm')]: {
             p: '8px'
@@ -187,8 +214,8 @@ const Footer = () => {
         }}
       >
         {renderLegalLinks}
-      </Stack>
-    </Box>
+      </Box>
+    </Stack>
   );
 };
 
