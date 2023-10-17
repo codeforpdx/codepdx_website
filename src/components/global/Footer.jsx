@@ -1,14 +1,12 @@
 // Material UI Imports
 import Box from '@mui/material/Box';
-// import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+import { useTheme } from '@mui/material/styles';
 // Other Library Imports
 import dayjs from 'dayjs';
 import { FaDiscord, FaGithub, FaLinkedin, FaMeetup } from 'react-icons/fa6';
-// Image Imports
-import roseLogo from '/assets/rose_logo.png';
 
 // Legal links
 const legalLinks = [
@@ -26,8 +24,6 @@ const legalLinks = [
   },
   {
     href: 'https://www.codepdx.org/',
-    target: '_blank',
-    rel: 'noopener',
     ml: 0.5,
     text: `©${dayjs().year()}`,
     title: 'CODE PDX'
@@ -38,56 +34,21 @@ const legalLinks = [
 const socialMediaLinks = [
   {
     href: 'https://github.com/codeforpdx/',
-    icon: <FaGithub size={45} />,
-    target: '_blank',
-    rel: 'noopener'
+    icon: <FaGithub size={45} />
   },
   {
     href: 'https://www.linkedin.com/company/code-pdx/',
-    icon: <FaLinkedin size={45} />,
-    target: '_blank',
-    rel: 'noopener'
+    icon: <FaLinkedin size={45} />
   },
   {
     href: 'https://www.meetup.com/Code-for-PDX/',
-    icon: <FaMeetup size={45} />,
-    target: '_blank',
-    rel: 'noopener'
+    icon: <FaMeetup size={45} />
   },
   {
     href: 'https://discord.gg/x6b573et',
-    icon: <FaDiscord size={45} />,
-    target: '_blank',
-    rel: 'noopener'
+    icon: <FaDiscord size={45} />
   }
 ];
-
-// maps legalLinks used for placement in stack below
-const renderLegalLinks = legalLinks.map((link) => (
-  <Typography
-    key={link.title}
-    variant="body2"
-    color="tertiary.main"
-    sx={{ display: 'flex', justifyContent: 'flex-end' }}
-  >
-    {link.text ?? null}
-    <Link
-      href={link.href}
-      underline="none"
-      color="#000"
-      target={link.target ?? null}
-      rel={link.rel ?? null}
-      ml={link.ml ?? null}
-      sx={{
-        '&:hover': {
-          color: 'primary.main'
-        }
-      }}
-    >
-      {link.title}
-    </Link>
-  </Typography>
-));
 
 // renders socialMediaLinks for placement in stack below
 const renderSocialLinks = socialMediaLinks.map(({ href, icon }) => (
@@ -98,6 +59,10 @@ const renderSocialLinks = socialMediaLinks.map(({ href, icon }) => (
     rel="noopener"
     color="#000"
     sx={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: '25px',
       '&:hover': {
         color: 'primary.main'
       }
@@ -107,29 +72,75 @@ const renderSocialLinks = socialMediaLinks.map(({ href, icon }) => (
   </Link>
 ));
 
-const socialBlobStyle = {
+const socialBlobStyle = (theme) => ({
   backgroundImage: 'url(/assets/socialsBlob.svg)',
-  backgroundSize: 'cover',
+  // backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
   overflow: 'visible',
-  minWidth: '42%',
-  minHeight: '175px'
-};
+  minWidth: '55%',
+  minHeight: '200px',
+  ml: '-200px',
+  [theme.breakpoints.down('sm')]: {
+    backgroundImage: 'none',
+    ml: '0'
+  }
+});
 
 // const logoBlobStyle = {
 //   backgroundImage: 'url(/assets/logoBlob.svg)',
 //   backgroundRepeat: 'no-repeat',
-//   // backgroundPosition: 'left',
-//   overflow: 'visible'
-//   // minWidth: '100vh',
-//   // minHeight: '100vh'
+//   backgroundPosition: 'center',
+//   overflow: 'visible',
+//   minHeight: '200px'
+//   // position: 'absolute',
+//   // ml: '30px'
 // };
 
 const Footer = () => {
+  const theme = useTheme();
+
+  // maps legalLinks used for placement in stack below
+  const renderLegalLinks = legalLinks.map((link, index) => (
+    <Box key={link.title + index}>
+      <Typography
+        key={link.title}
+        variant="body2"
+        color="tertiary.main"
+        mr={{ sm: '10px' }}
+        sx={{
+          display: 'flex',
+          justifyContent: 'flex-end',
+          [theme.breakpoints.down('sm')]: {
+            p: '10px'
+          }
+        }}
+      >
+        {link.text ?? null}
+        <Link
+          href={link.href}
+          underline="none"
+          color="#000"
+          ml={link.ml ?? null}
+          sx={{
+            '&:hover': {
+              color: 'primary.main'
+            }
+          }}
+        >
+          {link.title}
+        </Link>
+      </Typography>
+    </Box>
+  ));
+
   return (
     // this box contains the entire footer
-    <Box
+    <Stack
+      direction="row"
       component="footer"
       sx={{
         display: 'flex',
@@ -137,35 +148,75 @@ const Footer = () => {
         alignItems: 'center',
         position: 'fixed',
         bottom: 0,
-        flexDirection: 'row',
-        width: '100%',
-        background: 'lightgray'
+        width: '100vw',
+        [theme.breakpoints.down('sm')]: {
+          flexDirection: 'column'
+        }
       }}
     >
-      <Stack direction="row" alignItems="center">
-        <Box
-          component="img"
-          sx={{
-            marginRight: 2,
-            backgroundImage: 'url(/assets/logoBlob.svg)'
-          }}
-          alt="CODE PDX logo"
-          src={roseLogo}
-        />
-        <Typography variant="h5">CODE PDX</Typography>
-      </Stack>
-      {/* <Box sx={{ flexGrow: 1 }} /> */}
-      <Stack
-        direction="row"
-        spacing={3}
-        alignItems="center"
-        sx={{ ml: '50px', mr: '50px', socialBlobStyle }}
+      {/* logoBlob box*/}
+      <Box
+        sx={{
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          top: 0,
+          backgroundImage: 'url(/assets/logoBlob.svg)',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'left bottom',
+          zIndex: '-1',
+          [theme.breakpoints.down('sm')]: {
+            backgroundImage: 'none'
+          }
+        }}
+      ></Box>
+      <Box
+        sx={{
+          display: 'flex'
+        }}
       >
-        {renderSocialLinks}
-      </Stack>
-      {/* <Box sx={{ flexGrow: 2 }} /> */}
-      <Stack>{renderLegalLinks}</Stack>
-    </Box>
+        {/* roseLogo box */}
+        <Box
+          sx={{
+            width: '75px',
+            height: '75px',
+            ml: '30px',
+            [theme.breakpoints.down('sm')]: {
+              justifyContent: 'space-around',
+              alignContent: 'center',
+              ml: '0px'
+            }
+          }}
+          component="img"
+          alt="CODE PDX logo"
+          src={'/assets/rose_logo.png'}
+        />
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center'
+          }}
+        >
+          <Typography sx={{ ml: '100px' }} variant="h5">
+            CODE PDX
+          </Typography>
+        </Box>
+      </Box>
+
+      {/* this box and stack contain the social icons and blob with a hook to add padding on viewport scale down */}
+      <Box sx={socialBlobStyle}>{renderSocialLinks}</Box>
+      {/* this stack contains the legal links and hook to add padding on viewport scale down */}
+      <Box
+        sx={{
+          [theme.breakpoints.down('sm')]: {
+            p: '8px'
+          }
+        }}
+      >
+        {renderLegalLinks}
+      </Box>
+    </Stack>
   );
 };
 
