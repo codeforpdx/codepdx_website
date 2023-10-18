@@ -15,7 +15,7 @@ const projectsGrid = [
     description:
       'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit repellat saepe vel unde animi nesciunt suscipit iure quas, delectus possimus officiis voluptatum provident voluptates dolores deserunt nemo cum. Quaerat, cupiditate ad eius vel voluptatem sapiente iure sunt magni alias repellat?',
     status: 'Live',
-    logo: '',
+    logo: { image: '/assets/logoPlaceholder.svg', alt: 'RecordSponge logo' },
     links: <FaGithub />,
     techStack: 'Built with SOLID, React, Vite, JSDocs, MUI, NPM, ES Lint'
   },
@@ -34,27 +34,32 @@ const ProjectsBrief = (e) => {
   const handleLinksClick = () => {
     console.log(`${e} CLICKED!`);
   };
+
   return (
     <Box
       as="section"
       sx={{
         display: 'flex',
-        flexDirection: 'column'
+        flexDirection: 'column',
+        alignItems: 'center'
       }}
     >
       <Typography variant="h2">Our Projects</Typography>
-      <br />
-      <Card sx={{ m: 10, p: 1, backgroundColor: 'azure' }}>
-        <Grid container>
-          {projectsGrid.map(({ title, description, status, logo, links, techStack }) => (
-            <Grid item key={title}>
-              <Typography variant="h3">{title ?? null}</Typography>
-              <Chip label={status} />
-              <Typography variant="body2">{description ?? null}</Typography>
-              {logo ?? null}
-              <Typography variant="body2">{techStack ?? null}</Typography>
+      {projectsGrid.map(({ title, description, status, logo, links, techStack }) => (
+        <Card
+          key={title}
+          sx={{
+            mx: 10,
+            p: 5,
+            background: 'linear-gradient(to bottom, white, lightgrey)',
+            borderRadius: '25px'
+          }}
+        >
+          <Grid container rowSpacing={6}>
+            <Grid item xs={6}>
+              <img src={logo.image} alt={logo.alt ?? null} />
               {/* {links ?? null} */}
-              <Stack>
+              <Stack direction="row" spacing={1}>
                 <IconButton size="large" onClick={handleLinksClick}>
                   <FaGithub />
                 </IconButton>
@@ -66,9 +71,25 @@ const ProjectsBrief = (e) => {
                 </IconButton>
               </Stack>
             </Grid>
-          ))}
-        </Grid>
-      </Card>
+            <Grid item xs={6}>
+              <Stack direction="row" spacing={5} sx={{ alignItems: 'center' }}>
+                <Typography variant="h3">{title ?? null}</Typography>
+                <Chip label={status ?? null} />
+              </Stack>
+              <br />
+              <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
+                Overview
+              </Typography>
+              <Typography variant="body2">{description ?? null}</Typography>
+              <br />
+              <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
+                Technology Used
+              </Typography>
+              <Typography variant="body2">{techStack ?? null}</Typography>
+            </Grid>
+          </Grid>
+        </Card>
+      ))}
     </Box>
   );
 };
