@@ -1,6 +1,5 @@
 // Material UI Imports
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import Chip from '@mui/material/Chip';
 import Grid from '@mui/material/Grid';
@@ -13,6 +12,8 @@ import { FaDiscord, FaEarthAmericas, FaGithub } from 'react-icons/fa6';
 const projectsGrid = [
   {
     title: 'RecordSponge',
+    description:
+      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit repellat saepe vel unde animi nesciunt suscipit iure quas, delectus possimus officiis voluptatum provident voluptates dolores deserunt nemo cum. Quaerat, cupiditate ad eius vel voluptatem sapiente iure sunt magni alias repellat?',
     status: 'Live',
     logo: '',
     links: <FaGithub />,
@@ -20,6 +21,8 @@ const projectsGrid = [
   },
   {
     title: 'PASS',
+    description:
+      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit repellat saepe vel unde animi nesciunt suscipit iure quas, delectus possimus officiis voluptatum provident voluptates dolores deserunt nemo cum. Quaerat, cupiditate ad eius vel voluptatem sapiente iure sunt magni alias repellat?',
     status: 'In Development',
     logo: '',
     links: <FaEarthAmericas />,
@@ -27,7 +30,10 @@ const projectsGrid = [
   }
 ];
 
-const ProjectsBrief = () => {
+const ProjectsBrief = (e) => {
+  const handleLinksClick = () => {
+    console.log(`${e} CLICKED!`);
+  };
   return (
     <Box
       as="section"
@@ -36,20 +42,29 @@ const ProjectsBrief = () => {
         flexDirection: 'column'
       }}
     >
-      <Typography>Our Projects</Typography>
+      <Typography variant="h2">Our Projects</Typography>
       <br />
-      <Card sx={{ m: 10, p: 10, backgroundColor: 'azure' }}>
+      <Card sx={{ m: 10, p: 1, backgroundColor: 'azure' }}>
         <Grid container>
-          {projectsGrid.map(({ title, status, logo, links, techStack }) => (
+          {projectsGrid.map(({ title, description, status, logo, links, techStack }) => (
             <Grid item key={title}>
-              <Typography>{title ?? null}</Typography>
+              <Typography variant="h3">{title ?? null}</Typography>
               <Chip label={status} />
+              <Typography variant="body2">{description ?? null}</Typography>
               {logo ?? null}
-              {links ?? null}
               <Typography variant="body2">{techStack ?? null}</Typography>
-              <IconButton aria-label="Example">
-                <FaDiscord />
-              </IconButton>
+              {/* {links ?? null} */}
+              <Stack>
+                <IconButton size="large" onClick={handleLinksClick}>
+                  <FaGithub />
+                </IconButton>
+                <IconButton size="large" onClick={handleLinksClick}>
+                  <FaDiscord />
+                </IconButton>
+                <IconButton size="large" onClick={handleLinksClick}>
+                  <FaEarthAmericas />
+                </IconButton>
+              </Stack>
             </Grid>
           ))}
         </Grid>
