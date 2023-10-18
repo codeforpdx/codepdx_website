@@ -16,9 +16,6 @@ import {
   FaUser
 } from 'react-icons/fa6';
 
-// react-icons source
-// https://react-icons.github.io/react-icons/icons?name=fa6
-
 const volunteerGrid = [
   {
     icon: <FaLaptopCode size={45} />,
@@ -75,7 +72,7 @@ const VolunteerBrief = () => {
         my: '40px'
       }}
     >
-      <Typography variant="h3" component="h2">
+      <Typography variant="h3" component="h2" sx={{ px: '2rem' }}>
         Volunteer with Us
       </Typography>
       <Card
@@ -86,10 +83,10 @@ const VolunteerBrief = () => {
           borderRadius: '10px'
         }}
       >
-        <Typography variant="h6" component="h3">
+        <Typography variant="h6" component="h3" sx={{ px: '1rem' }}>
           Use your skills for the greater good or build your resume!
         </Typography>
-        <Grid container rowSpacing={5} columnSpacing={{ xs: 0 }} sx={{ margin: 0 }}>
+        <Grid container rowSpacing={5} sx={{ margin: 0 }}>
           {volunteerGrid.map(({ icon, label, alt }) => (
             <Grid item xs={6} sm={3} key={alt}>
               <Typography variant="body2">
