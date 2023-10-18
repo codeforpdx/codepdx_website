@@ -1,12 +1,12 @@
 // Material UI Imports
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
+// import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import Grid from '@mui/material/Grid';
-import Stack from '@mui/material/Stack';
+// import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 // Other Library Imports
-import { FaDiscord, FaGithub, FaHome } from 'react-icons/fa6';
+// import { FaDiscord, FaGithub, FaHome } from 'react-icons/fa6';
 
 const projectsGrid = [
   {
@@ -35,13 +35,22 @@ const ProjectsBrief = () => {
       }}
     >
       <Typography>Our Projects</Typography>
+      <br />
       <Card>
         <Grid container>
-          {projectsGrid.map(({ title, status, logo, links, techStack }) => (
-            <Grid item xs={6} sm={3} key={title}>
-              <Typography variant="body2">{title ?? null}</Typography>
-            </Grid>
-          ))}
+          {projectsGrid.map(
+            ({
+              title,
+              status, logo, links, techStack
+            }) => (
+              <Grid item key={title}>
+                <Typography variant="body2">
+                  {title ?? null}
+                  {status ?? null}
+                </Typography>
+              </Grid>
+            )
+          )}
         </Grid>
       </Card>
     </Box>
