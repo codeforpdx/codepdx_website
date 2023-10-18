@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import Chip from '@mui/material/Chip';
 import Grid from '@mui/material/Grid';
+import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 // Other Library Imports
@@ -37,7 +38,7 @@ const ProjectsBrief = () => {
     >
       <Typography>Our Projects</Typography>
       <br />
-      <Card sx={{ m: 10, p: 10 }}>
+      <Card sx={{ m: 10, p: 10, backgroundColor: 'azure' }}>
         <Grid container>
           {projectsGrid.map(({ title, status, logo, links, techStack }) => (
             <Grid item key={title}>
@@ -46,6 +47,9 @@ const ProjectsBrief = () => {
               {logo ?? null}
               {links ?? null}
               <Typography variant="body2">{techStack ?? null}</Typography>
+              <IconButton aria-label="Example">
+                <FaDiscord />
+              </IconButton>
             </Grid>
           ))}
         </Grid>
