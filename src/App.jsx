@@ -1,12 +1,12 @@
 // React Router Imports
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from 'react-router-dom';
 // Material UI Imports
-import CssBaseline from "@mui/material/CssBaseline";
-import { ThemeProvider } from "@mui/material/styles";
+import { ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 // Theme Imports
-import theme from "./theme";
+import theme from './theme';
 // Component Imports
-import Layout from "./Layout";
+import Layout from './Layout';
 
 function App() {
   // any logic
