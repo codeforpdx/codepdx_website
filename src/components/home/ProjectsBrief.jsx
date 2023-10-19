@@ -6,17 +6,22 @@ import Grid from '@mui/material/Grid';
 // import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 // Custom Imports
-import projectsGrid from '';
+import projectsList from '';
 
 const ProjectsBrief = () => {
   return (
     <Box as="section">
       <Typography variant="h2">Our Projects</Typography>
-      {projectsGrid.map(({ title, description, logo }) => (
+      {projectsList.map(({ title, description, logo }) => (
         <Card key={title}>
           <Grid container>
-            <Grid item></Grid>
-            <Grid item></Grid>
+            <Grid item>
+              <Typography variant="body1">{title}</Typography>
+              {logo}
+            </Grid>
+            <Grid item>
+              <Typography variant="body2">{description}</Typography>
+            </Grid>
             <Button>Learn More</Button>
           </Grid>
         </Card>
