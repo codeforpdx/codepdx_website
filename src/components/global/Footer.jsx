@@ -1,7 +1,8 @@
+// React Router Imports
+import { Link as ReactRouterLink } from 'react-router-dom';
 // Material UI Imports
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
-import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material/styles';
 // Other Library Imports
@@ -53,6 +54,7 @@ const socialMediaLinks = [
 // renders socialMediaLinks for placement in stack below
 const renderSocialLinks = socialMediaLinks.map(({ href, icon }) => (
   <Link
+    component={ReactRouterLink}
     key={href}
     href={href}
     target="_blank"
@@ -61,7 +63,6 @@ const renderSocialLinks = socialMediaLinks.map(({ href, icon }) => (
     sx={{
       display: 'flex',
       alignItems: 'center',
-      justifyContent: 'center',
       padding: '25px',
       '&:hover': {
         color: 'secondary.main'
@@ -72,105 +73,90 @@ const renderSocialLinks = socialMediaLinks.map(({ href, icon }) => (
   </Link>
 ));
 
+// maps legalLinks used for placement in stack below
+const renderLegalLinks = legalLinks.map((link, index) => (
+  <Box key={link.title + index}>
+    <Typography
+      key={link.title}
+      variant="body2"
+      color="tertiary.main"
+      mr={{ sm: '10px' }}
+      sx={{
+        display: 'flex',
+        justifyContent: 'flex-end',
+        p: { xs: '10px', sm: '5px' }
+      }}
+    >
+      {link.text ?? null}
+      <Link
+        component={ReactRouterLink}
+        to={link.href}
+        underline="none"
+        color="#000"
+        ml={link.ml ?? null}
+        sx={{
+          '&:hover': {
+            color: 'primary.main'
+          }
+        }}
+      >
+        {link.title}
+      </Link>
+    </Typography>
+  </Box>
+));
+
 const socialBlobStyle = (theme) => ({
   backgroundImage: 'url(/assets/socialsBlob.svg)',
-  // backgroundSize: 'cover',
+  backgroundSize: 'auto',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',
   display: 'flex',
-  alignItems: 'center',
+  flexGrow: 1,
   justifyContent: 'center',
-  overflow: 'visible',
-  minWidth: '55%',
   minHeight: '200px',
-  ml: '-200px',
+  zIndex: '-1',
   [theme.breakpoints.down('sm')]: {
     backgroundImage: 'none',
     ml: '0'
   }
 });
 
-// const logoBlobStyle = {
-//   backgroundImage: 'url(/assets/logoBlob.svg)',
-//   backgroundRepeat: 'no-repeat',
-//   backgroundPosition: 'center',
-//   overflow: 'visible',
-//   minHeight: '200px'
-//   // position: 'absolute',
-//   // ml: '30px'
-// };
+const logoBlobStyle = {
+  position: 'absolute',
+  bottom: 0,
+  left: 0,
+  right: 0,
+  top: 0,
+  backgroundImage: { md: 'url(/assets/logoBlob.svg)', sm: 'none' },
+  backgroundRepeat: 'no-repeat',
+  backgroundPosition: 'left bottom',
+  zIndex: '-1',
+  display: {
+    lg: 'block',
+    xs: 'none'
+  }
+};
 
 const Footer = () => {
   const theme = useTheme();
 
-  // maps legalLinks used for placement in stack below
-  const renderLegalLinks = legalLinks.map((link, index) => (
-    <Box key={link.title + index}>
-      <Typography
-        key={link.title}
-        variant="body2"
-        color="tertiary.main"
-        mr={{ sm: '10px' }}
-        sx={{
-          display: 'flex',
-          justifyContent: 'flex-end',
-          [theme.breakpoints.down('sm')]: {
-            p: '10px'
-          }
-        }}
-      >
-        {link.text ?? null}
-        <Link
-          href={link.href}
-          underline="none"
-          color="#000"
-          ml={link.ml ?? null}
-          sx={{
-            '&:hover': {
-              color: 'primary.main'
-            }
-          }}
-        >
-          {link.title}
-        </Link>
-      </Typography>
-    </Box>
-  ));
-
   return (
     // this box contains the entire footer
-    <Stack
-      direction="row"
+    <Box
       component="footer"
       sx={{
         display: 'flex',
+        flexDirection: { xs: 'column', sm: 'row' },
         justifyContent: 'space-between',
         alignItems: 'center',
         position: 'fixed',
         bottom: 0,
         width: '100vw',
-        [theme.breakpoints.down('sm')]: {
-          flexDirection: 'column'
-        }
+        height: { xs: 'auto', sm: '200px' }
       }}
     >
-      {/* logoBlob box*/}
-      <Box
-        sx={{
-          position: 'absolute',
-          bottom: 0,
-          left: 0,
-          right: 0,
-          top: 0,
-          backgroundImage: 'url(/assets/logoBlob.svg)',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'left bottom',
-          zIndex: '-1',
-          [theme.breakpoints.down('sm')]: {
-            backgroundImage: 'none'
-          }
-        }}
-      ></Box>
+      <Box sx={logoBlobStyle}></Box>
       <Box
         sx={{
           display: 'flex'
@@ -180,13 +166,8 @@ const Footer = () => {
         <Box
           sx={{
             width: '75px',
-            height: '75px',
-            ml: '30px',
-            [theme.breakpoints.down('sm')]: {
-              justifyContent: 'space-around',
-              alignContent: 'center',
-              ml: '0px'
-            }
+            mt: '25px',
+            ml: { sm: '50px', xs: '0px' }
           }}
           component="img"
           alt="CODE PDX logo"
@@ -198,25 +179,42 @@ const Footer = () => {
             alignItems: 'center'
           }}
         >
-          <Typography sx={{ ml: '100px' }} variant="h5">
+          <Typography sx={{ ml: '100px', mt: '25px' }} variant="h5">
             CODE PDX
           </Typography>
         </Box>
       </Box>
 
-      {/* this box and stack contain the social icons and blob with a hook to add padding on viewport scale down */}
-      <Box sx={socialBlobStyle}>{renderSocialLinks}</Box>
+      {/* this box and stack contain the social icons and blob*/}
+      <Box
+        sx={{
+          position: 'absolute', // Absolute positioning
+          left: '50%', // Centering
+          top: '50%',
+          transform: 'translate(-50%, -50%)',
+          display: 'flex',
+          minWidth: '1000px',
+          zIndex: -1,
+          [theme.breakpoints.down('sm')]: {
+            position: 'static', // Remove absolute positioning
+            transform: 'none' // Reset transform
+          }
+        }}
+      >
+        <Box sx={socialBlobStyle}>{renderSocialLinks}</Box>
+      </Box>
       {/* this stack contains the legal links and hook to add padding on viewport scale down */}
       <Box
         sx={{
           [theme.breakpoints.down('sm')]: {
-            p: '8px'
+            p: '8px',
+            pb: '40px'
           }
         }}
       >
         {renderLegalLinks}
       </Box>
-    </Stack>
+    </Box>
   );
 };
 
