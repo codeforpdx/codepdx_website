@@ -79,7 +79,7 @@ const renderLegalLinks = legalLinks.map((link, index) => (
   <Box key={link.title + index}>
     <Typography
       key={link.title}
-      variant="body2"
+      variant="body1"
       color="tertiary.main"
       mr={{ sm: '10px' }}
       sx={{
@@ -120,7 +120,7 @@ const socialBlobStyle = (theme) => ({
   [theme.breakpoints.down('sm')]: {
     backgroundImage: 'none',
     ml: '0',
-    minHeight: '100px'
+    minHeight: '150px'
   }
 });
 
@@ -159,12 +159,7 @@ const Footer = () => {
       }}
     >
       <Box sx={logoBlobStyle}></Box>
-      <Stack
-        direction={{ xs: 'row', sm: 'col' }}
-        sx={{
-          alignItems: 'center'
-        }}
-      >
+      <Stack direction={{ xs: 'row', sm: 'column', lg: 'row' }}>
         {/* roseLogo box */}
         <Box
           component="img"
@@ -173,10 +168,10 @@ const Footer = () => {
           sx={{
             width: '75px',
             mt: '25px',
-            ml: { xs: '0px', sm: '50px' }
+            ml: { xs: '0px', sm: '40px', lg: '50px' }
           }}
         />
-        <Typography ml={{ xs: '10px', lg: '60px' }} mt="25px" variant="h5">
+        <Typography ml={{ xs: '10px', lg: '60px' }} mt="35px" variant="h5">
           CODE PDX
         </Typography>
       </Stack>
