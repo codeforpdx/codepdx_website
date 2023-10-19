@@ -3,6 +3,7 @@ import { Link as ReactRouterLink } from 'react-router-dom';
 // Material UI Imports
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
+import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material/styles';
 // Other Library Imports
@@ -83,7 +84,7 @@ const renderLegalLinks = legalLinks.map((link, index) => (
       mr={{ sm: '10px' }}
       sx={{
         display: 'flex',
-        justifyContent: 'flex-end',
+        justifyContent: { xs: 'center', sm: 'flex-end' },
         p: { xs: '10px', sm: '5px' }
       }}
     >
@@ -118,7 +119,8 @@ const socialBlobStyle = (theme) => ({
   zIndex: '-1',
   [theme.breakpoints.down('sm')]: {
     backgroundImage: 'none',
-    ml: '0'
+    ml: '0',
+    minHeight: '100px'
   }
 });
 
@@ -157,33 +159,27 @@ const Footer = () => {
       }}
     >
       <Box sx={logoBlobStyle}></Box>
-      <Box
+      <Stack
+        direction={{ xs: 'row', sm: 'col' }}
         sx={{
-          display: 'flex'
+          alignItems: 'center'
         }}
       >
         {/* roseLogo box */}
         <Box
-          sx={{
-            width: '75px',
-            mt: '25px',
-            ml: { sm: '50px', xs: '0px' }
-          }}
           component="img"
           alt="CODE PDX logo"
           src={'/assets/rose_logo.png'}
-        />
-        <Box
           sx={{
-            display: 'flex',
-            alignItems: 'center'
+            width: '75px',
+            mt: '25px',
+            ml: { xs: '0px', sm: '50px' }
           }}
-        >
-          <Typography sx={{ ml: '100px', mt: '25px' }} variant="h5">
-            CODE PDX
-          </Typography>
-        </Box>
-      </Box>
+        />
+        <Typography ml={{ xs: '10px', lg: '60px' }} mt="25px" variant="h5">
+          CODE PDX
+        </Typography>
+      </Stack>
 
       {/* this box and stack contain the social icons and blob*/}
       <Box
