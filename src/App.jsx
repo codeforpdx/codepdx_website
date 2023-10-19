@@ -1,4 +1,7 @@
+import { useState } from 'react';
+
 // React Router Imports
+
 import { BrowserRouter } from 'react-router-dom';
 // Material UI Imports
 import { ThemeProvider } from '@mui/material/styles';
@@ -9,14 +12,14 @@ import theme from './theme';
 import Layout from './Layout';
 
 function App() {
-  // any logic
+  const [darkMode, setDarkMode] = useState(false);
 
   return (
     <>
       <CssBaseline />
       <ThemeProvider theme={theme}>
         <BrowserRouter>
-          <Layout />
+          <Layout darkMode={darkMode} setDarkMode={setDarkMode} />
         </BrowserRouter>
       </ThemeProvider>
     </>
