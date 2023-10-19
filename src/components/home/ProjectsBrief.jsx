@@ -58,7 +58,7 @@ const ProjectsBrief = (e) => {
           <Grid container rowSpacing={6}>
             <Grid item xs={6}>
               <img src={logo.image} alt={logo.alt ?? null} />
-              {/* {links ?? null} */}
+              {links ?? null}
               <Stack direction="row" spacing={1}>
                 <IconButton size="large" onClick={handleLinksClick}>
                   <FaGithub />
