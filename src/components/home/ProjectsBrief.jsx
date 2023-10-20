@@ -8,35 +8,25 @@ import Typography from '@mui/material/Typography';
 // Custom Imports
 import rose_logo from '/assets/rose_logo.png';
 // import projectsList from '../projects/projectsList';
-import { FaDiscord, FaEarthAmericas, FaGithub } from 'react-icons/fa6';
 
 const projectsList = [
   {
     title: 'RecordSponge',
     description:
       "RecordSponge is an app that helps community organizations quickly analyze an individual's criminal history to determine if they qualify to have their records expunged.",
-    status: 'Live',
-    logo: { image: '/assets/logoPlaceholder.svg', alt: 'RecordSponge logo' },
-    links: <FaGithub />,
-    techStack: 'Built with SOLID, React, Vite, JSDocs, MUI, NPM, ES Lint'
+    logo: { image: '/assets/logoPlaceholder.svg', alt: 'RecordSponge logo' }
   },
   {
     title: 'PASS',
     description:
       'PASS is an open source digital wallet for providing home insecure individuals a safe place to store documents within their control. PASS additionally assists caseworkers with processing and providing documents needed to complete the housing assistance application process.',
-    status: 'In Development',
-    logo: { image: '/assets/logoPlaceholder.svg', alt: 'PASS logo' },
-    links: <FaEarthAmericas />,
-    techStack: 'Built with SOLID, React, Vite, JSDocs, MUI, NPM, ES Lint'
+    logo: { image: '/assets/logoPlaceholder.svg', alt: 'PASS logo' }
   },
   {
     title: 'CODE PDX',
     description:
       'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit repellat saepe vel unde animi nesciunt suscipit iure quas, delectus possimus officiis voluptatum provident voluptates dolores deserunt nemo cum. Quaerat, cupiditate ad eius vel voluptatem sapiente iure sunt magni alias repellat?',
-    status: '',
-    logo: { image: '/assets/logoPlaceholder.svg', alt: 'PASS logo' },
-    links: '',
-    techStack: ''
+    logo: { image: rose_logo, alt: 'CODE PDX logo' }
   }
 ];
 
@@ -48,48 +38,46 @@ const ProjectsBrief = () => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        pb: 100,
-        flexGrow: 1
+        pb: 25
       }}
     >
-      <Typography variant="h3" component="h2">
+      <Typography variant="h3" component="h2" sx={{ px: '2rem' }}>
         Our Projects
       </Typography>
-      <Grid container rowSpacing={1} columnSpacing={1} sx={{ margin: 0 }}>
+      <Grid container rowSpacing={1} columnSpacing={1} sx={{ mt: 3 }}>
         {projectsList.map(({ title, description, logo }) => (
           <Grid
             key={title}
             item
-            xs={4}
-            sx={{ alignItems: 'center', textAlign: 'justify', textJustify: 'inter-word' }}
+            xs={12}
+            sm={4}
+            sx={{ textAlign: 'justify', textJustify: 'inter-word' }}
           >
             <Card
               sx={{
                 mx: 1,
                 p: 4,
                 background: 'lightgrey',
-                borderRadius: '25px'
+                borderRadius: '10px'
               }}
             >
-              <Typography variant="h4" component="h3">
+              <Typography variant="h4" component="h3" sx={{ py: '1rem' }}>
+                <Box
+                  component="img"
+                  alt={logo.alt ?? null}
+                  src={logo.image ?? null}
+                  sx={{
+                    width: '75px',
+                    mt: '25px',
+                    mr: '15px'
+                  }}
+                />
                 {title ?? null}
               </Typography>
-              {logo.image ?? null}
-              {logo.alt ?? null}
-              <Typography variant="body1">{description ?? null}</Typography>
-              <Button
-                variant="contained"
-                href="/"
-                target="_blank"
-                rel="noopener"
-                sx={{
-                  mt: '2rem',
-                  width: 1 / 3,
-                  '&:hover': {
-                    color: 'white'
-                  }
-                }}
-              >
+              <Typography variant="body1" sx={{ py: '1rem' }}>
+                {description ?? null}
+              </Typography>
+              <Button variant="contained" href="/volunteer" rel="noopener">
                 Learn More
               </Button>
             </Card>
