@@ -7,7 +7,7 @@ const Hero = () => {
   const heroStyle = {
     display: 'flex',
     flexFlow: 'column no-wrap',
-    justifyContent: 'flex-start',
+    justifyContent: { xs: 'center', md: 'flex-start' },
     alignItems: 'flex-start',
     width: '100vw',
     height: '70vh',
