@@ -2,37 +2,56 @@
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { useTheme } from '@mui/material/styles';
 
 const Hero = () => {
+  const theme = useTheme();
+  const heroStyle = {
+    display: 'flex',
+    flexFlow: 'column no-wrap',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    width: '100vw',
+    height: '70vh',
+    backgroundImage: 'url(/assets/stJohnsBridge.png)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat'
+  };
+
+  const h1Style = {
+    fontSize: '6vw',
+    pt: '1em',
+    pl: '0.75em',
+    height: '35vh',
+    width: 3 / 5,
+    textAlign: 'center',
+    color: 'black'
+  };
+
+  console.log(theme.palette.primary.main);
+  console.log(theme);
+  const contactBtnStyle = {
+    mt: '2em',
+    height: '2em',
+    width: '15vh',
+    color: 'black'
+  };
+
   return (
-    <Box
-      sx={{
-        width: '100vw',
-        height: '70vh',
-        backgroundImage: 'url(/assets/stJohnsBridge.png)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}
-    >
-      <Typography variant="h1" component="h1">
+    <Box sx={heroStyle}>
+      <Typography variant="h1" component="h1" sx={h1Style}>
         Bridging Technology and Civil Services
+        <Button
+          variant="contained"
+          href="mailto:hugh@codeforpdx.org"
+          target="_blank"
+          rel="noopener"
+          sx={contactBtnStyle}
+        >
+          Contact Us
+        </Button>
       </Typography>
-      <Button
-        variant="contained"
-        href="mailto:hugh@codeforpdx.org"
-        target="_blank"
-        rel="noopener"
-        sx={{
-          mt: '2rem',
-          width: 1 / 3,
-          '&:hover': {
-            color: 'white'
-          }
-        }}
-      >
-        Contact Us
-      </Button>
     </Box>
   );
 };
