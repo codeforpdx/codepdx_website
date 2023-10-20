@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 const Hero = () => {
   const heroBackground = {
     width: '100vw',
-    height: '70vh',
+    height: { xs: '30vh', md: '60vh' },
     backgroundImage: 'url(/assets/stJohnsBridge.png)',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
@@ -23,7 +23,7 @@ const Hero = () => {
   };
 
   const h1Style = {
-    fontSize: { xs: '8vw', md: '6vw' },
+    fontSize: { xs: '6vw', md: '6vw' },
     pt: '1em',
     pl: '0.75em',
     width: { xs: '80%', md: '100%' },
