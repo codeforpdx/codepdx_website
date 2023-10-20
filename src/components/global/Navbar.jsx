@@ -10,7 +10,7 @@ function NavBar() {
   };
 
   return (
-    <AppBar position="static" color={darkMode ? 'default' : 'primary'} sx={{ height: '100px' }}>
+    <AppBar position="static" color={darkMode ? 'dark' : 'primary'} sx={{ height: '100px' }}>
       <Toolbar>
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
           CODE PDX
