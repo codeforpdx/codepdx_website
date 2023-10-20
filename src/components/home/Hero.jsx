@@ -34,7 +34,7 @@ const Hero = () => {
     alignSelf: 'center',
     mt: '2em',
     height: '2em',
-    width: '17vh'
+    width: { xs: '18vh', md: '17vh' }
   };
 
   return (
