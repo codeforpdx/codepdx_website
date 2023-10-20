@@ -2,10 +2,8 @@
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { useTheme } from '@mui/material/styles';
 
 const Hero = () => {
-  const theme = useTheme();
   const heroStyle = {
     display: 'flex',
     flexFlow: 'column no-wrap',
@@ -25,17 +23,13 @@ const Hero = () => {
     pl: '0.75em',
     height: '35vh',
     width: 3 / 5,
-    textAlign: 'center',
-    color: 'black'
+    textAlign: 'center'
   };
 
-  console.log(theme.palette.primary.main);
-  console.log(theme);
   const contactBtnStyle = {
     mt: '2em',
     height: '2em',
-    width: '15vh',
-    color: 'black'
+    width: '15vh'
   };
 
   return (
