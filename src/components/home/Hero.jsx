@@ -5,10 +5,6 @@ import Typography from '@mui/material/Typography';
 
 const Hero = () => {
   const heroStyle = {
-    display: 'flex',
-    flexFlow: 'column no-wrap',
-    justifyContent: { xs: 'center', md: 'flex-start' },
-    alignItems: 'flex-start',
     width: '100vw',
     height: '70vh',
     backgroundImage: 'url(/assets/stJohnsBridge.png)',
@@ -17,25 +13,36 @@ const Hero = () => {
     backgroundRepeat: 'no-repeat'
   };
 
+  const containerStyle = {
+    display: 'flex',
+    flexFlow: 'column',
+    flexBasis: 1,
+    justifyContent: 'flex-start',
+    alignItems: { xs: 'center', md: 'flex-start' },
+    width: { xs: '100%', md: 3 / 5 }
+  };
+
   const h1Style = {
-    fontSize: '6vw',
+    fontSize: { xs: '8vw', md: '6vw' },
     pt: '1em',
     pl: '0.75em',
-    height: '35vh',
-    width: 3 / 5,
+    width: { xs: '80%', md: '100%' },
     textAlign: 'center'
   };
 
   const contactBtnStyle = {
+    alignSelf: 'center',
     mt: '2em',
     height: '2em',
-    width: '15vh'
+    width: '17vh'
   };
 
   return (
     <Box sx={heroStyle}>
-      <Typography variant="h1" component="h1" sx={h1Style}>
-        Bridging Technology and Civil Services
+      <Box sx={containerStyle}>
+        <Typography variant="h1" component="h1" sx={h1Style}>
+          Bridging Technology and Civil Services
+        </Typography>
         <Button
           variant="contained"
           href="mailto:hugh@codeforpdx.org"
@@ -45,7 +52,7 @@ const Hero = () => {
         >
           Contact Us
         </Button>
-      </Typography>
+      </Box>
     </Box>
   );
 };
