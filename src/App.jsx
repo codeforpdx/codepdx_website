@@ -7,7 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 // Theme Imports
-import theme from './theme';
+import getTheme from './theme';
 // Component Imports
 import Layout from './Layout';
 
@@ -17,7 +17,7 @@ function App() {
   return (
     <>
       <CssBaseline />
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={getTheme(darkMode ? 'dark' : 'light')}>
         <BrowserRouter>
           <Layout darkMode={darkMode} setDarkMode={setDarkMode} />
         </BrowserRouter>

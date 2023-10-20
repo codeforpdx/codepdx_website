@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { AppBar, Toolbar, Typography, Switch, IconButton } from '@mui/material';
 import { Brightness4, Brightness7 } from '@mui/icons-material';
-const [darkMode, setDarkMode] = useState(false);
-
-const handleThemeChange = () => {
-  setDarkMode(!darkMode);
-};
 
 function NavBar() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  const handleThemeChange = () => {
+    setDarkMode(!darkMode);
+  };
+
   return (
     <AppBar position="static" color={darkMode ? 'default' : 'primary'} sx={{ height: '100px' }}>
       <Toolbar>
