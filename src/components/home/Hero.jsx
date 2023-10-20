@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 const Hero = () => {
-  const heroStyle = {
+  const heroBackground = {
     width: '100vw',
     height: '70vh',
     backgroundImage: 'url(/assets/stJohnsBridge.png)',
@@ -13,7 +13,7 @@ const Hero = () => {
     backgroundRepeat: 'no-repeat'
   };
 
-  const containerStyle = {
+  const heroContainer = {
     display: 'flex',
     flexFlow: 'column',
     flexBasis: 1,
@@ -38,8 +38,8 @@ const Hero = () => {
   };
 
   return (
-    <Box sx={heroStyle}>
-      <Box sx={containerStyle}>
+    <Box sx={heroBackground}>
+      <Box sx={heroContainer}>
         <Typography variant="h1" component="h1" sx={h1Style}>
           Bridging Technology and Civil Services
         </Typography>
