@@ -65,7 +65,6 @@ const renderSocialLinks = socialMediaLinks.map(({ href, icon }) => (
     color="#000"
     sx={{
       display: 'flex',
-      alignItems: 'center',
       padding: '25px',
       '&:hover': {
         color: 'secondary.main'
@@ -109,22 +108,36 @@ const renderLegalLinks = legalLinks.map((link, index) => (
   </Box>
 ));
 
-// const socialBlobStyle = (theme) => ({
-//   backgroundImage: 'url(/assets/socialsBlob.svg)',
-//   backgroundSize: 'auto',
-//   backgroundRepeat: 'no-repeat',
-//   backgroundPosition: 'center',
-//   display: 'flex',
-//   flexGrow: 1,
-//   justifyContent: 'center',
-//   minHeight: '200px',
-//   zIndex: '-1',
-//   [theme.breakpoints.down('sm')]: {
-//     backgroundImage: 'none',
-//     ml: '0',
-//     minHeight: '150px'
-//   }
-// });
+const footerContainerStyle = (theme) => ({
+  display: 'flex',
+  flexDirection: { xs: 'column', sm: 'row' },
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  position: 'relative',
+  height: { xs: 'auto', sm: '200px' },
+  '&::before': {
+    content: '""',
+    backgroundImage: 'url(/assets/socialsBlob.svg)',
+    backgroundSize: 'auto',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    display: 'flex',
+    flexGrow: 1,
+    justifyContent: 'center',
+    minHeight: '200px',
+    position: 'absolute', // Required to position ::before
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    zIndex: -1,
+    [theme.breakpoints.down('sm')]: {
+      backgroundImage: 'none',
+      left: '0',
+      minHeight: '150px'
+    }
+  }
+});
 
 const logoBlobStyle = {
   position: 'absolute',
@@ -135,7 +148,6 @@ const logoBlobStyle = {
   backgroundSize: 'cover',
   backgroundImage: { md: 'url(/assets/logoBlob.svg)', sm: 'none' },
   backgroundRepeat: 'no-repeat',
-  // display: 'flex',
   // backgroundPosition: 'left bottom',
   zIndex: '-1',
   display: {
@@ -150,44 +162,7 @@ const Footer = () => {
 
   return (
     // this container contains the entire footer
-    <Container
-      component="footer"
-      maxWidth="100vw"
-      sx={{
-        display: 'flex',
-        flexDirection: { xs: 'column', sm: 'row' },
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        position: 'relative',
-        // position: 'fixed',
-        // bottom: 0,
-        // width: '100%',
-        // maxWidth: '100vw',
-        height: { xs: 'auto', sm: '200px' },
-        '&::before': {
-          content: '""',
-          backgroundImage: 'url(/assets/socialsBlob.svg)',
-          backgroundSize: 'auto',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center',
-          display: 'flex',
-          flexGrow: 1,
-          justifyContent: 'center',
-          minHeight: '200px',
-          position: 'absolute', // Required to position ::before
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          zIndex: -1,
-          [theme.breakpoints.down('sm')]: {
-            backgroundImage: 'none',
-            left: '0',
-            minHeight: '150px'
-          }
-        }
-      }}
-    >
+    <Container component="footer" maxWidth="100vw" sx={footerContainerStyle}>
       <Box sx={logoBlobStyle}></Box>
       <Stack direction={{ xs: 'row', sm: 'column', lg: 'row' }}>
         {/* roseLogo box */}
@@ -198,39 +173,26 @@ const Footer = () => {
           sx={{
             width: '75px',
             mt: '25px',
-            ml: { xs: '0px', sm: '40px', lg: '50px' }
+            ml: { xs: '0px', sm: '40px', lg: '35px' }
           }}
         />
-        {/* {logoBlobStyle} */}
-        <Typography ml={{ xs: '10px', lg: '60px' }} mt="35px" variant="h5">
+        <Typography ml={{ xs: '10px', lg: '80px' }} mt="35px" variant="h5">
           CODE PDX
         </Typography>
       </Stack>
-
-      {/* this box and stack contain the social icons and blob*/}
-      {/* <Box
-        sx={{
-          position: 'absolute', // Absolute positioning
-          left: '50%', // Centering
-          top: '50%',
-          transform: 'translate(-50%, -50%)',
-          display: 'flex',
-          minWidth: '1000px',
-          zIndex: -1,
-          [theme.breakpoints.down('sm')]: {
-            position: 'static', // Remove absolute positioning
-            transform: 'none' // Reset transform
-          }
-        }}
-      > */}
+      {/* this box and stack contain social links*/}
       <Box
         sx={{
-          display: 'flex'
+          display: 'flex',
+          position: { xs: 'static', md: 'absolute' },
+          justifyContent: 'center',
+          alignItems: 'center',
+          width: '100%',
+          height: '100%'
         }}
       >
         {renderSocialLinks}
       </Box>
-      {/* </Box> */}
       {/* this stack contains the legal links and hook to add padding on viewport scale down */}
       <Box
         sx={{
