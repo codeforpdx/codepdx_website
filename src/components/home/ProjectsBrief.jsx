@@ -2,6 +2,9 @@
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+// import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 // import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
@@ -38,48 +41,79 @@ const ProjectsBrief = () => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        pb: 25
+        pb: 25,
+        m: 7
       }}
     >
-      <Typography variant="h3" component="h2" sx={{ px: '2rem' }}>
+      <Typography variant="h3" component="h2" sx={{ mb: '40px' }}>
         Our Projects
       </Typography>
-      <Grid container rowSpacing={1} columnSpacing={1} sx={{ mt: 3 }}>
+      <Grid
+        container
+        // spacing={4}
+        // rowSpacing={1}
+        // columnSpacing={1}
+        // sx={{ mt: 3 }}
+      >
         {projectsList.map(({ title, description, logo }) => (
           <Grid
             key={title}
             item
             xs={12}
-            sm={4}
-            sx={{ textAlign: 'justify', textJustify: 'inter-word' }}
+            md={4}
+            sx={{
+              textAlign: 'justify'
+              // textJustify: 'inter-word'
+              // flexGrow: 1
+            }}
           >
             <Card
               sx={{
-                mx: 1,
+                mx: 2,
                 p: 4,
                 background: 'lightgrey',
-                borderRadius: '10px'
+                borderRadius: '10px',
+                height: '100%'
+                // flexGrow: 1
               }}
             >
-              <Typography variant="h4" component="h3" sx={{ py: '1rem' }}>
-                <Box
-                  component="img"
-                  alt={logo.alt ?? null}
-                  src={logo.image ?? null}
-                  sx={{
-                    width: '75px',
-                    mt: '25px',
-                    mr: '15px'
-                  }}
-                />
-                {title ?? null}
-              </Typography>
-              <Typography variant="body1" sx={{ py: '1rem' }}>
-                {description ?? null}
-              </Typography>
-              <Button variant="contained" href="/volunteer" rel="noopener">
-                Learn More
-              </Button>
+              <CardContent
+              // sx={{ flexGrow: 1 }}
+              >
+                <Typography
+                  variant="h4"
+                  component="h3"
+                  // sx={{ py: '1rem' }}
+                  // gutterBottom
+                >
+                  <Box
+                    component="img"
+                    alt={logo.alt ?? null}
+                    src={logo.image ?? null}
+                    sx={{
+                      width: '75px',
+                      mt: '25px',
+                      mr: '15px'
+                    }}
+                  />
+                  {title ?? null}
+                </Typography>
+                <Typography variant="body1" sx={{ py: '1rem' }}>
+                  {description ?? null}
+                </Typography>
+              </CardContent>
+              <CardActions>
+                <Button
+                  variant="contained"
+                  href="/volunteer"
+                  // rel="noopener"
+                  // color="quaternary"
+                  size="large"
+                  // sx={{ position: 'absolute' }}
+                >
+                  Learn More
+                </Button>
+              </CardActions>
             </Card>
           </Grid>
         ))}
