@@ -6,6 +6,8 @@ import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material/styles';
+import Container from '@mui/system/Container';
+
 // Other Library Imports
 import dayjs from 'dayjs';
 import { FaDiscord, FaGithub, FaLinkedin, FaMeetup } from 'react-icons/fa6';
@@ -107,22 +109,22 @@ const renderLegalLinks = legalLinks.map((link, index) => (
   </Box>
 ));
 
-const socialBlobStyle = (theme) => ({
-  backgroundImage: 'url(/assets/socialsBlob.svg)',
-  backgroundSize: 'auto',
-  backgroundRepeat: 'no-repeat',
-  backgroundPosition: 'center',
-  display: 'flex',
-  flexGrow: 1,
-  justifyContent: 'center',
-  minHeight: '200px',
-  zIndex: '-1',
-  [theme.breakpoints.down('sm')]: {
-    backgroundImage: 'none',
-    ml: '0',
-    minHeight: '150px'
-  }
-});
+// const socialBlobStyle = (theme) => ({
+//   backgroundImage: 'url(/assets/socialsBlob.svg)',
+//   backgroundSize: 'auto',
+//   backgroundRepeat: 'no-repeat',
+//   backgroundPosition: 'center',
+//   display: 'flex',
+//   flexGrow: 1,
+//   justifyContent: 'center',
+//   minHeight: '200px',
+//   zIndex: '-1',
+//   [theme.breakpoints.down('sm')]: {
+//     backgroundImage: 'none',
+//     ml: '0',
+//     minHeight: '150px'
+//   }
+// });
 
 const logoBlobStyle = {
   position: 'absolute',
@@ -130,32 +132,60 @@ const logoBlobStyle = {
   left: 0,
   right: 0,
   top: 0,
+  backgroundSize: 'cover',
   backgroundImage: { md: 'url(/assets/logoBlob.svg)', sm: 'none' },
   backgroundRepeat: 'no-repeat',
-  backgroundPosition: 'left bottom',
+  // display: 'flex',
+  // backgroundPosition: 'left bottom',
   zIndex: '-1',
   display: {
-    lg: 'block',
+    lg: 'flex',
     xs: 'none'
-  }
+  },
+  maxWidth: '200px'
 };
 
 const Footer = () => {
   const theme = useTheme();
 
   return (
-    // this box contains the entire footer
-    <Box
+    // this container contains the entire footer
+    <Container
       component="footer"
+      maxWidth="100vw"
       sx={{
         display: 'flex',
         flexDirection: { xs: 'column', sm: 'row' },
         justifyContent: 'space-between',
         alignItems: 'center',
-        position: 'fixed',
-        bottom: 0,
-        width: '100vw',
-        height: { xs: 'auto', sm: '200px' }
+        position: 'relative',
+        // position: 'fixed',
+        // bottom: 0,
+        // width: '100%',
+        // maxWidth: '100vw',
+        height: { xs: 'auto', sm: '200px' },
+        '&::before': {
+          content: '""',
+          backgroundImage: 'url(/assets/socialsBlob.svg)',
+          backgroundSize: 'auto',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+          display: 'flex',
+          flexGrow: 1,
+          justifyContent: 'center',
+          minHeight: '200px',
+          position: 'absolute', // Required to position ::before
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          zIndex: -1,
+          [theme.breakpoints.down('sm')]: {
+            backgroundImage: 'none',
+            left: '0',
+            minHeight: '150px'
+          }
+        }
       }}
     >
       <Box sx={logoBlobStyle}></Box>
@@ -171,13 +201,14 @@ const Footer = () => {
             ml: { xs: '0px', sm: '40px', lg: '50px' }
           }}
         />
+        {/* {logoBlobStyle} */}
         <Typography ml={{ xs: '10px', lg: '60px' }} mt="35px" variant="h5">
           CODE PDX
         </Typography>
       </Stack>
 
       {/* this box and stack contain the social icons and blob*/}
-      <Box
+      {/* <Box
         sx={{
           position: 'absolute', // Absolute positioning
           left: '50%', // Centering
@@ -191,9 +222,15 @@ const Footer = () => {
             transform: 'none' // Reset transform
           }
         }}
+      > */}
+      <Box
+        sx={{
+          display: 'flex'
+        }}
       >
-        <Box sx={socialBlobStyle}>{renderSocialLinks}</Box>
+        {renderSocialLinks}
       </Box>
+      {/* </Box> */}
       {/* this stack contains the legal links and hook to add padding on viewport scale down */}
       <Box
         sx={{
@@ -205,9 +242,8 @@ const Footer = () => {
       >
         {renderLegalLinks}
       </Box>
-    </Box>
+    </Container>
   );
-
 };
 
 export default Footer;
