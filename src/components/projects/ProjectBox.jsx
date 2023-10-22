@@ -18,18 +18,18 @@ const projectsGrid = [
     description:
       'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit repellat saepe vel unde animi nesciunt suscipit iure quas, delectus possimus officiis voluptatum provident voluptates dolores deserunt nemo cum. Quaerat, cupiditate ad eius vel voluptatem sapiente iure sunt magni alias repellat?',
     status: 'Live',
-    logo: { image: '/assets/logoPlaceholder.svg', alt: 'RecordSponge logo' },
+    logo: { image: '/assets/logoRecordSponge.svg', alt: 'RecordSponge logo' },
     links: <FaGithub />,
-    techStack: 'Built with SOLID, React, Vite, JSDocs, MUI, NPM, ES Lint'
+    techStack: 'SOLID, React, Vite, JSDocs, MUI, NPM, ES Lint'
   },
   {
     title: 'PASS',
     description:
       'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit repellat saepe vel unde animi nesciunt suscipit iure quas, delectus possimus officiis voluptatum provident voluptates dolores deserunt nemo cum. Quaerat, cupiditate ad eius vel voluptatem sapiente iure sunt magni alias repellat?',
     status: 'In Development',
-    logo: '',
+    logo: { image: '/assets/logoPASS.svg', alt: 'RecordSponge logo' },
     links: <FaEarthAmericas />,
-    techStack: 'Built with SOLID, React, Vite, JSDocs, MUI, NPM, ES Lint'
+    techStack: 'SOLID, React, Vite, JSDocs, MUI, NPM, ES Lint'
   }
 ];
 
@@ -54,6 +54,7 @@ const ProjectBox = (e) => {
           key={title}
           sx={{
             mx: 10,
+            mb: 3,
             p: 5,
             background: 'linear-gradient(to bottom, white, lightgrey)',
             borderRadius: '25px'
@@ -96,16 +97,16 @@ const ProjectBox = (e) => {
                   <Typography variant="h3">{title ?? null}</Typography>
                   <Chip label={status ?? null} color="quinary" />
                 </Stack>
-                <br />
+                {/* <br /> */}
                 <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
                   Overview
                 </Typography>
                 <Typography variant="body2">{description ?? null}</Typography>
-                <br />
+                {/* <br /> */}
                 <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
                   Technology Used
                 </Typography>
-                <Typography variant="body2">{techStack ?? null}</Typography>
+                <Typography variant="body2">Built with {techStack ?? null}</Typography>
               </CardContent>
             </Grid>
           </Grid>
