@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
 // import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 // import Stack from '@mui/material/Stack';
@@ -77,27 +78,27 @@ const ProjectsBrief = () => {
                 // flexGrow: 1
               }}
             >
+              <CardMedia
+                component="div"
+                sx={{
+                  pt: '50%'
+                }}
+                image={logo.image ?? null}
+                alt={logo.alt ?? null}
+              />
+              {/* <Box
+                  component="img"
+                  alt={logo.alt ?? null}
+                  src={logo.image ?? null}
+                  sx={{
+                    width: '75px',
+                    mt: '25px',
+                    mr: '15px',
+                  }}
+                /> */}
               <CardContent
               // sx={{ flexGrow: 1 }}
               >
-                <Typography
-                  variant="h4"
-                  component="h3"
-                  // sx={{ py: '1rem' }}
-                  // gutterBottom
-                >
-                  <Box
-                    component="img"
-                    alt={logo.alt ?? null}
-                    src={logo.image ?? null}
-                    sx={{
-                      width: '75px',
-                      mt: '25px',
-                      mr: '15px'
-                    }}
-                  />
-                  {title ?? null}
-                </Typography>
                 <Typography variant="body1" sx={{ py: '1rem' }}>
                   {description ?? null}
                 </Typography>
@@ -105,7 +106,7 @@ const ProjectsBrief = () => {
               <CardActions>
                 <Button
                   variant="contained"
-                  href="/volunteer"
+                  href="/projects"
                   // rel="noopener"
                   // color="quaternary"
                   size="large"

@@ -1,6 +1,6 @@
-import Typography from "@mui/material/Typography";
-import Hero from "../components/home/Hero";
-import ProjectBox from "../components/projects/ProjectBox";
+import Typography from '@mui/material/Typography';
+import Hero from '../components/home/Hero';
+import ProjectBox from '../components/projects/ProjectBox';
 
 const Projects = () => {
   // any logic needed
@@ -12,7 +12,7 @@ const Projects = () => {
       {/* or <Box component="img" /> */}
       <Typography />
       <ProjectBox />
-      <ProjectBox />
+      {/* <ProjectBox /> */}
     </>
   );
 };
