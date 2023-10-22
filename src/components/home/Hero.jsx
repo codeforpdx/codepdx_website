@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <Box sx={heroBackground}>
       <Box sx={heroContainer}>
-        <Typography variant="h1" component="h1" sx={h1Style}>
+        <Typography variant="h1" sx={h1Style}>
           Bridging Technology and Civil Services
         </Typography>
         <Button
