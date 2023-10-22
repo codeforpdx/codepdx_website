@@ -45,10 +45,10 @@ const heroContainer = {
 const h1Style = {
   fontWeight: '400',
   textShadow: '0px 4px 4px #0000004D',
-  lineHeight: { xs: '45px', sm: '80px' },
-  flexBasis: { xs: '100px', sm: '160px' },
-  fontSize: { xs: '30px', sm: '56px' },
-  pt: { xs: '25px', sm: '50px', md: '113px' },
+  lineHeight: { xs: '45px', md: '80px' },
+  flexBasis: { xs: '100px', md: '160px' },
+  fontSize: { xs: '30px', md: '56px' },
+  pt: { xs: '25px', md: '113px' },
   pl: { xs: 0, md: '56px' },
   width: { xs: '80%', md: '100%' },
   textAlign: 'center'
