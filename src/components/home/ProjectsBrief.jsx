@@ -5,9 +5,7 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-// import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-// import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 // Custom Imports
 import rose_logo from '/assets/rose_logo.png';
@@ -43,29 +41,22 @@ const ProjectsBrief = () => {
         flexDirection: 'column',
         alignItems: 'center',
         pb: 25,
-        m: 7
+        m: { xs: 1, sm: 4 }
       }}
     >
       <Typography variant="h3" component="h2" sx={{ mb: '40px' }}>
         Our Projects
       </Typography>
-      <Grid
-        container
-        // spacing={4}
-        // rowSpacing={1}
-        // columnSpacing={1}
-        // sx={{ mt: 3 }}
-      >
+      <Grid container rowSpacing={3}>
         {projectsList.map(({ title, description, logo }) => (
           <Grid
             key={title}
             item
             xs={12}
-            md={4}
+            md={6}
+            lg={4}
             sx={{
               textAlign: 'justify'
-              // textJustify: 'inter-word'
-              // flexGrow: 1
             }}
           >
             <Card
@@ -75,43 +66,23 @@ const ProjectsBrief = () => {
                 background: 'lightgrey',
                 borderRadius: '10px',
                 height: '100%'
-                // flexGrow: 1
               }}
             >
               <CardMedia
                 component="div"
                 sx={{
-                  pt: '50%'
+                  p: '25%'
                 }}
                 image={logo.image ?? null}
                 alt={logo.alt ?? null}
               />
-              {/* <Box
-                  component="img"
-                  alt={logo.alt ?? null}
-                  src={logo.image ?? null}
-                  sx={{
-                    width: '75px',
-                    mt: '25px',
-                    mr: '15px',
-                  }}
-                /> */}
-              <CardContent
-              // sx={{ flexGrow: 1 }}
-              >
+              <CardContent>
                 <Typography variant="body1" sx={{ py: '1rem' }}>
                   {description ?? null}
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button
-                  variant="contained"
-                  href="/projects"
-                  // rel="noopener"
-                  // color="quaternary"
-                  size="large"
-                  // sx={{ position: 'absolute' }}
-                >
+                <Button variant="contained" href="/projects" size="large">
                   Learn More
                 </Button>
               </CardActions>

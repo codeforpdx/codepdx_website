@@ -59,27 +59,18 @@ const ProjectBox = (e) => {
             borderRadius: '25px'
           }}
         >
-          <Grid
-            container
-            // spacing={6}
-          >
+          <Grid container spacing={2}>
             <Grid item xs={12} md={6}>
               <CardMedia
                 component="div"
                 sx={{
-                  pt: '56.25%'
+                  p: '25%'
                 }}
                 image={logo.image ?? null}
                 alt={logo.alt ?? null}
-              ></CardMedia>
-              {/* {links ?? null} */}
+              />
               <CardActions>
-                <Stack
-                  direction="row"
-                  justifyContent="space-around"
-                  // alignItems="center"
-                  // spacing={2}
-                >
+                <Stack direction="row" spacing={{ xs: 1, sm: 2, md: 4 }}>
                   <IconButton size="large" onClick={handleLinksClick} sx={{ fontSize: 40 }}>
                     <FaGithub />
                   </IconButton>
@@ -95,8 +86,8 @@ const ProjectBox = (e) => {
             <Grid item xs={12} md={6}>
               <CardContent>
                 <Stack
-                  direction="row"
-                  spacing={5}
+                  direction={{ xs: 'column', sm: 'row' }}
+                  spacing={1}
                   sx={{
                     alignItems: 'center',
                     justifyContent: 'space-between'
