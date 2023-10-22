@@ -38,32 +38,37 @@ const legalLinks = [
 const socialMediaLinks = [
   {
     href: 'https://github.com/codeforpdx/',
-    icon: <FaGithub size={45} />
+    icon: <FaGithub size={45} />,
+    ariaLabel: 'Github'
   },
   {
     href: 'https://www.linkedin.com/company/code-pdx/',
-    icon: <FaLinkedin size={45} />
+    icon: <FaLinkedin size={45} />,
+    ariaLabel: 'Linked In'
   },
   {
     href: 'https://www.meetup.com/Code-for-PDX/',
-    icon: <FaMeetup size={45} />
+    icon: <FaMeetup size={45} />,
+    ariaLabel: 'Meetup.com'
   },
   {
     href: 'https://discord.gg/x6b573et',
-    icon: <FaDiscord size={45} />
+    icon: <FaDiscord size={45} />,
+    ariaLabel: 'Discord'
   }
 ];
 
 // renders socialMediaLinks for placement in stack below
-const renderSocialLinks = socialMediaLinks.map(({ href, icon }) => (
+const renderSocialLinks = socialMediaLinks.map(({ ariaLabel, href, icon }) => (
   <Link
     component={ReactRouterLink}
     key={href}
     href={href}
+    aria-label={`Check us out on ${ariaLabel}`}
     target="_blank"
     rel="noopener"
-    color="#000"
     sx={{
+      color: '#000',
       display: 'flex',
       padding: '25px',
       '&:hover': {
@@ -94,9 +99,10 @@ const renderLegalLinks = legalLinks.map((link, index) => (
         component={ReactRouterLink}
         to={link.href}
         underline="none"
-        color="#000"
+        aria-label={`${link.title}`}
         ml={link.ml ?? null}
         sx={{
+          color: '#000',
           '&:hover': {
             color: 'primary.main'
           }
@@ -167,6 +173,7 @@ const Footer = () => {
         <Box
           component="img"
           alt="CODE PDX logo"
+          aria-label="Code pdx"
           src={'/assets/rose_logo.png'}
           sx={{
             width: '75px',
