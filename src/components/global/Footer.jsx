@@ -2,11 +2,11 @@
 import { Link as ReactRouterLink } from 'react-router-dom';
 // Material UI Imports
 import Box from '@mui/material/Box';
+import Container from '@mui/system/Container';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material/styles';
-import Container from '@mui/system/Container';
 
 // Other Library Imports
 import dayjs from 'dayjs';
@@ -121,11 +121,9 @@ const footerContainerStyle = (theme) => ({
     backgroundSize: 'auto',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    display: 'flex',
-    flexGrow: 1,
     justifyContent: 'center',
     minHeight: '200px',
-    position: 'absolute', // Required to position ::before
+    position: 'absolute',
     top: 0,
     left: 0,
     right: 0,
@@ -148,7 +146,6 @@ const logoBlobStyle = {
   backgroundSize: 'cover',
   backgroundImage: { md: 'url(/assets/logoBlob.svg)', sm: 'none' },
   backgroundRepeat: 'no-repeat',
-  // backgroundPosition: 'left bottom',
   zIndex: '-1',
   display: {
     lg: 'flex',
@@ -162,9 +159,10 @@ const Footer = () => {
 
   return (
     // this container contains the entire footer
-    <Container component="footer" maxWidth="100vw" sx={footerContainerStyle}>
+    <Container component="footer" maxWidth="100%" sx={footerContainerStyle}>
+      {/* this box contains the blob behind the roseLogo */}
       <Box sx={logoBlobStyle}></Box>
-      <Stack direction={{ xs: 'row', sm: 'column', lg: 'row' }}>
+      <Stack direction={{ xs: 'row', sm: 'column', lg: 'row' }} flex={1}>
         {/* roseLogo box */}
         <Box
           component="img"
@@ -180,22 +178,12 @@ const Footer = () => {
           CODE PDX
         </Typography>
       </Stack>
-      {/* this box and stack contain social links*/}
+      {/* this box contains social links*/}
+      <Box display={'flex'}>{renderSocialLinks}</Box>
+      {/* this box contains the legal links and hook to add padding on viewport scale down */}
       <Box
         sx={{
-          display: 'flex',
-          position: { xs: 'static', md: 'absolute' },
-          justifyContent: 'center',
-          alignItems: 'center',
-          width: '100%',
-          height: '100%'
-        }}
-      >
-        {renderSocialLinks}
-      </Box>
-      {/* this stack contains the legal links and hook to add padding on viewport scale down */}
-      <Box
-        sx={{
+          flex: '1',
           [theme.breakpoints.down('sm')]: {
             p: '8px',
             pb: '40px'
