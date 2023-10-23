@@ -70,7 +70,7 @@ const renderSocialLinks = socialMediaLinks.map(({ ariaLabel, href, icon }) => (
     sx={{
       color: '#000',
       display: 'flex',
-      padding: '25px',
+      py: '25px',
       '&:hover': {
         color: 'secondary.main'
       }
@@ -186,7 +186,9 @@ const Footer = () => {
         </Typography>
       </Stack>
       {/* this box contains social links*/}
-      <Box display={'flex'}>{renderSocialLinks}</Box>
+      <Stack direction="row" spacing={{ xs: 2, sm: 3 }}>
+        {renderSocialLinks}
+      </Stack>
       {/* this box contains the legal links and hook to add padding on viewport scale down */}
       <Box
         sx={{
