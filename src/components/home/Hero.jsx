@@ -3,27 +3,6 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-const Hero = () => {
-  return (
-    <Box sx={heroBackground}>
-      <Box sx={heroContainer}>
-        <Typography variant="h1" sx={h1Style}>
-          Bridging Technology and Civil Services
-        </Typography>
-        <Button
-          variant="contained"
-          href="mailto:hugh@codeforpdx.org"
-          target="_blank"
-          rel="noopener"
-          sx={contactBtnStyle}
-        >
-          Contact Us
-        </Button>
-      </Box>
-    </Box>
-  );
-};
-
 const heroBackground = {
   width: '100%',
   height: { xs: '35vh', md: '70vh' },
@@ -65,6 +44,27 @@ const contactBtnStyle = {
   width: { xs: '115px', md: '310px' },
   height: { xs: '25px', md: '84px' },
   borderRadius: '5px'
+};
+
+const Hero = () => {
+  return (
+    <Box sx={heroBackground}>
+      <Box sx={heroContainer}>
+        <Typography variant="h1" sx={h1Style}>
+          Bridging Technology and Civil Services
+        </Typography>
+        <Button
+          variant="contained"
+          href="mailto:hugh@codeforpdx.org"
+          target="_blank"
+          rel="noopener"
+          sx={contactBtnStyle}
+        >
+          Contact Us
+        </Button>
+      </Box>
+    </Box>
+  );
 };
 
 export default Hero;
