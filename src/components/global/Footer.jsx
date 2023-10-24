@@ -2,10 +2,12 @@
 import { Link as ReactRouterLink } from 'react-router-dom';
 // Material UI Imports
 import Box from '@mui/material/Box';
+import Container from '@mui/system/Container';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material/styles';
+
 // Other Library Imports
 import dayjs from 'dayjs';
 import { FaDiscord, FaGithub, FaLinkedin, FaMeetup } from 'react-icons/fa6';
@@ -36,35 +38,39 @@ const legalLinks = [
 const socialMediaLinks = [
   {
     href: 'https://github.com/codeforpdx/',
-    icon: <FaGithub size={45} />
+    icon: <FaGithub size={45} />,
+    ariaLabel: 'Github'
   },
   {
     href: 'https://www.linkedin.com/company/code-pdx/',
-    icon: <FaLinkedin size={45} />
+    icon: <FaLinkedin size={45} />,
+    ariaLabel: 'Linked In'
   },
   {
     href: 'https://www.meetup.com/Code-for-PDX/',
-    icon: <FaMeetup size={45} />
+    icon: <FaMeetup size={45} />,
+    ariaLabel: 'Meetup.com'
   },
   {
     href: 'https://discord.gg/x6b573et',
-    icon: <FaDiscord size={45} />
+    icon: <FaDiscord size={45} />,
+    ariaLabel: 'Discord'
   }
 ];
 
 // renders socialMediaLinks for placement in stack below
-const renderSocialLinks = socialMediaLinks.map(({ href, icon }) => (
+const renderSocialLinks = socialMediaLinks.map(({ ariaLabel, href, icon }) => (
   <Link
     component={ReactRouterLink}
     key={href}
     href={href}
+    aria-label={`Check us out on ${ariaLabel}`}
     target="_blank"
     rel="noopener"
-    color="#000"
     sx={{
+      color: '#000',
       display: 'flex',
-      alignItems: 'center',
-      padding: '25px',
+      py: '25px',
       '&:hover': {
         color: 'secondary.main'
       }
@@ -93,9 +99,10 @@ const renderLegalLinks = legalLinks.map((link, index) => (
         component={ReactRouterLink}
         to={link.href}
         underline="none"
-        color="#000"
+        aria-label={`${link.title}`}
         ml={link.ml ?? null}
         sx={{
+          color: '#000',
           '&:hover': {
             color: 'primary.main'
           }
@@ -107,20 +114,32 @@ const renderLegalLinks = legalLinks.map((link, index) => (
   </Box>
 ));
 
-const socialBlobStyle = (theme) => ({
-  backgroundImage: 'url(/assets/socialsBlob.svg)',
-  backgroundSize: 'auto',
-  backgroundRepeat: 'no-repeat',
-  backgroundPosition: 'center',
+const footerContainerStyle = (theme) => ({
   display: 'flex',
-  flexGrow: 1,
-  justifyContent: 'center',
-  minHeight: '200px',
-  zIndex: '-1',
-  [theme.breakpoints.down('sm')]: {
-    backgroundImage: 'none',
-    ml: '0',
-    minHeight: '150px'
+  flexDirection: { xs: 'column', sm: 'row' },
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  position: 'relative',
+  height: { xs: 'auto', sm: '200px' },
+  '&::before': {
+    content: '""',
+    backgroundImage: 'url(/assets/socialsBlob.svg)',
+    backgroundSize: 'auto',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    justifyContent: 'center',
+    minHeight: '200px',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    zIndex: -1,
+    [theme.breakpoints.down('sm')]: {
+      backgroundImage: 'none',
+      left: '0',
+      minHeight: '150px'
+    }
   }
 });
 
@@ -130,73 +149,50 @@ const logoBlobStyle = {
   left: 0,
   right: 0,
   top: 0,
+  backgroundSize: 'cover',
   backgroundImage: { md: 'url(/assets/logoBlob.svg)', sm: 'none' },
   backgroundRepeat: 'no-repeat',
-  backgroundPosition: 'left bottom',
   zIndex: '-1',
   display: {
-    lg: 'block',
+    lg: 'flex',
     xs: 'none'
-  }
+  },
+  maxWidth: '200px'
 };
 
 const Footer = () => {
   const theme = useTheme();
 
   return (
-    // this box contains the entire footer
-    <Box
-      component="footer"
-      sx={{
-        display: 'flex',
-        flexDirection: { xs: 'column', sm: 'row' },
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        position: 'fixed',
-        bottom: 0,
-        width: '100vw',
-        height: { xs: 'auto', sm: '200px' }
-      }}
-    >
+    // this container contains the entire footer
+    <Container component="footer" maxWidth="100%" sx={footerContainerStyle}>
+      {/* this box contains the blob behind the roseLogo */}
       <Box sx={logoBlobStyle}></Box>
-      <Stack direction={{ xs: 'row', sm: 'column', lg: 'row' }}>
+      <Stack direction={{ xs: 'row', sm: 'column', lg: 'row' }} flex={1}>
         {/* roseLogo box */}
         <Box
           component="img"
           alt="CODE PDX logo"
+          aria-label="Code pdx"
           src={'/assets/rose_logo.png'}
           sx={{
             width: '75px',
             mt: '25px',
-            ml: { xs: '0px', sm: '40px', lg: '50px' }
+            ml: { xs: '0px', sm: '40px', lg: '35px' }
           }}
         />
-        <Typography ml={{ xs: '10px', lg: '60px' }} mt="35px" variant="h5">
+        <Typography ml={{ xs: '10px', lg: '80px' }} mt="35px" variant="h5">
           CODE PDX
         </Typography>
       </Stack>
-
-      {/* this box and stack contain the social icons and blob*/}
+      {/* this box contains social links*/}
+      <Stack direction="row" spacing={{ xs: 2, sm: 3 }}>
+        {renderSocialLinks}
+      </Stack>
+      {/* this box contains the legal links and hook to add padding on viewport scale down */}
       <Box
         sx={{
-          position: 'absolute', // Absolute positioning
-          left: '50%', // Centering
-          top: '50%',
-          transform: 'translate(-50%, -50%)',
-          display: 'flex',
-          minWidth: '1000px',
-          zIndex: -1,
-          [theme.breakpoints.down('sm')]: {
-            position: 'static', // Remove absolute positioning
-            transform: 'none' // Reset transform
-          }
-        }}
-      >
-        <Box sx={socialBlobStyle}>{renderSocialLinks}</Box>
-      </Box>
-      {/* this stack contains the legal links and hook to add padding on viewport scale down */}
-      <Box
-        sx={{
+          flex: '1',
           [theme.breakpoints.down('sm')]: {
             p: '8px',
             pb: '40px'
@@ -205,9 +201,8 @@ const Footer = () => {
       >
         {renderLegalLinks}
       </Box>
-    </Box>
+    </Container>
   );
-
 };
 
 export default Footer;
