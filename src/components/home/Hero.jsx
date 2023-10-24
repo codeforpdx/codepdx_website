@@ -27,7 +27,7 @@ const Hero = () => {
 const heroBackground = {
   width: '100%',
   height: { xs: '35vh', md: '70vh' },
-  backgroundImage: 'url(/assets/stJohnsBridge.png)',
+  backgroundImage: `linear-gradient(to top, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3)), url(/assets/stJohnsBridge.png)`,
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat'
