@@ -39,7 +39,6 @@ const ProjectsBrief = () => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        pb: 25,
         m: { xs: 1, sm: 4 }
       }}
     >
@@ -68,10 +67,12 @@ const ProjectsBrief = () => {
               }}
             >
               <CardMedia
-                component="div"
-                sx={{
-                  p: '25%'
-                }}
+                component="img"
+                sx={
+                  {
+                    // p: '25%',
+                  }
+                }
                 image={logo.image ?? null}
                 alt={logo.alt ?? null}
               />

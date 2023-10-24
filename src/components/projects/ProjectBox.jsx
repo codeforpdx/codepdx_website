@@ -1,37 +1,31 @@
 // Material UI Imports
-import { CardMedia } from '@mui/material';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
 import Chip from '@mui/material/Chip';
 import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-// Other Library Imports
-import { FaDiscord, FaEarthAmericas, FaGithub } from 'react-icons/fa6';
+// Custom Imports
+import projectsList from './projectsList';
 
-const projectsGrid = [
-  {
-    title: 'RecordSponge',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit repellat saepe vel unde animi nesciunt suscipit iure quas, delectus possimus officiis voluptatum provident voluptates dolores deserunt nemo cum. Quaerat, cupiditate ad eius vel voluptatem sapiente iure sunt magni alias repellat?',
-    status: 'Live',
-    logo: { image: '/assets/logoRecordSponge.svg', alt: 'RecordSponge logo' },
-    links: <FaGithub />,
-    techStack: 'SOLID, React, Vite, JSDocs, MUI, NPM, ES Lint'
-  },
-  {
-    title: 'PASS',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit repellat saepe vel unde animi nesciunt suscipit iure quas, delectus possimus officiis voluptatum provident voluptates dolores deserunt nemo cum. Quaerat, cupiditate ad eius vel voluptatem sapiente iure sunt magni alias repellat?',
-    status: 'In Development',
-    logo: { image: '/assets/logoPASS.svg', alt: 'RecordSponge logo' },
-    links: <FaEarthAmericas />,
-    techStack: 'SOLID, React, Vite, JSDocs, MUI, NPM, ES Lint'
-  }
-];
+const renderProjectLinks = projectsList.map(({ href, icon, ariaLabel }) => {
+  <IconButton
+    size="large"
+    // onClick={handleLinksClick}
+    sx={{ fontSize: 40 }}
+    color="quinary"
+    // href={links.url}
+    key={href}
+    href={href}
+    ariaLabel={ariaLabel}
+  >
+    {icon}
+  </IconButton>;
+});
 
 const ProjectBox = (e) => {
   const handleLinksClick = () => {
@@ -44,12 +38,11 @@ const ProjectBox = (e) => {
       sx={{
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center',
-        pb: 40
+        alignItems: 'center'
       }}
     >
       <Typography variant="h2">Our Projects</Typography>
-      {projectsGrid.map(({ title, description, status, logo, links, techStack }) => (
+      {projectsList.map(({ title, description, status, logo, links, techStack }) => (
         <Card
           key={title}
           sx={{
@@ -63,24 +56,45 @@ const ProjectBox = (e) => {
           <Grid container spacing={2}>
             <Grid item xs={12} md={6}>
               <CardMedia
-                component="div"
-                sx={{
-                  p: '25%'
-                }}
+                component="img"
+                sx={
+                  {
+                    // p: '25%'
+                  }
+                }
                 image={logo.image ?? null}
                 alt={logo.alt ?? null}
               />
               <CardActions>
                 <Stack direction="row" spacing={{ xs: 1, sm: 2, md: 4 }}>
-                  <IconButton size="large" onClick={handleLinksClick} sx={{ fontSize: 40 }}>
+                  {/*  */}
+                  {renderProjectLinks}
+                  {/*  */}
+                  {/* <IconButton
+                    size="large"
+                    onClick={handleLinksClick}
+                    sx={{ fontSize: 40 }}
+                    color="quinary"
+                    // href={links.url}
+                  >
                     <FaGithub />
                   </IconButton>
-                  <IconButton size="large" onClick={handleLinksClick} sx={{ fontSize: 40 }}>
+                  <IconButton
+                    size="large"
+                    onClick={handleLinksClick}
+                    sx={{ fontSize: 40 }}
+                    color="quinary"
+                  >
                     <FaDiscord />
                   </IconButton>
-                  <IconButton size="large" onClick={handleLinksClick} sx={{ fontSize: 40 }}>
+                  <IconButton
+                    size="large"
+                    onClick={handleLinksClick}
+                    sx={{ fontSize: 40 }}
+                    color="quinary"
+                  >
                     <FaEarthAmericas />
-                  </IconButton>
+                  </IconButton> */}
                 </Stack>
               </CardActions>
             </Grid>
