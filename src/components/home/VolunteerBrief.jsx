@@ -68,7 +68,7 @@ const VolunteerBrief = () => {
         flexDirection: 'column',
         alignItems: 'center',
         textAlign: 'center',
-        width: '100vw',
+        width: '100%',
         my: '40px'
       }}
     >

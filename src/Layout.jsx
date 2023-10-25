@@ -7,20 +7,23 @@ import Navbar from './components/global/Navbar';
 import NoPageFound from './pages/NoPageFound';
 import Projects from './pages/Projects';
 import Volunteer from './pages/Volunteer';
+import { Container } from '@mui/material';
 
 const Layout = () => {
   // any logic needed
   return (
     <>
       <Navbar />
-      <main>
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/volunteer" element={<Volunteer />} />
-          <Route path="*" element={<NoPageFound />} />
-        </Routes>
-      </main>
+      <Container maxWidth="xl">
+        <main>
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/volunteer" element={<Volunteer />} />
+            <Route path="*" element={<NoPageFound />} />
+          </Routes>
+        </main>
+      </Container>
       <Footer />
     </>
   );
