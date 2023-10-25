@@ -9,7 +9,6 @@ import Projects from './pages/Projects';
 import Volunteer from './pages/Volunteer';
 
 const Layout = () => {
-  // any logic needed
   return (
     <>
       <Navbar />
