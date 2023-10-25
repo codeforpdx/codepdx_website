@@ -6,26 +6,12 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Chip from '@mui/material/Chip';
 import Grid from '@mui/material/Grid';
+import Icon from '@mui/material/Icon';
 import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 // Custom Imports
 import projectsList from './projectsList';
-
-const renderProjectLinks = projectsList.map(({ href, icon, ariaLabel }) => {
-  <IconButton
-    size="large"
-    // onClick={handleLinksClick}
-    sx={{ fontSize: 40 }}
-    color="quinary"
-    // href={links.url}
-    key={href}
-    href={href}
-    ariaLabel={ariaLabel}
-  >
-    {icon}
-  </IconButton>;
-});
 
 const ProjectBox = (e) => {
   const handleLinksClick = () => {
@@ -42,7 +28,7 @@ const ProjectBox = (e) => {
       }}
     >
       <Typography variant="h2">Our Projects</Typography>
-      {projectsList.map(({ title, description, status, logo, links, techStack }) => (
+      {projectsList.slice(0, 2).map(({ title, description, status, logo, links, techStack }) => (
         <Card
           key={title}
           sx={{
@@ -50,7 +36,9 @@ const ProjectBox = (e) => {
             mb: 3,
             p: 5,
             background: 'linear-gradient(to bottom, white, lightgrey)',
-            borderRadius: '25px'
+            borderRadius: '25px',
+            minWidth: { xs: '95vw', sm: '80vw' },
+            maxWidth: { sm: '85vw' }
           }}
         >
           <Grid container spacing={2}>
@@ -67,37 +55,24 @@ const ProjectBox = (e) => {
               />
               <CardActions>
                 <Stack direction="row" spacing={{ xs: 1, sm: 2, md: 4 }}>
-                  {/*  */}
-                  {renderProjectLinks}
-                  {/*  */}
-                  {/* <IconButton
-                    size="large"
-                    onClick={handleLinksClick}
-                    sx={{ fontSize: 40 }}
-                    color="quinary"
-                    // href={links.url}
-                  >
-                    <FaGithub />
-                  </IconButton>
-                  <IconButton
-                    size="large"
-                    onClick={handleLinksClick}
-                    sx={{ fontSize: 40 }}
-                    color="quinary"
-                  >
-                    <FaDiscord />
-                  </IconButton>
-                  <IconButton
-                    size="large"
-                    onClick={handleLinksClick}
-                    sx={{ fontSize: 40 }}
-                    color="quinary"
-                  >
-                    <FaEarthAmericas />
-                  </IconButton> */}
+                  {links.map(({ href, icon, ariaLabel }) => (
+                    <IconButton
+                      size="large"
+                      // onClick={handleLinksClick}
+                      // sx={{ fontSize: 40 }}
+                      color="quinary"
+                      key={href}
+                      // href={href}
+                      aria-label={ariaLabel}
+                    >
+                      <Icon>{icon}</Icon>
+                      {/* {icon} */}
+                    </IconButton>
+                  ))}
                 </Stack>
               </CardActions>
             </Grid>
+
             <Grid item xs={12} md={6}>
               <CardContent>
                 <Stack

@@ -8,28 +8,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 // Custom Imports
-// import projectsList from '../projects/projectsList';
-
-const projectsList = [
-  {
-    title: 'RecordSponge',
-    description:
-      "RecordSponge is an app that helps community organizations quickly analyze an individual's criminal history to determine if they qualify to have their records expunged.",
-    logo: { image: '/assets/logoRecordSponge.svg', alt: 'RecordSponge logo' }
-  },
-  {
-    title: 'PASS',
-    description:
-      'PASS is an open source digital wallet for providing home insecure individuals a safe place to store documents within their control. PASS additionally assists caseworkers with processing and providing documents needed to complete the housing assistance application process.',
-    logo: { image: '/assets/logoPASS.svg', alt: 'PASS logo' }
-  },
-  {
-    title: 'CODE PDX',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit repellat saepe vel unde animi nesciunt suscipit iure quas, delectus possimus officiis voluptatum provident voluptates dolores deserunt nemo cum. Quaerat, cupiditate ad eius vel voluptatem sapiente iure sunt magni alias repellat?',
-    logo: { image: '/assets/rose_logo.png', alt: 'CODE PDX logo' }
-  }
-];
+import projectsList from '../projects/projectsList';
 
 const ProjectsBrief = () => {
   return (

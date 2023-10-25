@@ -4,13 +4,15 @@ const projectsList = [
   {
     title: 'RecordSponge',
     description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit repellat saepe vel unde animi nesciunt suscipit iure quas, delectus possimus officiis voluptatum provident voluptates dolores deserunt nemo cum. Quaerat, cupiditate ad eius vel voluptatem sapiente iure sunt magni alias repellat?',
+      "RecordSponge is an app that helps community organizations quickly analyze an individual's criminal history to determine if they qualify to have their records expunged.",
     status: 'Live',
     logo: { image: '/assets/logoRecordSponge.svg', alt: 'RecordSponge logo' },
     links: [
       {
         href: 'https://github.com/codeforpdx/recordexpungPDX',
+        // icon: 'FaGithub',
         // icon: <FaGithub size={45} />,
+        icon: '<FaGithub size={45} />',
         ariaLabel: 'Github link'
       },
       {
@@ -29,7 +31,7 @@ const projectsList = [
   {
     title: 'PASS',
     description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit repellat saepe vel unde animi nesciunt suscipit iure quas, delectus possimus officiis voluptatum provident voluptates dolores deserunt nemo cum. Quaerat, cupiditate ad eius vel voluptatem sapiente iure sunt magni alias repellat?',
+      'PASS is an open source digital wallet for providing home insecure individuals a safe place to store documents within their control. PASS additionally assists caseworkers with processing and providing documents needed to complete the housing assistance application process.',
     status: 'In Development',
     logo: { image: '/assets/logoPASS.svg', alt: 'PASS logo' },
     links: [
@@ -50,6 +52,12 @@ const projectsList = [
       }
     ],
     techStack: 'SOLID, React, Vite, JSDocs, MUI, NPM, ES Lint'
+  },
+  {
+    title: 'CODE PDX',
+    description:
+      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit repellat saepe vel unde animi nesciunt suscipit iure quas, delectus possimus officiis voluptatum provident voluptates dolores deserunt nemo cum. Quaerat, cupiditate ad eius vel voluptatem sapiente iure sunt magni alias repellat?',
+    logo: { image: '/assets/rose_logo.png', alt: 'CODE PDX logo' }
   }
 ];
 
