@@ -68,12 +68,12 @@ const VolunteerBrief = () => {
         flexDirection: 'column',
         alignItems: 'center',
         textAlign: 'center',
-        width: '100vw',
+        width: '100%',
         my: '40px'
       }}
     >
       <Typography variant="h3" component="h2" sx={{ px: '2rem' }}>
-        Volunteer with Us
+        Volunteer With Us
       </Typography>
       <Card
         sx={{
