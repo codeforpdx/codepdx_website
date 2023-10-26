@@ -9,10 +9,9 @@ const logoBlobStyle = {
   left: -30,
   right: 0,
   top: -50,
-  // backgroundSize: 'cover',
+  height: '250px',
   backgroundImage: { md: 'url(/assets/logoBlobNav.svg)', sm: 'none' },
   backgroundRepeat: 'no-repeat',
-  zIndex: 1,
   display: {
     lg: 'flex',
     xs: 'none'
@@ -34,10 +33,24 @@ function NavBar() {
   };
 
   return (
-    <AppBar position="static" color={darkMode ? 'dark' : 'primary'} sx={{ height: '100px' }}>
-      <Box sx={logoBlobStyle}></Box>
-      <Toolbar>
-        <Typography variant="h6">CODE PDX</Typography>
+    <AppBar position="static" color={darkMode ? 'dark' : 'primary'}>
+      <Toolbar sx={{ height: '100px', alignItems: 'center' }}>
+        <Box sx={logoBlobStyle}></Box>
+        <Box
+          component="img"
+          alt="CODE PDX logo"
+          aria-label="Code pdx"
+          zIndex={2}
+          src={'/assets/rose_logo.png'}
+          sx={{
+            width: '75px',
+            mr: '30px',
+            ml: { xs: '0px', sm: '40px', lg: '20px' }
+          }}
+        />
+        <Typography pl={'15px'} flex={1} variant="h4">
+          CODE PDX
+        </Typography>
         <Typography sx={linkStyle} variant="body1" ml={'auto'} marginRight={2}>
           <Link to="/projects">Projects</Link>
         </Typography>
