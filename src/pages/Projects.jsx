@@ -1,18 +1,19 @@
 import Typography from '@mui/material/Typography';
 import Hero from '../components/home/Hero';
 import ProjectBox from '../components/projects/ProjectBox';
+import { Container } from '@mui/material';
 
 const Projects = () => {
-  // any logic needed
   return (
     // either make Hero reusable somehow (and move it to components/global)
     // or use <Box component="img" />
     <>
       <Hero />
       {/* or <Box component="img" /> */}
-      <Typography />
-      <ProjectBox />
-      {/* <ProjectBox /> */}
+      <Container maxWidth="xl">
+        <Typography />
+        <ProjectBox />
+      </Container>
     </>
   );
 };
