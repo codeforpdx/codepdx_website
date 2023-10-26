@@ -25,6 +25,10 @@ const linkStyle = {
   underline: 'hover'
 };
 
+const textStyle = {
+  textDecoration: 'none',
+  color: 'inherit'
+};
 function NavBar() {
   const [darkMode, setDarkMode] = useState(false);
 
@@ -48,14 +52,20 @@ function NavBar() {
             ml: { xs: '0px', sm: '40px', lg: '20px' }
           }}
         />
-        <Typography pl={'15px'} flex={1} variant="h4">
-          CODE PDX
+        <Link to="/" style={textStyle}>
+          <Typography pl={'15px'} flex={1} variant="h4">
+            CODE PDX
+          </Typography>
+        </Link>
+        <Typography variant="body1" ml={'auto'} marginRight={2}>
+          <Link to="/projects" style={textStyle}>
+            Projects
+          </Link>
         </Typography>
-        <Typography sx={linkStyle} variant="body1" ml={'auto'} marginRight={2}>
-          <Link to="/projects">Projects</Link>
-        </Typography>
-        <Typography variant="body1" marginRight={2}>
-          <Link to="/volunteer">Volunteer</Link>
+        <Typography style={textStyle} variant="body1" marginRight={2}>
+          <Link to="/volunteer" style={textStyle}>
+            Volunteer
+          </Link>
         </Typography>
         <IconButton edge="end" color="inherit" onClick={handleThemeChange}>
           {darkMode ? <Brightness7 /> : <Brightness4 />}
