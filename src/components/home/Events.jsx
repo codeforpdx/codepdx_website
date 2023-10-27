@@ -51,7 +51,18 @@ const Events = () => {
         {/* box for calendar */}
         <Grid item xs={12} md={6}>
           {/* will be google calendar */}
-          <Box mt={'40px'} height={'700px'} width={'700px'} bgcolor={'purple'}></Box>
+          <Typography zIndex={1}>I AM GOOBLE CANDLER I MAKE LIFE EASY</Typography>
+          <Box height={'400px'} pb={'100%'} mt={'40px'} width={'100%'} bgcolor={'#FD0E89'}>
+            <Typography
+              variant="h4"
+              display={'flex'}
+              justifyContent={'center'}
+              alignItems={'center'}
+              zIndex={1}
+            >
+              PUT THE GOOGLE IN THE SQUARE
+            </Typography>
+          </Box>
         </Grid>
       </Grid>
     </Container>
