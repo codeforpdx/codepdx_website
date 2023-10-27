@@ -47,11 +47,6 @@ const ProjectsBrief = () => {
             >
               <CardMedia
                 component="img"
-                sx={
-                  {
-                    // p: '25%',
-                  }
-                }
                 image={logo.image ?? null}
                 alt={logo.alt ?? null}
               />

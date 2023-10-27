@@ -15,7 +15,7 @@ import projectsList from './projectsList';
 
 const ProjectBox = (e) => {
   const handleLinksClick = () => {
-    console.log(`${e} CLICKED!`);
+    // Add logic here
   };
 
   return (
@@ -43,30 +43,19 @@ const ProjectBox = (e) => {
         >
           <Grid container spacing={2}>
             <Grid item xs={12} md={6}>
-              <CardMedia
-                component="img"
-                sx={
-                  {
-                    // p: '25%'
-                  }
-                }
-                image={logo.image ?? null}
-                alt={logo.alt ?? null}
-              />
+              <CardMedia component="img" image={logo.image ?? null} alt={logo.alt ?? null} />
               <CardActions>
                 <Stack direction="row" spacing={{ xs: 1, sm: 2, md: 4 }}>
                   {links.map(({ href, icon, ariaLabel }) => (
                     <IconButton
                       size="large"
-                      // onClick={handleLinksClick}
-                      // sx={{ fontSize: 40 }}
+                      onClick={handleLinksClick}
                       color="quinary"
                       key={href}
-                      // href={href}
+                      href={href}
                       aria-label={ariaLabel}
                     >
                       <Icon>{icon}</Icon>
-                      {/* {icon} */}
                     </IconButton>
                   ))}
                 </Stack>
@@ -86,12 +75,12 @@ const ProjectBox = (e) => {
                   <Typography variant="h3">{title ?? null}</Typography>
                   <Chip label={status ?? null} color="quinary" />
                 </Stack>
-                {/* <br /> */}
+                <br />
                 <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
                   Overview
                 </Typography>
                 <Typography variant="body2">{description ?? null}</Typography>
-                {/* <br /> */}
+                <br />
                 <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
                   Technology Used
                 </Typography>
