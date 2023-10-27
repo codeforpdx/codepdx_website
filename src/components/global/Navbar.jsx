@@ -10,8 +10,9 @@ import {
   Typography
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import { Brightness4, Brightness7 } from '@mui/icons-material';
-import { BrowserRouter as Route, Link } from 'react-router-dom';
+import Brightness3Icon from '@mui/icons-material/Brightness3';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
+import { Link } from 'react-router-dom';
 import { useState, useRef } from 'react';
 
 const logoBlobStyle = {
@@ -23,10 +24,7 @@ const logoBlobStyle = {
   height: '250px',
   backgroundImage: { md: 'url(/assets/logoBlobNav.svg)', sm: 'none' },
   backgroundRepeat: 'no-repeat',
-  display: {
-    lg: 'flex',
-    xs: 'none'
-  },
+
   maxWidth: '200px'
 };
 
@@ -47,7 +45,7 @@ function NavBar() {
   };
 
   const handleToggle = () => {
-    setMenuOpen((prevOpen) => !prevOpen);
+    setMenuOpen(!menuOpen);
   };
 
   const handleClose = () => {
@@ -80,12 +78,12 @@ function NavBar() {
             src={'/assets/rose_logo.png'}
             sx={{
               width: '75px',
-              mr: '30px',
+              mr: { xs: '0px', md: '30px' },
               ml: { xs: '0px', sm: '30px', lg: '20px' }
             }}
           />
         </Link>
-        <Typography variant="h4" display={{ xs: 'none', sm: 'block' }} pl={'15px'}>
+        <Typography component="h1" variant="h4" display={{ xs: 'none', sm: 'block' }} pl={'10px'}>
           <Link to="/" style={textStyle} aria-label="Home">
             CODE PDX
           </Link>
@@ -122,7 +120,7 @@ function NavBar() {
           </IconButton>
         </Hidden>
         <IconButton edge="end" color="inherit" onClick={handleThemeChange}>
-          {darkMode ? <Brightness7 /> : <Brightness4 />}
+          {darkMode ? <Brightness3Icon /> : <Brightness7Icon />}
         </IconButton>
         <Popover
           open={menuOpen}
