@@ -75,6 +75,7 @@ function NavBar() {
         <Link to="/" style={textStyle} aria-label="Home">
           <Box
             component="img"
+            position="relative"
             alt="CODE PDX logo"
             src={'/assets/rose_logo.png'}
             sx={{
