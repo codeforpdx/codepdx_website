@@ -22,17 +22,22 @@ const logoBlobStyle = {
   right: 0,
   top: -50,
   height: '250px',
-  backgroundImage: { md: 'url(/assets/logoBlobNav.svg)', sm: 'none' },
+  backgroundImage: 'url(/assets/logoBlobNav.svg)',
   backgroundRepeat: 'no-repeat',
-
   maxWidth: '200px'
 };
 
-const textStyle = {
+const navTextStyle = {
   textDecoration: 'none',
   color: 'inherit'
 };
 
+const menuTextStyle = {
+  textDecoration: 'none',
+  color: 'inherit',
+  justifyContent: 'center',
+  pb: '10px'
+};
 function NavBar() {
   const [darkMode, setDarkMode] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -54,23 +59,23 @@ function NavBar() {
 
   const menuItems = (
     <List>
-      <ListItem component={Link} to="/" onClick={handleClose}>
+      <ListItem sx={menuTextStyle} component={Link} to="/" onClick={handleClose}>
         Home
       </ListItem>
-      <ListItem component={Link} to="/projects" onClick={handleClose}>
+      <ListItem sx={menuTextStyle} component={Link} to="/projects" onClick={handleClose}>
         Projects
       </ListItem>
-      <ListItem component={Link} to="/volunteer" onClick={handleClose}>
+      <ListItem sx={menuTextStyle} component={Link} to="/volunteer" onClick={handleClose}>
         Volunteer
       </ListItem>
     </List>
   );
 
   return (
-    <AppBar position="static" color={darkMode ? 'dark' : 'primary'}>
+    <AppBar component="nav" position="static" color={darkMode ? 'dark' : 'primary'}>
       <Toolbar sx={{ height: '100px', alignItems: 'center' }}>
-        <Box sx={logoBlobStyle}></Box>
-        <Link to="/" style={textStyle} aria-label="Home">
+        <Box sx={logoBlobStyle} display={{ xs: 'none', md: 'block' }} />
+        <Link to="/" style={navTextStyle} aria-label="Home">
           <Box
             component="img"
             position="relative"
@@ -79,12 +84,12 @@ function NavBar() {
             sx={{
               width: '75px',
               mr: { xs: '0px', md: '30px' },
-              ml: { xs: '0px', sm: '30px', lg: '20px' }
+              ml: { xs: '0px', md: '30px' }
             }}
           />
         </Link>
         <Typography component="h1" variant="h4" display={{ xs: 'none', sm: 'block' }} pl={'10px'}>
-          <Link to="/" style={textStyle} aria-label="Home">
+          <Link to="/" style={navTextStyle} aria-label="Home">
             CODE PDX
           </Link>
         </Typography>
@@ -96,12 +101,12 @@ function NavBar() {
           display={{ xs: 'none', sm: 'block' }}
           marginRight={2}
         >
-          <Link to="/projects" style={textStyle} aria-label="Projects">
+          <Link to="/projects" style={navTextStyle} aria-label="Projects">
             Projects
           </Link>
         </Typography>
         <Typography variant="body1" display={{ xs: 'none', sm: 'block' }} marginRight={2}>
-          <Link to="/volunteer" style={textStyle} aria-label="Volunteer">
+          <Link to="/volunteer" style={navTextStyle} aria-label="Volunteer">
             Volunteer
           </Link>
         </Typography>
@@ -109,7 +114,7 @@ function NavBar() {
         {/* Hamburger menu for smaller viewports */}
         <Hidden smUp>
           <IconButton
-            sx={{ ml: 'auto' }}
+            sx={{ ml: 'auto', mr: 1 }}
             edge="end"
             color="inherit"
             aria-label="menu"
@@ -126,6 +131,13 @@ function NavBar() {
           open={menuOpen}
           anchorEl={anchorRef.current}
           onClose={handleClose}
+          // still need to fix this part.
+          PaperProps={{
+            style: {
+              width: '100%',
+              maxWidth: '100%'
+            }
+          }}
           anchorOrigin={{
             vertical: 'bottom',
             horizontal: 'center'
