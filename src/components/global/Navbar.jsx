@@ -33,12 +33,10 @@ const navTextStyle = {
   textDecoration: 'none',
   color: 'inherit',
   justifyContent: 'center',
-  pb: '20px',
   '&:hover': {
-    transform: 'scale(1.2), 0.3s',
+    transform: 'scale(1.2)',
     textDecoration: 'underline',
-    transition: ' transform 0.3s, textDecoration 0.3s',
-    backgroundColor: '#56B6A'
+    transition: ' transform 0.3s, textDecoration 0.3s'
   }
 };
 
@@ -152,7 +150,7 @@ function NavBar() {
           />
         </Link>
         <Typography component="h1" variant="h4" display={{ xs: 'none', sm: 'block' }} pl={'10px'}>
-          <Link to="/" style={navTextStyle} aria-label="Home" underline="hover">
+          <Link to="/" style={navTextStyle} aria-label="Home">
             CODE PDX
           </Link>
         </Typography>
@@ -163,12 +161,18 @@ function NavBar() {
           ml={'auto'}
           display={{ xs: 'none', sm: 'block' }}
           marginRight={2}
+          sx={navTextStyle}
         >
-          <Link to="/projects" style={navTextStyle} aria-label="Our Projects" underline="hover">
+          <Link to="/projects" style={navTextStyle} aria-label="Our Projects">
             Projects
           </Link>
         </Typography>
-        <Typography variant="body1" display={{ xs: 'none', sm: 'block' }} marginRight={2}>
+        <Typography
+          variant="body1"
+          display={{ xs: 'none', sm: 'block' }}
+          marginRight={2}
+          sx={navTextStyle}
+        >
           <Link to="/volunteer" style={navTextStyle} aria-label="Volunteer for code pdx">
             Volunteer
           </Link>
