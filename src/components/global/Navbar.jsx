@@ -1,19 +1,17 @@
-import {
-  AppBar,
-  Box,
-  Hidden,
-  IconButton,
-  List,
-  ListItem,
-  Popover,
-  Toolbar,
-  Typography
-} from '@mui/material';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import MenuIcon from '@mui/icons-material/Menu';
-import { styled } from '@mui/material/styles';
 import Grow from '@mui/material/Grow';
+import Hidden from '@mui/material/Hidden';
+import IconButton from '@mui/material/IconButton';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import MenuIcon from '@mui/icons-material/Menu';
+import Popover from '@mui/material/Popover';
+import Toolbar from '@mui/material/Toolbar';
 import Switch from '@mui/material/Switch';
+import Typography from '@mui/material/Typography';
+import { styled } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
 import { useState, useRef } from 'react';
 
