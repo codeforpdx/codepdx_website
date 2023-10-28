@@ -1,42 +1,42 @@
 import { Container, Grid, Typography, Paper, Box } from '@mui/material';
 
-const paperStyle = {
-  mb: '40px',
-  borderRadius: '40px'
+const leftSidePaperStyles = {
+  elevation: 3,
+  sx: {
+    mr: '20%',
+    mb: '40px',
+    borderRadius: '30px'
+  }
 };
 
 const Events = () => {
   return (
     <Container maxWidth={false}>
       <Grid pb={'40px'} container spacing={3} alignItems={'center'}>
-        {/* box for text */}
         <Grid item xs={12} md={6}>
-          {/* <Grid item xs={12} md={6}>
-            Upcoming Events
-          </Grid> */}
           <Typography pb={'40px'} variant="h4" align="center" gutterBottom>
             Upcoming Events
           </Typography>
-          <Paper elevation={3} sx={{ mr: '20%', mb: '40px', borderRadius: '40px' }}>
+          <Paper {...leftSidePaperStyles}>
             <Box p={2}>
               <Typography>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab consequuntur, officiis
-                quis quasi voluptatem obcaecati ut reiciendis corporis. Doloremque laboriosam esse
-                ea dolore iusto. A cum veritatis ex sequi soluta?.
+                CODE PDX meets up in-person once a month for a project demo night and onboarding
+                event. We also occasionally do social meetups.
+                <br></br>
+                <br></br>not sure if we need three boxes. I Need to find more content to put here or
+                remove a bubble and maybe toss in a blob since this will be mid page.
               </Typography>
             </Box>
           </Paper>
-          <Paper elevation={3} sx={{ ml: '20%', mb: '40px', borderRadius: '40px' }}>
+          <Paper elevation={3} sx={{ ml: '20%', mb: '40px', borderRadius: '30px' }}>
             <Box p={2}>
               <Typography>
-                blah blah blah Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptatibus, et eius. Repudiandae quidem cum harum fugiat. Hic, molestias obcaecati
-                officiis minima atque laboriosam expedita dolorem, maiores voluptatum repellendus
-                repellat pariatur.
+                Individual projects often meet online weekly with schedules being determined per
+                group. Additionally there is a biweekly in person work session once a month.
               </Typography>
             </Box>
           </Paper>
-          <Paper elevation={3} sx={{ mr: '20%', mb: '40px', borderRadius: '40px' }}>
+          <Paper {...leftSidePaperStyles}>
             <Box p={2}>
               <Typography>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea delectus error expedita
@@ -50,7 +50,7 @@ const Events = () => {
         </Grid>
         {/* box for calendar */}
         <Grid item xs={12} md={6}>
-          {/* will be google calendar */}
+          {/* will be google calendar I promise*/}
           <Typography zIndex={1}>I AM GOOBLE CANDLER I MAKE LIFE EASY</Typography>
           <Box height={'400px'} pb={'100%'} mt={'40px'} width={'100%'} bgcolor={'#FD0E89'}>
             <Typography
