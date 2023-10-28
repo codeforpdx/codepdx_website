@@ -1,7 +1,5 @@
 import { useState } from 'react';
-
 // React Router Imports
-
 import { BrowserRouter } from 'react-router-dom';
 // Material UI Imports
 import { ThemeProvider } from '@mui/material/styles';
