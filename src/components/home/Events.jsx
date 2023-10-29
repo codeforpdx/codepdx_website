@@ -9,7 +9,8 @@ const leftSidePaperStyles = {
   sx: {
     mr: '20%',
     mb: '40px',
-    borderRadius: '30px'
+    borderRadius: '30px',
+    background: '#d9d9d9'
   }
 };
 
@@ -18,38 +19,35 @@ const Events = () => {
     <Container maxWidth={false}>
       <Grid pb={'40px'} container spacing={3} alignItems={'center'}>
         <Grid item xs={12} md={6}>
-          <Typography pb={'40px'} variant="h4" align="center" gutterBottom>
+          <Typography component="h2" pb={'40px'} variant="h3" align="center" gutterBottom>
             Upcoming Events
           </Typography>
           <Paper {...leftSidePaperStyles}>
-            <Box p={2}>
-              <Typography>
-                CODE PDX meets up in-person once a month for a project demo night and onboarding
-                event. We also occasionally do social meetups.
-                <br></br>
-                <br></br>not sure if we need three boxes. I Need to find more content to put here or
-                remove a bubble and maybe toss in a blob since this will be mid page.
-              </Typography>
-            </Box>
+            <Typography p={2}>
+              CODE PDX meets up in-person once a month for a project demo night and onboarding
+              event. We also occasionally do social meetups.
+              <br></br>
+              <br></br>not sure if we need three boxes. I Need to find more content to put here or
+              remove a bubble and maybe toss in a blob since this will be mid page.
+            </Typography>
           </Paper>
-          <Paper elevation={3} sx={{ ml: '20%', mb: '40px', borderRadius: '30px' }}>
-            <Box p={2}>
-              <Typography>
-                Individual projects often meet online weekly with schedules being determined per
-                group. Additionally there is a biweekly in person work session once a month.
-              </Typography>
-            </Box>
+          <Paper
+            elevation={3}
+            sx={{ ml: '20%', mb: '40px', borderRadius: '30px', background: '#d9d9d9' }}
+          >
+            <Typography p={2}>
+              Individual projects often meet online weekly with schedules being determined per
+              group. Additionally there is a biweekly in person work session once a month.
+            </Typography>
           </Paper>
           <Paper {...leftSidePaperStyles}>
-            <Box p={2}>
-              <Typography>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea delectus error expedita
-                voluptates? Commodi nam proasdasdasdasddasd asd asvident velit quidem nostrum !
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur vero hic a
-                voluptate ratione perferendis numquam quis eius laboriosam fugiat! Laboriosam velit
-                magni tenetur pariatur blanditiis soluta sapiente ratione dolorum.
-              </Typography>
-            </Box>
+            <Typography p={2}>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea delectus error expedita
+              voluptates? Commodi nam proasdasdasdasddasd asd asvident velit quidem nostrum ! Lorem
+              ipsum dolor sit amet consectetur adipisicing elit. Consectetur vero hic a voluptate
+              ratione perferendis numquam quis eius laboriosam fugiat! Laboriosam velit magni
+              tenetur pariatur blanditiis soluta sapiente ratione dolorum.
+            </Typography>
           </Paper>
         </Grid>
         {/* box for calendar */}
