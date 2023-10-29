@@ -13,7 +13,7 @@ import Typography from '@mui/material/Typography';
 // Custom Imports
 import projectsList from './projectsList';
 
-const ProjectBox = (e) => {
+const ProjectBox = () => {
   const handleLinksClick = () => {
     // Add logic here
   };

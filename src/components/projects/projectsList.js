@@ -1,4 +1,4 @@
-import { FaDiscord, FaEarthAmericas, FaGithub } from 'react-icons/fa6';
+// import { FaDiscord, FaEarthAmericas, FaGithub } from 'react-icons/fa6';
 
 const projectsList = [
   {
