@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 const heroBackground = {
   width: '100%',
   height: { xs: '35vh', md: '70vh' },
-  backgroundImage: `linear-gradient(to top, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3)), url(/assets/stJohnsBridge.png)`,
+  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/stJohnsBridge.png)`,
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat'
@@ -23,6 +23,7 @@ const heroContainer = {
 
 const h1Style = {
   fontWeight: '400',
+  color: '#ffff',
   textShadow: '0px 4px 4px #0000004D',
   lineHeight: { xs: '45px', md: '80px' },
   flexBasis: { xs: '100px', md: '160px' },
