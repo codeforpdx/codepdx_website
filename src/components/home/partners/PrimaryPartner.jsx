@@ -26,15 +26,15 @@ const sponsorValues = [
   }
 ];
 
-const displaySponsorValuesInGrid = (value, index) => {
+const displaySponsorValuesInGrid = ({ title, description }) => {
   return (
-    <Grid value xs={6} key={index}>
-      <Typography variant="body1" p={'0 10% 18% 15%'}>
-        <Typography variant="body1" pb={'6%'}>
-          {value.title}
+    <Grid item xs={12} sm={6} key={title}>
+      <Box p={'0 6% 10% 6%'}>
+        <Typography tex variant="body1" pb={'6%'}>
+          <strong>{title}</strong>
         </Typography>
-        <Typography variant="body1">{value.description}</Typography>
-      </Typography>
+        <Typography variant="body1">{description}</Typography>
+      </Box>
     </Grid>
   );
 };
