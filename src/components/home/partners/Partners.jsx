@@ -1,8 +1,8 @@
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 import PrimaryPartner from './PrimaryPartner';
 import SecondaryPartner from './SecondaryPartner';
 import CallToAction from './CallToAction';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 
 const Partners = () => {
   return (
@@ -11,7 +11,7 @@ const Partners = () => {
         <Typography
           component={'h2'}
           variant="h3"
-          padding={{ sm: '50px 0 150px 0', md: '50px 3rem 150px 3rem' }}
+          padding={{ xs: '50px 0 100px 0', md: '50px 50px 150px 50px' }}
           display={'flex'}
           textAlign={'center'}
         >
@@ -26,5 +26,4 @@ const Partners = () => {
     </>
   );
 };
-console.log('working');
 export default Partners;
