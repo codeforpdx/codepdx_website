@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 
 const CallToAction = () => {
   return (
-    <Container maxWidth="xl" sx={{ pt: '100px', pb: '100px' }}>
+    <Container maxWidth="xl" sx={{ pt: '50px', pb: '100px' }}>
       <Grid container spacing={1} alignItems="center">
         <Grid item xs={12} md={8}>
           <Typography variant="h4" pb={'2rem'}>
@@ -21,6 +21,10 @@ const CallToAction = () => {
               mt: {
                 xs: '50px',
                 md: '0'
+              },
+              mr: {
+                xs: '0px',
+                md: '25%'
               }
             }}
             variant="contained"
