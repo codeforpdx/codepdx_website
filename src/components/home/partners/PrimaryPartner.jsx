@@ -23,6 +23,7 @@ const PrimaryPartner = () => {
         display={'flex'}
         maxWidth={'100%'}
         m={'0 auto 100px auto'}
+        alt="technology association of oregon logo"
         src={'/assets/TAOLogo.png'}
       />
       <Typography
@@ -43,16 +44,16 @@ const PrimaryPartner = () => {
         <Box sx={sponsorValues}>
           {/* top 2 values */}
           <Typography variant="body1" sx={{ mr: '30%' }}>
-            Advocacy
-            <br />
-            <br />
+            <Typography variant="body1" pb={'5%'}>
+              Advocacy
+            </Typography>
             We amplify your voice and bridge industry and government to drive policies that ensure
             the growth and success of the region's tech industry.
           </Typography>
           <Typography variant="body1">
-            Community
-            <br />
-            <br />
+            <Typography variant="body1" pb={'5%'}>
+              Community
+            </Typography>
             We bring the regional tech community together through in-person and online events to
             deepen relationships and build meaningful connections.
           </Typography>
@@ -60,16 +61,16 @@ const PrimaryPartner = () => {
         {/* bottom 2 values */}
         <Box sx={sponsorValues}>
           <Typography variant="body1" sx={{ mr: '22%' }}>
-            Visibility
-            <br />
-            <br />
+            <Typography variant="body1" pb={'5%'}>
+              Visibility
+            </Typography>
             We shine a spotlight on the companies and people that power the region’s innovation
             economy and leverage our platform to promote the local tech sector.
           </Typography>
           <Typography variant="body1">
-            Resources
-            <br />
-            <br />
+            <Typography variant="body1" pb={'5%'}>
+              Resources
+            </Typography>
             We connect our members to resources to help their businesses grow and succeed through
             public and private sector partnerships.
           </Typography>
