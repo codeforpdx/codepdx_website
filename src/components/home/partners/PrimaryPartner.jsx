@@ -1,11 +1,23 @@
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
 
+const sponsorValues = {
+  display: 'flex',
+  alignContent: 'center',
+  justifyContent: 'space-between',
+  height: '50%'
+};
 const PrimaryPartner = () => {
   return (
-    <Container>
+    <Container
+      sx={{
+        mb: '100px',
+        borderRadius: '40px',
+        background:
+          'linear-gradient(180deg, rgba(217, 217, 217, 0) 24.86%, rgba(217, 217, 217, 0.4) 104.55%)'
+      }}
+    >
       <Box
         component="img"
         display={'flex'}
@@ -24,16 +36,19 @@ const PrimaryPartner = () => {
       </Typography>
       <Box
         sx={{
-          width: '80%',
-          height: '800px',
-          display: 'flex',
-          margin: 'auto',
-          mb: '100px',
-          borderRadius: '40px',
-          background:
-            'linear-gradient(180deg, rgba(217, 217, 217, 0) 24.86%, rgba(217, 217, 217, 0.4) 104.55%)'
+          height: '400px',
+          mb: '100px'
         }}
-      ></Box>
+      >
+        <Box sx={sponsorValues}>
+          <Typography>blah blah</Typography>
+          <Typography>blah blah</Typography>
+        </Box>
+        <Box sx={sponsorValues}>
+          <Typography>blah blah</Typography>
+          <Typography>blah blah</Typography>
+        </Box>
+      </Box>
     </Container>
   );
 };
