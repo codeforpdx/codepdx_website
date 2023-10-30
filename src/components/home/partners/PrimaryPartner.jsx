@@ -29,7 +29,7 @@ const sponsorValues = [
 const displaySponsorValuesInGrid = (value, index) => {
   return (
     <Grid value xs={6} key={index}>
-      <Typography variant="body1" pb={'18%'}>
+      <Typography variant="body1" p={'0 10% 18% 15%'}>
         <Typography variant="body1" pb={'6%'}>
           {value.title}
         </Typography>
