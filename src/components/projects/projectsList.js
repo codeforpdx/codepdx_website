@@ -1,28 +1,29 @@
-// import { FaDiscord, FaEarthAmericas, FaGithub } from 'react-icons/fa6';
+import { FaDiscord, FaEarthAmericas, FaGithub } from 'react-icons/fa6';
 
 const projectsList = [
   {
     title: 'RecordSponge',
+    backgroundStyle: 'linear-gradient(to bottom, white, lightgrey)',
     description:
       "RecordSponge is an app that helps community organizations quickly analyze an individual's criminal history to determine if they qualify to have their records expunged.",
-    status: 'Live',
+    status: { statusText: 'Live', statusColor: 'success' },
     logo: { image: '/assets/logoRecordSponge.svg', alt: 'RecordSponge logo' },
     links: [
       {
         href: 'https://github.com/codeforpdx/recordexpungPDX',
-        // icon: 'FaGithub',
+        icon: 'FaGithub',
         // icon: <FaGithub size={45} />,
-        icon: '<FaGithub size={45} />',
+        // icon: '<FaGithub size={45} />',
         ariaLabel: 'Github link'
       },
       {
         href: 'https://discord.gg/x6b573et',
-        // icon: <FaDiscord size={45} />,
+        icon: '<FaDiscord size={45} />',
         ariaLabel: 'Discord link'
       },
       {
         href: 'https://codeforpdx.github.io/recordexpungPDX',
-        // icon: <FaEarthAmericas size={45} />,
+        icon: '<FaEarthAmericas size={45} />',
         ariaLabel: 'Deployed link'
       }
     ],
@@ -30,24 +31,25 @@ const projectsList = [
   },
   {
     title: 'PASS',
+    backgroundStyle: 'linear-gradient(to left, white, lightgrey)',
     description:
       'PASS is an open source digital wallet for providing home insecure individuals a safe place to store documents within their control. PASS additionally assists caseworkers with processing and providing documents needed to complete the housing assistance application process.',
-    status: 'In Development',
+    status: { statusText: 'In Development', statusColor: 'error' },
     logo: { image: '/assets/logoPASS.svg', alt: 'PASS logo' },
     links: [
       {
         href: 'https://github.com/codeforpdx/PASS',
-        // icon: <FaGithub size={45} />,
+        icon: `<FaGithub size={45} />`,
         ariaLabel: 'Github link'
       },
       {
         href: 'https://discord.gg/x6b573et',
-        // icon: <FaDiscord size={45} />,
+        icon: `<FaDiscord size={45} />`,
         ariaLabel: 'Discord link'
       },
       {
         href: 'https://passsmartwallet-967e217a2652.herokuapp.com/',
-        // icon: <FaEarthAmericas size={45} />,
+        icon: `<FaEarthAmericas size={45} />`,
         ariaLabel: 'Deployed link'
       }
     ],

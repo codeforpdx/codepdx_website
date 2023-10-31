@@ -16,6 +16,7 @@ import projectsList from './projectsList';
 const ProjectBox = () => {
   const handleLinksClick = () => {
     // Add logic here
+    console.log('CLICK');
   };
 
   return (
@@ -28,68 +29,79 @@ const ProjectBox = () => {
       }}
     >
       <Typography variant="h2">Our Projects</Typography>
-      {projectsList.slice(0, 2).map(({ title, description, status, logo, links, techStack }) => (
-        <Card
-          key={title}
-          sx={{
-            mx: 10,
-            mb: 3,
-            p: 5,
-            background: 'linear-gradient(to bottom, white, lightgrey)',
-            borderRadius: '25px',
-            minWidth: { xs: '95vw', sm: '80vw' },
-            maxWidth: { sm: '85vw' }
-          }}
-        >
-          <Grid container spacing={2}>
-            <Grid item xs={12} md={6}>
-              <CardMedia component="img" image={logo.image ?? null} alt={logo.alt ?? null} />
-              <CardActions>
-                <Stack direction="row" spacing={{ xs: 1, sm: 2, md: 4 }}>
+      {/* {console.log(projectsList)} */}
+      {projectsList
+        .slice(0, 2)
+        .map(({ title, backgroundStyle, description, status, logo, links, techStack }) => (
+          <Box
+            key={title}
+            sx={{
+              mx: 10,
+              mb: 3,
+              p: 5,
+              background: backgroundStyle,
+              borderRadius: '25px',
+              minWidth: { xs: '95vw', sm: '80vw' },
+              maxWidth: { sm: '85vw' }
+            }}
+          >
+            <Grid
+              container
+              spacing={2}
+              // sx={{}}
+            >
+              <Grid item xs={12} md={6}>
+                <CardMedia component="img" image={logo.image ?? null} alt={logo.alt ?? null} />
+                <Stack
+                  direction="row"
+                  justifyContent="space-evenly"
+                  alignItems="center"
+                  // spacing={{ xs: 1, sm: 2, md: 4 }}
+                  sx={{ pt: 5 }}
+                >
                   {links.map(({ href, icon, ariaLabel }) => (
                     <IconButton
                       size="large"
                       onClick={handleLinksClick}
                       color="quinary"
                       key={href}
-                      href={href}
-                      aria-label={ariaLabel}
+                      // href={href}
+                      // aria-label={ariaLabel}
                     >
-                      <Icon>{icon}</Icon>
+                      <Icon href={href} aria-label={ariaLabel}>
+                        {icon}
+                      </Icon>
                     </IconButton>
                   ))}
                 </Stack>
-              </CardActions>
-            </Grid>
+              </Grid>
 
-            <Grid item xs={12} md={6}>
-              <CardContent>
-                <Stack
-                  direction={{ xs: 'column', sm: 'row' }}
-                  spacing={1}
-                  sx={{
-                    alignItems: 'center',
-                    justifyContent: 'space-between'
-                  }}
-                >
-                  <Typography variant="h3">{title ?? null}</Typography>
-                  <Chip label={status ?? null} color="quinary" />
-                </Stack>
-                <br />
-                <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
-                  Overview
-                </Typography>
-                <Typography variant="body2">{description ?? null}</Typography>
-                <br />
-                <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
-                  Technology Used
-                </Typography>
-                <Typography variant="body2">Built with {techStack ?? null}</Typography>
-              </CardContent>
+              <Grid item xs={12} md={6}>
+                <CardContent>
+                  <Stack
+                    direction={{ xs: 'column', sm: 'row' }}
+                    spacing={1}
+                    sx={{
+                      alignItems: 'center',
+                      justifyContent: 'space-between'
+                    }}
+                  >
+                    <Typography variant="h3">{title ?? null}</Typography>
+                    <Chip label={status.statusText ?? null} color={status.statusColor} />
+                  </Stack>
+                  <Typography variant="body1" sx={{ fontWeight: 'bold', my: 1 }}>
+                    Overview
+                  </Typography>
+                  <Typography variant="body2">{description ?? null}</Typography>
+                  <Typography variant="body1" sx={{ fontWeight: 'bold', my: 1 }}>
+                    Technology Used
+                  </Typography>
+                  <Typography variant="body2">Built with {techStack ?? null}</Typography>
+                </CardContent>
+              </Grid>
             </Grid>
-          </Grid>
-        </Card>
-      ))}
+          </Box>
+        ))}
     </Box>
   );
 };
