@@ -1,7 +1,5 @@
 // Material UI Imports
 import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Chip from '@mui/material/Chip';
@@ -16,7 +14,6 @@ import projectsList from './projectsList';
 const ProjectBox = () => {
   const handleLinksClick = () => {
     // Add logic here
-    console.log('CLICK');
   };
 
   return (
@@ -29,7 +26,6 @@ const ProjectBox = () => {
       }}
     >
       <Typography variant="h2">Our Projects</Typography>
-      {/* {console.log(projectsList)} */}
       {projectsList
         .slice(0, 2)
         .map(({ title, backgroundStyle, description, status, logo, links, techStack }) => (
@@ -48,7 +44,6 @@ const ProjectBox = () => {
             <Grid
               container
               spacing={2}
-              // sx={{}}
             >
               <Grid item xs={12} md={6}>
                 <CardMedia component="img" image={logo.image ?? null} alt={logo.alt ?? null} />
@@ -56,7 +51,7 @@ const ProjectBox = () => {
                   direction="row"
                   justifyContent="space-evenly"
                   alignItems="center"
-                  // spacing={{ xs: 1, sm: 2, md: 4 }}
+                  spacing={{ xs: 1, sm: 2, md: 4 }}
                   sx={{ pt: 5 }}
                 >
                   {links.map(({ href, icon, ariaLabel }) => (
@@ -65,8 +60,8 @@ const ProjectBox = () => {
                       onClick={handleLinksClick}
                       color="quinary"
                       key={href}
-                      // href={href}
-                      // aria-label={ariaLabel}
+                      href={href}
+                      aria-label={ariaLabel}
                     >
                       <Icon href={href} aria-label={ariaLabel}>
                         {icon}
