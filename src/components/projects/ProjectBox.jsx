@@ -1,21 +1,37 @@
+// React Router Imports
+import { Link as ReactRouterLink } from 'react-router-dom';
 // Material UI Imports
 import Box from '@mui/material/Box';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Chip from '@mui/material/Chip';
 import Grid from '@mui/material/Grid';
-import Icon from '@mui/material/Icon';
-import IconButton from '@mui/material/IconButton';
+import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 // Custom Imports
 import projectsList from './projectsList';
+import { FaDiscord, FaEarthAmericas, FaGithub } from 'react-icons/fa6';
+
+const projectsListLinks = [
+  {
+    href: 'https://github.com/codeforpdx/recordexpungPDX',
+    icon: <FaGithub size={45} />,
+    ariaLabel: 'Github link'
+  },
+  {
+    href: 'https://discord.gg/x6b573et',
+    icon: <FaDiscord size={45} />,
+    ariaLabel: 'Discord link'
+  },
+  {
+    href: 'https://codeforpdx.github.io/recordexpungPDX',
+    icon: <FaEarthAmericas size={45} />,
+    ariaLabel: 'Deployed link'
+  }
+];
 
 const ProjectBox = () => {
-  const handleLinksClick = () => {
-    // Add logic here
-  };
-
   return (
     <Box
       as="section"
@@ -41,32 +57,34 @@ const ProjectBox = () => {
               maxWidth: { sm: '85vw' }
             }}
           >
-            <Grid
-              container
-              spacing={2}
-            >
+            <Grid container spacing={2}>
               <Grid item xs={12} md={6}>
                 <CardMedia component="img" image={logo.image ?? null} alt={logo.alt ?? null} />
                 <Stack
                   direction="row"
                   justifyContent="space-evenly"
-                  alignItems="center"
-                  spacing={{ xs: 1, sm: 2, md: 4 }}
+                  // alignItems="center"
+                  spacing={{ xs: 0, md: 2 }}
                   sx={{ pt: 5 }}
                 >
-                  {links.map(({ href, icon, ariaLabel }) => (
-                    <IconButton
-                      size="large"
-                      onClick={handleLinksClick}
-                      color="quinary"
+                  {projectsListLinks.map(({ href, icon, ariaLabel }) => (
+                    <Link
+                      component={ReactRouterLink}
                       key={href}
                       href={href}
                       aria-label={ariaLabel}
+                      target="_blank"
+                      rel="noopener"
+                      sx={{
+                        color: '#000',
+                        display: 'flex',
+                        '&:hover': {
+                          color: 'primary.main'
+                        }
+                      }}
                     >
-                      <Icon href={href} aria-label={ariaLabel}>
-                        {icon}
-                      </Icon>
-                    </IconButton>
+                      {icon}
+                    </Link>
                   ))}
                 </Stack>
               </Grid>
