@@ -5,7 +5,7 @@ import CallToAction from './CallToAction';
 
 const Partners = () => {
   return (
-    <>
+    <section>
       <Typography
         component={'h2'}
         variant={'h3'}
@@ -20,7 +20,7 @@ const Partners = () => {
       <SecondaryPartner />
       <SecondaryPartner />
       <CallToAction />
-    </>
+    </section>
   );
 };
 export default Partners;
