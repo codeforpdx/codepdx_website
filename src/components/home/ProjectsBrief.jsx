@@ -10,6 +10,18 @@ import Typography from '@mui/material/Typography';
 // Custom Imports
 import projectsList from '../projects/projectsList';
 
+const cardStyle = {
+  display: 'flex',
+  alignItems: 'center',
+  flexDirection: 'column',
+  mx: 2,
+  p: 4,
+  background: 'lightgrey',
+  borderRadius: '10px',
+  height: '100%',
+  textAlign: 'justify'
+};
+
 const ProjectsBrief = () => {
   return (
     <Box
@@ -27,19 +39,7 @@ const ProjectsBrief = () => {
       <Grid container rowSpacing={3}>
         {projectsList.map(({ title, description, logo }) => (
           <Grid key={title} item xs={12} md={6} lg={4}>
-            <Card
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                flexDirection: 'column',
-                mx: 2,
-                p: 4,
-                background: 'lightgrey',
-                borderRadius: '10px',
-                height: '100%',
-                textAlign: 'justify'
-              }}
-            >
+            <Card sx={{ cardStyle }}>
               <CardMedia
                 component="img"
                 image={logo.image ?? null}
