@@ -56,7 +56,7 @@ const projectsList = [
   {
     title: 'CODE PDX',
     description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit repellat saepe vel unde animi nesciunt suscipit iure quas, delectus possimus officiis voluptatum provident voluptates dolores deserunt nemo cum. Quaerat, cupiditate ad eius vel voluptatem sapiente iure sunt magni alias repellat?',
+      'Code PDX itself is a project that requires constant upkeep and volunteers to maintain.',
     logo: { image: '/assets/rose_logo.png', alt: 'CODE PDX logo' }
   }
 ];
