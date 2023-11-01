@@ -18,7 +18,7 @@ const ProjectsBrief = () => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        m: { xs: 1, sm: 4 }
+        m: { xs: 0, sm: 1 }
       }}
     >
       <Typography variant="h3" component="h2" sx={{ mb: '40px' }}>
@@ -26,29 +26,27 @@ const ProjectsBrief = () => {
       </Typography>
       <Grid container rowSpacing={3}>
         {projectsList.map(({ title, description, logo }) => (
-          <Grid
-            key={title}
-            item
-            xs={12}
-            md={6}
-            lg={4}
-            sx={{
-              textAlign: 'justify'
-            }}
-          >
+          <Grid key={title} item xs={12} md={6} lg={4}>
             <Card
               sx={{
+                display: 'flex',
+                alignItems: 'center',
+                flexDirection: 'column',
                 mx: 2,
                 p: 4,
                 background: 'lightgrey',
                 borderRadius: '10px',
-                height: '100%'
+                height: '100%',
+                textAlign: 'justify'
               }}
             >
               <CardMedia
                 component="img"
                 image={logo.image ?? null}
                 alt={logo.alt ?? null}
+                sx={{
+                  width: title === 'CODE PDX' ? '125px' : '100%'
+                }}
               />
               <CardContent>
                 <Typography variant="body1" sx={{ py: '1rem' }}>
