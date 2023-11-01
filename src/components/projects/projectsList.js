@@ -3,10 +3,10 @@
 const projectsList = [
   {
     title: 'RecordSponge',
-    backgroundStyle: 'linear-gradient(to bottom, white, lightgrey)',
+    // backgroundStyle: 'linear-gradient(to right, white, lightgrey)',
     description:
-      "RecordSponge is an app that helps community organizations quickly analyze an individual's criminal history to determine if they qualify to have their records expunged.",
-    status: { statusText: 'Live', statusColor: 'success' },
+      'Having been utilized by over 10,000 individuals and honored with the 2021 Achievement in Legal Technology Award by the Oregon State Bar, RecordSponge is an innovative tool with proven community impact. Designed to analyze an individuals criminal history and determine their eligibility for record expungement, RecordSponge reduces obstruction of costly legal services and assists in reduction of inequalities within our justice system.',
+    status: 'Live',
     logo: { image: '/assets/logoRecordSponge.svg', alt: 'RecordSponge logo' },
     links: [
       {
@@ -25,14 +25,15 @@ const projectsList = [
         ariaLabel: 'Deployed link'
       }
     ],
-    techStack: 'tbd'
+    techStack:
+      'TypeScript, React, Redux, NPM, Flask, Python, Pytest,  SCSS, CSS, Jinja, Makefile, Docker'
   },
   {
     title: 'PASS',
-    backgroundStyle: 'linear-gradient(to left, white, lightgrey)',
+    // backgroundStyle: 'linear-gradient(to left, white, lightgrey)',
     description:
       'PASS is an open source digital wallet for providing home insecure individuals a safe place to store documents within their control. PASS additionally assists caseworkers with processing and providing documents needed to complete the housing assistance application process.',
-    status: { statusText: 'In Development', statusColor: 'error' },
+    status: 'In Development',
     logo: { image: '/assets/logoPASS.svg', alt: 'PASS logo' },
     links: [
       {

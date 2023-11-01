@@ -41,29 +41,38 @@ const ProjectBox = () => {
         alignItems: 'center'
       }}
     >
-      <Typography variant="h2">Our Projects</Typography>
+      <Typography variant="h2" sx={{ m: 5 }}>
+        Our Projects
+      </Typography>
       {projectsList
         .slice(0, 2)
-        .map(({ title, backgroundStyle, description, status, logo, links, techStack }) => (
+        .map(({ index, title, description, status, logo, links, techStack }) => (
           <Box
             key={title}
             sx={{
               mx: 10,
               mb: 3,
               p: 5,
-              background: backgroundStyle,
+              background:
+                index % 2 === 0
+                  ? 'linear-gradient(90deg, rgba(217, 217, 217, 0) 38.54%, rgba(217, 217, 217, 0.4) 82.29%)'
+                  : 'linear-gradient(270deg, rgba(217, 217, 217, 0) 38.54%, rgba(217, 217, 217, 0.4) 82.29%)',
               borderRadius: '25px',
               minWidth: { xs: '95vw', sm: '80vw' },
               maxWidth: { sm: '85vw' }
             }}
           >
-            <Grid container spacing={2}>
-              <Grid item xs={12} md={6}>
-                <CardMedia component="img" image={logo.image ?? null} alt={logo.alt ?? null} />
+            <Grid container spacing={10}>
+              <Grid item xs={12} md={6} order={{ xs: 1, sm: 2 }}>
+                <CardMedia
+                  component="img"
+                  image={logo.image ?? null}
+                  alt={logo.alt ?? null}
+                  sx={{ pt: 3 }}
+                />
                 <Stack
                   direction="row"
                   justifyContent="space-evenly"
-                  // alignItems="center"
                   spacing={{ xs: 0, md: 2 }}
                   sx={{ pt: 5 }}
                 >
@@ -89,7 +98,7 @@ const ProjectBox = () => {
                 </Stack>
               </Grid>
 
-              <Grid item xs={12} md={6}>
+              <Grid item xs={12} md={6} order={{ xs: 2, sm:1  }}>
                 <CardContent>
                   <Stack
                     direction={{ xs: 'column', sm: 'row' }}
@@ -99,14 +108,21 @@ const ProjectBox = () => {
                       justifyContent: 'space-between'
                     }}
                   >
-                    <Typography variant="h3">{title ?? null}</Typography>
-                    <Chip label={status.statusText ?? null} color={status.statusColor} />
+                    <Typography variant="h4" component="h3">
+                      {title ?? null}
+                    </Typography>
+                    <Chip
+                      label={status ?? null}
+                      color={'primary'}
+                      variant="outlined"
+                      sx={{ backgroundColor: ' #D9D9D9' }}
+                    />
                   </Stack>
-                  <Typography variant="body1" sx={{ fontWeight: 'bold', my: 1 }}>
+                  <Typography variant="body1" sx={{ fontWeight: 'bold', my: 2 }}>
                     Overview
                   </Typography>
                   <Typography variant="body2">{description ?? null}</Typography>
-                  <Typography variant="body1" sx={{ fontWeight: 'bold', my: 1 }}>
+                  <Typography variant="body1" sx={{ fontWeight: 'bold', my: 2 }}>
                     Technology Used
                   </Typography>
                   <Typography variant="body2">Built with {techStack ?? null}</Typography>
