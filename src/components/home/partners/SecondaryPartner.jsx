@@ -40,7 +40,7 @@ const displaySecondaryPartners = ({
         background: gradientStyle,
         borderRadius: '40px',
         minHeight: { xs: 'auto', md: '500px' },
-        marginBottom: '100px',
+        marginBottom: { xs: '50px', md: '100px' },
         flexDirection: { xs: 'column', md: 'row' }
       }}
       key={company}
