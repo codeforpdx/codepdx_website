@@ -29,6 +29,21 @@ const getTheme = (mode) =>
         main: '#1F2725',
         contrastText: '#fff'
       }
+    },
+    // can't get this to work for the StepLabel in VolunteerStepsMobile.jsx
+    components: {
+      MuiStepLabel: {
+        defaultProps: {
+          sx: {
+            color: '#56B6A1'
+          }
+        },
+        styleOverrides: {
+          root: {
+            color: '#56B6A1'
+          }
+        }
+      }
     }
   });
 
