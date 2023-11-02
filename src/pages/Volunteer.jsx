@@ -1,11 +1,18 @@
 // Material UI Imports
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 // Component Imports
 import Hero from '../components/home/Hero';
 import VolunteerSteps from '../components/volunteer/VolunteerSteps.jsx';
+import VolunteerStepsMobile from '../components/volunteer/VolunteerStepsMobile.jsx';
 
 const Volunteer = () => {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
+  const isLargeScreen = useMediaQuery(theme.breakpoints.up('md'));
+
   return (
     // either make Hero reusable somehow (and move it to components/global)
     // or use <Box component="img" />
@@ -17,7 +24,8 @@ const Volunteer = () => {
           Regardless of skillset, background, or physical location, we welcome all to contribute to
           our community.
         </Typography>
-        <VolunteerSteps />
+        {isLargeScreen && <VolunteerSteps />}
+        {isSmallScreen && <VolunteerStepsMobile />}
       </Container>
     </>
   );
