@@ -6,10 +6,21 @@ import Typography from '@mui/material/Typography';
 const heroBackground = {
   width: '100%',
   height: { xs: '35vh', md: '70vh' },
-  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/stJohnsBridge.png)`,
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat'
+};
+
+const homeHeroImage = {
+  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/stJohnsBridge.png)`
+};
+
+const projectsHeroImage = {
+  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/projectsHeroImage.png)`
+};
+
+const volunteerHeroImage = {
+  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/volunteerHeroImage.png)`
 };
 
 const heroContainer = {
@@ -34,6 +45,10 @@ const h1Style = {
   textAlign: 'center'
 };
 
+const h1StyleOverride = {
+  fontSize: '15px'
+};
+
 const contactBtnStyle = {
   textTransform: 'capitalize',
   fontWeight: '200',
@@ -47,22 +62,40 @@ const contactBtnStyle = {
   borderRadius: '5px'
 };
 
-const Hero = () => {
+const Hero = (props) => {
+  let heroImage = {};
+  let heroText = '';
+  switch (props.pageName) {
+    case 'projects':
+      heroImage = projectsHeroImage;
+      heroText = `Our products blend innovation, quality, and user-centric design to meet today's needs and anticipate tomorrow's challenges`;
+      break;
+    case 'volunteer':
+      heroImage = volunteerHeroImage;
+      heroText = `How to Join CODE PDX`;
+      break;
+    default:
+      heroImage = homeHeroImage;
+      heroText = `Bridging Technology and Civil Services`;
+  }
+
   return (
-    <Box sx={heroBackground}>
+    <Box sx={[heroBackground, heroImage]}>
       <Box sx={heroContainer}>
-        <Typography variant="h1" sx={h1Style}>
-          Bridging Technology and Civil Services
+        <Typography variant="h1" sx={[h1Style, h1StyleOverride]}>
+          {heroText}
         </Typography>
-        <Button
-          variant="contained"
-          href="mailto:hugh@codeforpdx.org"
-          target="_blank"
-          rel="noopener"
-          sx={contactBtnStyle}
-        >
-          Contact Us
-        </Button>
+        {props.pageName === 'home' && (
+          <Button
+            variant="contained"
+            href="mailto:hugh@codeforpdx.org"
+            target="_blank"
+            rel="noopener"
+            sx={contactBtnStyle}
+          >
+            Contact Us
+          </Button>
+        )}
       </Box>
     </Box>
   );

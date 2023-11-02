@@ -8,7 +8,7 @@ const Projects = () => {
     // either make Hero reusable somehow (and move it to components/global)
     // or use <Box component="img" />
     <>
-      <Hero />
+      <Hero pageName={'projects'} />
       {/* or <Box component="img" /> */}
       <Container maxWidth="xl">
         <Typography />

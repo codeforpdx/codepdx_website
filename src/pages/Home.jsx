@@ -11,7 +11,7 @@ import Partners from '../components/home/partners/Partners';
 const Home = () => {
   return (
     <>
-      <Hero />
+      <Hero pageName={'home'} />
       <Container maxWidth="xl">
         <About />
         <VolunteerBrief />
