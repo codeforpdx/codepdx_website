@@ -1,15 +1,19 @@
 import PropTypes from 'prop-types';
-// import Typography from '@mui/material/Typography';
+// Material UI Imports
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 
-const Step = ({ children }) => (
-  <>
-    {/* <Typography>{title}</Typography> */}
-    {/* <p>{title}</p> */}
+const Step = ({ title, children }) => (
+  <Box mb={8}>
+    <Typography variant="h5" gutterBottom color="primary">
+      {title}
+    </Typography>
     {children}
-  </>
+  </Box>
 );
 
 Step.propTypes = {
+  title: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired
 };
 

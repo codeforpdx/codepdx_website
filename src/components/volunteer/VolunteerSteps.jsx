@@ -9,57 +9,54 @@ const VolunteerSteps = () => {
     <Stack direction="row" minWidth="100%" spacing={4} my={8}>
       {/* left column */}
       <Stack maxWidth="33%">
-        {/* <Step title="Step 1: Self Onboarding & Initial Contact"> */}
-        <Typography>Step 1: Self Onboarding & Initial Contact</Typography>
-        <Typography>Get familiar with CODE PDX</Typography>
-        <ol>
-          <li>
-            Read our <a>Code of Conduct</a>
-          </li>
-          <li>
-            Complete our <a>onboarding form</a>
-          </li>
-          <li>
-            Review our <a>current projects</a>
-          </li>
-          <li>
-            Read the <a>ADA Compliance Guide</a>, all CODE PDX projects are inclusive by design
-          </li>
-          <li>
-            Join a project demo night & onboarding session listed on <a>meetup</a> and the{' '}
-            <a>events calendar</a>
-          </li>
-        </ol>
-        {/* </Step> */}
-        {/* <Step title="Step 3: Choose a Role & Adopt Our Standards"> */}
-        <Typography>Step 3: Choose a Role & Adopt Our Standards</Typography>
-        <ul>
-          <li>
-            After seeing what we are up to, reach out to members of a project to connect with the
-            team to let them know how you would like to contribute. You can find active members by
-            seeing who recently contributed to a repository or the recent discord chat history of a
-            project.
-          </li>
-          <li>
-            The GitHub repository is a good place to see whats going on and active within CODE PDX
-            and contains a writeup of our contribution guidelines that we follow to standardize our
-            workflow.
-          </li>
-        </ul>
-        {/* </Step> */}
-        {/* <Step title="Additional Onboarding Info"> */}
-        <Typography>Additional Onboarding Info</Typography>
-        <ul>
-          <li>All of these steps can be completed remotely or at an in person event.</li>
-          <li>
-            We invite people to contribute to CODE PDX regardless of skill set or skill level.
-          </li>
-          <li>
-            When in doubt, proactively reach out in the Discord text channels. They are frequently
-            checked by members and will likely yield a swift response.
-          </li>
-        </ul>
-        {/* </Step> */}
+        <Step title="Step 1: Self Onboarding & Initial Contact">
+          <Typography variant="h6">Get familiar with CODE PDX</Typography>
+          <ol>
+            <li>
+              Read our <a>Code of Conduct</a>
+            </li>
+            <li>
+              Complete our <a>onboarding form</a>
+            </li>
+            <li>
+              Review our <a>current projects</a>
+            </li>
+            <li>
+              Read the <a>ADA Compliance Guide</a>, all CODE PDX projects are inclusive by design
+            </li>
+            <li>
+              Join a project demo night & onboarding session listed on <a>meetup</a> and the{' '}
+              <a>events calendar</a>
+            </li>
+          </ol>
+        </Step>
+        <Step title="Step 3: Choose a Role & Adopt Our Standards">
+          <ul>
+            <li>
+              After seeing what we are up to, reach out to members of a project to connect with the
+              team to let them know how you would like to contribute. You can find active members by
+              seeing who recently contributed to a repository or the recent discord chat history of
+              a project.
+            </li>
+            <li>
+              The GitHub repository is a good place to see whats going on and active within CODE PDX
+              and contains a writeup of our contribution guidelines that we follow to standardize
+              our workflow.
+            </li>
+          </ul>
+        </Step>
+        <Step title="Additional Onboarding Info">
+          <ul>
+            <li>All of these steps can be completed remotely or at an in person event.</li>
+            <li>
+              We invite people to contribute to CODE PDX regardless of skill set or skill level.
+            </li>
+            <li>
+              When in doubt, proactively reach out in the Discord text channels. They are frequently
+              checked by members and will likely yield a swift response.
+            </li>
+          </ul>
+        </Step>
       </Stack>
 
       {/* middle column */}
@@ -97,45 +94,47 @@ const VolunteerSteps = () => {
       </svg>
 
       {/* right column */}
-      <Stack maxWidth="33%">
-        {/* <Step title="Step 2: Connect on Discord and Request Access"> */}
-        <Typography>Step 2: Connect on Discord and Request Access</Typography>
-        <Typography>CODE PDX uses Discord for a communication hub.</Typography>
-        <ol>
-          <li>
-            Join the <a>CODE PDX Discord server</a> and self assign roles. These roles will display
-            project channels and help others identify the roles you intend to fulfill.{' '}
-          </li>
-          <li>
-            Introduce yourself in the <code>#introductions</code> channel, this is a good way to
-            network with current members.
-          </li>
-          <li>
-            Request GitHub access in the <code>#github-access-request</code> channel.
-          </li>
-          <li>Request project specific access to Google Drive and other project content.</li>
-        </ol>
-        <Typography mb={2}>
-          If you are new to discord, they have a beginners users guide on their website{' '}
-          <a>
-            https://support.discord.com/hc/en-us/articles/360045138571-Beginner-s-Guide-to-Discord
-          </a>
-        </Typography>
-        {/* </Step> */}
-        {/* <Step title="Step 4: Contribute!"> */}
-        <Typography>Step 4: Contribute!</Typography>
-        <ul>
-          <li>
-            Find your first issue to work on from the GitHub repo of the project of your choice.
-            Check out our <a>Wiki</a> for guidance on picking your first issue.
-          </li>
-          <li>Create a branch for your issue or feature and collaborate with other members.</li>
-          <li>
-            Create a pull request off of our GitHub template, and submit fore review. Pull requests
-            require at least one other person to review & approve before merging.
-          </li>
-        </ul>
-        {/* </Step> */}
+      <Stack maxWidth="33%" spacing={6}>
+        <Step title="Step 2: Connect on Discord and Request Access">
+          <Typography variant="h6">CODE PDX uses Discord for a communication hub.</Typography>
+          <ol>
+            <li>
+              Join the <a>CODE PDX Discord server</a> and self assign roles. These roles will
+              display project channels and help others identify the roles you intend to fulfill.{' '}
+            </li>
+            <li>
+              Introduce yourself in the <code>#introductions</code> channel, this is a good way to
+              network with current members.
+            </li>
+            <li>
+              Request GitHub access in the <code>#github-access-request</code> channel.
+            </li>
+            <li>Request project specific access to Google Drive and other project content.</li>
+          </ol>
+          <Typography>
+            If you are new to discord, they have a beginners users guide on their website{' '}
+            <a
+              href="https://support.discord.com/hc/en-us/articles/360045138571-Beginner-s-Guide-to-Discord"
+              target="_blank"
+              rel="noreferrer"
+            >
+              HERE
+            </a>
+          </Typography>
+        </Step>
+        <Step title="Step 4: Contribute!">
+          <ul>
+            <li>
+              Find your first issue to work on from the GitHub repo of the project of your choice.
+              Check out our <a>Wiki</a> for guidance on picking your first issue.
+            </li>
+            <li>Create a branch for your issue or feature and collaborate with other members.</li>
+            <li>
+              Create a pull request off of our GitHub template, and submit fore review. Pull
+              requests require at least one other person to review & approve before merging.
+            </li>
+          </ul>
+        </Step>
       </Stack>
     </Stack>
   );
