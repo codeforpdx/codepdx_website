@@ -39,7 +39,7 @@ const displaySecondaryPartners = ({
       sx={{
         background: gradientStyle,
         borderRadius: '40px',
-        minHeight: '500px',
+        minHeight: { xs: 'auto', md: '500px' },
         marginBottom: '100px',
         flexDirection: { xs: 'column', md: 'row' }
       }}
