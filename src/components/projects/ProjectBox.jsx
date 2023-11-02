@@ -41,7 +41,7 @@ const ProjectBox = () => {
         alignItems: 'center'
       }}
     >
-      <Typography variant="h2" sx={{ m: 5 }}>
+      <Typography variant="h2" sx={{ m: 5, textAlign: 'center' }}>
         Our Projects
       </Typography>
       {projectsList
@@ -50,31 +50,32 @@ const ProjectBox = () => {
           <Box
             key={title}
             sx={{
-              mx: 10,
-              mb: 3,
+              mb: { xs: 5, sm: 15 },
               p: 5,
               background:
                 index % 2 === 0
-                  ? 'linear-gradient(90deg, rgba(217, 217, 217, 0) 38.54%, rgba(217, 217, 217, 0.4) 82.29%)'
-                  : 'linear-gradient(270deg, rgba(217, 217, 217, 0) 38.54%, rgba(217, 217, 217, 0.4) 82.29%)',
+                  ? 'linear-gradient(270deg, rgba(217, 217, 217, 0) 38.54%, rgba(217, 217, 217, 0.4) 82.29%)'
+                  : 'linear-gradient(90deg, rgba(217, 217, 217, 0) 38.54%, rgba(217, 217, 217, 0.4) 82.29%)',
               borderRadius: '25px',
               minWidth: { xs: '95vw', sm: '80vw' },
               maxWidth: { sm: '85vw' }
             }}
           >
             <Grid container spacing={10}>
-              <Grid item xs={12} md={6} order={{ xs: 1, sm: 2 }}>
+              <Grid item xs={12} md={6} order={{ xs: 0, sm: index % 2 === 0 ? 2 : 1 }}>
                 <CardMedia
                   component="img"
                   image={logo.image ?? null}
                   alt={logo.alt ?? null}
-                  sx={{ pt: 3 }}
+                  sx={{
+                    p: 3
+                  }}
                 />
                 <Stack
                   direction="row"
                   justifyContent="space-evenly"
                   spacing={{ xs: 0, md: 2 }}
-                  sx={{ pt: 5 }}
+                  sx={{ pt: '1rem' }}
                 >
                   {projectsListLinks.map(({ href, icon, ariaLabel }) => (
                     <Link
@@ -98,7 +99,7 @@ const ProjectBox = () => {
                 </Stack>
               </Grid>
 
-              <Grid item xs={12} md={6} order={{ xs: 2, sm:1  }}>
+              <Grid item xs={12} md={6} order={{ xs: 0, sm: index % 2 === 0 ? 1 : 2 }}>
                 <CardContent>
                   <Stack
                     direction={{ xs: 'column', sm: 'row' }}
