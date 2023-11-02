@@ -12,14 +12,12 @@ import projectsList from '../projects/projectsList';
 
 const cardStyle = {
   display: 'flex',
-  // alignItems: 'center',
   flexDirection: 'column',
   mx: 2,
   p: 4,
-  background: '#D9D9D9 40%',
-  borderRadius: '10px',
-  height: '100%',
-  textAlign: 'justify'
+  background: 'rgba(217, 217, 217, 0.4)',
+  borderRadius: '40px',
+  height: '100%'
 };
 
 const ProjectsBrief = () => {
@@ -30,7 +28,7 @@ const ProjectsBrief = () => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        m: { xs: '50px 0 100px 0', md: '50px 50px 150px 50px' },
+        m: { xs: '50px 0 100px 0', md: '50px 0 150px 0' },
         position: 'relative'
       }}
     >
@@ -62,7 +60,10 @@ const ProjectsBrief = () => {
                   sx={{
                     position: 'absolute',
                     bottom: { xs: null, sm: '0' },
-                    py: 4
+                    py: 4,
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'flex-start'
                   }}
                   color="quinary"
                 >
