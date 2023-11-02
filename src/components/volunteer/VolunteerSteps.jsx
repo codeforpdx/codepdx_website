@@ -1,10 +1,13 @@
 // Material UI Imports
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+import { useTheme } from '@mui/material';
 // Component Imports
 import Step from './Step.jsx';
 
 const VolunteerSteps = () => {
+  const theme = useTheme();
+
   return (
     <Stack direction="row" minWidth="100%" spacing={4} my={8}>
       {/* left column */}
@@ -13,35 +16,94 @@ const VolunteerSteps = () => {
           <Typography variant="h6">Get familiar with CODE PDX</Typography>
           <ol>
             <li>
-              Read our <a>Code of Conduct</a>
+              Read our{' '}
+              <a
+                href="https://github.com/codeforpdx/codeofconduct"
+                target="_blank"
+                rel="noreferrer"
+                style={{
+                  color: theme.palette.primary.main,
+                  textDecoration: 'none',
+                  fontWeight: 600
+                }}
+              >
+                Code of Conduct
+              </a>
             </li>
             <li>
-              Complete our <a>onboarding form</a>
+              Complete our{' '}
+              <a
+                style={{
+                  color: theme.palette.primary.main,
+                  textDecoration: 'none',
+                  fontWeight: 600
+                }}
+              >
+                onboarding form
+              </a>
             </li>
             <li>
-              Review our <a>current projects</a>
+              Review our{' '}
+              <a
+                style={{
+                  color: theme.palette.primary.main,
+                  textDecoration: 'none',
+                  fontWeight: 600
+                }}
+              >
+                current projects
+              </a>
             </li>
             <li>
-              Read the <a>ADA Compliance Guide</a>, all CODE PDX projects are inclusive by design
+              Read the{' '}
+              <a
+                style={{
+                  color: theme.palette.primary.main,
+                  textDecoration: 'none',
+                  fontWeight: 600
+                }}
+              >
+                ADA Compliance Guide
+              </a>
+              , all CODE PDX projects are inclusive by design
             </li>
             <li>
-              Join a project demo night & onboarding session listed on <a>meetup</a> and the{' '}
-              <a>events calendar</a>
+              Join a project demo night & onboarding session listed on{' '}
+              <a
+                href="https://www.meetup.com/code-for-pdx/"
+                style={{
+                  color: theme.palette.primary.main,
+                  textDecoration: 'none',
+                  fontWeight: 600
+                }}
+              >
+                meetup
+              </a>{' '}
+              and the{' '}
+              <a
+                style={{
+                  color: theme.palette.primary.main,
+                  textDecoration: 'none',
+                  fontWeight: 600
+                }}
+              >
+                events calendar
+              </a>
             </li>
           </ol>
         </Step>
         <Step title="Step 3: Choose a Role & Adopt Our Standards">
           <ul>
             <li>
-              After seeing what we are up to, reach out to members of a project to connect with the
-              team to let them know how you would like to contribute. You can find active members by
+              After seeing what we are up to, reach out to team members of a project to connect
+              &amp; let them know how you would like to contribute. You can find active members by
               seeing who recently contributed to a repository or the recent discord chat history of
               a project.
             </li>
             <li>
-              The GitHub repository is a good place to see whats going on and active within CODE PDX
-              and contains a writeup of our contribution guidelines that we follow to standardize
-              our workflow.
+              The GitHub repository is a good place to see what&apos;s active within CODE PDX and
+              contains a writeup of our contribution guidelines that we follow to standardize our
+              workflow.
             </li>
           </ul>
         </Step>
@@ -96,27 +158,66 @@ const VolunteerSteps = () => {
       {/* right column */}
       <Stack maxWidth="33%" spacing={6}>
         <Step title="Step 2: Connect on Discord and Request Access">
-          <Typography variant="h6">CODE PDX uses Discord for a communication hub.</Typography>
+          <Typography variant="h6">CODE PDX uses Discord for communication</Typography>
           <ol>
             <li>
-              Join the <a>CODE PDX Discord server</a> and self assign roles. These roles will
-              display project channels and help others identify the roles you intend to fulfill.{' '}
+              Join the{' '}
+              <a
+                href="https://discord.gg/qQ2sNXMagU"
+                target="_blank"
+                rel="noreferrer"
+                style={{
+                  color: theme.palette.primary.main,
+                  textDecoration: 'none',
+                  fontWeight: 600
+                }}
+              >
+                CODE PDX Discord server
+              </a>{' '}
+              and self assign roles. These roles will display project channels and help others
+              identify the roles you intend to fulfill.{' '}
             </li>
             <li>
-              Introduce yourself in the <code>#introductions</code> channel, this is a good way to
-              network with current members.
+              Introduce yourself in the{' '}
+              <a
+                href="https://discord.com/channels/1068260532806766733/1075286322530484256"
+                target="_blank"
+                rel="noreferrer"
+                style={{
+                  color: theme.palette.primary.main,
+                  textDecoration: 'none',
+                  fontWeight: 600
+                }}
+              >
+                #introductions
+              </a>{' '}
+              channel, this is a good way to network with current members.
             </li>
             <li>
-              Request GitHub access in the <code>#github-access-request</code> channel.
+              Request GitHub access in the{' '}
+              <a
+                href="https://discord.com/channels/1068260532806766733/1078124139983945858"
+                target="_blank"
+                rel="noreferrer"
+                style={{
+                  color: theme.palette.primary.main,
+                  textDecoration: 'none',
+                  fontWeight: 600
+                }}
+              >
+                #github-access-request
+              </a>{' '}
+              channel.
             </li>
             <li>Request project specific access to Google Drive and other project content.</li>
           </ol>
           <Typography>
-            If you are new to discord, they have a beginners users guide on their website{' '}
+            If you are new to discord, there is a beginners user guide available{' '}
             <a
               href="https://support.discord.com/hc/en-us/articles/360045138571-Beginner-s-Guide-to-Discord"
               target="_blank"
               rel="noreferrer"
+              style={{ color: theme.palette.primary.main, textDecoration: 'none', fontWeight: 600 }}
             >
               HERE
             </a>
@@ -126,12 +227,22 @@ const VolunteerSteps = () => {
           <ul>
             <li>
               Find your first issue to work on from the GitHub repo of the project of your choice.
-              Check out our <a>Wiki</a> for guidance on picking your first issue.
+              Check out our{' '}
+              <a
+                style={{
+                  color: theme.palette.primary.main,
+                  textDecoration: 'none',
+                  fontWeight: 600
+                }}
+              >
+                Wiki
+              </a>{' '}
+              for guidance on picking your first issue.
             </li>
             <li>Create a branch for your issue or feature and collaborate with other members.</li>
             <li>
-              Create a pull request off of our GitHub template, and submit fore review. Pull
-              requests require at least one other person to review & approve before merging.
+              Create a pull request off of our GitHub template, and submit for review. Pull requests
+              require at least one other person to review & approve before merging.
             </li>
           </ul>
         </Step>
