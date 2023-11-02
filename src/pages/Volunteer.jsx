@@ -10,8 +10,8 @@ import VolunteerStepsMobile from '../components/volunteer/VolunteerStepsMobile.j
 
 const Volunteer = () => {
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
-  const isLargeScreen = useMediaQuery(theme.breakpoints.up('md'));
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+  const isLargeScreen = useMediaQuery(theme.breakpoints.up('sm'));
 
   return (
     // either make Hero reusable somehow (and move it to components/global)
