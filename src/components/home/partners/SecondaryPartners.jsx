@@ -29,7 +29,6 @@ const displaySecondaryPartners = ({
     index % 2 === 0
       ? 'linear-gradient(90deg, rgba(217, 217, 217, 0) 38.54%, rgba(217, 217, 217, 0.4) 82.29%)'
       : 'linear-gradient(270deg, rgba(217, 217, 217, 0) 38.54%, rgba(217, 217, 217, 0.4) 82.29%)';
-
   const logoOrder = index % 2 === 1 ? 2 : 1;
   const contentOrder = index % 2 === 1 ? 1 : 2;
 
@@ -50,7 +49,7 @@ const displaySecondaryPartners = ({
           <Box
             component={'img'}
             alt={`${company} logo`}
-            aria-label={`${partnerLogo} logo`}
+            aria-label={`${company} logo`}
             src={partnerLogo}
             mb={{ xs: '25px', md: '150px' }}
             width={{ xs: '100px', md: '250px' }}
@@ -62,16 +61,19 @@ const displaySecondaryPartners = ({
           {testimonial}
         </Typography>
         <Typography pb={'40px'}>{testimonialAuthor}</Typography>
-        <Typography variant="body1" display={'flex'} p={'0 15% 3% 0'}>
-          {testimonialTwo}
-        </Typography>
-        <Typography>{testimonialAuthorTwo}</Typography>
+
+        {company === 'ORDSN' ? (
+          <Typography variant="body1" display={'flex'} p={'0 15% 3% 0'}>
+            {testimonialTwo}
+          </Typography>
+        ) : null}
+        {company === 'ORDSN' ? <Typography>{testimonialAuthorTwo}</Typography> : null}
       </Grid>
     </Grid>
   );
 };
 
-const SecondaryPartner = () => {
+const SecondaryPartners = () => {
   return (
     <Container>
       {secondaryPartnerList.map((partner, index) =>
@@ -81,4 +83,4 @@ const SecondaryPartner = () => {
   );
 };
 
-export default SecondaryPartner;
+export default SecondaryPartners;

@@ -4,7 +4,6 @@ export const secondaryPartnerList = [
     testimonial:
       "CODEPDX's exceptional team embodies talent and dedication, working relentlessly to enhance the lives of vulnerable citizens. Their innovative approach to utilizing technology for social betterment is truly remarkable.",
     testimonialAuthor: '- Wilfred Pinfold, President of OpenCommons',
-
     partnerLogo: '/assets/openCommonsLogo.png',
     website: 'https://opencommons.org/Main_Page'
   },
