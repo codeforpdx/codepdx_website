@@ -13,6 +13,7 @@ import Typography from '@mui/material/Typography';
 import projectsList from './projectsList';
 import { FaDiscord, FaEarthAmericas, FaGithub } from 'react-icons/fa6';
 
+// TODO: Consolidate this with projectsList.js
 const projectsListLinks = [
   {
     href: 'https://github.com/codeforpdx/recordexpungPDX',
@@ -46,6 +47,7 @@ const ProjectBox = () => {
       </Typography>
       {projectsList
         .slice(0, 2)
+        // TODO: Replace 'projectsListLinks' with unused 'links' parameter
         .map(({ index, title, description, status, logo, links, techStack }) => (
           <Box
             key={title}
@@ -65,8 +67,8 @@ const ProjectBox = () => {
               <Grid item xs={12} md={6} order={{ xs: 0, sm: index % 2 === 0 ? 2 : 1 }}>
                 <CardMedia
                   component="img"
-                  image={logo.image ?? null}
-                  alt={logo.alt ?? null}
+                  image={logo ?? null}
+                  alt={`${title} logo`}
                   sx={{
                     p: 3
                   }}
