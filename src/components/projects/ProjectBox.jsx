@@ -11,26 +11,6 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 // Custom Imports
 import projectsList from './projectsList';
-import { FaDiscord, FaEarthAmericas, FaGithub } from 'react-icons/fa6';
-
-// TODO: Consolidate this with projectsList.js
-const projectsListLinks = [
-  {
-    href: 'https://github.com/codeforpdx/recordexpungPDX',
-    icon: <FaGithub size={45} />,
-    ariaLabel: 'Github link'
-  },
-  {
-    href: 'https://discord.gg/x6b573et',
-    icon: <FaDiscord size={45} />,
-    ariaLabel: 'Discord link'
-  },
-  {
-    href: 'https://codeforpdx.github.io/recordexpungPDX',
-    icon: <FaEarthAmericas size={45} />,
-    ariaLabel: 'Deployed link'
-  }
-];
 
 const ProjectBox = () => {
   return (
@@ -47,7 +27,6 @@ const ProjectBox = () => {
       </Typography>
       {projectsList
         .slice(0, 2)
-        // TODO: Replace 'projectsListLinks' with unused 'links' parameter
         .map(({ index, title, description, status, logo, links, techStack }) => (
           <Box
             key={title}
@@ -63,8 +42,8 @@ const ProjectBox = () => {
               maxWidth: { sm: '85vw' }
             }}
           >
-            <Grid container spacing={10}>
-              <Grid item xs={12} md={6} order={{ xs: 0, sm: index % 2 === 0 ? 2 : 1 }}>
+            <Grid container spacing={{ xs: 1, md: 10 }}>
+              <Grid item xs={12} md={6} order={{ xs: 0, md: index % 2 === 0 ? 2 : 1 }}>
                 <CardMedia
                   component="img"
                   image={logo ?? null}
@@ -79,12 +58,12 @@ const ProjectBox = () => {
                   spacing={{ xs: 0, md: 2 }}
                   sx={{ pt: '1rem' }}
                 >
-                  {projectsListLinks.map(({ href, icon }) => (
+                  {links.map(({ href, icon }) => (
                     <Link
                       component={ReactRouterLink}
                       key={href}
                       href={href}
-                      aria-label={`${title} logo`}
+                      alt={`${title} logo`}
                       target="_blank"
                       rel="noopener"
                       sx={{
@@ -95,13 +74,14 @@ const ProjectBox = () => {
                         }
                       }}
                     >
+                      {/* TODO: Fix icons not rendering */}
                       {icon}
                     </Link>
                   ))}
                 </Stack>
               </Grid>
 
-              <Grid item xs={12} md={6} order={{ xs: 0, sm: index % 2 === 0 ? 1 : 2 }}>
+              <Grid item xs={12} md={6} order={{ xs: 0, md: index % 2 === 0 ? 1 : 2 }}>
                 <CardContent>
                   <Stack
                     direction={{ xs: 'column', sm: 'row' }}
@@ -111,7 +91,11 @@ const ProjectBox = () => {
                       justifyContent: 'space-between'
                     }}
                   >
-                    <Typography variant="h4" component="h3">
+                    <Typography
+                      variant="h4"
+                      component="h3"
+                      sx={{ display: { xs: 'none', sm: 'block' } }}
+                    >
                       {title ?? null}
                     </Typography>
                     <Chip
