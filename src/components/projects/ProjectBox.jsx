@@ -77,12 +77,12 @@ const ProjectBox = () => {
                   spacing={{ xs: 0, md: 2 }}
                   sx={{ pt: '1rem' }}
                 >
-                  {projectsListLinks.map(({ href, icon, ariaLabel }) => (
+                  {projectsListLinks.map(({ href, icon }) => (
                     <Link
                       component={ReactRouterLink}
                       key={href}
                       href={href}
-                      aria-label={ariaLabel}
+                      aria-label={`${title} logo`}
                       target="_blank"
                       rel="noopener"
                       sx={{
