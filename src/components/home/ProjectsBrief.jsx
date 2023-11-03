@@ -54,19 +54,7 @@ const ProjectsBrief = () => {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button
-                  href="/projects"
-                  size="large"
-                  sx={{
-                    position: 'static',
-                    bottom: { xs: null, sm: '0' },
-                    py: 4,
-                    display: 'flex',
-                    flexDirection: 'row',
-                    justifyContent: 'flex-start'
-                  }}
-                  color="quinary"
-                >
+                <Button href="/projects" size="large" color="quinary">
                   <strong>Learn More</strong>
                 </Button>
               </CardActions>
