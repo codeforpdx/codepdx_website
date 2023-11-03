@@ -41,8 +41,8 @@ const ProjectsBrief = () => {
             <Card sx={cardStyle}>
               <CardMedia
                 component="img"
-                image={logo.image ?? null}
-                alt={logo.alt ?? null}
+                image={logo ?? null}
+                alt={`${title} logo`}
                 sx={{
                   p: 1,
                   width: title === 'CODE PDX' ? '125px' : '100%'
@@ -58,7 +58,7 @@ const ProjectsBrief = () => {
                   href="/projects"
                   size="large"
                   sx={{
-                    position: 'absolute',
+                    position: 'static',
                     bottom: { xs: null, sm: '0' },
                     py: 4,
                     display: 'flex',
