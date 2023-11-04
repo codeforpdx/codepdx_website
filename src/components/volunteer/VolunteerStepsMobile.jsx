@@ -12,7 +12,7 @@ import Typography from '@mui/material/Typography';
 
 const steps = [
   {
-    label: 'Self Onboarding & Initial Contact',
+    label: 'Self-Onboarding & Initial Contact',
     description: (
       <>
         <Typography variant="h6">Get familiar with CODE PDX</Typography>
@@ -35,6 +35,9 @@ const steps = [
           <li>
             Complete our{' '}
             <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfu4u9FB00RXd2TncbMLws_Ckot-vYqPK0oUHr81uLDjThE7Q/viewform"
+              target="_blank"
+              rel="noreferrer"
               style={{
                 color: '#56B6A1',
                 textDecoration: 'none',
@@ -47,6 +50,9 @@ const steps = [
           <li>
             Review our{' '}
             <a
+              href="https://github.com/codeforpdx"
+              target="_blank"
+              rel="noreferrer"
               style={{
                 color: '#56B6A1',
                 textDecoration: 'none',
