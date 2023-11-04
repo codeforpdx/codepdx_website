@@ -2,9 +2,22 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import { useTheme } from '@mui/material/styles';
+
 import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 import { secondaryPartnerList } from './secondaryPartnerList';
+import { PropTypes } from 'prop-types';
+
+const secondaryPartnerProps = {
+  index: PropTypes.number.isRequired,
+  company: PropTypes.string.isRequired,
+  testimonial: PropTypes.string.isRequired,
+  testimonialTwo: PropTypes.string,
+  testimonialAuthorTwo: PropTypes.string,
+  testimonialAuthor: PropTypes.string.isRequired,
+  partnerLogo: PropTypes.string.isRequired,
+  website: PropTypes.string.isRequired
+};
 
 const partnerGridStyle = {
   xs: 12,
@@ -78,8 +91,9 @@ const LargeScreenComponent = ({
   );
 };
 
+LargeScreenComponent.propTypes = secondaryPartnerProps;
+
 const SmallScreenComponent = ({
-  index,
   company,
   testimonial,
   testimonialTwo,
@@ -115,7 +129,7 @@ const SmallScreenComponent = ({
         <Typography variant="body1" p={'5% 5% 5% 5%'}>
           {testimonial}
         </Typography>
-        <Typography variant="caption" p={'5% 5% 5% 5%'}>
+        <Typography variant="caption" p={'0 5% 8% 5%'}>
           {testimonialAuthor}
         </Typography>
         {testimonialTwo ? (
@@ -133,22 +147,21 @@ const SmallScreenComponent = ({
   );
 };
 
-const ResponsivePartnerDisplay = (props) => {
-  const theme = useTheme();
-  const isSmallAScreen = useMediaQuery(theme.breakpoints.down('md'));
+SmallScreenComponent.propTypes = secondaryPartnerProps;
 
-  if (isSmallAScreen) {
-    return <SmallScreenComponent {...props}></SmallScreenComponent>;
-  } else {
-    return <LargeScreenComponent {...props} />;
-  }
-};
 const SecondaryPartners = () => {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
+
   return (
     <Container>
-      {secondaryPartnerList.map((partner, index) => (
-        <ResponsivePartnerDisplay key={partner.company} {...partner} index={index} />
-      ))}
+      {secondaryPartnerList.map((partner) =>
+        isSmallScreen ? (
+          <SmallScreenComponent key={partner.company} {...partner} />
+        ) : (
+          <LargeScreenComponent key={partner.company} {...partner} />
+        )
+      )}
     </Container>
   );
 };
