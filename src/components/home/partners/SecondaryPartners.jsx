@@ -37,7 +37,7 @@ const displaySecondaryPartners = ({
       container
       sx={{
         background: gradientStyle,
-        borderRadius: '40px',
+        borderRadius: '30px',
         minHeight: { xs: 'auto', md: '500px' },
         marginBottom: { xs: '50px', md: '100px' },
         flexDirection: { xs: 'column', md: 'row' }
@@ -57,17 +57,22 @@ const displaySecondaryPartners = ({
         </a>
       </Grid>
       <Grid item pl={'6%'} {...partnerGridStyle} order={contentOrder}>
-        <Typography variant="body1" p={{ xs: '0 0 0 0 ', md: '0 15% 3% 0' }}>
+        <Typography variant="body1" p={{ xs: '0 0 0 0 ', md: '5% 15% 3% 0' }}>
           {testimonial}
         </Typography>
-        <Typography pb={'40px'}>{testimonialAuthor}</Typography>
-
-        {company === 'ORDSN' ? (
-          <Typography variant="body1" display={'flex'} p={'0 15% 3% 0'}>
+        <Typography variant="caption" p={'15px 0 5% 0'}>
+          {testimonialAuthor}
+        </Typography>
+        {testimonialTwo ? (
+          <Typography variant="body1" display={'flex'} p={'40px 15% 15% 0'}>
             {testimonialTwo}
           </Typography>
         ) : null}
-        {company === 'ORDSN' ? <Typography>{testimonialAuthorTwo}</Typography> : null}
+        {testimonialAuthorTwo ? (
+          <Typography variant="caption" pb={'5%'}>
+            {testimonialAuthorTwo}
+          </Typography>
+        ) : null}
       </Grid>
     </Grid>
   );
