@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import { secondaryPartnerList } from './secondaryPartnerList';
+
 import { PropTypes } from 'prop-types';
 
 const secondaryPartnerProps = {
