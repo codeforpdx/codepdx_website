@@ -149,19 +149,36 @@ const SmallScreenComponent = ({
 
 SmallScreenComponent.propTypes = secondaryPartnerProps;
 
-const SecondaryPartners = () => {
+// const SecondaryPartners = () => {
+//   const theme = useTheme();
+//   const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
+
+//   return (
+//     <Container>
+//       {secondaryPartnerList.map((partner) =>
+//         isSmallScreen ? (
+//           <SmallScreenComponent key={partner.company} {...partner} />
+//         ) : (
+//           <LargeScreenComponent key={partner.company} {...partner} />
+//         )
+//       )}
+//     </Container>
+//   );
+// };
+
+const ResponsivePartnerDisplay = (props) => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
 
+  return isSmallScreen ? <SmallScreenComponent {...props} /> : <LargeScreenComponent {...props} />;
+};
+
+const SecondaryPartners = () => {
   return (
     <Container>
-      {secondaryPartnerList.map((partner) =>
-        isSmallScreen ? (
-          <SmallScreenComponent key={partner.company} {...partner} />
-        ) : (
-          <LargeScreenComponent key={partner.company} {...partner} />
-        )
-      )}
+      {secondaryPartnerList.map((partner, index) => (
+        <ResponsivePartnerDisplay key={partner.company} index={index} {...partner} />
+      ))}
     </Container>
   );
 };
