@@ -112,11 +112,15 @@ const Projects = () => {
                     <Typography variant="h6" component="h4" sx={{ fontWeight: 'bold', my: 2 }}>
                       Overview
                     </Typography>
-                    <Typography variant="body1">{description ?? null}</Typography>
+                    <Typography variant="body1" sx={{ textAlign: 'justify' }}>
+                      {description ?? null}
+                    </Typography>
                     <Typography variant="h6" component="h4" sx={{ fontWeight: 'bold', my: 2 }}>
                       Technology Used
                     </Typography>
-                    <Typography variant="body1">{techStack ?? null}</Typography>
+                    <Typography variant="body1" sx={{ textAlign: 'justify' }}>
+                      {techStack ?? null}
+                    </Typography>
                   </CardContent>
                 </Grid>
               </Grid>
