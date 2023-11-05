@@ -1,7 +1,7 @@
 // Material UI Imports
 import { Container } from '@mui/material';
 // Component Imports
-import Hero from '../components/home/Hero';
+import Hero from '../components/global/Hero/Hero';
 import About from '../components/home/About';
 import VolunteerBrief from '../components/home/VolunteerBrief';
 import Events from '../components/home/Events';

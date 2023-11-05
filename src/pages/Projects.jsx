@@ -1,5 +1,5 @@
 import Typography from '@mui/material/Typography';
-import Hero from '../components/home/Hero';
+import Hero from '../components/global/Hero/Hero';
 import ProjectBox from '../components/projects/ProjectBox';
 import { Container } from '@mui/material';
 
