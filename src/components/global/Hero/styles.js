@@ -40,6 +40,8 @@ export const heroStyles = {
         textAlign: 'center'
     },
     projectsH1: {
+        color: '#ffff',
+        textShadow: '0px 4px 4px #0000004D',
         fontSize: {xs: '22px', md: '3vw'},
         pr: {xs: '0', sm:'5%'},
         width: {xs: '80%', md: '40%'},
