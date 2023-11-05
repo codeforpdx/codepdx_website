@@ -14,8 +14,9 @@ const cardStyle = {
   display: 'flex',
   justifyContent: 'space-between',
   flexDirection: 'column',
-  mx: 2,
-  p: 4,
+  m: { xs: '10px 0 10px 0', md: '0 25px 20px 25px' },
+  // mx: { xs: 1, md: 4 },
+  p: { xs: '0 0 0 0', sm: 3 },
   background: 'rgba(217, 217, 217, 0.4)',
   borderRadius: '30px',
   height: '100%'
