@@ -33,8 +33,6 @@ const Hero = ({ pageName, heroImage, heroText }) => {
           <Button
             variant="contained"
             href="mailto:hugh@codeforpdx.org"
-            target="_blank"
-            rel="noopener"
             sx={heroStyles.contactBtnStyle}
           >
             Contact Us
