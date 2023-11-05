@@ -1,4 +1,7 @@
 // Material UI Imports
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material';
@@ -11,8 +14,8 @@ const VolunteerSteps = () => {
   return (
     <Stack direction="row" minWidth="100%" spacing={4} my={8}>
       {/* left column */}
-      <Stack maxWidth="33%">
-        <Step title="Step 1: Self Onboarding & Initial Contact">
+      <Stack maxWidth="33%" pt="8.15rem">
+        {/* <Step title="Step 1: Self-Onboarding & Initial Contact">
           <Typography variant="h6">Get familiar with CODE PDX</Typography>
           <ol>
             <li>
@@ -33,6 +36,9 @@ const VolunteerSteps = () => {
             <li>
               Complete our{' '}
               <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfu4u9FB00RXd2TncbMLws_Ckot-vYqPK0oUHr81uLDjThE7Q/viewform"
+                target="_blank"
+                rel="noreferrer"
                 style={{
                   color: theme.palette.primary.main,
                   textDecoration: 'none',
@@ -45,6 +51,9 @@ const VolunteerSteps = () => {
             <li>
               Review our{' '}
               <a
+                href="https://github.com/codeforpdx"
+                target="_blank"
+                rel="noreferrer"
                 style={{
                   color: theme.palette.primary.main,
                   textDecoration: 'none',
@@ -81,6 +90,7 @@ const VolunteerSteps = () => {
               </a>{' '}
               and the{' '}
               <a
+                href="/#events"
                 style={{
                   color: theme.palette.primary.main,
                   textDecoration: 'none',
@@ -91,8 +101,115 @@ const VolunteerSteps = () => {
               </a>
             </li>
           </ol>
+        </Step> */}
+
+        {/* ========== START HERE */}
+
+        <Step step={1} title="Self-Onboarding & Initial Contact" mb={36.5}>
+          <Typography variant="h6">Get familiar with CODE PDX</Typography>
+          <List dense>
+            <ListItem>
+              <ListItemText>
+                1. Read our{' '}
+                <a
+                  href="https://github.com/codeforpdx/codeofconduct"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{
+                    color: theme.palette.primary.main,
+                    textDecoration: 'none',
+                    fontWeight: 600
+                  }}
+                >
+                  Code of Conduct
+                </a>
+              </ListItemText>
+            </ListItem>
+
+            <ListItem>
+              <ListItemText>
+                2. Complete our{' '}
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSfu4u9FB00RXd2TncbMLws_Ckot-vYqPK0oUHr81uLDjThE7Q/viewform"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{
+                    color: theme.palette.primary.main,
+                    textDecoration: 'none',
+                    fontWeight: 600
+                  }}
+                >
+                  onboarding form
+                </a>
+              </ListItemText>
+            </ListItem>
+
+            <ListItem>
+              <ListItemText>
+                3. Review our{' '}
+                <a
+                  href="https://github.com/codeforpdx"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{
+                    color: theme.palette.primary.main,
+                    textDecoration: 'none',
+                    fontWeight: 600
+                  }}
+                >
+                  current projects
+                </a>
+              </ListItemText>
+            </ListItem>
+
+            <ListItem>
+              <ListItemText>
+                4. Read the{' '}
+                <a
+                  style={{
+                    color: theme.palette.primary.main,
+                    textDecoration: 'none',
+                    fontWeight: 600
+                  }}
+                >
+                  ADA Compliance Guide
+                </a>
+                , all CODE PDX projects are inclusive by design
+              </ListItemText>
+            </ListItem>
+
+            <ListItem>
+              <ListItemText>
+                5. Join a project demo night & onboarding session listed on{' '}
+                <a
+                  href="https://www.meetup.com/code-for-pdx/"
+                  style={{
+                    color: theme.palette.primary.main,
+                    textDecoration: 'none',
+                    fontWeight: 600
+                  }}
+                >
+                  meetup
+                </a>{' '}
+                and the{' '}
+                <a
+                  href="/#events"
+                  style={{
+                    color: theme.palette.primary.main,
+                    textDecoration: 'none',
+                    fontWeight: 600
+                  }}
+                >
+                  events calendar
+                </a>
+              </ListItemText>
+            </ListItem>
+          </List>
         </Step>
-        <Step title="Step 3: Choose a Role & Adopt Our Standards">
+
+        {/* ========== END HERE */}
+
+        <Step step={3} title="Choose a Role & Adopt Our Standards" mb={34.5}>
           <ul>
             <li>
               After seeing what we are up to, reach out to team members of a project to connect
@@ -156,8 +273,8 @@ const VolunteerSteps = () => {
       </svg>
 
       {/* right column */}
-      <Stack maxWidth="33%" spacing={6}>
-        <Step title="Step 2: Connect on Discord and Request Access">
+      <Stack maxWidth="33%" spacing={25.75} pt="23.8rem">
+        <Step step={2} title="Connect on Discord & Request Access">
           <Typography variant="h6">CODE PDX uses Discord for communication</Typography>
           <ol>
             <li>
@@ -177,6 +294,7 @@ const VolunteerSteps = () => {
               and self assign roles. These roles will display project channels and help others
               identify the roles you intend to fulfill.{' '}
             </li>
+            <br />
             <li>
               Introduce yourself in the{' '}
               <a
@@ -193,6 +311,7 @@ const VolunteerSteps = () => {
               </a>{' '}
               channel, this is a good way to network with current members.
             </li>
+            <br />
             <li>
               Request GitHub access in the{' '}
               <a
@@ -209,6 +328,7 @@ const VolunteerSteps = () => {
               </a>{' '}
               channel.
             </li>
+            <br />
             <li>Request project specific access to Google Drive and other project content.</li>
           </ol>
           <Typography>
@@ -223,7 +343,7 @@ const VolunteerSteps = () => {
             </a>
           </Typography>
         </Step>
-        <Step title="Step 4: Contribute!">
+        <Step step={4} title="Contribute!">
           <ul>
             <li>
               Find your first issue to work on from the GitHub repo of the project of your choice.
