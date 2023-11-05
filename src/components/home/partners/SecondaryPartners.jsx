@@ -78,12 +78,12 @@ const LargeScreenComponent = ({
           {testimonialAuthor}
         </Typography>
         {testimonialTwo ? (
-          <Typography variant="body1" display={'flex'} p={'40px 15% 15% 0'}>
+          <Typography variant="body1" display={'flex'} p={'40px 15% 5% 0'}>
             {testimonialTwo}
           </Typography>
         ) : null}
         {testimonialAuthorTwo ? (
-          <Typography variant="caption" pb={'5%'}>
+          <Typography variant="caption" pb={'10%'}>
             {testimonialAuthorTwo}
           </Typography>
         ) : null}
@@ -139,7 +139,7 @@ const SmallScreenComponent = ({
           </Typography>
         ) : null}
         {testimonialAuthorTwo ? (
-          <Typography variant="caption" p={'5% 5% 5% 5%'}>
+          <Typography variant="caption" p={'0 5% 10% 5%'}>
             {testimonialAuthorTwo}
           </Typography>
         ) : null}
