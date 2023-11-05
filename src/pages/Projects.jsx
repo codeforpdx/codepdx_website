@@ -13,7 +13,6 @@ const Projects = () => {
       <Container maxWidth="xl">
         <Typography />
         <ProjectBox />
-        <ProjectBox />
       </Container>
     </>
   );
