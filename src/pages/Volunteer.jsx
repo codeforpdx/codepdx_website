@@ -5,8 +5,6 @@ import { Container } from '@mui/material';
 
 const Volunteer = () => {
   return (
-    // either make Hero reusable somehow (and move it to components/global)
-    // or use <Box component="img" />
     <>
       <Hero
         pageName={'volunteer'}
