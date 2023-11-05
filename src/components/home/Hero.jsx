@@ -11,18 +11,6 @@ const heroBackground = {
   backgroundRepeat: 'no-repeat'
 };
 
-const homeHeroImage = {
-  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/stJohnsBridge.png)`
-};
-
-const projectsHeroImage = {
-  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/projectsHeroImage.png)`
-};
-
-const volunteerHeroImage = {
-  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/volunteerHeroImage.png)`
-};
-
 const heroContainer = {
   display: 'flex',
   flexFlow: 'column',
@@ -32,7 +20,16 @@ const heroContainer = {
   height: '100%'
 };
 
-const h1Style = {
+const heroContainerRight = {
+  display: 'flex',
+  flexFlow: 'row',
+  justifyContent: 'flex-end',
+  alignItems: { xs: 'center', md: 'flex-start' },
+  width: { xs: '100%', md: '575px' },
+  height: '100%'
+};
+
+const homeH1 = {
   fontWeight: '400',
   color: '#ffff',
   textShadow: '0px 4px 4px #0000004D',
@@ -45,8 +42,30 @@ const h1Style = {
   textAlign: 'center'
 };
 
-const h1StyleOverride = {
-  fontSize: '15px'
+const projectsH1 = {
+  fontWeight: '400',
+  color: '#ffff',
+  textShadow: '0px 4px 4px #0000004D',
+  alignSelf: 'flex-end',
+  flexBasis: { xs: '100px', md: '160px' },
+  fontSize: { xs: '16px', md: '48px' },
+  pt: { xs: '25px', md: '113px' },
+  pl: { xs: 0, md: '56px' },
+  width: { xs: '80%', md: '100%' },
+  textAlign: 'left'
+};
+
+const volunteerH1 = {
+  fontWeight: '400',
+  color: '#ffff',
+  textShadow: '0px 4px 4px #0000004D',
+  lineHeight: { xs: '45px', md: '80px' },
+  flexBasis: { xs: '100px', md: '160px' },
+  fontSize: { xs: '16px', md: '30px' },
+  pt: { xs: '25px', md: '113px' },
+  pl: { xs: 0, md: '56px' },
+  width: { xs: '80%', md: '100%' },
+  textAlign: 'center'
 };
 
 const contactBtnStyle = {
@@ -63,27 +82,23 @@ const contactBtnStyle = {
 };
 
 const Hero = (props) => {
-  let heroImage = {};
-  let heroText = '';
+  let h1Style = '';
   switch (props.pageName) {
     case 'projects':
-      heroImage = projectsHeroImage;
-      heroText = `Our products blend innovation, quality, and user-centric design to meet today's needs and anticipate tomorrow's challenges`;
+      h1Style = projectsH1;
       break;
     case 'volunteer':
-      heroImage = volunteerHeroImage;
-      heroText = `How to Join CODE PDX`;
+      h1Style = volunteerH1;
       break;
     default:
-      heroImage = homeHeroImage;
-      heroText = `Bridging Technology and Civil Services`;
+      h1Style = homeH1;
   }
 
   return (
-    <Box sx={[heroBackground, heroImage]}>
+    <Box sx={[heroBackground, { backgroundImage: props.heroImage }]}>
       <Box sx={heroContainer}>
-        <Typography variant="h1" sx={[h1Style, h1StyleOverride]}>
-          {heroText}
+        <Typography variant="h1" sx={[h1Style]}>
+          {props.heroText}
         </Typography>
         {props.pageName === 'home' && (
           <Button

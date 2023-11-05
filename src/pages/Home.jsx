@@ -11,7 +11,11 @@ import Partners from '../components/home/partners/Partners';
 const Home = () => {
   return (
     <>
-      <Hero pageName={'home'} />
+      <Hero
+        pageName={'home'}
+        heroImage={`linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/stJohnsBridge.png)`}
+        heroText={`Bridging Technology and Civil Services`}
+      />
       <Container maxWidth="xl">
         <About />
         <VolunteerBrief />
