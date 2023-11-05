@@ -11,15 +11,15 @@ const projectsList = [
     links: [
       {
         href: 'https://github.com/codeforpdx/recordexpungPDX',
-        icon: '<FaGithub />'
+        icon: '<FaGithub size={45} />'
       },
       {
         href: 'https://discord.gg/x6b573et',
-        icon: '<FaDiscord />'
+        icon: '<FaDiscord size={45} />'
       },
       {
         href: 'https://codeforpdx.github.io/recordexpungPDX',
-        icon: '<FaEarthAmericas />'
+        icon: '<FaEarthAmericas size={45} />'
       }
     ],
     techStack:
@@ -35,15 +35,15 @@ const projectsList = [
     links: [
       {
         href: 'https://github.com/codeforpdx/PASS',
-        icon: `<FaGithub />`
+        icon: `<FaGithub size={45} />`
       },
       {
         href: 'https://discord.gg/x6b573et',
-        icon: `<FaDiscord />`
+        icon: `<FaDiscord size={45} />`
       },
       {
         href: 'https://passsmartwallet-967e217a2652.herokuapp.com/',
-        icon: `<FaEarthAmericas />`
+        icon: `<FaEarthAmericas size={45} />`
       }
     ],
     techStack: 'SOLID, React, Vite, JSDocs, MUI, NPM, ES Lint'
@@ -51,8 +51,9 @@ const projectsList = [
   {
     title: 'CODE PDX',
     description:
-      'Code PDX itself is a project that requires constant upkeep and volunteers to maintain.',
-    logo: '/assets/rose_logo.png'
+      'Code PDX itself is a project that requires constant upkeep and volunteers to maintain. This ranges from project management, assisting with organizing events, or even updating this website! We are constantly improving to better help our community.',
+    logo: '/assets/rose_logo.png',
+    techStack: 'SOLID, React, Vite, JSDocs, MUI, NPM, ES Lint'
   }
 ];
 

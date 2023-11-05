@@ -1,6 +1,6 @@
 import Typography from '@mui/material/Typography';
 import PrimaryPartner from './PrimaryPartner';
-import SecondaryPartner from './SecondaryPartner';
+import SecondaryPartners from './SecondaryPartners';
 import CallToAction from './CallToAction';
 
 const Partners = () => {
@@ -17,8 +17,7 @@ const Partners = () => {
         our partners
       </Typography>
       <PrimaryPartner />
-      <SecondaryPartner />
-      <SecondaryPartner />
+      <SecondaryPartners />
       <CallToAction />
     </section>
   );
