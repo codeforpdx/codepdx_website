@@ -5,10 +5,10 @@ import Typography from '@mui/material/Typography';
 //import component specific styles
 import { heroStyles } from './styles';
 
-const Hero = (props) => {
+const Hero = ({ pageName, heroImage, heroText }) => {
   let h1Styles = '';
   let containerStyles = '';
-  switch (props.pageName) {
+  switch (pageName) {
     case 'projects':
       h1Styles = heroStyles.projectsH1;
       containerStyles = [heroStyles.heroContainerAlt, heroStyles.heroRightAlign];
@@ -23,12 +23,12 @@ const Hero = (props) => {
   }
 
   return (
-    <Box sx={[heroStyles.heroBackground, { backgroundImage: props.heroImage }]}>
+    <Box sx={[heroStyles.heroBackground, { backgroundImage: heroImage }]}>
       <Box sx={containerStyles}>
         <Typography variant="h1" sx={h1Styles}>
-          {props.heroText}
+          {heroText}
         </Typography>
-        {props.pageName === 'home' && (
+        {pageName === 'home' && (
           <Button
             variant="contained"
             href="mailto:hugh@codeforpdx.org"
