@@ -14,7 +14,7 @@ const VolunteerSteps = () => {
   return (
     <Stack direction="row" minWidth="100%" spacing={4} my={8}>
       {/* left column */}
-      <Stack maxWidth="33%" pt="8.15rem">
+      <Stack maxWidth="33%" pt="8.25rem">
         {/* <Step title="Step 1: Self-Onboarding & Initial Contact">
           <Typography variant="h6">Get familiar with CODE PDX</Typography>
           <ol>
@@ -105,7 +105,7 @@ const VolunteerSteps = () => {
 
         {/* ========== START HERE */}
 
-        <Step step={1} title="Self-Onboarding & Initial Contact" mb={36.5}>
+        <Step step={1} title="Self-Onboarding & Initial Contact" mb={36.25}>
           <Typography variant="h6">Get familiar with CODE PDX</Typography>
           <List dense>
             <ListItem>
@@ -209,7 +209,7 @@ const VolunteerSteps = () => {
 
         {/* ========== END HERE */}
 
-        <Step step={3} title="Choose a Role & Adopt Our Standards" mb={34.5}>
+        <Step step={3} title="Choose a Role & Adopt Our Standards" mb={31}>
           <ul>
             <li>
               After seeing what we are up to, reach out to team members of a project to connect
@@ -273,7 +273,7 @@ const VolunteerSteps = () => {
       </svg>
 
       {/* right column */}
-      <Stack maxWidth="33%" spacing={25.75} pt="23.8rem">
+      <Stack maxWidth="33%" spacing={15} pt="24rem">
         <Step step={2} title="Connect on Discord & Request Access">
           <Typography variant="h6">CODE PDX uses Discord for communication</Typography>
           <ol>
