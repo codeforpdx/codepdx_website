@@ -51,8 +51,9 @@ const projectsList = [
   {
     title: 'CODE PDX',
     description:
-      'Code PDX itself is a project that requires constant upkeep and volunteers to maintain.',
-    logo: '/assets/rose_logo.png'
+      'Code PDX itself is a project that requires constant upkeep and volunteers to maintain. This ranges from project management, assisting with organizing events, or even updating this website! We are constantly improving to better help our community.',
+    logo: '/assets/rose_logo.png',
+    techStack: 'SOLID, React, Vite, JSDocs, MUI, NPM, ES Lint'
   }
 ];
 

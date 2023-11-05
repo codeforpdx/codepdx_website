@@ -12,12 +12,44 @@ import projectsList from '../projects/projectsList';
 
 const cardStyle = {
   display: 'flex',
+  justifyContent: 'space-between',
   flexDirection: 'column',
   mx: 2,
   p: 4,
   background: 'rgba(217, 217, 217, 0.4)',
-  borderRadius: '40px',
+  borderRadius: '30px',
   height: '100%'
+};
+
+const renderProjectBriefCard = ({ title, description, logo }) => {
+  return (
+    <Grid key={title} item xs={12} md={6} lg={4}>
+      <Card sx={cardStyle}>
+        <CardContent>
+          <CardMedia
+            component="img"
+            image={logo ?? null}
+            alt={`${title} logo`}
+            sx={{
+              mx: 'auto',
+              objectFit: 'contain',
+              maxWidth: '90%',
+              height: '70px',
+              mb: '15%'
+            }}
+          />
+          <Typography variant="body1" sx={{ py: '1rem' }}>
+            {description ?? null}
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button href="/projects" size="large" color="primary">
+            <strong>Learn More</strong>
+          </Button>
+        </CardActions>
+      </Card>
+    </Grid>
+  );
 };
 
 const ProjectsBrief = () => {
@@ -25,42 +57,14 @@ const ProjectsBrief = () => {
     <Box
       as="section"
       sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        m: { xs: '50px 0 100px 0', md: '50px 0 150px 0' },
-        position: 'relative'
+        m: { xs: '50px 0 100px 0', md: '50px 0 150px 0' }
       }}
     >
-      <Typography variant="h3" component="h2" sx={{ mb: '40px' }}>
+      <Typography variant="h3" component="h2" textAlign={'center'} sx={{ mb: '40px' }}>
         Our Projects
       </Typography>
       <Grid container rowSpacing={3}>
-        {projectsList.map(({ title, description, logo }) => (
-          <Grid key={title} item xs={12} md={6} lg={4}>
-            <Card sx={cardStyle}>
-              <CardMedia
-                component="img"
-                image={logo ?? null}
-                alt={`${title} logo`}
-                sx={{
-                  p: 1,
-                  width: title === 'CODE PDX' ? '125px' : '100%'
-                }}
-              />
-              <CardContent>
-                <Typography variant="body1" sx={{ py: '1rem' }}>
-                  {description ?? null}
-                </Typography>
-              </CardContent>
-              <CardActions>
-                <Button href="/projects" size="large" color="quinary">
-                  <strong>Learn More</strong>
-                </Button>
-              </CardActions>
-            </Card>
-          </Grid>
-        ))}
+        {projectsList.map(renderProjectBriefCard)}
       </Grid>
     </Box>
   );
