@@ -13,6 +13,27 @@ import Typography from '@mui/material/Typography';
 import Hero from '../components/home/Hero';
 import projectsList from '../components/projects/projectsList';
 
+const boxStyle = (index) => ({
+  mb: { xs: 5, sm: 15 },
+  p: 5,
+  borderRadius: '25px',
+  minWidth: { xs: '95vw', sm: '80vw' },
+  maxWidth: { sm: '85vw' },
+  background:
+    index % 2 === 0
+      ? 'linear-gradient(270deg, rgba(217, 217, 217, 0) 38.54%, rgba(217, 217, 217, 0.4) 82.29%)'
+      : 'linear-gradient(90deg, rgba(217, 217, 217, 0) 38.54%, rgba(217, 217, 217, 0.4) 82.29%)'
+});
+
+const linkStyle = {
+  color: '#000',
+  textDecoration: 'none',
+  display: 'flex',
+  '&:hover': {
+    color: 'primary.main'
+  }
+};
+
 const Projects = () => {
   return (
     <>
@@ -30,23 +51,10 @@ const Projects = () => {
         </Typography>
         {projectsList
           .slice(0, 2)
-          .map(({ id, title, description, status, logo, links, techStack }) => (
-            <Box
-              key={title}
-              sx={{
-                mb: { xs: 5, sm: 15 },
-                p: 5,
-                background:
-                  id % 2 === 0
-                    ? 'linear-gradient(270deg, rgba(217, 217, 217, 0) 38.54%, rgba(217, 217, 217, 0.4) 82.29%)'
-                    : 'linear-gradient(90deg, rgba(217, 217, 217, 0) 38.54%, rgba(217, 217, 217, 0.4) 82.29%)',
-                borderRadius: '25px',
-                minWidth: { xs: '95vw', sm: '80vw' },
-                maxWidth: { sm: '85vw' }
-              }}
-            >
+          .map(({ index, description, title, status, logo, links, techStack }) => (
+            <Box key={title} sx={boxStyle(index)}>
               <Grid container spacing={{ xs: 1, md: 10 }}>
-                <Grid item xs={12} md={6} order={{ xs: 0, md: id % 2 === 0 ? 2 : 1 }}>
+                <Grid item xs={12} md={6} order={{ xs: 0, md: index % 2 === 0 ? 2 : 1 }}>
                   <CardMedia
                     component="img"
                     image={logo ?? null}
@@ -69,14 +77,7 @@ const Projects = () => {
                         alt={`${title} logo`}
                         target="_blank"
                         rel="noopener"
-                        sx={{
-                          color: '#000',
-                          textDecoration: 'none',
-                          display: 'flex',
-                          '&:hover': {
-                            color: 'primary.main'
-                          }
-                        }}
+                        sx={linkStyle}
                       >
                         {/* TODO: Fix icons not rendering */}
                         {icon}
@@ -85,7 +86,7 @@ const Projects = () => {
                   </Stack>
                 </Grid>
 
-                <Grid item xs={12} md={6} order={{ xs: 0, md: id % 2 === 0 ? 1 : 2 }}>
+                <Grid item xs={12} md={6} order={{ xs: 0, md: index % 2 === 0 ? 1 : 2 }}>
                   <CardContent>
                     <Stack
                       direction={{ xs: 'column', sm: 'row' }}
@@ -109,13 +110,21 @@ const Projects = () => {
                         sx={{ backgroundColor: '#DEDEDEB2', fontWeight: 'bold' }}
                       />
                     </Stack>
-                    <Typography variant="h6" component="h4" sx={{ fontWeight: 'bold', my: 2 }}>
+                    <Typography
+                      variant="h6"
+                      component="h4"
+                      sx={{ fontWeight: 'bold', my: 2, textAlign: { xs: 'center', sm: 'left' } }}
+                    >
                       Overview
                     </Typography>
                     <Typography variant="body1" sx={{ textAlign: 'justify' }}>
                       {description ?? null}
                     </Typography>
-                    <Typography variant="h6" component="h4" sx={{ fontWeight: 'bold', my: 2 }}>
+                    <Typography
+                      variant="h6"
+                      component="h4"
+                      sx={{ fontWeight: 'bold', my: 2, textAlign: { xs: 'center', sm: 'left' } }}
+                    >
                       Technology Used
                     </Typography>
                     <Typography variant="body1" sx={{ textAlign: 'justify' }}>
