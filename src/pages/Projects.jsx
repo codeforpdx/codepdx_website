@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Chip from '@mui/material/Chip';
+import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
@@ -34,6 +35,110 @@ const linkStyle = {
   }
 };
 
+const projectGridLogo = (index, title, logo, links) => {
+  return (
+    <Grid item xs={12} md={6} order={{ xs: 0, md: index % 2 === 0 ? 2 : 1 }}>
+      <CardMedia
+        component="img"
+        image={logo ?? null}
+        alt={`${title} logo`}
+        sx={{
+          p: 1,
+          mx: 'auto',
+          objectFit: 'contain',
+          maxWidth: '90%',
+          height: '150px'
+          // mb: '15%'
+        }}
+      />
+      <Stack
+        direction="row"
+        justifyContent="space-evenly"
+        // spacing={{ xs: 0, md: 2 }}
+        // sx={{ pt: '1rem' }}
+      >
+        {links.map(({ href, icon }) => (
+          <Link
+            component={ReactRouterLink}
+            key={href}
+            href={href}
+            alt={`${title} logo`}
+            target="_blank"
+            rel="noopener"
+            sx={linkStyle}
+          >
+            {/* TODO: Fix icons not rendering */}
+            {icon}
+          </Link>
+        ))}
+      </Stack>
+    </Grid>
+  );
+};
+
+const projectGridContent = (index, description, title, status, techStack) => {
+  return (
+    <Grid item xs={12} md={6} order={{ xs: 0, md: index % 2 === 0 ? 1 : 2 }}>
+      <CardContent>
+        <Stack
+          direction={{ xs: 'column', sm: 'row' }}
+          // spacing={1}
+          sx={{
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            mb: '2rem'
+          }}
+        >
+          <Typography variant="h4" component="h3" sx={{ display: { xs: 'none', sm: 'block' } }}>
+            {title ?? null}
+          </Typography>
+          <Chip
+            label={status ?? null}
+            color="quaternary"
+            variant="outlined"
+            sx={{ backgroundColor: '#DEDEDEB2', fontWeight: 'bold' }}
+          />
+        </Stack>
+        <Divider />
+        <Typography
+          variant="h6"
+          component="h4"
+          sx={{
+            fontWeight: 'bold',
+            mb: 2,
+            mt: 4,
+            textAlign: { xs: 'center', sm: 'left' }
+          }}
+        >
+          Overview
+        </Typography>
+        <Typography
+          variant="body1"
+          // TODO: Keep textAlign here?
+          sx={{ textAlign: 'justify' }}
+        >
+          {description ?? null}
+        </Typography>
+        <Typography
+          variant="h6"
+          component="h4"
+          sx={{
+            fontWeight: 'bold',
+            mb: 2,
+            mt: 4,
+            textAlign: { xs: 'center', sm: 'left' }
+          }}
+        >
+          Technology Used
+        </Typography>
+        <Typography variant="body1" sx={{ textAlign: 'justify' }}>
+          {techStack ?? null}
+        </Typography>
+      </CardContent>
+    </Grid>
+  );
+};
+
 const Projects = () => {
   return (
     <>
@@ -54,84 +159,8 @@ const Projects = () => {
           .map(({ index, description, title, status, logo, links, techStack }) => (
             <Box key={title} sx={boxStyle(index)}>
               <Grid container spacing={{ xs: 1, md: 10 }}>
-                <Grid item xs={12} md={6} order={{ xs: 0, md: index % 2 === 0 ? 2 : 1 }}>
-                  <CardMedia
-                    component="img"
-                    image={logo ?? null}
-                    alt={`${title} logo`}
-                    sx={{
-                      p: 3
-                    }}
-                  />
-                  <Stack
-                    direction="row"
-                    justifyContent="space-evenly"
-                    spacing={{ xs: 0, md: 2 }}
-                    sx={{ pt: '1rem' }}
-                  >
-                    {links.map(({ href, icon }) => (
-                      <Link
-                        component={ReactRouterLink}
-                        key={href}
-                        href={href}
-                        alt={`${title} logo`}
-                        target="_blank"
-                        rel="noopener"
-                        sx={linkStyle}
-                      >
-                        {/* TODO: Fix icons not rendering */}
-                        {icon}
-                      </Link>
-                    ))}
-                  </Stack>
-                </Grid>
-
-                <Grid item xs={12} md={6} order={{ xs: 0, md: index % 2 === 0 ? 1 : 2 }}>
-                  <CardContent>
-                    <Stack
-                      direction={{ xs: 'column', sm: 'row' }}
-                      spacing={1}
-                      sx={{
-                        alignItems: 'center',
-                        justifyContent: 'space-between'
-                      }}
-                    >
-                      <Typography
-                        variant="h4"
-                        component="h3"
-                        sx={{ display: { xs: 'none', sm: 'block' } }}
-                      >
-                        {title ?? null}
-                      </Typography>
-                      <Chip
-                        label={status ?? null}
-                        color="quaternary"
-                        variant="outlined"
-                        sx={{ backgroundColor: '#DEDEDEB2', fontWeight: 'bold' }}
-                      />
-                    </Stack>
-                    <Typography
-                      variant="h6"
-                      component="h4"
-                      sx={{ fontWeight: 'bold', my: 2, textAlign: { xs: 'center', sm: 'left' } }}
-                    >
-                      Overview
-                    </Typography>
-                    <Typography variant="body1" sx={{ textAlign: 'justify' }}>
-                      {description ?? null}
-                    </Typography>
-                    <Typography
-                      variant="h6"
-                      component="h4"
-                      sx={{ fontWeight: 'bold', my: 2, textAlign: { xs: 'center', sm: 'left' } }}
-                    >
-                      Technology Used
-                    </Typography>
-                    <Typography variant="body1" sx={{ textAlign: 'justify' }}>
-                      {techStack ?? null}
-                    </Typography>
-                  </CardContent>
-                </Grid>
+                {projectGridLogo(index, title, logo, links)}
+                {projectGridContent(index, description, title, status, techStack)}
               </Grid>
             </Box>
           ))}

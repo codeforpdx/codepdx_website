@@ -11,15 +11,15 @@ const projectsList = [
     links: [
       {
         href: 'https://github.com/codeforpdx/recordexpungPDX',
-        icon: '<FaGithub size={45} />'
+        icon: '<FaGithub />'
       },
       {
         href: 'https://discord.gg/x6b573et',
-        icon: '<FaDiscord size={45} />'
+        icon: '<FaDiscord />'
       },
       {
         href: 'https://codeforpdx.github.io/recordexpungPDX',
-        icon: '<FaEarthAmericas size={45} />'
+        icon: '<FaEarthAmericas />'
       }
     ],
     techStack:
@@ -35,15 +35,15 @@ const projectsList = [
     links: [
       {
         href: 'https://github.com/codeforpdx/PASS',
-        icon: `<FaGithub size={45} />`
+        icon: `<FaGithub />`
       },
       {
         href: 'https://discord.gg/x6b573et',
-        icon: `<FaDiscord size={45} />`
+        icon: `<FaDiscord />`
       },
       {
         href: 'https://passsmartwallet-967e217a2652.herokuapp.com/',
-        icon: `<FaEarthAmericas size={45} />`
+        icon: `<FaEarthAmericas />`
       }
     ],
     techStack: 'SOLID, React, Vite, JSDocs, MUI, NPM, ES Lint'
