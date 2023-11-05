@@ -226,7 +226,7 @@ const VolunteerSteps = () => {
         </Step>
         <Step title="Additional Onboarding Info">
           <ul>
-            <li>All of these steps can be completed remotely or at an in person event.</li>
+            <li>All of these steps can be completed remotely or at an in-person event.</li>
             <li>
               We invite people to contribute to CODE PDX regardless of skill set or skill level.
             </li>

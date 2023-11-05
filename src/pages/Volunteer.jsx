@@ -5,7 +5,8 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 // Component Imports
 import Hero from '../components/home/Hero';
-import VolunteerSteps from '../components/volunteer/VolunteerSteps.jsx';
+import VolunteerSteps from '../components/volunteer/VolunteerSteps';
+import VolunteerSteps2 from '../components/volunteer/VolunteerSteps2.jsx';
 import VolunteerStepsMobile from '../components/volunteer/VolunteerStepsMobile.jsx';
 
 const Volunteer = () => {
@@ -24,7 +25,8 @@ const Volunteer = () => {
           Regardless of skillset, background, or physical location, we welcome all to contribute to
           our community.
         </Typography>
-        {isLargeScreen && <VolunteerSteps />}
+        {/* {isLargeScreen && <VolunteerSteps />} */}
+        {isLargeScreen && <VolunteerSteps2 />}
         {isSmallScreen && <VolunteerStepsMobile />}
       </Container>
     </>
