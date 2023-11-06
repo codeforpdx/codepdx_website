@@ -10,8 +10,9 @@ import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+import ProjectBox from '../components/projects/ProjectBox';
 // Custom Imports
-import Hero from '../components/home/Hero';
+import Hero from '../components/global/Hero/Hero';
 import projectsList from '../components/projects/projectsList';
 
 const renderingLinks = (href, icon) => {
@@ -140,7 +141,11 @@ const projectGridContent = (index, description, title, status, techStack) => {
 const Projects = () => {
   return (
     <>
-      <Hero />
+      <Hero
+        pageName={'projects'}
+        heroImage={`linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/assets/projectsHeroImage.png)`}
+        heroText={`Our products blend innovation, quality, and user-centric design to meet today's needs and anticipate tomorrow's challenges`}
+      />
       <Box
         as="section"
         sx={{

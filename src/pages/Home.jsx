@@ -1,7 +1,7 @@
 // Material UI Imports
 import { Container } from '@mui/material';
 // Component Imports
-import Hero from '../components/home/Hero';
+import Hero from '../components/global/Hero/Hero';
 import About from '../components/home/About';
 import VolunteerBrief from '../components/home/VolunteerBrief';
 import Events from '../components/home/Events';
@@ -11,7 +11,11 @@ import Partners from '../components/home/partners/Partners';
 const Home = () => {
   return (
     <>
-      <Hero />
+      <Hero
+        pageName={'home'}
+        heroImage={`linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/assets/stJohnsBridge.png)`}
+        heroText={`Bridging Technology and Civil Services`}
+      />
       <Container maxWidth="xl">
         <About />
         <VolunteerBrief />
