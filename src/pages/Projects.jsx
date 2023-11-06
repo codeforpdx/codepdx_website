@@ -31,14 +31,16 @@ const renderingLinks = (href, icon) => {
 
 const boxStyle = (index) => ({
   mb: { xs: 5, sm: 15 },
-  p: 5,
+  py: 5,
+  px: 2,
   borderRadius: '25px',
-  minWidth: { xs: '95vw', sm: '80vw' },
-  maxWidth: { sm: '85vw' },
-  background:
-    index % 2 === 0
-      ? 'linear-gradient(270deg, rgba(217, 217, 217, 0) 38.54%, rgba(217, 217, 217, 0.4) 82.29%)'
-      : 'linear-gradient(90deg, rgba(217, 217, 217, 0) 38.54%, rgba(217, 217, 217, 0.4) 82.29%)'
+  background: {
+    md:
+      index % 2 === 0
+        ? 'linear-gradient(270deg, rgba(217, 217, 217, 0) 38.54%, rgba(217, 217, 217, 0.4) 82.29%)'
+        : 'linear-gradient(90deg, rgba(217, 217, 217, 0) 38.54%, rgba(217, 217, 217, 0.4) 82.29%)',
+    xs: 'linear-gradient(0deg, rgba(217, 217, 217, 0) 38.54%, rgba(217, 217, 217, 0.4) 82.29%)'
+  }
 });
 
 const linkStyle = {
@@ -77,7 +79,7 @@ const projectGridLogo = (index, title, logo, links) => {
 
 const projectGridContent = (index, description, title, status, techStack) => {
   return (
-    <Grid item xs={12} md={6} order={{ xs: 0, md: index % 2 === 0 ? 1 : 2 }}>
+    <Grid maxWidth={'xl'} item xs={12} md={6} order={{ xs: 0, md: index % 2 === 0 ? 1 : 2 }}>
       <CardContent>
         {/* Title and status */}
         <Stack
@@ -114,13 +116,7 @@ const projectGridContent = (index, description, title, status, techStack) => {
         >
           Overview
         </Typography>
-        <Typography
-          variant="body1"
-          // TODO: Keep textAlign here?
-          sx={{ textAlign: 'justify' }}
-        >
-          {description ?? null}
-        </Typography>
+        <Typography variant="body1">{description ?? null}</Typography>
         <Typography
           variant="h6"
           component="h4"
@@ -148,9 +144,13 @@ const Projects = () => {
       <Box
         as="section"
         sx={{
+          alignItems: 'center',
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'center'
+          justifyContent: 'center',
+          px: 2,
+          maxWidth: 'xl',
+          mx: 'auto'
         }}
       >
         <Typography variant="h2" sx={{ m: 5, textAlign: 'center' }}>
