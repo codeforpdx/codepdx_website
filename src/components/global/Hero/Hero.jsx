@@ -26,9 +26,11 @@ const Hero = ({ pageName, heroImage, heroText }) => {
   return (
     <Box sx={[heroStyles.heroBackground, { backgroundImage: heroImage }]}>
       <Box sx={containerStyles}>
-        <Typography variant="h1" sx={h1Styles}>
-          {heroText}
-        </Typography>
+        {heroText && (
+          <Typography variant="h1" sx={h1Styles}>
+            {heroText}
+          </Typography>
+        )}
         {pageName === 'home' && (
           <Button
             variant="contained"
@@ -44,8 +46,8 @@ const Hero = ({ pageName, heroImage, heroText }) => {
 };
 
 Hero.propTypes = {
-  pageName: PropTypes.string,
-  heroImage: PropTypes.string,
+  pageName: PropTypes.string.isRequired,
+  heroImage: PropTypes.string.isRequired,
   heroText: PropTypes.string
 };
 
