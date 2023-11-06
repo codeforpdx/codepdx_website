@@ -14,6 +14,21 @@ import Typography from '@mui/material/Typography';
 import Hero from '../components/home/Hero';
 import projectsList from '../components/projects/projectsList';
 
+const renderingLinks = (href, icon) => {
+  return (
+    <Link
+      component={ReactRouterLink}
+      key={href}
+      to={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      sx={linkStyle}
+    >
+      {icon}
+    </Link>
+  );
+};
+
 const boxStyle = (index) => ({
   mb: { xs: 5, sm: 15 },
   p: 5,
@@ -38,40 +53,24 @@ const linkStyle = {
 const projectGridLogo = (index, title, logo, links) => {
   return (
     <Grid item xs={12} md={6} order={{ xs: 0, md: index % 2 === 0 ? 2 : 1 }}>
+      {/* Logo */}
       <CardMedia
         component="img"
         image={logo ?? null}
         alt={`${title} logo`}
         sx={{
-          p: 1,
           mx: 'auto',
           objectFit: 'contain',
           maxWidth: '90%',
           height: '150px'
-          // mb: '15%'
         }}
       />
-      <Stack
-        direction="row"
-        justifyContent="space-evenly"
-        // spacing={{ xs: 0, md: 2 }}
-        // sx={{ pt: '1rem' }}
-      >
-        {links.map(({ href, icon }) => (
-          <Link
-            component={ReactRouterLink}
-            key={href}
-            href={href}
-            alt={`${title} logo`}
-            target="_blank"
-            rel="noopener"
-            sx={linkStyle}
-          >
-            {/* TODO: Fix icons not rendering */}
-            {icon}
-          </Link>
-        ))}
+      {/* Logo ends */}
+      {/* Links */}
+      <Stack direction="row" justifyContent="space-evenly" pt={{ xs: 0, sm: '1rem' }}>
+        {links.map(({ href, icon }) => renderingLinks(href, icon))}
       </Stack>
+      {/* Links end */}
     </Grid>
   );
 };
@@ -80,9 +79,10 @@ const projectGridContent = (index, description, title, status, techStack) => {
   return (
     <Grid item xs={12} md={6} order={{ xs: 0, md: index % 2 === 0 ? 1 : 2 }}>
       <CardContent>
+        {/* Title and status */}
         <Stack
           direction={{ xs: 'column', sm: 'row' }}
-          // spacing={1}
+          spacing={1}
           sx={{
             alignItems: 'center',
             justifyContent: 'space-between',
@@ -99,14 +99,16 @@ const projectGridContent = (index, description, title, status, techStack) => {
             sx={{ backgroundColor: '#DEDEDEB2', fontWeight: 'bold' }}
           />
         </Stack>
+        {/* Title and status end */}
         <Divider />
+        {/* Content */}
         <Typography
           variant="h6"
           component="h4"
           sx={{
             fontWeight: 'bold',
             mb: 2,
-            mt: 4,
+            mt: 3,
             textAlign: { xs: 'center', sm: 'left' }
           }}
         >
@@ -124,8 +126,7 @@ const projectGridContent = (index, description, title, status, techStack) => {
           component="h4"
           sx={{
             fontWeight: 'bold',
-            mb: 2,
-            mt: 4,
+            my: 2,
             textAlign: { xs: 'center', sm: 'left' }
           }}
         >
@@ -134,6 +135,7 @@ const projectGridContent = (index, description, title, status, techStack) => {
         <Typography variant="body1" sx={{ textAlign: 'justify' }}>
           {techStack ?? null}
         </Typography>
+        {/* Content ends */}
       </CardContent>
     </Grid>
   );
