@@ -10,7 +10,6 @@ import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import ProjectBox from '../components/projects/ProjectBox';
 // Custom Imports
 import Hero from '../components/global/Hero/Hero';
 import projectsList from '../components/projects/projectsList';
