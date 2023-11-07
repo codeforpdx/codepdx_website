@@ -42,8 +42,8 @@ By participating in this project, you are expected to uphold our [Code of Conduc
 3. Check if someone is currently working on that issue and if a [pull request](https://github.com/codeforpdx/codepdx_website/pulls) exists. If someone is working on an issue they should also have a branch created for it and be assigned to the issue.
 4. Assign yourself to an issue leave a comment stating your plans and create a branch for your issue.
 
-  - All bug reporting, feature requests, or enhancements can be found in [issues](https://github.com/codeforpdx/codepdx_website/issues)
-  - Templates for each one can be found [here](./.github/ISSUE_TEMPLATE/) in the .github/ISSUE_TEMPLATE folder. These will automatically populate when using github issues.
+- All bug reporting, feature requests, or enhancements can be found in [issues](https://github.com/codeforpdx/codepdx_website/issues)
+- Templates for each one can be found [here](./.github/ISSUE_TEMPLATE/) in the .github/ISSUE_TEMPLATE folder. These will automatically populate when using github issues.
 
 - ## Clone the repo
 
