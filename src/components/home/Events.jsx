@@ -16,7 +16,7 @@ const leftSidePaperStyles = {
 
 const Events = () => {
   return (
-    <Container maxWidth={false}>
+    <Container maxWidth={false} as="section" id="events">
       <Grid pb={'40px'} container spacing={3} alignItems={'center'}>
         <Grid item xs={12} md={6}>
           <Typography component="h2" pb={'40px'} variant="h3" align="center" gutterBottom>
@@ -26,9 +26,10 @@ const Events = () => {
             <Typography p={2}>
               CODE PDX meets up in-person once a month for a project demo night and onboarding
               event. We also occasionally do social meetups.
-              <br></br>
-              <br></br>not sure if we need three boxes. I Need to find more content to put here or
-              remove a bubble and maybe toss in a blob since this will be mid page.
+              <br />
+              <br />
+              Not sure if we need three boxes. I Need to find more content to put here or remove a
+              bubble and maybe toss in a blob since this will be mid page.
             </Typography>
           </Paper>
           <Paper
