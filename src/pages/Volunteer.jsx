@@ -12,7 +12,10 @@ const Volunteer = () => {
         heroText={`How to Join CODE PDX`}
       />
       <Container maxWidth="xl">
-        <Typography />
+        <Typography variant="h3" component="h1" textAlign="center" sx={{ px: '2rem', my: '40px' }}>
+          Regardless of skillset, background, or physical location, we welcome all to contribute to
+          our community.
+        </Typography>
         <Steps />
       </Container>
     </>
