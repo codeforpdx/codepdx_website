@@ -18,18 +18,15 @@ jobs:
     steps:
       - name: Checkout sources
         uses: actions/checkout@v3
-
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
           cache: npm
-
       - name: Build
         run: |
           npm ci
           npm run build
-
       - name: Upload frontend assets
         uses: actions/upload-pages-artifact@v1
         with:
@@ -38,6 +35,29 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: main
+          folder: dist
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: npm
+      - name: Download frontend assets
+        uses: actions/download-pages-artifact@v1
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
           folder: dist
 
   lint:
