@@ -36,7 +36,6 @@ jobs:
         with:
           branch: gh-pages
           folder: dist
-
   deploy:
     name: Deploy
     needs: build
