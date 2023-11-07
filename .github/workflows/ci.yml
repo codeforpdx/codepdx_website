@@ -39,7 +39,6 @@ jobs:
         with:
           branch: main
           folder: dist
-          token: ${{ secrets.GITHUB_TOKEN }}
 
   lint:
     name: Lint
