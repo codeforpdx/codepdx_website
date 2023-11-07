@@ -37,8 +37,9 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: codepdx_website
+          branch: gh-pages
           folder: dist
+          token: ${{ secrets.GITHUB_TOKEN }}
 
   lint:
     name: Lint
