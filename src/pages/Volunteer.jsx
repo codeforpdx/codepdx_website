@@ -4,6 +4,7 @@ import Hero from '../components/global/Hero/Hero';
 import Typography from '@mui/material/Typography';
 // Component Imports
 import VolunteerSteps from '../components/volunteer/VolunteerSteps';
+import VolunteerSteps2 from '../components/volunteer/VolunteerSteps2';
 
 const Volunteer = () => {
   return (
