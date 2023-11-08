@@ -1,11 +1,13 @@
 {
-  "name": "code-pdx-website",
-  "private": true,
+  "homepage": "https://codeforpdx.github.io/codepdx_website/",
+  "name": "codepdx_website",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "deploy": "gh-pages -d dist",
     "build": "vite build",
+    "serve": "vite preview",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "eslint --fix .",
     "prettier:check": "prettier --check .",

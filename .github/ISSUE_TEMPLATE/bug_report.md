@@ -14,7 +14,7 @@ Please provide a DETAILED description of the bug.
 
 ### Reproduction Steps:
 
-1. 
+1.
 
 ---
 

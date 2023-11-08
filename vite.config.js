@@ -7,5 +7,6 @@ export default defineConfig({
     react({
       include: '**/*.jsx'
     })
-  ]
+  ],
+  base: '/codepdx_website/'
 });
