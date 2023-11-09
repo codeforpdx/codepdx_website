@@ -4,7 +4,6 @@ import Hero from '../components/global/Hero/Hero';
 import Typography from '@mui/material/Typography';
 // Component Imports
 import VolunteerSteps from '../components/volunteer/VolunteerSteps';
-import VolunteerSteps2 from '../components/volunteer/VolunteerSteps2';
 
 const Volunteer = () => {
   return (
@@ -19,7 +18,7 @@ const Volunteer = () => {
           Regardless of skillset, background, or physical location, we welcome all to contribute to
           our community.
         </Typography>
-        <VolunteerSteps2 />
+        <VolunteerSteps />
       </Container>
     </>
   );

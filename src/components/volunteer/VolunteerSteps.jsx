@@ -212,8 +212,7 @@ const VolunteerSteps = () => {
           </Typography>
           {subtitle && <Typography variant="h6">{subtitle}</Typography>}
           <List sx={{ listStyle: 'decimal', pl: 4 }}>
-            {/* ====== THE PROBLEM IS HERE ====== */}
-            {listItems.map(({ preText, link, linkText, postText, numbered }) => {
+            {listItems.map(({ preText, link, linkText, postText, numbered }) => (
               <ListItem key={preText} sx={{ display: numbered ? 'list-item' : '' }}>
                 <ListItemText>
                   {preText}{' '}
@@ -233,9 +232,8 @@ const VolunteerSteps = () => {
                   )}
                   {postText}
                 </ListItemText>
-              </ListItem>;
-            })}
-
+              </ListItem>
+            ))}
             {extraText}
           </List>
         </VerticalTimelineElement>
