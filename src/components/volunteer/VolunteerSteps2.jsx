@@ -66,13 +66,6 @@ const VolunteerSteps2 = () => {
       subtitle: 'Get familiar with CODE PDX',
       icon: <BsFill1CircleFill />,
       listItems: [
-        // {
-        //   preText: 'Read our ',
-        //   link: 'https://github.com/codeforpdx/codeofconduct',
-        //   linkText: 'Code of Conduct',
-        //   postText: '.',
-        //   numbered: true
-        // },
         createListItem(
           'Read our ',
           'https://github.com/codeforpdx/codeofconduct',
@@ -213,7 +206,7 @@ const VolunteerSteps2 = () => {
 
   const getBackgroundStyle = (isSingleColumn, index) => {
     if (isSingleColumn) {
-      return 'linear-gradient(180deg, rgba(217, 217, 217, 0) 38.54%, rgba(217, 217, 217, 0.4) 82.29%)';
+      return 'linear-gradient(0deg, rgba(217, 217, 217, 0) 38.54%, rgba(217, 217, 217, 0.4) 82.29%)';
     } else if (index % 2 === 0) {
       return 'linear-gradient(90deg, rgba(217, 217, 217, 0) 38.54%, rgba(217, 217, 217, 0.4) 82.29%)';
     } else {
@@ -245,28 +238,6 @@ const VolunteerSteps2 = () => {
           {item.subtitle && <Typography variant="h6">{item.subtitle}</Typography>}
           <List sx={{ listStyle: 'decimal', pl: 4 }}>
             {item.listItems}
-            {/* {item.listItems.map((item) => {
-              <ListItem sx={{ display: item.numbered ? 'list-item' : '' }}>
-                <ListItemText>
-                  {item.preText}{' '}
-                  {item.link && (
-                    <a
-                      href={item.link}
-                      target="_blank"
-                      rel="noreferrer"
-                      style={{
-                        color: theme.palette.primary.main,
-                        textDecoration: 'none',
-                        fontWeight: 600
-                      }}
-                    >
-                      {item.linkText}
-                    </a>
-                  )}
-                  {item.postText}
-                </ListItemText>
-              </ListItem>;
-            })} */}
             {item.extraText}
           </List>
         </VerticalTimelineElement>
