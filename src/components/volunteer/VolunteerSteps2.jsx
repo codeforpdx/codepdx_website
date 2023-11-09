@@ -20,10 +20,10 @@ const VolunteerSteps2 = () => {
   const theme = useTheme();
   const isSingleColumn = useMediaQuery('(max-width:1169px)');
 
-  const createListItem = (text, link, linkText, numbered) => (
+  const createListItem = (preText, link, linkText, postText, numbered) => (
     <ListItem sx={{ display: numbered ? 'list-item' : '' }}>
       <ListItemText>
-        {text}{' '}
+        {preText}{' '}
         {link && (
           <a
             href={link}
@@ -38,13 +38,14 @@ const VolunteerSteps2 = () => {
             {linkText}
           </a>
         )}
+        {postText}
       </ListItemText>
     </ListItem>
   );
 
-  const createExtraText = (text, link, linkText) => (
+  const createExtraText = (preText, link, linkText, postText) => (
     <Typography>
-      {text}{' '}
+      {preText}{' '}
       {link && (
         <a
           href={link}
@@ -55,6 +56,7 @@ const VolunteerSteps2 = () => {
           {linkText}
         </a>
       )}
+      {postText}
     </Typography>
   );
 
@@ -68,20 +70,35 @@ const VolunteerSteps2 = () => {
           'Read our ',
           'https://github.com/codeforpdx/codeofconduct',
           'Code of Conduct',
+          '.',
           true
         ),
         createListItem(
           'Complete our ',
           'https://docs.google.com/forms/d/e/1FAIpQLSfu4u9FB00RXd2TncbMLws_Ckot-vYqPK0oUHr81uLDjThE7Q/viewform',
           'onboarding form',
+          '.',
           true
         ),
-        createListItem('Review our ', 'https://github.com/codeforpdx', 'current projects', true),
-        createListItem('Read the ', 'https://github.com/codeforpdx', 'ADA Compliance Guide', true),
+        createListItem(
+          'Review our ',
+          'https://github.com/codeforpdx',
+          'current projects',
+          '.',
+          true
+        ),
+        createListItem(
+          'Read the ',
+          'https://github.com/codeforpdx',
+          'ADA Compliance Guide',
+          ', all CODE PDX projects are inclusive by design.',
+          true
+        ),
         createListItem(
           'Join a project demo night & onboarding session listed on ',
           'https://www.meetup.com/code-for-pdx/',
           'Meetup',
+          '.',
           true
         )
       ]
@@ -94,22 +111,26 @@ const VolunteerSteps2 = () => {
           'Join the ',
           'https://discord.gg/qQ2sNXMagU',
           'CODE PDX Discord server',
+          ' and self assign roles. These roles will display project channels and help others identify the roles you intend to fulfill.',
           true
         ),
         createListItem(
           'Introduce yourself in the ',
           'https://discord.com/channels/1068260532806766733/1075286322530484256',
-          '#introductions channel',
+          '#introductions',
+          ' channel, this is a good way to network with current members.',
           true
         ),
         createListItem(
           'Request GitHub access in the ',
           'https://discord.com/channels/1068260532806766733/1078124139983945858',
-          '#github-access-request channel',
+          '#github-access-request',
+          ' channel.',
           true
         ),
         createListItem(
-          'Request project specific access to Google Drive and other project content',
+          'Request project specific access to Google Drive and other project content.',
+          '',
           '',
           '',
           true
@@ -124,7 +145,8 @@ const VolunteerSteps2 = () => {
         createExtraText(
           'If you are new to discord, there is a beginners user guide available ',
           'https://support.discord.com/hc/en-us/articles/360045138571-Beginner-s-Guide-to-Discord',
-          'HERE'
+          'HERE',
+          '.'
         )
       ]
     },
@@ -133,10 +155,10 @@ const VolunteerSteps2 = () => {
       icon: <BsFill3CircleFill />,
       listItems: [
         createListItem(
-          '- After seeing what we are up to, reach out to team members of a project to connect & let them know how you would like to contribute. You can find active members by seeing who recently contributed to a repository or the recent discord chat history of a project'
+          '- After seeing what we are up to, reach out to team members of a project to connect & let them know how you would like to contribute. You can find active members by seeing who recently contributed to a repository or the recent discord chat history of a project.'
         ),
         createListItem(
-          "- The GitHub repository is a good place to see what's active within CODE PDX and contains a writeup of our contribution guidelines that we follow to standardize our workflow"
+          "- The GitHub repository is a good place to see what's active within CODE PDX and contains a writeup of our contribution guidelines that we follow to standardize our workflow."
         )
       ]
     },
@@ -145,19 +167,22 @@ const VolunteerSteps2 = () => {
       icon: <BsFill4CircleFill />,
       listItems: [
         createListItem(
-          'Find your first issue to work on from the GitHub repo of the project of your choice. For guidance on picking your first issue, check out our ',
+          'Find your first issue to work on from the GitHub repo of the project of your choice. Check out our ',
           'https://github.com/codeforpdx',
           'Wiki',
+          ' for guidance on picking your first issue.',
           true
         ),
         createListItem(
-          'Create a branch for your issue or feature and collaborate with other members',
+          'Create a branch for your issue or feature and collaborate with other members.',
+          '',
           '',
           '',
           true
         ),
         createListItem(
-          'Create a pull request off of our GitHub template, and submit for review. Pull requests require at least one other person to review & approve before merging',
+          'Create a pull request off of our GitHub template, and submit for review. Pull requests require at least one other person to review & approve before merging.',
+          '',
           '',
           '',
           true
@@ -168,12 +193,12 @@ const VolunteerSteps2 = () => {
       title: 'Additional Onboarding Info',
       icon: <BsFill5CircleFill />,
       listItems: [
-        createListItem('- All of these steps can be completed remotely or at an in-person event'),
+        createListItem('- All of these steps can be completed remotely or at an in-person event.'),
         createListItem(
-          '- We invite people to contribute to CODE PDX regardless of skill set or skill level'
+          '- We invite people to contribute to CODE PDX regardless of skill set or skill level.'
         ),
         createListItem(
-          '- When in doubt, proactively reach out in the Discord text channels. They are frequently checked by members and will likely yield a swift response'
+          '- When in doubt, proactively reach out in the Discord text channels. They are frequently checked by members and will likely yield a swift response.'
         )
       ]
     }

@@ -19,7 +19,7 @@ const Volunteer = () => {
           Regardless of skillset, background, or physical location, we welcome all to contribute to
           our community.
         </Typography>
-        <VolunteerSteps />
+        <VolunteerSteps2 />
       </Container>
     </>
   );
