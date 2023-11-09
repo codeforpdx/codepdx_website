@@ -20,23 +20,6 @@ const VolunteerSteps = () => {
   const theme = useTheme();
   const isSingleColumn = useMediaQuery('(max-width:1169px)');
 
-  const createExtraText = (preText, link, linkText, postText) => (
-    <Typography key={preText}>
-      {preText}{' '}
-      {link && (
-        <a
-          href={link}
-          target="_blank"
-          rel="noreferrer"
-          style={{ color: theme.palette.primary.main, textDecoration: 'none', fontWeight: 600 }}
-        >
-          {linkText}
-        </a>
-      )}
-      {postText}
-    </Typography>
-  );
-
   const volunteerStepsData = [
     {
       title: 'Self-Onboarding & Initial Contact',
@@ -114,14 +97,12 @@ const VolunteerSteps = () => {
           numbered: true
         }
       ],
-      extraText: [
-        createExtraText(
-          'If you are new to discord, there is a beginners user guide available ',
-          'https://support.discord.com/hc/en-us/articles/360045138571-Beginner-s-Guide-to-Discord',
-          'HERE',
-          '.'
-        )
-      ]
+      extraText: {
+        preText: 'If you are new to discord, there is a beginners user guide available ',
+        link: 'https://support.discord.com/hc/en-us/articles/360045138571-Beginner-s-Guide-to-Discord',
+        linkText: 'HERE',
+        postText: '.'
+      }
     },
     {
       title: 'Choose a Role & Adopt Our Standards',
@@ -234,7 +215,26 @@ const VolunteerSteps = () => {
                 </ListItemText>
               </ListItem>
             ))}
-            {extraText}
+            {extraText && (
+              <Typography key={extraText.preText}>
+                {extraText.preText}{' '}
+                {extraText.link && (
+                  <a
+                    href={extraText.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{
+                      color: theme.palette.primary.main,
+                      textDecoration: 'none',
+                      fontWeight: 600
+                    }}
+                  >
+                    {extraText.linkText}
+                  </a>
+                )}
+                {extraText.postText}
+              </Typography>
+            )}
           </List>
         </VerticalTimelineElement>
       ))}
