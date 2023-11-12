@@ -4,44 +4,10 @@ import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-// Other Library Imports
-// import {
-//   FaChartPie,
-//   FaDatabase,
-//   FaHandHoldingHeart,
-//   FaHandshakeSimple,
-//   FaLaptopCode,
-//   FaPenRuler,
-//   FaPeopleLine,
-//   FaUser
-// } from 'react-icons/fa6';
-
-import BarChartIcon from '@mui/icons-material/BarChart';
-import DesignServicesIcon from '@mui/icons-material/DesignServices';
-// import Diversity1Icon from '@mui/icons-material/Diversity1';
-import Diversity3Icon from '@mui/icons-material/Diversity3';
-// import GroupsIcon from '@mui/icons-material/Groups';
-// import DrawIcon from '@mui/icons-material/Draw';
-import HandshakeIcon from '@mui/icons-material/Handshake';
-import LaptopIcon from '@mui/icons-material/Laptop';
-// import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
-import PersonIcon from '@mui/icons-material/Person';
-import StorageIcon from '@mui/icons-material/Storage';
-// import SupervisorAccountIcon from '@mui/icons-material/SupervisorAccount';
-// import SupervisedUserCircleIcon from '@mui/icons-material/SupervisedUserCircle';
-// import TerminalIcon from '@mui/icons-material/Terminal';
-import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
-
-// import CodeOutlinedIcon from '@mui/icons-material/CodeOutlined';
+// Material UI Icons Imports
 import DesignServicesOutlinedIcon from '@mui/icons-material/DesignServicesOutlined';
-// import Diversity1OutlinedIcon from '@mui/icons-material/Diversity1Outlined';
-// import Diversity3OutlinedIcon from '@mui/icons-material/Diversity3Outlined';
-// import DnsOutlinedIcon from '@mui/icons-material/DnsOutlined';
 import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined';
 import HandshakeOutlinedIcon from '@mui/icons-material/HandshakeOutlined';
-// import InsertChartOutlinedOutlinedIcon from '@mui/icons-material/InsertChartOutlinedOutlined';
-// import InventoryOutlinedIcon from '@mui/icons-material/InventoryOutlined';
-// import LaptopOutlinedIcon from '@mui/icons-material/LaptopOutlined';
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 import QueryStatsOutlinedIcon from '@mui/icons-material/QueryStatsOutlined';
 import StorageRoundedIcon from '@mui/icons-material/StorageRounded';
@@ -101,16 +67,10 @@ const boxStyle = {
 };
 
 const cardStyle = {
-  // display: 'flex',
-  // justifyContent: 'space-between',
-  // flexDirection: 'column',
   m: { xs: '10px 0 10px 0', md: '0 25px 20px 25px' },
-  p: { xs: '0 0 0 0', sm: 3 },
-  // py: 5,
-  // my: 5,
+  p: 4,
   backgroundColor: 'rgba(217, 217, 217, 0.4)',
   borderRadius: '30px'
-  // height: '100%'
 };
 
 const VolunteerBrief = () => {
@@ -124,7 +84,14 @@ const VolunteerBrief = () => {
           Use your skills for the greater good or build your resume!
         </Typography>
         <Box>
-          <Grid container rowSpacing={5} sx={{ margin: 0 }}>
+          <Grid
+            container
+            rowSpacing={3}
+            sx={{
+              // m: 0,
+              pt: 3
+            }}
+          >
             {volunteerGrid.map(({ icon, label, alt }) => (
               <Grid item xs={6} sm={3} key={alt}>
                 <Typography variant="body2">
