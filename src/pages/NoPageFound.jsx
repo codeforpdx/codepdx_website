@@ -25,7 +25,7 @@ const NoPageFound = () => {
         }
       })
       .catch((error) => console.error(error));
-  }, [photoUrl]);
+  }, []);
 
   const isPhotoFound = photoUrl !== null && photoUrl !== undefined;
 
