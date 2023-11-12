@@ -32,98 +32,117 @@ import StorageIcon from '@mui/icons-material/Storage';
 // import TerminalIcon from '@mui/icons-material/Terminal';
 import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 
+// import CodeOutlinedIcon from '@mui/icons-material/CodeOutlined';
+import DesignServicesOutlinedIcon from '@mui/icons-material/DesignServicesOutlined';
+// import Diversity1OutlinedIcon from '@mui/icons-material/Diversity1Outlined';
+// import Diversity3OutlinedIcon from '@mui/icons-material/Diversity3Outlined';
+// import DnsOutlinedIcon from '@mui/icons-material/DnsOutlined';
+import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined';
+import HandshakeOutlinedIcon from '@mui/icons-material/HandshakeOutlined';
+// import InsertChartOutlinedOutlinedIcon from '@mui/icons-material/InsertChartOutlinedOutlined';
+// import InventoryOutlinedIcon from '@mui/icons-material/InventoryOutlined';
+// import LaptopOutlinedIcon from '@mui/icons-material/LaptopOutlined';
+import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
+import QueryStatsOutlinedIcon from '@mui/icons-material/QueryStatsOutlined';
+import StorageRoundedIcon from '@mui/icons-material/StorageRounded';
+import TerminalOutlinedIcon from '@mui/icons-material/TerminalOutlined';
+import VolunteerActivismOutlinedIcon from '@mui/icons-material/VolunteerActivismOutlined';
+
 const volunteerGrid = [
   {
-    icon: <LaptopIcon fontSize="large" />,
+    icon: <TerminalOutlinedIcon fontSize="large" />,
     label: 'Developers',
     alt: 'Laptop with code'
   },
   {
-    icon: <StorageIcon fontSize="large" />,
+    icon: <StorageRoundedIcon fontSize="large" />,
     label: 'Data Scientists',
     alt: 'Database'
   },
   {
-    icon: <DesignServicesIcon fontSize="large" />,
+    icon: <DesignServicesOutlinedIcon fontSize="large" />,
     label: 'Designers',
     alt: 'Pen and ruler'
   },
   {
-    icon: <Diversity3Icon fontSize="large" />,
+    icon: <GroupsOutlinedIcon fontSize="large" />,
     label: 'Project Managers',
     alt: 'People in a line'
   },
   {
-    icon: <BarChartIcon fontSize="large" />,
+    icon: <QueryStatsOutlinedIcon fontSize="large" />,
     label: 'Product Managers',
     alt: 'Pie chart'
   },
   {
-    icon: <HandshakeIcon fontSize="large" />,
+    icon: <HandshakeOutlinedIcon fontSize="large" />,
     label: 'Social Workers',
     alt: 'Handshake'
   },
   {
-    icon: <VolunteerActivismIcon fontSize="large" />,
+    icon: <VolunteerActivismOutlinedIcon fontSize="large" />,
     label: 'Community Organizers',
     alt: 'Hand holding heart'
   },
   {
-    icon: <PersonIcon fontSize="large" />,
+    icon: <PersonOutlinedIcon fontSize="large" />,
     label: 'Anyone!',
     alt: 'User avatar'
   }
 ];
 
+const boxStyle = {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  textAlign: 'center',
+  width: '100%',
+  m: { xs: '50px 0 100px 0', md: '50px 0 150px 0' }
+};
+
+const cardStyle = {
+  // display: 'flex',
+  // justifyContent: 'space-between',
+  // flexDirection: 'column',
+  m: { xs: '10px 0 10px 0', md: '0 25px 20px 25px' },
+  p: { xs: '0 0 0 0', sm: 3 },
+  // py: 5,
+  // my: 5,
+  backgroundColor: 'rgba(217, 217, 217, 0.4)',
+  borderRadius: '30px'
+  // height: '100%'
+};
+
 const VolunteerBrief = () => {
   return (
-    <Box
-      as="section"
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        textAlign: 'center',
-        width: '100%',
-        my: '40px'
-      }}
-    >
-      <Typography variant="h3" component="h2" sx={{ px: '2rem' }}>
+    <Box as="section" sx={boxStyle}>
+      <Typography variant="h3" component="h2" sx={{ mb: '40px' }}>
         Volunteer With Us
       </Typography>
-      <Card
-        sx={{
-          py: 5,
-          my: 5,
-          backgroundColor: 'rgba(217, 217, 217, 0.4',
-          borderRadius: '10px'
-        }}
-      >
+      <Card sx={cardStyle}>
         <Typography variant="h6" component="h3" sx={{ px: '1rem' }}>
           Use your skills for the greater good or build your resume!
         </Typography>
-        <Grid container rowSpacing={5} sx={{ margin: 0 }}>
-          {volunteerGrid.map(({ icon, label, alt }) => (
-            <Grid item xs={6} sm={3} key={alt}>
-              <Typography variant="body2">
-                {icon ?? null}
-                <br />
-                {label ?? null}
-              </Typography>
-            </Grid>
-          ))}
-        </Grid>
+        <Box>
+          <Grid container rowSpacing={5} sx={{ margin: 0 }}>
+            {volunteerGrid.map(({ icon, label, alt }) => (
+              <Grid item xs={6} sm={3} key={alt}>
+                <Typography variant="body2">
+                  {icon ?? null}
+                  <br />
+                  {label ?? null}
+                </Typography>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
         <Button
           variant="contained"
           href="mailto:hugh@codeforpdx.org"
           target="_blank"
           rel="noopener"
           sx={{
-            mt: '2rem',
-            width: 1 / 3,
-            '&:hover': {
-              color: 'white'
-            }
+            mt: '2rem'
           }}
         >
           Volunteer
