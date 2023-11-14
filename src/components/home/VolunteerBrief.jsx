@@ -88,17 +88,13 @@ const VolunteerBrief = () => {
             container
             rowSpacing={3}
             sx={{
-              // m: 0,
               pt: 3
             }}
           >
             {volunteerGrid.map(({ icon, label, alt }) => (
               <Grid item xs={6} sm={3} key={alt}>
-                <Typography variant="body2">
-                  {icon ?? null}
-                  <br />
-                  {label ?? null}
-                </Typography>
+                {icon ?? null}
+                <Typography variant="body2">{label ?? null}</Typography>
               </Grid>
             ))}
           </Grid>
