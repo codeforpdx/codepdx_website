@@ -67,7 +67,6 @@ const boxStyle = {
 };
 
 const cardStyle = {
-  m: { xs: '10px 0 10px 0', md: '0 25px 20px 25px' },
   p: 4,
   backgroundColor: 'rgba(217, 217, 217, 0.4)',
   borderRadius: '30px'
