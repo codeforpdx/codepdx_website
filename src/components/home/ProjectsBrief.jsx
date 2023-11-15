@@ -18,7 +18,8 @@ const cardStyle = {
   p: { xs: '0 0 0 0', sm: 3 },
   background: 'rgba(217, 217, 217, 0.4)',
   borderRadius: '30px',
-  height: '100%'
+  height: '100%',
+  minHeight: '500px'
 };
 
 const renderProjectBriefCard = ({ title, description, logo }) => {
@@ -34,11 +35,10 @@ const renderProjectBriefCard = ({ title, description, logo }) => {
               mx: 'auto',
               objectFit: 'contain',
               maxWidth: '90%',
-              height: '70px',
-              mb: '15%'
+              height: '70px'
             }}
           />
-          <Typography variant="body1" sx={{ py: '1rem' }}>
+          <Typography variant="body1" sx={{ py: { xs: '1rem', sm: '2rem' } }}>
             {description ?? null}
           </Typography>
         </CardContent>
