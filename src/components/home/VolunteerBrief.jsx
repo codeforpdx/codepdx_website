@@ -57,15 +57,6 @@ const volunteerGrid = [
   }
 ];
 
-const boxStyle = {
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  textAlign: 'center',
-  width: '100%',
-  m: { xs: '50px 0 100px 0', md: '50px 0 150px 0' }
-};
-
 const cardStyle = {
   p: 4,
   backgroundColor: 'rgba(217, 217, 217, 0.4)',
@@ -74,7 +65,14 @@ const cardStyle = {
 
 const VolunteerBrief = () => {
   return (
-    <Box as="section" sx={boxStyle}>
+    <Box
+      as="section"
+      sx={{
+        textAlign: 'center',
+        alignItems: 'center',
+        margin: { xs: '50px 0 100px 0', md: '50px 0 150px 0' }
+      }}
+    >
       <Typography variant="h3" component="h2" sx={{ mb: '40px' }}>
         Volunteer With Us
       </Typography>
