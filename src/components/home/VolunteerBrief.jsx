@@ -1,8 +1,8 @@
 // Material UI Imports
-import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import Grid from '@mui/material/Grid';
+import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 // Material UI Icons Imports
 import DesignServicesOutlinedIcon from '@mui/icons-material/DesignServicesOutlined';
@@ -57,15 +57,9 @@ const volunteerGrid = [
   }
 ];
 
-const cardStyle = {
-  p: 4,
-  backgroundColor: 'rgba(217, 217, 217, 0.4)',
-  borderRadius: '30px'
-};
-
 const VolunteerBrief = () => {
   return (
-    <Box
+    <Stack
       as="section"
       sx={{
         textAlign: 'center',
@@ -76,26 +70,24 @@ const VolunteerBrief = () => {
       <Typography variant="h3" component="h2" sx={{ mb: '40px' }}>
         Volunteer With Us
       </Typography>
-      <Card sx={cardStyle}>
+      <Card sx={{ p: 4, backgroundColor: 'rgba(217, 217, 217, 0.4)', borderRadius: '30px' }}>
         <Typography variant="h6" component="h3" sx={{ px: '1rem' }}>
           Use your skills for the greater good or build your resume!
         </Typography>
-        <Box>
-          <Grid
-            container
-            rowSpacing={3}
-            sx={{
-              pt: 3
-            }}
-          >
-            {volunteerGrid.map(({ icon, label, alt }) => (
-              <Grid item xs={6} sm={3} key={alt}>
-                {icon ?? null}
-                <Typography variant="body2">{label ?? null}</Typography>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
+        <Grid
+          container
+          rowSpacing={3}
+          sx={{
+            pt: 3
+          }}
+        >
+          {volunteerGrid.map(({ icon, label, alt }) => (
+            <Grid item xs={6} sm={3} key={alt}>
+              {icon ?? null}
+              <Typography variant="body2">{label ?? null}</Typography>
+            </Grid>
+          ))}
+        </Grid>
         <Button
           variant="contained"
           href="mailto:hugh@codeforpdx.org"
@@ -108,7 +100,7 @@ const VolunteerBrief = () => {
           Volunteer
         </Button>
       </Card>
-    </Box>
+    </Stack>
   );
 };
 
