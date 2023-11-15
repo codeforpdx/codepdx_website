@@ -12,6 +12,7 @@ import Typography from '@mui/material/Typography';
 const NoPageFound = () => {
   const navigate = useNavigate();
   const [photoUrl, setPhotoUrl] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetch('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
@@ -23,8 +24,12 @@ const NoPageFound = () => {
         if (!urlIsVideo) {
           setPhotoUrl(data.url);
         }
+        setIsLoading(false);
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        console.error(error);
+        setIsLoading(false);
+      });
   }, []);
 
   const isPhotoFound = photoUrl !== null && photoUrl !== undefined;
@@ -35,6 +40,16 @@ const NoPageFound = () => {
 
   const buttonText = isPhotoFound ? 'Take me back to earth' : 'Take me back';
 
+  let backgroundStyle;
+
+  if (isLoading) {
+    backgroundStyle = 'rgba(0, 0, 0, 0.87)';
+  } else if (photoUrl) {
+    backgroundStyle = `url(${photoUrl}) center/cover no-repeat`;
+  } else {
+    backgroundStyle = 'url(/assets/notfound.webp) center/cover no-repeat';
+  }
+
   return (
     <Box
       width="100vw"
@@ -43,25 +58,40 @@ const NoPageFound = () => {
       alignItems="center"
       justifyContent="center"
       sx={{
-        background: `${
-          photoUrl ? `url(${photoUrl})` : `url(/assets/notfound.webp)`
-        } center/cover no-repeat`
+        background: backgroundStyle
       }}
     >
       <Stack
         alignItems="center"
         textAlign="center"
         spacing={4}
+        p="25px"
         sx={{
-          backdropFilter: 'blur(16px) saturate(180%)',
-          WebkitBackdropFilter: 'blur(16px) saturate(180%)',
+          backdropFilter: 'blur(5px) saturate(180%)',
+          WebkitBackdropFilter: 'blur(5px) saturate(180%)',
           backgroundColor: 'rgba(17, 25, 40, 0.5)',
           border: '1px solid rgba(236, 236, 236, 0.1)',
           borderRadius: '10px'
         }}
       >
         <Container maxWidth="sm">
-          <Typography variant="h2" color="primary" mb={2}>
+          <Typography
+            variant="body1"
+            component="h1"
+            color="secondary"
+            fontSize="24px"
+            sx={{ textShadow: '0px 4px 4px #0000004D' }}
+          >
+            Error 404:
+            <br />
+            Page Not Found
+          </Typography>
+          <Typography
+            variant="h4"
+            color="primary"
+            my="2rem"
+            sx={{ textShadow: '0px 4px 4px #0000004D' }}
+          >
             {primaryText}
           </Typography>
           {/* takes to previous page in browser history OR HOME.JSX if no previous browser history */}
@@ -69,7 +99,6 @@ const NoPageFound = () => {
             {buttonText}
           </Button>
         </Container>
-        <Typography color="primary">Error 404: Page Not Found</Typography>
       </Stack>
     </Box>
   );
