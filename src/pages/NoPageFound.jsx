@@ -89,7 +89,7 @@ const NoPageFound = () => {
           <Typography
             variant="h4"
             component="p"
-            color="primary"
+            color="secondary"
             my="2rem"
             sx={{ textShadow: '0px 4px 4px #0000004D' }}
           >
