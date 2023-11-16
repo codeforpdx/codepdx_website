@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-// Custom Imports
+// Component Imports
 import ContactFormModal from '../../global/ContactFormModal';
 
 const CallToAction = () => {

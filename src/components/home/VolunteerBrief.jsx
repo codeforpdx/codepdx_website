@@ -15,7 +15,7 @@ import QueryStatsOutlinedIcon from '@mui/icons-material/QueryStatsOutlined';
 import StorageRoundedIcon from '@mui/icons-material/StorageRounded';
 import TerminalOutlinedIcon from '@mui/icons-material/TerminalOutlined';
 import VolunteerActivismOutlinedIcon from '@mui/icons-material/VolunteerActivismOutlined';
-// Custom Imports
+// Component Imports
 import ContactFormModal from '../global/ContactFormModal';
 
 const volunteerGrid = [
