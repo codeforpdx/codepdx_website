@@ -1,3 +1,5 @@
+// React Imports
+import { useState } from 'react';
 // Material UI Imports
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
@@ -13,6 +15,8 @@ import QueryStatsOutlinedIcon from '@mui/icons-material/QueryStatsOutlined';
 import StorageRoundedIcon from '@mui/icons-material/StorageRounded';
 import TerminalOutlinedIcon from '@mui/icons-material/TerminalOutlined';
 import VolunteerActivismOutlinedIcon from '@mui/icons-material/VolunteerActivismOutlined';
+// Custom Imports
+import ContactFormModal from '../global/ContactFormModal';
 
 const volunteerGrid = [
   {
@@ -58,6 +62,12 @@ const volunteerGrid = [
 ];
 
 const VolunteerBrief = () => {
+  const [showContactFormModal, setShowContactFormModal] = useState(false);
+
+  const handleContactForm = () => {
+    setShowContactFormModal(!showContactFormModal);
+  };
+
   return (
     <Stack
       as="section"
@@ -90,9 +100,9 @@ const VolunteerBrief = () => {
         </Grid>
         <Button
           variant="contained"
-          href="mailto:hugh@codeforpdx.org"
           target="_blank"
           rel="noopener"
+          onClick={handleContactForm}
           sx={{
             mt: '2rem'
           }}
@@ -100,6 +110,10 @@ const VolunteerBrief = () => {
           Volunteer
         </Button>
       </Card>
+      <ContactFormModal
+        showContactFormModal={showContactFormModal}
+        setShowContactFormModal={setShowContactFormModal}
+      />
     </Stack>
   );
 };

@@ -22,7 +22,7 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
   const handleSubmit = (e) => {
     e.preventDefault();
     setEmail(e.target.value);
-    console.log(`Email is: ${e}`);
+    console.log(`Email is: ${e.target.value}`);
     setEmail('');
   };
 
