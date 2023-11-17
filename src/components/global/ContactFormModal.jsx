@@ -12,45 +12,39 @@ import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 
 const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => {
+  const [name, setName] = useState('');
+  const [message, setMessage] = useState('');
   const [email, setEmail] = useState('');
 
   const handleClose = () => {
     setShowContactFormModal(false);
+    setName('');
+    setMessage('');
     setEmail('');
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setEmail(e.target.value);
-    console.log(`Email is: ${e.target.value}`);
+    setName(e.target[0].form[0].value);
+    setMessage(e.target[1].form[1].value);
+    setEmail(e.target[2].form[2].value);
+    console.log(e.target[0].form[0].value);
+    console.log(e.target[1].form[1].value);
+    console.log(e.target[2].form[2].value);
+    setName('');
+    setMessage('');
     setEmail('');
   };
 
   return (
-    <Dialog
-      open={showContactFormModal}
-      onClose={() => setShowContactFormModal(false)}
-      sx={
-        {
-          // backgroundColor: 'red'
-          // display: 'flex',
-          // flexDirection: 'column',
-          // alignText: 'center'
-          // p: '50px'
-        }
-      }
-    >
+    <Dialog open={showContactFormModal} onClose={() => setShowContactFormModal(false)}>
       <form onSubmit={handleSubmit} autoComplete="off">
         <Box
           sx={{
-            p: 4,
-            display: 'flex',
-            flexDirection: 'column'
-            // alignContent: 'center',
-            // justifyContent: 'center'
+            p: { xs: 0, md: 4 }
           }}
         >
-          <DialogTitle>Contact Us</DialogTitle>
+          <DialogTitle sx={{ display: 'flex', justifyContent: 'center' }}>Contact Us</DialogTitle>
           <DialogContent>
             <DialogContentText>
               For any questions or to just reach out, contact us today!
@@ -59,10 +53,33 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
               autoFocus
               margin="dense"
               id="name"
+              label="Name"
+              type="text"
+              fullWidth
+              variant="standard"
+              required
+            />
+            <TextField
+              autoFocus
+              margin="dense"
+              id="email"
               label="Email Address"
               type="email"
               fullWidth
               variant="standard"
+              required
+            />
+            <TextField
+              autoFocus
+              margin="dense"
+              id="name"
+              label="Message"
+              type="text"
+              fullWidth
+              variant="standard"
+              multiline
+              rows={5}
+              required
             />
           </DialogContent>
           <DialogActions>
@@ -83,8 +100,6 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
                   type="submit"
                   color="success"
                   variant="contained"
-                  // onClick={handleSubmit}
-                  // onChange={}
                   fullWidth
                   sx={{ borderRadius: 5 }}
                 >
