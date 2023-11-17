@@ -1,5 +1,7 @@
 // React Imports
-import { useState } from 'react';
+import { useRef } from 'react';
+// emailjs Imports
+import emailjs from '@emailjs/browser';
 // Material UI Imports
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -14,33 +16,29 @@ import TextField from '@mui/material/TextField';
 import { PropTypes } from 'prop-types';
 
 const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => {
-  const [name, setName] = useState('');
-  const [message, setMessage] = useState('');
-  const [email, setEmail] = useState('');
+  const form = useRef();
 
   const handleClose = () => {
     setShowContactFormModal(false);
-    setName('');
-    setMessage('');
-    setEmail('');
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setName(e.target[0].form[0].value);
-    setMessage(e.target[1].form[1].value);
-    setEmail(e.target[2].form[2].value);
-    console.log(e.target[0].form[0].value);
-    console.log(e.target[1].form[1].value);
-    console.log(e.target[2].form[2].value);
-    setName('');
-    setMessage('');
-    setEmail('');
+
+    emailjs.sendForm('service_co2agxf', 'template_20pnwni', form.current, 'AkBl59Ya3226OfPyQ').then(
+      (result) => {
+        console.log(result.text);
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
+    e.target.reset();
   };
 
   return (
-    <Dialog open={showContactFormModal} onClose={() => handleClose}>
-      <form onSubmit={handleSubmit} autoComplete="off">
+    <Dialog open={showContactFormModal} onClose={handleClose}>
+      <form ref={form} onSubmit={handleSubmit} autoComplete="off">
         <Box
           sx={{
             p: { xs: 0, md: 4 }
@@ -57,6 +55,7 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
               id="name"
               label="Name"
               type="text"
+              name="name"
               fullWidth
               variant="standard"
               required
@@ -67,6 +66,7 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
               id="email"
               label="Email Address"
               type="email"
+              name="email"
               fullWidth
               variant="standard"
               required
@@ -74,9 +74,10 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
             <TextField
               autoFocus
               margin="dense"
-              id="name"
+              id="message"
               label="Message"
               type="text"
+              name="message"
               fullWidth
               variant="standard"
               multiline
@@ -118,7 +119,7 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
 
 ContactFormModal.propTypes = {
   showContactFormModal: PropTypes.bool,
-  setShowContactFormModal: PropTypes.bool
+  setShowContactFormModal: PropTypes.func
 };
 
 export default ContactFormModal;
