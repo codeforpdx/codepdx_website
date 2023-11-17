@@ -10,6 +10,8 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
+// Other Library Imports
+import { PropTypes } from 'prop-types';
 
 const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => {
   const [name, setName] = useState('');
@@ -37,7 +39,7 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
   };
 
   return (
-    <Dialog open={showContactFormModal} onClose={() => setShowContactFormModal(false)}>
+    <Dialog open={showContactFormModal} onClose={() => handleClose}>
       <form onSubmit={handleSubmit} autoComplete="off">
         <Box
           sx={{
@@ -112,6 +114,11 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
       </form>
     </Dialog>
   );
+};
+
+ContactFormModal.propTypes = {
+  showContactFormModal: PropTypes.bool,
+  setShowContactFormModal: PropTypes.bool
 };
 
 export default ContactFormModal;

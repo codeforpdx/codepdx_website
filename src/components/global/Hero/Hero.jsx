@@ -1,6 +1,7 @@
 // Material UI Imports
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+// Other Library Imports
 import { PropTypes } from 'prop-types';
 // Component Style Imports
 import { heroStyles } from './styles';
