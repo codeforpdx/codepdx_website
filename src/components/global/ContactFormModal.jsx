@@ -74,6 +74,17 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
             <TextField
               autoFocus
               margin="dense"
+              id="subject"
+              label="Subject"
+              type="text"
+              name="subject"
+              fullWidth
+              variant="standard"
+              required
+            />
+            <TextField
+              autoFocus
+              margin="dense"
               id="message"
               label="Message"
               type="text"
