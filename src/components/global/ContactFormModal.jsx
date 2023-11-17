@@ -15,6 +15,8 @@ import TextField from '@mui/material/TextField';
 // Other Library Imports
 import { PropTypes } from 'prop-types';
 
+// TODO: Change title from "Contact Us" to "Volunteer" if using that button?
+
 const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => {
   const form = useRef();
 
@@ -46,7 +48,7 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
         >
           <DialogTitle sx={{ display: 'flex', justifyContent: 'center' }}>Contact Us</DialogTitle>
           <DialogContent>
-            <DialogContentText>
+            <DialogContentText sx={{ pb: '1rem' }}>
               For any questions or to just reach out, contact us today!
             </DialogContentText>
             <TextField
