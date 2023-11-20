@@ -41,8 +41,6 @@ const CallToAction = () => {
             variant="contained"
             color="primary"
             size="large"
-            target="_blank"
-            rel="noopener"
             onClick={handleContactForm}
           >
             Contact us

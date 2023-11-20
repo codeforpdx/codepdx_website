@@ -100,8 +100,6 @@ const VolunteerBrief = () => {
         </Grid>
         <Button
           variant="contained"
-          target="_blank"
-          rel="noopener"
           onClick={handleContactForm}
           sx={{
             mt: '2rem'
