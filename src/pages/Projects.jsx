@@ -30,8 +30,8 @@ const renderingLinks = (href, icon) => {
 };
 
 const boxStyle = (index) => ({
-  mb: { xs: 5, sm: 15 },
-  py: 5,
+  mb: { xs: 5, sm: 10 },
+  py: 2,
   px: 2,
   borderRadius: '25px',
   background: {
@@ -84,7 +84,6 @@ const projectGridContent = (index, description, title, status, techStack) => {
         {/* Title and status */}
         <Stack
           direction={{ xs: 'column', sm: 'row' }}
-          spacing={1}
           sx={{
             alignItems: 'center',
             justifyContent: 'space-between',
@@ -145,12 +144,10 @@ const Projects = () => {
         heroImage={`linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/assets/projectsHeroImage.png)`}
         heroText={`Our products blend innovation, quality, and user-centric design to meet today's needs and anticipate tomorrow's challenges`}
       />
-      <Box
+      <Stack
         as="section"
         sx={{
           alignItems: 'center',
-          display: 'flex',
-          flexDirection: 'column',
           justifyContent: 'center',
           px: 2,
           maxWidth: 'xl',
@@ -170,7 +167,7 @@ const Projects = () => {
               </Grid>
             </Box>
           ))}
-      </Box>
+      </Stack>
     </>
   );
 };
