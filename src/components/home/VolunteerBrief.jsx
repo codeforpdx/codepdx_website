@@ -1,5 +1,5 @@
 // React Imports
-import { useState } from 'react';
+// import { useState } from 'react';
 // Material UI Imports
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
@@ -16,7 +16,7 @@ import StorageRoundedIcon from '@mui/icons-material/StorageRounded';
 import TerminalOutlinedIcon from '@mui/icons-material/TerminalOutlined';
 import VolunteerActivismOutlinedIcon from '@mui/icons-material/VolunteerActivismOutlined';
 // Component Imports
-import ContactFormModal from '../global/ContactFormModal';
+// import ContactFormModal from '../global/ContactFormModal';
 
 const volunteerGrid = [
   {
@@ -61,12 +61,12 @@ const volunteerGrid = [
   }
 ];
 
-const VolunteerBrief = () => {
-  const [showContactFormModal, setShowContactFormModal] = useState(false);
+const VolunteerBrief = (handleContactForm) => {
+  // const [showContactFormModal, setShowContactFormModal] = useState(false);
 
-  const handleContactForm = () => {
-    setShowContactFormModal(!showContactFormModal);
-  };
+  // const handleContactForm = () => {
+  //   setShowContactFormModal(!showContactFormModal);
+  // };
 
   return (
     <Stack
@@ -108,10 +108,10 @@ const VolunteerBrief = () => {
           Volunteer
         </Button>
       </Card>
-      <ContactFormModal
+      {/* <ContactFormModal
         showContactFormModal={showContactFormModal}
         setShowContactFormModal={setShowContactFormModal}
-      />
+      /> */}
     </Stack>
   );
 };

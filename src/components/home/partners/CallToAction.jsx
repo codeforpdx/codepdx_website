@@ -1,19 +1,19 @@
 // React Imports
-import { useState } from 'react';
+// import { useState } from 'react';
 // Material UI Imports
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 // Component Imports
-import ContactFormModal from '../../global/ContactFormModal';
+// import ContactFormModal from '../../global/ContactFormModal';
 
-const CallToAction = () => {
-  const [showContactFormModal, setShowContactFormModal] = useState(false);
+const CallToAction = (handleContactForm) => {
+  // const [showContactFormModal, setShowContactFormModal] = useState(false);
 
-  const handleContactForm = () => {
-    setShowContactFormModal(!showContactFormModal);
-  };
+  // const handleContactForm = () => {
+  //   setShowContactFormModal(!showContactFormModal);
+  // };
 
   return (
     <Container maxWidth="xl" sx={{ pt: '50px', pb: '100px' }}>
@@ -47,10 +47,10 @@ const CallToAction = () => {
           </Button>
         </Grid>
       </Grid>
-      <ContactFormModal
+      {/* <ContactFormModal
         showContactFormModal={showContactFormModal}
         setShowContactFormModal={setShowContactFormModal}
-      />
+      /> */}
     </Container>
   );
 };
