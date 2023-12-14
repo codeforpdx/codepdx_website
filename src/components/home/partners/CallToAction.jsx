@@ -17,32 +17,22 @@ const CallToAction = (handleContactForm) => {
 
   return (
     <Container maxWidth="xl" sx={{ pt: '50px', pb: '100px' }}>
-      <Grid container spacing={1} alignItems="center">
-        <Grid item xs={12} md={8}>
+      <Grid
+        container
+        spacing={1}
+        alignItems="center"
+        style={{ textAlign: 'center', alignItems: 'center' }}
+      >
+        <Grid item xs={12}>
           <Typography variant="h4" pb={'2rem'}>
             Empower Change: Become a partner in our civic tech movement.
           </Typography>
-          <Typography variant="h4">
+          <Typography variant="h4" pb={'2rem'}>
             Have an idea for a civic project in Portland or want to partner with us?
           </Typography>
         </Grid>
-        <Grid item xs={12} md={4} style={{ textAlign: 'center', alignItems: 'center' }}>
-          <Button
-            sx={{
-              mt: {
-                xs: '50px',
-                md: '0'
-              },
-              mr: {
-                xs: '0px',
-                md: '25%'
-              }
-            }}
-            variant="contained"
-            color="primary"
-            size="large"
-            onClick={handleContactForm}
-          >
+        <Grid item xs={12}>
+          <Button variant="contained" color="primary" size="large" onClick={handleContactForm}>
             Contact us
           </Button>
         </Grid>

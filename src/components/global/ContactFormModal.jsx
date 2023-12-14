@@ -103,7 +103,7 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
             name="name"
             fullWidth
             variant="standard"
-            autocomplete
+            autoComplete="true"
             required
           />
           <TextField
@@ -114,7 +114,7 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
             name="email"
             fullWidth
             variant="standard"
-            autocomplete
+            autoComplete="true"
             required
           />
           <TextField
