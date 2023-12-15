@@ -2,8 +2,9 @@
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+// PropTypes Imports
 import { PropTypes } from 'prop-types';
-//import component specific styles
+// Styles Imports
 import { heroStyles } from './styles';
 
 const Hero = ({ pageName, heroImage, heroText }) => {

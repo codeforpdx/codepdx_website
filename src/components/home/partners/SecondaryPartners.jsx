@@ -1,12 +1,13 @@
+// Material UI Imports
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
+// Data Imports
 import { secondaryPartnerList } from './secondaryPartnerList';
-
+// PropTypes Imports
 import { PropTypes } from 'prop-types';
 
 const secondaryPartnerProps = {

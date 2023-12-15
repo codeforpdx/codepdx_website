@@ -7,7 +7,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-// Custom Imports
+// Data Imports
 import projectsList from '../projects/projectsList';
 
 const cardStyle = {
