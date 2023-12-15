@@ -46,7 +46,7 @@ const PrimaryPartner = () => {
         mb: '100px',
         borderRadius: '40px',
         background:
-          'linear-gradient(180deg, rgba(217, 217, 217, 0) 24.86%, rgba(217, 217, 217, 0.4) 104.55%)'
+          'linear-gradient(180deg, rgba(217, 217, 217, 0) 24.86%, rgba(217, 217, 217, 0.4) 70.55%)'
       }}
     >
       <Box
@@ -58,12 +58,14 @@ const PrimaryPartner = () => {
         src={'/assets/TAOLogo.png'}
       />
       <Typography
-        variant="h4"
+        // variant="h4"
+        component="h4"
         textAlign={'center'}
-        padding={{ xs: '0 0 100px 0', md: '15px 15% 100px 15%' }}
+        padding={{ xs: '0 0 75px 0', md: '0px 15% 75px 15%' }}
+        sx={{ typography: { xs: 'h5', sm: 'h4' } }}
       >
-        Empowering businesses and entrepreneurs TAO is creating and uniting a world-class innovation
-        economy in Oregon and beyond.
+        Empowering businesses and entrepreneurs, the TAO Foundation is creating and uniting a
+        world-class innovation economy in Oregon and beyond.
       </Typography>
       <Grid
         sx={{
