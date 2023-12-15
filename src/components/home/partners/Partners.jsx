@@ -2,8 +2,10 @@ import Typography from '@mui/material/Typography';
 import PrimaryPartner from './PrimaryPartner';
 import SecondaryPartners from './SecondaryPartners';
 import CallToAction from './CallToAction';
+// Other Library Imports
+import { PropTypes } from 'prop-types';
 
-const Partners = () => {
+const Partners = ({ showContactFormModal, setShowContactFormModal, handleContactForm }) => {
   return (
     <section>
       <Typography
@@ -18,8 +20,19 @@ const Partners = () => {
       </Typography>
       <PrimaryPartner />
       <SecondaryPartners />
-      <CallToAction />
+      <CallToAction
+        showContactFormModal={showContactFormModal}
+        setShowContactFormModal={setShowContactFormModal}
+        handleContactForm={handleContactForm}
+      />
     </section>
   );
 };
+
+Partners.propTypes = {
+  showContactFormModal: PropTypes.bool,
+  setShowContactFormModal: PropTypes.func,
+  handleContactForm: PropTypes.func
+};
+
 export default Partners;

@@ -27,12 +27,25 @@ const Home = () => {
       />
       <Container maxWidth="xl">
         <About />
-        <VolunteerBrief />
+        <VolunteerBrief
+          showContactFormModal={showContactFormModal}
+          setShowContactFormModal={setShowContactFormModal}
+          handleContactForm={handleContactForm}
+        />
         <Events />
         <ProjectsBrief />
-        <Partners />
+        <Partners
+          showContactFormModal={showContactFormModal}
+          setShowContactFormModal={setShowContactFormModal}
+          handleContactForm={handleContactForm}
+        />
       </Container>
-      <ContactFormModal onClick={handleContactForm} />
+      <button onClick={handleContactForm}>Click me</button>
+      <ContactFormModal
+        showContactFormModal={showContactFormModal}
+        setShowContactFormModal={setShowContactFormModal}
+        handleContactForm={handleContactForm}
+      />
     </>
   );
 };

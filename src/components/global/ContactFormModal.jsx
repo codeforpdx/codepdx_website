@@ -1,9 +1,6 @@
 // React Imports
 import { useRef } from 'react';
-// emailjs Imports
-import emailjs from '@emailjs/browser';
 // Material UI Imports
-// import Alert from '@mui/material/Alert';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
@@ -14,6 +11,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 // Other Library Imports
+import emailjs from '@emailjs/browser';
 import { PropTypes } from 'prop-types';
 
 const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => {
@@ -34,7 +32,7 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
     e.target.reset();
     setTimeout(() => {
       setShowContactFormModal(false);
-    }, 2000);
+    }, 500);
   };
 
   return (
@@ -43,11 +41,8 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
       onClose={handleClose}
       sx={{
         display: 'flex',
-        flexDirection: 'column'
-        // justifyContent: 'center',
-        // alignItems: 'center',
-        // alignContent: 'center',
-        // alignText: 'center'
+        flexDirection: 'column',
+        textAlign: 'center'
       }}
     >
       <Box
@@ -55,43 +50,12 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
         ref={form}
         onSubmit={handleSubmit}
         sx={{
-          // display: 'flex',
-          // flexDirection: 'column',
-          // justifyContent: 'center',
-          // alignItems: 'center',
-          // alignContent: 'center',
-          // alignText: 'center'
           p: { xs: 0, md: 4 }
         }}
       >
-        <DialogTitle
-          sx={
-            {
-              // display: 'flex',
-              // flexDirection: 'column',
-              // justifyContent: 'center',
-              // alignItems: 'center',
-              // alignContent: 'center',
-              // alignText: 'center'
-            }
-          }
-        >
-          Contact Us
-        </DialogTitle>
+        <DialogTitle>Contact Us</DialogTitle>
         <DialogContent>
-          <DialogContentText
-            sx={
-              {
-                // display: 'flex',
-                // flexDirection: 'column',
-                // justifyContent: 'center',
-                // alignItems: 'center',
-                // alignContent: 'center',
-                // alignText: 'center'
-                // pb: '1rem',
-              }
-            }
-          >
+          <DialogContentText>
             For any questions or to just reach out, contact us today!
           </DialogContentText>
           <TextField
@@ -167,11 +131,6 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
           </Grid>
         </DialogActions>
       </Box>
-      {/* {cleared && (
-        <Alert sx={{ position: 'absolute', bottom: 0, right: 0 }} severity="success">
-          Field cleared!
-        </Alert>
-      )} */}
     </Dialog>
   );
 };

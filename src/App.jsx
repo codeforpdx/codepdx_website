@@ -2,8 +2,8 @@ import { useState } from 'react';
 // React Router Imports
 import { BrowserRouter } from 'react-router-dom';
 // Material UI Imports
-import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import { ThemeProvider } from '@mui/material/styles';
 // Theme Imports
 import getTheme from './theme';
 // Component Imports
