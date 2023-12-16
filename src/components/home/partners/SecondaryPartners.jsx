@@ -53,9 +53,10 @@ const LargeScreenComponent = ({
       sx={{
         background: gradientStyle,
         borderRadius: '30px',
-        minHeight: '400px',
-        marginBottom: '100px',
-        flexDirection: 'row'
+        minHeight: '350px',
+        marginBottom: '100px'
+        // Below not necessary?
+        // flexDirection: 'row'
       }}
       key={company}
     >
@@ -66,24 +67,24 @@ const LargeScreenComponent = ({
             alt={`${company} logo`}
             aria-label={`${company} logo`}
             src={partnerLogo}
-            // mb={'150px'}
             width={'250px'}
           ></Box>
         </a>
       </Grid>
       <Grid item pl={'6%'} {...partnerGridStyle} order={contentOrder}>
-        <Typography variant="body1" p={'5% 15% 3% 0'}>
+        <Typography variant="body1" p={'5% 0 3% 0'}>
           {testimonial}
         </Typography>
-        <Typography
-          variant="caption"
-          // p={'15px 0 5% 0'}
-          sx={{ fontWeight: 'bold', textAlign: 'center' }}
-        >
+        <Typography variant="caption" sx={{ fontWeight: 'bold' }}>
           {testimonialAuthor}
         </Typography>
         {testimonialTwo ? (
-          <Typography variant="body1" display={'flex'} p={'40px 15% 5% 0'}>
+          <Typography
+            variant="body1"
+            // Below not necessary?
+            // display={'flex'}
+            p={'40px 15% 5% 0'}
+          >
             {testimonialTwo}
           </Typography>
         ) : null}
@@ -135,16 +136,29 @@ const SmallScreenComponent = ({
         <Typography variant="body1" p={'5% 5% 5% 5%'}>
           {testimonial}
         </Typography>
-        <Typography variant="caption" p={'0 5% 8% 5%'}>
+        <Typography
+          variant="caption"
+          p={'0 5% 8% 5%'}
+          sx={{ fontWeight: 'bold', textAlign: 'center' }}
+        >
           {testimonialAuthor}
         </Typography>
         {testimonialTwo ? (
-          <Typography variant="body1" display={'flex'} p={'5% 5% 5% 5%'}>
+          <Typography
+            variant="body1"
+            // Below not necessary?
+            // display={'flex'}
+            p={'5% 5% 5% 5%'}
+          >
             {testimonialTwo}
           </Typography>
         ) : null}
         {testimonialAuthorTwo ? (
-          <Typography variant="caption" p={'0 5% 10% 5%'}>
+          <Typography
+            variant="caption"
+            p={'0 5% 10% 5%'}
+            sx={{ fontWeight: 'bold', textAlign: 'center' }}
+          >
             {testimonialAuthorTwo}
           </Typography>
         ) : null}
@@ -160,6 +174,8 @@ const SecondaryPartners = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
+    // This Container element causes the second partners to be narrower than the primary partner, even on small screens.
+    // Do we want them to be equally sized, at least in some viewports?
     <Container>
       {secondaryPartnerList.map((partner, index) =>
         isSmallScreen ? (
