@@ -1,6 +1,7 @@
 // React Imports
+import { useRef, useState } from 'react';
+// React Router Imports
 import { Link } from 'react-router-dom';
-import { useState, useRef } from 'react';
 // Material UI Imports
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -16,7 +17,6 @@ import Toolbar from '@mui/material/Toolbar';
 import Switch from '@mui/material/Switch';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
-
 
 const logoBlobStyle = {
   position: 'absolute',

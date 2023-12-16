@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
-// need to find out exact pictures to use
+// TODO: find out exact pictures to use
 const volunteerGrid = [
   {
     image:

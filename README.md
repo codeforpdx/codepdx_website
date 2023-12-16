@@ -4,7 +4,7 @@ Welcome! 👋👋🏿👋🏽👋🏻👋🏾👋🏼
 
 🚧UNDER CONSTRUCTION!🚧
 
-We are currently structuring the code pdx website repo. Detailed information for those looking to contribute can be found in [contributing.md](./contributing.md). We are in the process of structuring out the build and creating issues for tasks.
+We are currently structuring the CODE PDX website repo. Detailed information for those looking to contribute can be found in [contributing.md](./contributing.md). We are in the process of structuring out the build and creating issues for tasks.
 
 **to run dev environment:**
 

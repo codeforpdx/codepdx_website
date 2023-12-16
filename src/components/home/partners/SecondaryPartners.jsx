@@ -15,8 +15,8 @@ const secondaryPartnerProps = {
   company: PropTypes.string.isRequired,
   testimonial: PropTypes.string.isRequired,
   testimonialTwo: PropTypes.string,
-  testimonialAuthorTwo: PropTypes.string,
   testimonialAuthor: PropTypes.string.isRequired,
+  testimonialAuthorTwo: PropTypes.string,
   partnerLogo: PropTypes.string.isRequired,
   website: PropTypes.string.isRequired
 };
@@ -53,7 +53,7 @@ const LargeScreenComponent = ({
       sx={{
         background: gradientStyle,
         borderRadius: '30px',
-        minHeight: '500px',
+        minHeight: '400px',
         marginBottom: '100px',
         flexDirection: 'row'
       }}
@@ -66,7 +66,7 @@ const LargeScreenComponent = ({
             alt={`${company} logo`}
             aria-label={`${company} logo`}
             src={partnerLogo}
-            mb={'150px'}
+            // mb={'150px'}
             width={'250px'}
           ></Box>
         </a>
@@ -75,7 +75,11 @@ const LargeScreenComponent = ({
         <Typography variant="body1" p={'5% 15% 3% 0'}>
           {testimonial}
         </Typography>
-        <Typography variant="caption" p={'15px 0 5% 0'}>
+        <Typography
+          variant="caption"
+          // p={'15px 0 5% 0'}
+          sx={{ fontWeight: 'bold', textAlign: 'center' }}
+        >
           {testimonialAuthor}
         </Typography>
         {testimonialTwo ? (
@@ -84,7 +88,7 @@ const LargeScreenComponent = ({
           </Typography>
         ) : null}
         {testimonialAuthorTwo ? (
-          <Typography variant="caption" pb={'10%'}>
+          <Typography variant="caption" pb={'10%'} sx={{ fontWeight: 'bold' }}>
             {testimonialAuthorTwo}
           </Typography>
         ) : null}
