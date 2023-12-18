@@ -1,3 +1,5 @@
+// React Imports
+import { useState } from 'react';
 // Material UI Imports
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
@@ -13,8 +15,8 @@ import QueryStatsOutlinedIcon from '@mui/icons-material/QueryStatsOutlined';
 import StorageRoundedIcon from '@mui/icons-material/StorageRounded';
 import TerminalOutlinedIcon from '@mui/icons-material/TerminalOutlined';
 import VolunteerActivismOutlinedIcon from '@mui/icons-material/VolunteerActivismOutlined';
-// Other Library Imports
-import { PropTypes } from 'prop-types';
+// Component Imports
+import ContactFormModal from '../global/ContactFormModal';
 
 const volunteerGrid = [
   {
@@ -59,7 +61,13 @@ const volunteerGrid = [
   }
 ];
 
-const VolunteerBrief = ({ handleContactForm }) => {
+const VolunteerBrief = () => {
+  const [showContactFormModal, setShowContactFormModal] = useState(false);
+
+  const handleContactForm = () => {
+    setShowContactFormModal(!showContactFormModal);
+  };
+
   return (
     <Stack
       as="section"
@@ -100,12 +108,12 @@ const VolunteerBrief = ({ handleContactForm }) => {
           Volunteer
         </Button>
       </Card>
+      <ContactFormModal
+        showContactFormModal={showContactFormModal}
+        setShowContactFormModal={setShowContactFormModal}
+      />
     </Stack>
   );
-};
-
-VolunteerBrief.propTypes = {
-  handleContactForm: PropTypes.func
 };
 
 export default VolunteerBrief;

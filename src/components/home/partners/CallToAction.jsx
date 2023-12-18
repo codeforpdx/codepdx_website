@@ -1,12 +1,19 @@
+// React Imports
+import { useState } from 'react';
 // Material UI Imports
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-// Other Library Imports
-import { PropTypes } from 'prop-types';
+// Component Imports
+import ContactFormModal from '../../global/ContactFormModal';
 
-const CallToAction = ({ handleContactForm }) => {
+const CallToAction = () => {
+  const [showContactFormModal, setShowContactFormModal] = useState(false);
+
+  const handleContactForm = () => {
+    setShowContactFormModal(!showContactFormModal);
+  };
   return (
     <Container maxWidth="xl" sx={{ pt: '50px', pb: '100px' }}>
       <Grid
@@ -29,12 +36,12 @@ const CallToAction = ({ handleContactForm }) => {
           </Button>
         </Grid>
       </Grid>
+      <ContactFormModal
+        showContactFormModal={showContactFormModal}
+        setShowContactFormModal={setShowContactFormModal}
+      />
     </Container>
   );
-};
-
-CallToAction.propTypes = {
-  handleContactForm: PropTypes.func
 };
 
 export default CallToAction;

@@ -1,5 +1,3 @@
-// React Imports
-import { useState } from 'react';
 // Material UI Imports
 import { Container } from '@mui/material';
 // Component Imports
@@ -9,15 +7,8 @@ import VolunteerBrief from '../components/home/VolunteerBrief';
 import Events from '../components/home/Events';
 import ProjectsBrief from '../components/home/ProjectsBrief';
 import Partners from '../components/home/partners/Partners';
-import ContactFormModal from '../components/global/ContactFormModal';
 
 const Home = () => {
-  const [showContactFormModal, setShowContactFormModal] = useState(false);
-
-  const handleContactForm = () => {
-    setShowContactFormModal(!showContactFormModal);
-  };
-
   return (
     <>
       <Hero
@@ -27,25 +18,11 @@ const Home = () => {
       />
       <Container maxWidth="xl">
         <About />
-        <VolunteerBrief
-          showContactFormModal={showContactFormModal}
-          setShowContactFormModal={setShowContactFormModal}
-          handleContactForm={handleContactForm}
-        />
+        <VolunteerBrief />
         <Events />
         <ProjectsBrief />
-        <Partners
-          showContactFormModal={showContactFormModal}
-          setShowContactFormModal={setShowContactFormModal}
-          handleContactForm={handleContactForm}
-        />
+        <Partners />
       </Container>
-      <button onClick={handleContactForm}>Click me</button>
-      <ContactFormModal
-        showContactFormModal={showContactFormModal}
-        setShowContactFormModal={setShowContactFormModal}
-        handleContactForm={handleContactForm}
-      />
     </>
   );
 };
