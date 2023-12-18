@@ -22,8 +22,20 @@ const projectsList = [
         icon: <FaEarthAmericas />
       }
     ],
-    techStack:
-      'TypeScript, React, Redux, NPM, Flask, Python, Pytest, SCSS, CSS, Jinja, Makefile, Docker'
+    techStack: [
+      'TypeScript',
+      'React',
+      'Redux',
+      'NPM',
+      'Flask',
+      'Python',
+      'Pytest',
+      'SCSS',
+      'CSS',
+      'Jinja',
+      'Makefile',
+      'Docker'
+    ]
   },
   {
     index: 2,
@@ -46,7 +58,7 @@ const projectsList = [
         icon: <FaEarthAmericas />
       }
     ],
-    techStack: 'SOLID, React, Vite, JSDocs, MUI, NPM, ES Lint'
+    techStack: ['SOLID', 'React', 'Vite', 'JSDocs', 'MUI', 'NPM', 'ES Lint']
   },
   {
     index: 3,
@@ -68,7 +80,7 @@ const projectsList = [
         icon: <FaEarthAmericas />
       }
     ],
-    techStack: 'Discord, GitHub, Google Meets'
+    techStack: ['Discord', 'GitHub', 'Google Meets']
   }
 ];
 
