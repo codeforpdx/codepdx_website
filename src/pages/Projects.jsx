@@ -126,8 +126,9 @@ const projectGridContent = (index, description, title, status, techStack) => (
             spacing={{ xs: 1, sm: 2 }}
           >
             {techStack.map((tech) => (
-              <Box
+              <Typography
                 key={tech}
+                variant="body1"
                 sx={{
                   backgroundColor: 'primary.main',
                   borderRadius: '25px',
@@ -135,8 +136,8 @@ const projectGridContent = (index, description, title, status, techStack) => (
                   color: 'white'
                 }}
               >
-                <Typography variant="body1">{tech}</Typography>
-              </Box>
+                {tech}
+              </Typography>
             ))}
           </Stack>
         </Stack>
