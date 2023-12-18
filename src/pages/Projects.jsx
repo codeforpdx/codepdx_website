@@ -112,7 +112,9 @@ const projectGridContent = (index, description, title, status, techStack) => (
           <Typography variant="h6" component="h4" sx={{ fontWeight: 'bold' }}>
             Overview
           </Typography>
-          <Typography variant="body1">{description}</Typography>
+          <Typography variant="body1" pl={{ xs: null, sm: 2 }}>
+            {description}
+          </Typography>
         </Stack>
       )}
       {techStack && (
@@ -120,7 +122,7 @@ const projectGridContent = (index, description, title, status, techStack) => (
           <Typography variant="h6" component="h4" sx={{ fontWeight: 'bold' }}>
             Technology Used
           </Typography>
-          <Stack
+          {/* <Stack
             direction="row"
             justifyContent={{ xs: 'center', sm: 'left' }}
             spacing={{ xs: 1, sm: 2 }}
@@ -139,7 +141,28 @@ const projectGridContent = (index, description, title, status, techStack) => (
                 {tech}
               </Typography>
             ))}
-          </Stack>
+          </Stack> */}
+          <Grid
+            container
+            spacing={{ xs: 1, sm: 2 }}
+            justifyContent={{ xs: 'center', sm: 'flex-start' }}
+          >
+            {techStack.map((tech) => (
+              <Grid item key={tech}>
+                <Typography
+                  variant="body1"
+                  sx={{
+                    backgroundColor: 'primary.main',
+                    borderRadius: '25px',
+                    paddingX: '10px',
+                    color: 'white'
+                  }}
+                >
+                  {tech}
+                </Typography>
+              </Grid>
+            ))}
+          </Grid>
         </Stack>
       )}
     </CardContent>
