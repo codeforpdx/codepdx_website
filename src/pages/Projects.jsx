@@ -99,9 +99,8 @@ const projectGridContent = (index, description, title, status, techStack) => (
         {status && (
           <Chip
             label={status}
-            color="quaternary"
             variant="outlined"
-            sx={{ backgroundColor: '#DEDEDEB2', fontWeight: 'bold' }}
+            sx={{ backgroundColor: '#DEDEDEB2', fontWeight: 'bold', minWidth: '120px' }}
           />
         )}
       </Stack>
