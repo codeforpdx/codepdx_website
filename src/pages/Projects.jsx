@@ -121,7 +121,25 @@ const projectGridContent = (index, description, title, status, techStack) => (
           <Typography variant="h6" component="h4" sx={{ fontWeight: 'bold' }}>
             Technology Used
           </Typography>
-          <Typography variant="body1">{techStack}</Typography>
+          <Stack
+            direction="row"
+            justifyContent={{ xs: 'center', sm: 'left' }}
+            spacing={{ xs: 1, sm: 2 }}
+          >
+            {techStack.map((tech) => (
+              <Box
+                key={tech}
+                sx={{
+                  backgroundColor: 'primary.main',
+                  borderRadius: '25px',
+                  paddingX: '10px',
+                  color: 'white'
+                }}
+              >
+                <Typography variant="body1">{tech}</Typography>
+              </Box>
+            ))}
+          </Stack>
         </Stack>
       )}
     </CardContent>
