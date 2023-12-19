@@ -1,5 +1,5 @@
 // React Imports
-import { useState } from 'react';
+import { Link } from 'react-router-dom';
 // Material UI Imports
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
@@ -15,8 +15,6 @@ import QueryStatsOutlinedIcon from '@mui/icons-material/QueryStatsOutlined';
 import StorageRoundedIcon from '@mui/icons-material/StorageRounded';
 import TerminalOutlinedIcon from '@mui/icons-material/TerminalOutlined';
 import VolunteerActivismOutlinedIcon from '@mui/icons-material/VolunteerActivismOutlined';
-// Component Imports
-import ContactFormModal from '../global/ContactFormModal';
 
 const volunteerGrid = [
   {
@@ -62,12 +60,6 @@ const volunteerGrid = [
 ];
 
 const VolunteerBrief = () => {
-  const [showContactFormModal, setShowContactFormModal] = useState(false);
-
-  const handleContactForm = () => {
-    setShowContactFormModal(!showContactFormModal);
-  };
-
   return (
     <Stack
       as="section"
@@ -100,18 +92,17 @@ const VolunteerBrief = () => {
         </Grid>
         <Button
           variant="contained"
-          onClick={() => handleContactForm()}
           sx={{
             mt: '2rem'
           }}
+          href="/volunteer"
         >
+          {/* TODO: This is to determine whether we prefer this button to redirect to Volunteer page 
+          rather than the contact form modal. If so, this may need to be wrapped in a "scroll to top" component
+          because it currently switches to the middle of the page  */}
           Volunteer
         </Button>
       </Card>
-      <ContactFormModal
-        showContactFormModal={showContactFormModal}
-        setShowContactFormModal={setShowContactFormModal}
-      />
     </Stack>
   );
 };
