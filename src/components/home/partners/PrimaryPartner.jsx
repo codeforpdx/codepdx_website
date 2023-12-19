@@ -58,8 +58,8 @@ const PrimaryPartner = () => {
         src={'/assets/TAOLogo.png'}
       />
       <Typography
-        // variant="h4"
         component="h4"
+        variant="h3"
         textAlign={'center'}
         padding={{ xs: '0 0 75px 0', md: '0px 15% 75px 15%' }}
         sx={{ typography: { xs: 'h5', sm: 'h4' } }}
