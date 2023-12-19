@@ -54,8 +54,6 @@ const LargeScreenComponent = ({
         borderRadius: '30px',
         minHeight: '350px',
         marginBottom: '100px'
-        // Below not necessary?
-        // flexDirection: 'row'
       }}
       key={company}
     >
@@ -67,7 +65,7 @@ const LargeScreenComponent = ({
             aria-label={`${company} logo`}
             src={partnerLogo}
             width={'250px'}
-          ></Box>
+          />
         </a>
       </Grid>
       <Grid item pl={'6%'} pr={'1%'} {...partnerGridStyle} order={contentOrder}>
@@ -77,19 +75,16 @@ const LargeScreenComponent = ({
         <Typography variant="caption" sx={{ fontWeight: 'bold' }}>
           {testimonialAuthor}
         </Typography>
-        {testimonialTwo ? (
-          <Typography
-            variant="body1"
-            p={'5% 0 3% 0'}
-          >
+        {testimonialTwo && (
+          <Typography variant="body1" p={'5% 0 3% 0'}>
             {testimonialTwo}
           </Typography>
-        ) : null}
-        {testimonialAuthorTwo ? (
+        )}
+        {testimonialAuthorTwo && (
           <Typography variant="caption" pb={'10%'} sx={{ fontWeight: 'bold' }}>
             {testimonialAuthorTwo}
           </Typography>
-        ) : null}
+        )}
       </Grid>
     </Grid>
   );
@@ -140,15 +135,12 @@ const SmallScreenComponent = ({
         >
           {testimonialAuthor}
         </Typography>
-        {testimonialTwo ? (
-          <Typography
-            variant="body1"
-            p={'5% 5% 5% 5%'}
-          >
+        {testimonialTwo && (
+          <Typography variant="body1" p={'5% 5% 5% 5%'}>
             {testimonialTwo}
           </Typography>
-        ) : null}
-        {testimonialAuthorTwo ? (
+        )}
+        {testimonialAuthorTwo && (
           <Typography
             variant="caption"
             p={'5% 5% 5% 5%'}
@@ -156,7 +148,7 @@ const SmallScreenComponent = ({
           >
             {testimonialAuthorTwo}
           </Typography>
-        ) : null}
+        )}
       </Grid>
     </Grid>
   );
