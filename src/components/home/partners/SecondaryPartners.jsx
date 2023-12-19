@@ -1,6 +1,5 @@
 // Material UI Imports
 import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -81,9 +80,7 @@ const LargeScreenComponent = ({
         {testimonialTwo ? (
           <Typography
             variant="body1"
-            // Below not necessary?
-            // display={'flex'}
-            p={'40px 15% 5% 0'}
+            p={'5% 0 3% 0'}
           >
             {testimonialTwo}
           </Typography>
@@ -146,8 +143,6 @@ const SmallScreenComponent = ({
         {testimonialTwo ? (
           <Typography
             variant="body1"
-            // Below not necessary?
-            // display={'flex'}
             p={'5% 5% 5% 5%'}
           >
             {testimonialTwo}
@@ -156,7 +151,7 @@ const SmallScreenComponent = ({
         {testimonialAuthorTwo ? (
           <Typography
             variant="caption"
-            p={'0 5% 10% 5%'}
+            p={'5% 5% 5% 5%'}
             sx={{ fontWeight: 'bold', textAlign: 'center' }}
           >
             {testimonialAuthorTwo}
@@ -174,9 +169,7 @@ const SecondaryPartners = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
-    // This Container element causes the second partners to be narrower than the primary partner, even on small screens.
-    // Do we want them to be equally sized, at least in some viewports?
-    <Container>
+    <>
       {secondaryPartnerList.map((partner, index) =>
         isSmallScreen ? (
           <SmallScreenComponent key={partner.company} index={index} {...partner} />
@@ -184,7 +177,7 @@ const SecondaryPartners = () => {
           <LargeScreenComponent key={partner.company} index={index} {...partner} />
         )
       )}
-    </Container>
+    </>
   );
 };
 
