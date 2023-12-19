@@ -2,10 +2,8 @@ import Typography from '@mui/material/Typography';
 import PrimaryPartner from './PrimaryPartner';
 import SecondaryPartners from './SecondaryPartners';
 import CallToAction from './CallToAction';
-// Other Library Imports
-import { PropTypes } from 'prop-types';
 
-const Partners = (handleContactForm) => {
+const Partners = () => {
   return (
     <section>
       <Typography
@@ -20,13 +18,9 @@ const Partners = (handleContactForm) => {
       </Typography>
       <PrimaryPartner />
       <SecondaryPartners />
-      <CallToAction handleContactForm={handleContactForm} />
+      <CallToAction />
     </section>
   );
-};
-
-Partners.propTypes = {
-  handleContactForm: PropTypes.func
 };
 
 export default Partners;
