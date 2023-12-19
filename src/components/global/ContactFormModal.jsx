@@ -24,11 +24,14 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm('service_co2agxf', 'template_20pnwni', form.current, 'AkBl59Ya3226OfPyQ')
-      .then((result) => {
+    emailjs.sendForm('service_co2agxf', 'template_20pnwni', form.current, 'AkBl59Ya3226OfPyQ').then(
+      (result) => {
         console.log(result.text);
-      }, console.error());
+      },
+      (error) => {
+        console.error(error.text);
+      }
+    );
     e.target.reset();
     setTimeout(() => {
       setShowContactFormModal(false);
@@ -40,8 +43,6 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
       open={showContactFormModal}
       onClose={handleClose}
       sx={{
-        display: 'flex',
-        flexDirection: 'column',
         textAlign: 'center'
       }}
     >
@@ -100,12 +101,12 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
             fullWidth
             variant="standard"
             multiline
-            rows={5}
+            rows={4}
             required
           />
         </DialogContent>
         <DialogActions>
-          <Grid container spacing={1}>
+          <Grid container spacing={1} px={2}>
             <Grid item xs={12} sm={6}>
               <Button
                 color="error"

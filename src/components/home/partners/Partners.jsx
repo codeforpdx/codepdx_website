@@ -5,7 +5,7 @@ import CallToAction from './CallToAction';
 // Other Library Imports
 import { PropTypes } from 'prop-types';
 
-const Partners = ({ showContactFormModal, setShowContactFormModal, handleContactForm }) => {
+const Partners = (handleContactForm) => {
   return (
     <section>
       <Typography
@@ -20,18 +20,12 @@ const Partners = ({ showContactFormModal, setShowContactFormModal, handleContact
       </Typography>
       <PrimaryPartner />
       <SecondaryPartners />
-      <CallToAction
-        showContactFormModal={showContactFormModal}
-        setShowContactFormModal={setShowContactFormModal}
-        handleContactForm={handleContactForm}
-      />
+      <CallToAction handleContactForm={handleContactForm} />
     </section>
   );
 };
 
 Partners.propTypes = {
-  showContactFormModal: PropTypes.bool,
-  setShowContactFormModal: PropTypes.func,
   handleContactForm: PropTypes.func
 };
 

@@ -14,14 +14,10 @@ const CallToAction = () => {
   const handleContactForm = () => {
     setShowContactFormModal(!showContactFormModal);
   };
+
   return (
     <Container maxWidth="xl" sx={{ pt: '50px', pb: '100px' }}>
-      <Grid
-        container
-        spacing={1}
-        alignItems="center"
-        style={{ textAlign: 'center', alignItems: 'center' }}
-      >
+      <Grid container spacing={1} sx={{ textAlign: 'center', alignItems: 'center' }}>
         <Grid item xs={12}>
           <Typography variant="h4" pb={'2rem'}>
             Empower Change: Become a partner in our civic tech movement.
