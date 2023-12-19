@@ -122,38 +122,14 @@ const projectGridContent = (index, description, title, status, techStack) => (
           <Typography variant="h6" component="h4" sx={{ fontWeight: 'bold' }}>
             Technology Used
           </Typography>
-          {/* <Stack
-            direction="row"
-            justifyContent={{ xs: 'center', sm: 'left' }}
-            spacing={{ xs: 1, sm: 2 }}
-          >
-            {techStack.map((tech) => (
-              <Typography
-                key={tech}
-                variant="body1"
-                sx={{
-                  backgroundColor: 'primary.main',
-                  borderRadius: '25px',
-                  paddingX: '10px',
-                  color: 'white'
-                }}
-              >
-                {tech}
-              </Typography>
-            ))}
-          </Stack> */}
-          <Grid
-            container
-            spacing={{ xs: 1, sm: 2 }}
-            justifyContent={{ xs: 'center', sm: 'flex-start' }}
-          >
+          <Grid container spacing={1} justifyContent={{ xs: 'center', sm: 'flex-start' }}>
             {techStack.map((tech) => (
               <Grid item key={tech}>
                 <Typography
                   variant="body1"
                   sx={{
                     backgroundColor: 'primary.main',
-                    borderRadius: '25px',
+                    borderRadius: '15px',
                     paddingX: '10px',
                     color: 'white'
                   }}
@@ -192,16 +168,14 @@ const Projects = () => {
         <Typography variant="h2" sx={{ m: 5, textAlign: 'center' }}>
           Our Projects
         </Typography>
-        {projectsList
-          // .slice(0, 2)
-          .map(({ index, description, title, status, logo, links, techStack }) => (
-            <Box key={title} sx={boxStyle(index)}>
-              <Grid container spacing={{ xs: 1, md: 10 }}>
-                {projectGridLogo(index, title, logo, links, isSmallScreen)}
-                {projectGridContent(index, description, title, status, techStack)}
-              </Grid>
-            </Box>
-          ))}
+        {projectsList.map(({ index, description, title, status, logo, links, techStack }) => (
+          <Box key={title} sx={boxStyle(index)}>
+            <Grid container spacing={{ xs: 1, md: 10 }}>
+              {projectGridLogo(index, title, logo, links, isSmallScreen)}
+              {projectGridContent(index, description, title, status, techStack)}
+            </Grid>
+          </Box>
+        ))}
       </Stack>
     </>
   );
