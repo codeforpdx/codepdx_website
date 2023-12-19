@@ -71,7 +71,7 @@ const LargeScreenComponent = ({
           ></Box>
         </a>
       </Grid>
-      <Grid item pl={'6%'} {...partnerGridStyle} order={contentOrder}>
+      <Grid item pl={'6%'} pr={'1%'} {...partnerGridStyle} order={contentOrder}>
         <Typography variant="body1" p={'5% 0 3% 0'}>
           {testimonial}
         </Typography>
