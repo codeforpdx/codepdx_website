@@ -1,5 +1,3 @@
-// React Imports
-import { Link } from 'react-router-dom';
 // Material UI Imports
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
