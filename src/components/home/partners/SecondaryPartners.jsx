@@ -27,7 +27,7 @@ const partnerGridStyle = {
   justifyContent: 'center',
   alignItems: 'center',
   flexDirection: 'column',
-  pt: '20px'
+  p: { xs: '10px', sm: '50px' }
 };
 
 const LargeScreenComponent = ({
@@ -59,16 +59,10 @@ const LargeScreenComponent = ({
     >
       <Grid item md={6} {...partnerGridStyle} order={logoOrder}>
         <a href={website} target="_blank" rel="noopener noreferrer">
-          <Box
-            component={'img'}
-            alt={`${company} logo`}
-            aria-label={`${company} logo`}
-            src={partnerLogo}
-            width={'250px'}
-          />
+          <Box component={'img'} alt={`${company} logo`} src={partnerLogo} width={'250px'} />
         </a>
       </Grid>
-      <Grid item pl={'6%'} pr={'1%'} {...partnerGridStyle} order={contentOrder}>
+      <Grid item {...partnerGridStyle} order={contentOrder}>
         <Typography variant="body1" p={'5% 0 3% 0'}>
           {testimonial}
         </Typography>
@@ -81,7 +75,7 @@ const LargeScreenComponent = ({
           </Typography>
         )}
         {testimonialAuthorTwo && (
-          <Typography variant="caption" pb={'10%'} sx={{ fontWeight: 'bold' }}>
+          <Typography variant="caption" sx={{ fontWeight: 'bold' }}>
             {testimonialAuthorTwo}
           </Typography>
         )}
@@ -121,11 +115,11 @@ const SmallScreenComponent = ({
             aria-label={`${company} logo`}
             src={partnerLogo}
             width={'100px'}
-          ></Box>
+          />
         </a>
       </Grid>
       <Grid item {...partnerGridStyle}>
-        <Typography variant="body1" p={'5% 5% 5% 5%'}>
+        <Typography variant="body1" p={'0 5% 8% 5%'}>
           {testimonial}
         </Typography>
         <Typography
@@ -136,14 +130,14 @@ const SmallScreenComponent = ({
           {testimonialAuthor}
         </Typography>
         {testimonialTwo && (
-          <Typography variant="body1" p={'5% 5% 5% 5%'}>
+          <Typography variant="body1" p={'0 5% 8% 5%'}>
             {testimonialTwo}
           </Typography>
         )}
         {testimonialAuthorTwo && (
           <Typography
             variant="caption"
-            p={'5% 5% 5% 5%'}
+            p={'0 5% 8% 5%'}
             sx={{ fontWeight: 'bold', textAlign: 'center' }}
           >
             {testimonialAuthorTwo}
