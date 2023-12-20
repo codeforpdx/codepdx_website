@@ -53,15 +53,14 @@ const PrimaryPartner = () => {
         component="img"
         display={'flex'}
         maxWidth={'100%'}
-        m={'0 auto 100px auto'}
+        m={'auto'}
         alt="technology association of oregon logo"
         src={'/assets/TAOLogo.png'}
       />
       <Typography
-        component="h4"
-        variant="h3"
+        component="h3"
         textAlign={'center'}
-        padding={{ xs: '0 0 75px 0', md: '0px 15% 75px 15%' }}
+        p={{ xs: '50px 0 50px 0', md: '75px 15% 75px 15%' }}
         sx={{ typography: { xs: 'h5', sm: 'h4' } }}
       >
         Empowering businesses and entrepreneurs, the TAO Foundation is creating and uniting a
@@ -70,7 +69,7 @@ const PrimaryPartner = () => {
       <Grid
         sx={{
           height: 'auto',
-          pb: '50px'
+          pb: '15px'
         }}
         container
         rowSpacing={1}
