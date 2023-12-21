@@ -11,9 +11,11 @@ import Popover from '@mui/material/Popover';
 import Toolbar from '@mui/material/Toolbar';
 import Switch from '@mui/material/Switch';
 import Typography from '@mui/material/Typography';
-import { styled } from '@mui/material/styles';
+import { styled, useTheme } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
-import { useState, useRef } from 'react';
+import { useState, useRef, useContext } from 'react';
+import { ColorModeContext } from '../../theme';
+import useThemeDetector from '../../hooks/useThemeDetector';
 
 const logoBlobStyle = {
   position: 'absolute',
@@ -98,7 +100,10 @@ const DarkModeToggle = styled(Switch)(({ theme }) => ({
 }));
 
 function NavBar() {
-  const [darkMode, setDarkMode] = useState(false);
+  const preferredTheme = useThemeDetector();
+  const theme = useTheme();
+  const colorMode = useContext(ColorModeContext);
+  const [darkMode, setDarkMode] = useState(preferredTheme === 'dark');
   const [menuOpen, setMenuOpen] = useState(false);
 
   // anchor for menu to pop from
@@ -106,6 +111,7 @@ function NavBar() {
 
   const handleThemeChange = () => {
     setDarkMode(!darkMode);
+    colorMode.toggleColorMode();
   };
 
   const handleToggle = () => {
@@ -131,7 +137,12 @@ function NavBar() {
   );
 
   return (
-    <AppBar ref={anchorRef} component="nav" position="static" color={darkMode ? 'dark' : 'primary'}>
+    <AppBar
+      ref={anchorRef}
+      component="nav"
+      position="static"
+      color={theme.palette.mode === 'dark' ? 'dark' : 'primary'}
+    >
       <Toolbar sx={{ height: '100px', alignItems: 'center' }}>
         <Box sx={logoBlobStyle} display={{ xs: 'none', md: 'block' }} />
         <Link to="/" style={navTextStyle} aria-label="Home">
