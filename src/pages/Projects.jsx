@@ -42,7 +42,7 @@ const boxStyle = (index) => ({
   flexDirection: { xs: 'column', md: 'row' }
 });
 
-const ProjectGridLogo = ({ index, title, logo, links }) => {
+const ProjectTitle = ({ index, title, logo, links }) => {
   const isSmallScreen = useMediaQuery('(max-width:500px)');
   const iconSize = isSmallScreen ? '30' : '45';
 
@@ -83,7 +83,7 @@ const ProjectGridLogo = ({ index, title, logo, links }) => {
   );
 };
 
-ProjectGridLogo.propTypes = {
+ProjectTitle.propTypes = {
   index: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   logo: PropTypes.string.isRequired,
@@ -95,7 +95,7 @@ ProjectGridLogo.propTypes = {
   )
 };
 
-const ProjectGridContent = ({ index, title, description, status, techStack }) => (
+const ProjectInfo = ({ index, title, description, status, techStack }) => (
   <Stack maxWidth={{ xs: '100%', md: '50%' }} order={{ xs: 0, md: index % 2 === 0 ? 1 : 2 }}>
     <CardContent>
       <Stack
@@ -163,7 +163,7 @@ const ProjectGridContent = ({ index, title, description, status, techStack }) =>
   </Stack>
 );
 
-ProjectGridContent.propTypes = {
+ProjectInfo.propTypes = {
   index: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
@@ -193,8 +193,8 @@ const Projects = () => (
       </Typography>
       {projectsList.map(({ index, title, description, status, logo, links, techStack }) => (
         <Box key={title} sx={boxStyle(index)}>
-          <ProjectGridLogo index={index} title={title} logo={logo} links={links} />
-          <ProjectGridContent
+          <ProjectTitle index={index} title={title} logo={logo} links={links} />
+          <ProjectInfo
             index={index}
             title={title}
             description={description}
