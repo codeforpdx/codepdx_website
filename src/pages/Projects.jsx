@@ -1,4 +1,4 @@
-// React Imports
+// PropTypes Imports
 import PropTypes from 'prop-types';
 // React Router Imports
 import { Link as ReactRouterLink } from 'react-router-dom';
