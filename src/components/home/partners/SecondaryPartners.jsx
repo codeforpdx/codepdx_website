@@ -27,7 +27,7 @@ const partnerGridStyle = {
   justifyContent: 'center',
   alignItems: 'center',
   flexDirection: 'column',
-  p: { xs: '10px', sm: '50px' }
+  p: { xs: '10px', md: '50px' }
 };
 
 const LargeScreenComponent = ({
@@ -63,19 +63,19 @@ const LargeScreenComponent = ({
         </a>
       </Grid>
       <Grid item {...partnerGridStyle} order={contentOrder}>
-        <Typography variant="body1" p={'5% 0 3% 0'}>
+        <Typography variant="body1" p={'0 6% 5% 6%'}>
           {testimonial}
         </Typography>
-        <Typography variant="caption" sx={{ fontWeight: 'bold' }}>
+        <Typography variant="caption" p={'0 6% 5% 6%'} sx={{ fontWeight: 'bold' }}>
           {testimonialAuthor}
         </Typography>
         {testimonialTwo && (
-          <Typography variant="body1" p={'5% 0 3% 0'}>
+          <Typography variant="body1" p={'0 6% 5% 6%'}>
             {testimonialTwo}
           </Typography>
         )}
         {testimonialAuthorTwo && (
-          <Typography variant="caption" sx={{ fontWeight: 'bold' }}>
+          <Typography variant="caption" p={'0 6% 5% 6%'} sx={{ fontWeight: 'bold' }}>
             {testimonialAuthorTwo}
           </Typography>
         )}
@@ -119,25 +119,25 @@ const SmallScreenComponent = ({
         </a>
       </Grid>
       <Grid item {...partnerGridStyle}>
-        <Typography variant="body1" p={'0 5% 8% 5%'}>
+        <Typography variant="body1" p={'0 6% 5% 6%'}>
           {testimonial}
         </Typography>
         <Typography
           variant="caption"
-          p={'0 5% 8% 5%'}
+          p={'0 6% 5% 6%'}
           sx={{ fontWeight: 'bold', textAlign: 'center' }}
         >
           {testimonialAuthor}
         </Typography>
         {testimonialTwo && (
-          <Typography variant="body1" p={'0 5% 8% 5%'}>
+          <Typography variant="body1" p={'0 6% 5% 6%'}>
             {testimonialTwo}
           </Typography>
         )}
         {testimonialAuthorTwo && (
           <Typography
             variant="caption"
-            p={'0 5% 8% 5%'}
+            p={'0 6% 5% 6%'}
             sx={{ fontWeight: 'bold', textAlign: 'center' }}
           >
             {testimonialAuthorTwo}
