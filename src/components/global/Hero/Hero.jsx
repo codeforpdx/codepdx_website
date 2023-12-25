@@ -1,10 +1,9 @@
 // Material UI Imports
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-// PropTypes Imports
+// Other Library Imports
 import { PropTypes } from 'prop-types';
-// Styles Imports
+// Component Style Imports
 import { heroStyles } from './styles';
 
 const Hero = ({ pageName, heroImage, heroText }) => {
@@ -31,15 +30,6 @@ const Hero = ({ pageName, heroImage, heroText }) => {
           <Typography variant="h1" sx={h1Styles}>
             {heroText}
           </Typography>
-        )}
-        {pageName === 'home' && (
-          <Button
-            variant="contained"
-            href="mailto:hugh@codeforpdx.org"
-            sx={heroStyles.contactBtnStyle}
-          >
-            Contact Us
-          </Button>
         )}
       </Box>
     </Box>

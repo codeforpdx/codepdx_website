@@ -4,17 +4,17 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
-// Data Imports
-import { secondaryPartnerList } from './secondaryPartnerList';
-// PropTypes Imports
+// Other Library Imports
 import { PropTypes } from 'prop-types';
+// Component Imports
+import { secondaryPartnerList } from './secondaryPartnerList';
 
 const secondaryPartnerProps = {
   index: PropTypes.number.isRequired,
   company: PropTypes.string.isRequired,
   testimonial: PropTypes.string.isRequired,
   testimonialTwo: PropTypes.string,
-  testimonialAuthor: PropTypes.string.isRequired,
+  testimonialAuthor: PropTypes.string,
   testimonialAuthorTwo: PropTypes.string,
   partnerLogo: PropTypes.string.isRequired,
   website: PropTypes.string.isRequired

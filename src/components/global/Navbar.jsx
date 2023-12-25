@@ -1,5 +1,5 @@
 // React Imports
-import { useRef, useState } from 'react';
+import { useState, useRef } from 'react';
 // React Router Imports
 import { Link } from 'react-router-dom';
 // Material UI Imports
@@ -174,7 +174,7 @@ function NavBar() {
           marginRight={2}
           sx={navTextStyle}
         >
-          <Link to="/volunteer" style={navTextStyle} aria-label="Volunteer for code pdx">
+          <Link to="/volunteer" style={navTextStyle} aria-label="Volunteer for CODE PDX">
             Volunteer
           </Link>
         </Typography>

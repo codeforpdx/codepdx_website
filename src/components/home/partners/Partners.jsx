@@ -24,4 +24,5 @@ const Partners = () => {
     </section>
   );
 };
+
 export default Partners;

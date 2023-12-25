@@ -22,7 +22,6 @@ export const secondaryPartnerList = [
     company: 'Epicodus',
     testimonial:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, quaerat saepe possimus ex dolor deleniti excepturi alias, est in tempore similique, inventore doloribus voluptatibus voluptate. Reiciendis minima nihil et dicta.',
-    testimonialAuthor: 'someone important there',
     partnerLogo: '/assets/epicodusLogo.png',
     website: 'https://www.epicodus.com/'
   }

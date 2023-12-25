@@ -7,10 +7,9 @@ import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material/styles';
-// React Icons Imports
-import { FaDiscord, FaGithub, FaLinkedin, FaMeetup } from 'react-icons/fa6';
-// dayjs Imports
+// Other Library Imports
 import dayjs from 'dayjs';
+import { FaDiscord, FaGithub, FaLinkedin, FaMeetup } from 'react-icons/fa6';
 
 // Legal links
 const legalLinks = [
