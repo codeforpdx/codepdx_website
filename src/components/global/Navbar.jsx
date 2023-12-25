@@ -171,7 +171,7 @@ function NavBar() {
           marginRight={2}
           sx={navTextStyle}
         >
-          <Link to="/volunteer" style={navTextStyle} aria-label="Volunteer for code pdx">
+          <Link to="/volunteer" style={navTextStyle} aria-label="Volunteer for CODE PDX">
             Volunteer
           </Link>
         </Typography>

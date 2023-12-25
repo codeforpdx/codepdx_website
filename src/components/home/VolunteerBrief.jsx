@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 // Material UI Imports
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
@@ -58,6 +60,10 @@ const volunteerGrid = [
 ];
 
 const VolunteerBrief = () => {
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <Stack
       as="section"
@@ -93,12 +99,18 @@ const VolunteerBrief = () => {
           sx={{
             mt: '2rem'
           }}
-          href="/volunteer"
+          onClick={scrollToTop}
         >
-          {/* TODO: This is to determine whether we prefer this button to redirect to Volunteer page 
-          rather than the contact form modal. If so, this may need to be wrapped in a "scroll to top" component
-          because it currently switches to the middle of the page  */}
-          Volunteer
+          <Link
+            to="/volunteer"
+            style={{
+              textDecoration: 'none',
+              color: 'inherit'
+            }}
+            aria-label="Volunteer for CODE PDX"
+          >
+            Volunteer
+          </Link>
         </Button>
       </Card>
     </Stack>
