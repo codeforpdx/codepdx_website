@@ -63,19 +63,19 @@ const LargeScreenComponent = ({
         </a>
       </Grid>
       <Grid item {...partnerGridStyle} order={contentOrder}>
-        <Typography variant="body1" p={'0 6% 5% 6%'}>
+        <Typography variant="body1" p={'5% 0 3% 0'}>
           {testimonial}
         </Typography>
-        <Typography variant="caption" p={'0 6% 5% 6%'} sx={{ fontWeight: 'bold' }}>
+        <Typography variant="caption" p={'5% 0 3% 0'} sx={{ fontWeight: 'bold' }}>
           {testimonialAuthor}
         </Typography>
         {testimonialTwo && (
-          <Typography variant="body1" p={'0 6% 5% 6%'}>
+          <Typography variant="body1" p={'5% 0 3% 0'}>
             {testimonialTwo}
           </Typography>
         )}
         {testimonialAuthorTwo && (
-          <Typography variant="caption" p={'0 6% 5% 6%'} sx={{ fontWeight: 'bold' }}>
+          <Typography variant="caption" p={'5% 0 3% 0'} sx={{ fontWeight: 'bold' }}>
             {testimonialAuthorTwo}
           </Typography>
         )}
@@ -119,25 +119,25 @@ const SmallScreenComponent = ({
         </a>
       </Grid>
       <Grid item {...partnerGridStyle}>
-        <Typography variant="body1" p={'0 6% 5% 6%'}>
+        <Typography variant="body1" p={'0 6% 20px 6%'}>
           {testimonial}
         </Typography>
         <Typography
           variant="caption"
-          p={'0 6% 5% 6%'}
+          p={'0 6% 20px 6%'}
           sx={{ fontWeight: 'bold', textAlign: 'center' }}
         >
           {testimonialAuthor}
         </Typography>
         {testimonialTwo && (
-          <Typography variant="body1" p={'0 6% 5% 6%'}>
+          <Typography variant="body1" p={'0 6% 20px 6%'}>
             {testimonialTwo}
           </Typography>
         )}
         {testimonialAuthorTwo && (
           <Typography
             variant="caption"
-            p={'0 6% 5% 6%'}
+            p={'0 6% 20px 6%'}
             sx={{ fontWeight: 'bold', textAlign: 'center' }}
           >
             {testimonialAuthorTwo}
