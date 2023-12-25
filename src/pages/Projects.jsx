@@ -1,3 +1,5 @@
+// React Imports
+import PropTypes from 'prop-types';
 // React Router Imports
 import { Link as ReactRouterLink } from 'react-router-dom';
 // Material UI Imports
@@ -6,7 +8,6 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Chip from '@mui/material/Chip';
 import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
@@ -28,23 +29,25 @@ const linkStyle = {
 
 const boxStyle = (index) => ({
   mb: { xs: 5, sm: 10 },
-  py: 2,
-  px: 2,
+  p: 2,
   borderRadius: '25px',
   background: {
     md:
       index % 2 === 0
-        ? 'linear-gradient(270deg, rgba(217, 217, 217, 0) 38.54%, rgba(217, 217, 217, 0.4) 82.29%)'
-        : 'linear-gradient(90deg, rgba(217, 217, 217, 0) 38.54%, rgba(217, 217, 217, 0.4) 82.29%)',
+        ? 'linear-gradient(270deg, rgba(217, 217, 217, 0) 25.54%, rgba(217, 217, 217, 0.4) 54.29%)'
+        : 'linear-gradient(90deg, rgba(217, 217, 217, 0) 25.54%, rgba(217, 217, 217, 0.4) 54.29%)',
     xs: 'linear-gradient(0deg, rgba(217, 217, 217, 0) 18.54%, rgba(217, 217, 217, 0.4) 82.29%)'
-  }
+  },
+  display: 'flex',
+  flexDirection: { xs: 'column', md: 'row' }
 });
 
-const projectGridLogo = (index, title, logo, links, isSmallScreen) => {
+const ProjectGridLogo = ({ index, title, logo, links }) => {
+  const isSmallScreen = useMediaQuery('(max-width:500px)');
   const iconSize = isSmallScreen ? '30' : '45';
 
   return (
-    <Grid item xs={12} md={6} order={{ xs: 0, md: index % 2 === 0 ? 2 : 1 }}>
+    <Stack minWidth={{ xs: '100%', md: '50%' }} order={{ xs: 0, md: index % 2 === 0 ? 2 : 1 }}>
       {logo && (
         <CardMedia
           component="img"
@@ -76,12 +79,24 @@ const projectGridLogo = (index, title, logo, links, isSmallScreen) => {
           </IconContext.Provider>
         </Stack>
       )}
-    </Grid>
+    </Stack>
   );
 };
 
-const projectGridContent = (index, description, title, status, techStack) => (
-  <Grid maxWidth={'xl'} item xs={12} md={6} order={{ xs: 0, md: index % 2 === 0 ? 1 : 2 }}>
+ProjectGridLogo.propTypes = {
+  index: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  logo: PropTypes.string.isRequired,
+  links: PropTypes.arrayOf(
+    PropTypes.shape({
+      href: PropTypes.string.isRequired,
+      icon: PropTypes.element.isRequired
+    })
+  )
+};
+
+const ProjectGridContent = ({ index, title, description, status, techStack }) => (
+  <Stack maxWidth={{ xs: '100%', md: '50%' }} order={{ xs: 0, md: index % 2 === 0 ? 1 : 2 }}>
     <CardContent>
       <Stack
         direction={{ xs: 'column', sm: 'row' }}
@@ -112,9 +127,7 @@ const projectGridContent = (index, description, title, status, techStack) => (
           <Typography variant="h6" component="h4" sx={{ fontWeight: 'bold' }}>
             Overview
           </Typography>
-          <Typography variant="body1" pl={{ xs: null, sm: 2 }}>
-            {description}
-          </Typography>
+          <Typography variant="body1">{description}</Typography>
         </Stack>
       )}
       {techStack && (
@@ -122,63 +135,76 @@ const projectGridContent = (index, description, title, status, techStack) => (
           <Typography variant="h6" component="h4" sx={{ fontWeight: 'bold' }}>
             Technology Used
           </Typography>
-          <Grid container spacing={1} justifyContent={{ xs: 'center', sm: 'flex-start' }}>
+          <Stack
+            direction="row"
+            spacing={1}
+            justifyContent={{ xs: 'center', sm: 'flex-start' }}
+            useFlexGap
+            flexWrap="wrap"
+          >
             {techStack.map((tech) => (
-              <Grid item key={tech}>
-                <Typography
-                  variant="body1"
-                  sx={{
-                    backgroundColor: 'primary.main',
-                    borderRadius: '15px',
-                    paddingX: '10px',
-                    color: 'white'
-                  }}
-                >
-                  {tech}
-                </Typography>
-              </Grid>
+              <Typography
+                key={tech}
+                variant="body1"
+                sx={{
+                  backgroundColor: 'primary.main',
+                  borderRadius: '15px',
+                  px: '10px',
+                  color: 'white'
+                }}
+              >
+                {tech}
+              </Typography>
             ))}
-          </Grid>
+          </Stack>
         </Stack>
       )}
     </CardContent>
-  </Grid>
+  </Stack>
 );
 
-const Projects = () => {
-  const isSmallScreen = useMediaQuery('(max-width:600px)');
-
-  return (
-    <>
-      <Hero
-        pageName={'projects'}
-        heroImage={`linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/assets/projectsHeroImage.png)`}
-        heroText={`Our products blend innovation, quality, and user-centric design to meet today's needs and anticipate tomorrow's challenges`}
-      />
-      <Stack
-        as="section"
-        sx={{
-          alignItems: 'center',
-          justifyContent: 'center',
-          px: 2,
-          maxWidth: 'xl',
-          mx: 'auto'
-        }}
-      >
-        <Typography variant="h2" sx={{ m: 5, textAlign: 'center' }}>
-          Our Projects
-        </Typography>
-        {projectsList.map(({ index, description, title, status, logo, links, techStack }) => (
-          <Box key={title} sx={boxStyle(index)}>
-            <Grid container spacing={{ xs: 1, md: 10 }}>
-              {projectGridLogo(index, title, logo, links, isSmallScreen)}
-              {projectGridContent(index, description, title, status, techStack)}
-            </Grid>
-          </Box>
-        ))}
-      </Stack>
-    </>
-  );
+ProjectGridContent.propTypes = {
+  index: PropTypes.number.isRequired,
+  description: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  status: PropTypes.string,
+  techStack: PropTypes.arrayOf(PropTypes.string)
 };
+
+const Projects = () => (
+  <>
+    <Hero
+      pageName={'projects'}
+      heroImage={`linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/assets/projectsHeroImage.png)`}
+      heroText={`Our products blend innovation, quality, and user-centric design to meet today's needs and anticipate tomorrow's challenges`}
+    />
+    <Stack
+      as="section"
+      sx={{
+        alignItems: 'center',
+        justifyContent: 'center',
+        px: 2,
+        maxWidth: 'xl',
+        mx: 'auto'
+      }}
+    >
+      <Typography variant="h2" sx={{ m: 5, textAlign: 'center' }}>
+        Our Projects
+      </Typography>
+      {projectsList.map(({ index, title, description, status, logo, links, techStack }) => (
+        <Box key={title} sx={boxStyle(index)}>
+          <ProjectGridLogo index={index} title={title} logo={logo} links={links} />
+          <ProjectGridContent
+            index={index}
+            title={title}
+            description={description}
+            status={status}
+            techStack={techStack}
+          />
+        </Box>
+      ))}
+    </Stack>
+  </>
+);
 
 export default Projects;
