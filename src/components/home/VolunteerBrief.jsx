@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+// React Router Imports
 import { Link } from 'react-router-dom';
 // Material UI Imports
 import Button from '@mui/material/Button';
