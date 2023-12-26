@@ -10,6 +10,8 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
+// Component Imports
+import ContactFormAlert from './ContactFormAlert';
 // Other Library Imports
 import emailjs from '@emailjs/browser';
 import { PropTypes } from 'prop-types';
@@ -132,6 +134,7 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
           </Grid>
         </DialogActions>
       </Box>
+      <ContactFormAlert />
     </Dialog>
   );
 };
