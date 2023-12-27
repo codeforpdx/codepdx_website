@@ -1,3 +1,4 @@
+// React Icons Imports
 import { FaDiscord, FaEarthAmericas, FaGithub } from 'react-icons/fa6';
 
 const projectsList = [
@@ -58,7 +59,7 @@ const projectsList = [
         icon: <FaEarthAmericas />
       }
     ],
-    techStack: ['SOLID', 'React', 'Vite', 'JSDocs', 'MUI', 'NPM', 'ES Lint']
+    techStack: ['SOLID', 'React', 'Vite', 'JSDocs', 'MUI', 'NPM', 'ESLint']
   },
   {
     index: 3,

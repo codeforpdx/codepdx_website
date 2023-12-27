@@ -14,7 +14,7 @@ import Typography from '@mui/material/Typography';
 import { useMediaQuery } from '@mui/material';
 // React Icons Import
 import { IconContext } from 'react-icons';
-// Custom Imports
+// Component Imports
 import Hero from '../components/global/Hero/Hero';
 import projectsList from '../components/projects/projectsList';
 

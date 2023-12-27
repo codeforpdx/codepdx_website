@@ -1,3 +1,5 @@
+// React Router Imports
+import { Link } from 'react-router-dom';
 // Material UI Imports
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
@@ -58,6 +60,10 @@ const volunteerGrid = [
 ];
 
 const VolunteerBrief = () => {
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <Stack
       as="section"
@@ -90,14 +96,21 @@ const VolunteerBrief = () => {
         </Grid>
         <Button
           variant="contained"
-          href="mailto:hugh@codeforpdx.org"
-          target="_blank"
-          rel="noopener"
           sx={{
             mt: '2rem'
           }}
+          onClick={scrollToTop}
         >
-          Volunteer
+          <Link
+            to="/volunteer"
+            style={{
+              textDecoration: 'none',
+              color: 'inherit'
+            }}
+            aria-label="Volunteer for CODE PDX"
+          >
+            Volunteer
+          </Link>
         </Button>
       </Card>
     </Stack>

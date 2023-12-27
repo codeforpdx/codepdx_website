@@ -55,17 +55,5 @@ export const heroStyles = {
     width: '80%',
     height: '60%',
     textAlign: 'center'
-  },
-  contactBtnStyle: {
-    textTransform: 'capitalize',
-    fontWeight: '200',
-    color: 'black',
-    textShadow: '0px 4px 4px #0000004D',
-    alignSelf: 'center',
-    mt: '2em',
-    fontSize: { xs: '15px', md: '18px' },
-    width: { xs: '115px', md: '310px' },
-    height: { xs: '25px', md: '84px' },
-    borderRadius: '5px'
   }
 };
