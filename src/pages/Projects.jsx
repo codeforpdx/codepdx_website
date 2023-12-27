@@ -47,7 +47,11 @@ const ProjectTitle = ({ index, title, logo, links }) => {
   const iconSize = isSmallScreen ? '30' : '45';
 
   return (
-    <Stack minWidth={{ xs: '100%', md: '50%' }} order={{ xs: 0, md: index % 2 === 0 ? 2 : 1 }}>
+    <Stack
+      minWidth={{ xs: '100%', md: '50%' }}
+      order={{ xs: 0, md: index % 2 === 0 ? 2 : 1 }}
+      spacing={{ xs: 1, md: 2 }}
+    >
       {logo && (
         <CardMedia
           component="img"
@@ -62,7 +66,7 @@ const ProjectTitle = ({ index, title, logo, links }) => {
         />
       )}
       {links && (
-        <Stack direction="row" justifyContent="space-evenly" pt={{ xs: 0, sm: '1rem' }}>
+        <Stack direction="row" justifyContent="space-evenly">
           <IconContext.Provider value={{ size: iconSize }}>
             {links.map(({ href, icon }) => (
               <Link
