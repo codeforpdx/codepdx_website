@@ -44,7 +44,7 @@ const projectsList = [
     description:
       'PASS is an open source digital wallet for providing home insecure individuals a safe place to store documents within their control. PASS additionally assists caseworkers with processing and providing documents needed to complete the housing assistance application process.',
     status: 'In Development',
-    logo: '/assets/PassLogo.png',
+    logo: '/assets/pass_logo.svg',
     links: [
       {
         href: 'https://github.com/codeforpdx/PASS',
@@ -66,7 +66,7 @@ const projectsList = [
     title: 'CODE PDX',
     description:
       'Code PDX itself is a project that requires constant upkeep and volunteers to maintain. This ranges from project management, assisting with organizing events, or even updating this website! We are constantly improving to better help our community.',
-    logo: '/assets/rose_logo.png',
+    logo: '/assets/roseLogoGreen.svg',
     links: [
       {
         href: 'https://github.com/codeforpdx',

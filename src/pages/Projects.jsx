@@ -55,7 +55,7 @@ const ProjectTitle = ({ index, title, logo, links }) => {
           alt={title ? `${title} logo` : 'project logo'}
           sx={{
             mx: 'auto',
-            objectFit: 'contain',
+            objectFit: logo === '/assets/pass_logo.svg' ? 'cover' : 'fill',
             maxWidth: '90%',
             height: '150px'
           }}
