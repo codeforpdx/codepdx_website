@@ -51,6 +51,7 @@ const ProjectTitle = ({ index, title, logo, links }) => {
       minWidth={{ xs: '100%', md: '50%' }}
       order={{ xs: 0, md: index % 2 === 0 ? 2 : 1 }}
       spacing={{ xs: 1, md: 2 }}
+      alignItems="center"
     >
       {logo && (
         <CardMedia
@@ -59,14 +60,19 @@ const ProjectTitle = ({ index, title, logo, links }) => {
           alt={title ? `${title} logo` : 'project logo'}
           sx={{
             mx: 'auto',
-            objectFit: logo === '/assets/pass_logo.svg' ? 'cover' : 'fill',
+            objectFit: 'fill',
             maxWidth: '90%',
             height: '150px'
           }}
         />
       )}
       {links && (
-        <Stack direction="row" justifyContent="space-evenly">
+        <Stack
+          direction="row"
+          justifyContent="space-evenly"
+          width="100%"
+          pt={logo === '/assets/roseLogoGreen.svg' ? 4 : null}
+        >
           <IconContext.Provider value={{ size: iconSize }}>
             {links.map(({ href, icon }) => (
               <Link
