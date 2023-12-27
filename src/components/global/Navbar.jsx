@@ -17,6 +17,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Switch from '@mui/material/Switch';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
+import { useMediaQuery } from '@mui/material';
 
 const logoBlobStyle = {
   position: 'absolute',
@@ -133,6 +134,9 @@ function NavBar() {
     </List>
   );
 
+  const isMediumScreen = useMediaQuery('(min-width:900px)');
+  const roseLogo = isMediumScreen ? '/assets/roseLogoGreen.svg' : '/assets/roseLogoWhite.svg';
+
   return (
     <AppBar ref={anchorRef} component="nav" position="static" color={darkMode ? 'dark' : 'primary'}>
       <Toolbar sx={{ height: '100px', alignItems: 'center' }}>
@@ -142,7 +146,7 @@ function NavBar() {
             component="img"
             position="relative"
             alt="CODE PDX logo"
-            src={'/assets/rose_logo.png'}
+            src={roseLogo}
             sx={{
               width: '75px',
               mr: { xs: '0px', md: '30px' },
