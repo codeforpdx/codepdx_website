@@ -11,10 +11,10 @@ export const secondaryPartnerList = [
     company: 'ORDSN',
     testimonial:
       'By harnessing the diverse talents and enthusiasm of both tech-savvy and non-tech individuals, CODE PDX is carving a pathway to a more vibrant and inclusive Portland. CODE PDX exemplifies the very essence of what collaborative endeavors like ours at ORDSN aim to achieve.',
+    testimonialAuthor: 'Siva Narendra, Co-Founder ORDSN',
     testimonialTwo:
       "Digital vaults are essential components of the future 'stack' that every individual needs to control their lives in our modern economy. CODE PDX's focus on this exemplifies their understanding of what is most important for the vulnerable in our society. The remarkable team at CODE PDX should be applauded for their energy and vision.",
-    testimonialAuthor: 'Siva Narendra, Co-Founder ORDSN',
-    testimonialAuthorTwo: 'Carol Coye Benson, Co-Founder ORDSN',
+    testimonialTwoAuthor: 'Carol Coye Benson, Co-Founder ORDSN',
     partnerLogo: '/assets/ordsnLogo.png',
     website: 'https://www.ordsn.org/'
   },

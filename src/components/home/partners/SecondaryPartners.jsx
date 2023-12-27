@@ -14,9 +14,9 @@ const secondaryPartnerProps = {
   index: PropTypes.number.isRequired,
   company: PropTypes.string.isRequired,
   testimonial: PropTypes.string.isRequired,
-  testimonialTwo: PropTypes.string,
-  testimonialAuthorTwo: PropTypes.string,
   testimonialAuthor: PropTypes.string,
+  testimonialTwo: PropTypes.string,
+  testimonialTwoAuthor: PropTypes.string,
   partnerLogo: PropTypes.string.isRequired,
   website: PropTypes.string.isRequired
 };
@@ -35,9 +35,9 @@ const LargeScreenComponent = ({
   index,
   company,
   testimonial,
-  testimonialTwo,
-  testimonialAuthorTwo,
   testimonialAuthor,
+  testimonialTwo,
+  testimonialTwoAuthor,
   partnerLogo,
   website
 }) => {
@@ -83,9 +83,9 @@ const LargeScreenComponent = ({
             {testimonialTwo}
           </Typography>
         ) : null}
-        {testimonialAuthorTwo ? (
+        {testimonialTwoAuthor ? (
           <Typography variant="caption" pb={'10%'}>
-            {testimonialAuthorTwo}
+            {testimonialTwoAuthor}
           </Typography>
         ) : null}
       </Grid>
@@ -98,9 +98,9 @@ LargeScreenComponent.propTypes = secondaryPartnerProps;
 const SmallScreenComponent = ({
   company,
   testimonial,
-  testimonialTwo,
-  testimonialAuthorTwo,
   testimonialAuthor,
+  testimonialTwo,
+  testimonialTwoAuthor,
   partnerLogo,
   website
 }) => {
@@ -139,9 +139,9 @@ const SmallScreenComponent = ({
             {testimonialTwo}
           </Typography>
         ) : null}
-        {testimonialAuthorTwo ? (
+        {testimonialTwoAuthor ? (
           <Typography variant="caption" p={'0 5% 10% 5%'}>
-            {testimonialAuthorTwo}
+            {testimonialTwoAuthor}
           </Typography>
         ) : null}
       </Grid>
