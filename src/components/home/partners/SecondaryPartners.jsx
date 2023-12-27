@@ -1,5 +1,6 @@
 // Material UI Imports
 import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -14,8 +15,8 @@ const secondaryPartnerProps = {
   company: PropTypes.string.isRequired,
   testimonial: PropTypes.string.isRequired,
   testimonialTwo: PropTypes.string,
-  testimonialAuthor: PropTypes.string,
   testimonialAuthorTwo: PropTypes.string,
+  testimonialAuthor: PropTypes.string,
   partnerLogo: PropTypes.string.isRequired,
   website: PropTypes.string.isRequired
 };
@@ -27,7 +28,7 @@ const partnerGridStyle = {
   justifyContent: 'center',
   alignItems: 'center',
   flexDirection: 'column',
-  p: { xs: '10px', md: '50px' }
+  pt: '20px'
 };
 
 const LargeScreenComponent = ({
@@ -52,33 +53,41 @@ const LargeScreenComponent = ({
       sx={{
         background: gradientStyle,
         borderRadius: '30px',
-        minHeight: '350px',
-        marginBottom: '100px'
+        minHeight: '500px',
+        marginBottom: '100px',
+        flexDirection: 'row'
       }}
       key={company}
     >
       <Grid item md={6} {...partnerGridStyle} order={logoOrder}>
         <a href={website} target="_blank" rel="noopener noreferrer">
-          <Box component={'img'} alt={`${company} logo`} src={partnerLogo} width={'250px'} />
+          <Box
+            component={'img'}
+            alt={`${company} logo`}
+            aria-label={`${company} logo`}
+            src={partnerLogo}
+            mb={'150px'}
+            width={'250px'}
+          ></Box>
         </a>
       </Grid>
-      <Grid item {...partnerGridStyle} order={contentOrder}>
-        <Typography variant="body1" p={'5% 0 3% 0'}>
+      <Grid item pl={'6%'} {...partnerGridStyle} order={contentOrder}>
+        <Typography variant="body1" p={'5% 15% 3% 0'}>
           {testimonial}
         </Typography>
-        <Typography variant="caption" p={'5% 0 3% 0'} sx={{ fontWeight: 'bold' }}>
+        <Typography variant="caption" p={'15px 0 5% 0'}>
           {testimonialAuthor}
         </Typography>
-        {testimonialTwo && (
-          <Typography variant="body1" p={'5% 0 3% 0'}>
+        {testimonialTwo ? (
+          <Typography variant="body1" display={'flex'} p={'40px 15% 5% 0'}>
             {testimonialTwo}
           </Typography>
-        )}
-        {testimonialAuthorTwo && (
-          <Typography variant="caption" p={'5% 0 3% 0'} sx={{ fontWeight: 'bold' }}>
+        ) : null}
+        {testimonialAuthorTwo ? (
+          <Typography variant="caption" pb={'10%'}>
             {testimonialAuthorTwo}
           </Typography>
-        )}
+        ) : null}
       </Grid>
     </Grid>
   );
@@ -115,34 +124,26 @@ const SmallScreenComponent = ({
             aria-label={`${company} logo`}
             src={partnerLogo}
             width={'100px'}
-          />
+          ></Box>
         </a>
       </Grid>
       <Grid item {...partnerGridStyle}>
-        <Typography variant="body1" p={'0 6% 20px 6%'}>
+        <Typography variant="body1" p={'5% 5% 5% 5%'}>
           {testimonial}
         </Typography>
-        <Typography
-          variant="caption"
-          p={'0 6% 20px 6%'}
-          sx={{ fontWeight: 'bold', textAlign: 'center' }}
-        >
+        <Typography variant="caption" p={'0 5% 8% 5%'}>
           {testimonialAuthor}
         </Typography>
-        {testimonialTwo && (
-          <Typography variant="body1" p={'0 6% 20px 6%'}>
+        {testimonialTwo ? (
+          <Typography variant="body1" display={'flex'} p={'5% 5% 5% 5%'}>
             {testimonialTwo}
           </Typography>
-        )}
-        {testimonialAuthorTwo && (
-          <Typography
-            variant="caption"
-            p={'0 6% 20px 6%'}
-            sx={{ fontWeight: 'bold', textAlign: 'center' }}
-          >
+        ) : null}
+        {testimonialAuthorTwo ? (
+          <Typography variant="caption" p={'0 5% 10% 5%'}>
             {testimonialAuthorTwo}
           </Typography>
-        )}
+        ) : null}
       </Grid>
     </Grid>
   );
@@ -155,7 +156,7 @@ const SecondaryPartners = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
-    <>
+    <Container>
       {secondaryPartnerList.map((partner, index) =>
         isSmallScreen ? (
           <SmallScreenComponent key={partner.company} index={index} {...partner} />
@@ -163,7 +164,7 @@ const SecondaryPartners = () => {
           <LargeScreenComponent key={partner.company} index={index} {...partner} />
         )
       )}
-    </>
+    </Container>
   );
 };
 
