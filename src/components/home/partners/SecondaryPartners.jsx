@@ -125,30 +125,21 @@ const SmallScreenComponent = ({
         </a>
       </Grid>
       <Grid item {...partnerGridStyle}>
-        <Typography variant="body1" p={'5% 5% 5% 5%'}>
-          {testimonial}
-        </Typography>
-        <Typography
-          variant="caption"
-          p={'0 5% 8% 5%'}
-          sx={{ fontWeight: 'bold', textAlign: 'center' }}
-        >
-          {testimonialAuthor}
-        </Typography>
-        {testimonialTwo ? (
-          <Typography variant="body1" p={'5% 5% 5% 5%'}>
-            {testimonialTwo}
+        <Box>
+          <Typography variant="body1">{testimonial}</Typography>
+          <Typography variant="caption" sx={{ fontWeight: 'bold', textAlign: 'center' }}>
+            {testimonialAuthor}
           </Typography>
-        ) : null}
-        {testimonialTwoAuthor ? (
-          <Typography
-            variant="caption"
-            p={'0 5% 10% 5%'}
-            sx={{ fontWeight: 'bold', textAlign: 'center' }}
-          >
-            {testimonialTwoAuthor}
-          </Typography>
-        ) : null}
+        </Box>
+        <br />
+        <Box>
+          {testimonialTwo ? <Typography variant="body1">{testimonialTwo}</Typography> : null}
+          {testimonialTwoAuthor ? (
+            <Typography variant="caption" sx={{ fontWeight: 'bold', textAlign: 'center' }}>
+              {testimonialTwoAuthor}
+            </Typography>
+          ) : null}
+        </Box>
       </Grid>
     </Grid>
   );
