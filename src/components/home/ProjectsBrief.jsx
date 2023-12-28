@@ -15,11 +15,11 @@ const cardStyle = {
   justifyContent: 'space-between',
   flexDirection: 'column',
   m: { xs: '10px 0 10px 0', md: '0 25px 20px 25px' },
-  p: { xs: '0 0 0 0', sm: 3 },
+  p: { xs: 1, sm: 3 },
   background: 'rgba(217, 217, 217, 0.4)',
   borderRadius: '30px',
   height: '100%',
-  minHeight: '500px'
+  minHeight: { xs: '0', sm: '500px' }
 };
 
 const renderProjectBriefCard = ({ title, description, logo }) => {
