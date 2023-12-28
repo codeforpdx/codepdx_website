@@ -1,13 +1,14 @@
+// Material UI Imports
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
-import { secondaryPartnerList } from './secondaryPartnerList';
-
+// Other Library Imports
 import { PropTypes } from 'prop-types';
+// Component Imports
+import { secondaryPartnerList } from './secondaryPartnerList';
 
 const secondaryPartnerProps = {
   index: PropTypes.number.isRequired,
@@ -15,7 +16,7 @@ const secondaryPartnerProps = {
   testimonial: PropTypes.string.isRequired,
   testimonialTwo: PropTypes.string,
   testimonialAuthorTwo: PropTypes.string,
-  testimonialAuthor: PropTypes.string.isRequired,
+  testimonialAuthor: PropTypes.string,
   partnerLogo: PropTypes.string.isRequired,
   website: PropTypes.string.isRequired
 };
