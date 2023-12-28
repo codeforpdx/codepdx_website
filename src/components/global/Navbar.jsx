@@ -18,6 +18,7 @@ import Switch from '@mui/material/Switch';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 import { useMediaQuery } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
 const logoBlobStyle = {
   position: 'absolute',
@@ -133,8 +134,8 @@ function NavBar() {
       </ListItem>
     </List>
   );
-
-  const isMediumScreen = useMediaQuery('(min-width:900px)');
+  const theme = useTheme();
+  const isMediumScreen = useMediaQuery(theme.breakpoints.up('md'));
   const roseLogo = isMediumScreen ? '/assets/roseLogoGreen.svg' : '/assets/roseLogoWhite.svg';
 
   return (
