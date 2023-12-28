@@ -33,7 +33,7 @@ const boxStyle = (index) => ({
   mb: { xs: 5, sm: 15 },
   py: 5,
   px: 2,
-  borderRadius: '25px',
+  borderRadius: '30px',
   background: {
     md:
       index % 2 === 0

@@ -45,7 +45,7 @@ const PrimaryPartner = () => {
     <Container
       sx={{
         mb: '100px',
-        borderRadius: '40px',
+        borderRadius: '30px',
         background:
           'linear-gradient(180deg, rgba(217, 217, 217, 0) 24.86%, rgba(217, 217, 217, 0.4) 70.55%)'
       }}

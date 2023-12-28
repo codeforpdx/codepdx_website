@@ -53,9 +53,8 @@ const LargeScreenComponent = ({
       sx={{
         background: gradientStyle,
         borderRadius: '30px',
-        minHeight: '500px',
-        marginBottom: '100px',
-        flexDirection: 'row'
+        minHeight: '350px',
+        marginBottom: '100px'
       }}
       key={company}
     >
@@ -64,9 +63,8 @@ const LargeScreenComponent = ({
           <Box
             component={'img'}
             alt={`${company} logo`}
-            aria-label={`${company} logo`}
             src={partnerLogo}
-            mb={'150px'}
+            // mb={'150px'}
             width={'250px'}
           ></Box>
         </a>
@@ -75,7 +73,11 @@ const LargeScreenComponent = ({
         <Typography variant="body1" p={'5% 15% 3% 0'}>
           {testimonial}
         </Typography>
-        <Typography variant="caption" p={'15px 0 5% 0'}>
+        <Typography
+          variant="caption"
+          p={'15px 0 5% 0'}
+          sx={{ fontWeight: 'bold', textAlign: 'center' }}
+        >
           {testimonialAuthor}
         </Typography>
         {testimonialTwo ? (
@@ -84,7 +86,7 @@ const LargeScreenComponent = ({
           </Typography>
         ) : null}
         {testimonialTwoAuthor ? (
-          <Typography variant="caption" pb={'10%'}>
+          <Typography variant="caption" pb={'10%'} sx={{ fontWeight: 'bold', textAlign: 'center' }}>
             {testimonialTwoAuthor}
           </Typography>
         ) : null}
@@ -131,7 +133,11 @@ const SmallScreenComponent = ({
         <Typography variant="body1" p={'5% 5% 5% 5%'}>
           {testimonial}
         </Typography>
-        <Typography variant="caption" p={'0 5% 8% 5%'}>
+        <Typography
+          variant="caption"
+          p={'0 5% 8% 5%'}
+          sx={{ fontWeight: 'bold', textAlign: 'center' }}
+        >
           {testimonialAuthor}
         </Typography>
         {testimonialTwo ? (
@@ -140,7 +146,11 @@ const SmallScreenComponent = ({
           </Typography>
         ) : null}
         {testimonialTwoAuthor ? (
-          <Typography variant="caption" p={'0 5% 10% 5%'}>
+          <Typography
+            variant="caption"
+            p={'0 5% 10% 5%'}
+            sx={{ fontWeight: 'bold', textAlign: 'center' }}
+          >
             {testimonialTwoAuthor}
           </Typography>
         ) : null}
