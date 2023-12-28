@@ -2,6 +2,7 @@
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
+import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
@@ -60,14 +61,14 @@ const LargeScreenComponent = ({
     >
       <Grid item md={6} {...partnerGridStyle} order={logoOrder}>
         <a href={website} target="_blank" rel="noopener noreferrer">
-          <Box component={'img'} alt={`${company} logo`} src={partnerLogo} width={'250px'} />
+          <Box component="img" alt={`${company} logo`} src={partnerLogo} width="250px" />
         </a>
       </Grid>
       <Grid item {...partnerGridStyle} order={contentOrder}>
-        <Box>
+        <Stack spacing={1}>
           <Typography variant="body1">{testimonial}</Typography>
           <Typography
-            variant="caption"
+            variant="subtitle2"
             sx={{
               fontWeight: 'bold',
               textAlign: 'center'
@@ -75,16 +76,16 @@ const LargeScreenComponent = ({
           >
             {testimonialAuthor}
           </Typography>
-        </Box>
+        </Stack>
         <br />
-        <Box>
-          {testimonialTwo ? <Typography variant="body1">{testimonialTwo}</Typography> : null}
-          {testimonialTwoAuthor ? (
-            <Typography variant="caption" sx={{ fontWeight: 'bold', textAlign: 'center' }}>
+        <Stack spacing={1}>
+          {testimonialTwo && <Typography variant="body1">{testimonialTwo}</Typography>}
+          {testimonialTwoAuthor && (
+            <Typography variant="subtitle2" sx={{ fontWeight: 'bold', textAlign: 'center' }}>
               {testimonialTwoAuthor}
             </Typography>
-          ) : null}
-        </Box>
+          )}
+        </Stack>
       </Grid>
     </Grid>
   );
@@ -116,30 +117,30 @@ const SmallScreenComponent = ({
       <Grid item {...partnerGridStyle}>
         <a href={website} target="_blank" rel="noopener noreferrer">
           <Box
-            component={'img'}
+            component="img"
             alt={`${company} logo`}
             aria-label={`${company} logo`}
             src={partnerLogo}
-            width={'100px'}
-          ></Box>
+            width="100px"
+          />
         </a>
       </Grid>
       <Grid item {...partnerGridStyle}>
-        <Box>
+        <Stack spacing={1}>
           <Typography variant="body1">{testimonial}</Typography>
-          <Typography variant="caption" sx={{ fontWeight: 'bold', textAlign: 'center' }}>
+          <Typography variant="subtitle2" sx={{ fontWeight: 'bold', textAlign: 'center' }}>
             {testimonialAuthor}
           </Typography>
-        </Box>
+        </Stack>
         <br />
-        <Box>
-          {testimonialTwo ? <Typography variant="body1">{testimonialTwo}</Typography> : null}
-          {testimonialTwoAuthor ? (
-            <Typography variant="caption" sx={{ fontWeight: 'bold', textAlign: 'center' }}>
+        <Stack spacing={1}>
+          {testimonialTwo && <Typography variant="body1">{testimonialTwo}</Typography>}
+          {testimonialTwoAuthor && (
+            <Typography variant="subtitle2" sx={{ fontWeight: 'bold', textAlign: 'center' }}>
               {testimonialTwoAuthor}
             </Typography>
-          ) : null}
-        </Box>
+          )}
+        </Stack>
       </Grid>
     </Grid>
   );
