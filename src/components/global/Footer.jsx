@@ -6,6 +6,7 @@ import Container from '@mui/system/Container';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+import { useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 // Other Library Imports
 import dayjs from 'dayjs';
@@ -161,6 +162,12 @@ const logoBlobStyle = {
 
 const Footer = () => {
   const theme = useTheme();
+  const isXsmallScreen = useMediaQuery('(max-width:599px)');
+  const isSmallScreen = useMediaQuery('(min-width:600px)');
+  const isMediumScreen = useMediaQuery('(min-width:900px)');
+  const isLargeScreen = useMediaQuery('(min-width:1200px)');
+  const roseLogo = isLargeScreen ? '/assets/roseLogoWhite.svg' : '/assets/roseLogoGreen.svg';
+  // xs: '/assets/', sm: '/asssets/', md: '/assets/', lg: '/assets/roseLogoWhite.svg'
 
   return (
     // this container contains the entire footer
@@ -173,7 +180,7 @@ const Footer = () => {
           component="img"
           alt="CODE PDX logo"
           aria-label="Code pdx"
-          src={'/assets/rose_logo.png'}
+          src={roseLogo}
           sx={{
             width: '75px',
             mt: '25px',
