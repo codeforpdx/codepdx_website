@@ -162,12 +162,20 @@ const logoBlobStyle = {
 
 const Footer = () => {
   const theme = useTheme();
-  const isXsmallScreen = useMediaQuery('(max-width:599px)');
-  const isSmallScreen = useMediaQuery('(min-width:600px)');
-  const isMediumScreen = useMediaQuery('(min-width:900px)');
-  const isLargeScreen = useMediaQuery('(min-width:1200px)');
-  const roseLogo = isLargeScreen ? '/assets/roseLogoWhite.svg' : '/assets/roseLogoGreen.svg';
-  // xs: '/assets/', sm: '/asssets/', md: '/assets/', lg: '/assets/roseLogoWhite.svg'
+  const isSmallScreen = useMediaQuery(theme.breakpoints.only('sm'));
+  const isMediumScreen = useMediaQuery(theme.breakpoints.only('md'));
+  const isLargeScreen = useMediaQuery(theme.breakpoints.up('lg'));
+
+  let roseLogo = '/assets/roseLogoGreen.svg';
+  if (isSmallScreen) {
+    roseLogo = '/assets/roseLogoWhite.svg';
+  }
+  if (isMediumScreen) {
+    roseLogo = '/assets/roseLogoGreen.svg';
+  }
+  if (isLargeScreen) {
+    roseLogo = '/assets/roseLogoWhite.svg';
+  }
 
   return (
     // this container contains the entire footer
