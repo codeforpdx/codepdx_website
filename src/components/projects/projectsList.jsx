@@ -12,19 +12,31 @@ const projectsList = [
     links: [
       {
         href: 'https://github.com/codeforpdx/recordexpungPDX',
-        icon: <FaGithub size={45} />
+        icon: <FaGithub />
       },
       {
         href: 'https://discord.gg/x6b573et',
-        icon: <FaDiscord size={45} />
+        icon: <FaDiscord />
       },
       {
         href: 'https://codeforpdx.github.io/recordexpungPDX',
-        icon: <FaEarthAmericas size={45} />
+        icon: <FaEarthAmericas />
       }
     ],
-    techStack:
-      'TypeScript, React, Redux, NPM, Flask, Python, Pytest, SCSS, CSS, Jinja, Makefile, Docker'
+    techStack: [
+      'TypeScript',
+      'React',
+      'Redux',
+      'NPM',
+      'Flask',
+      'Python',
+      'Pytest',
+      'SCSS',
+      'CSS',
+      'Jinja',
+      'Makefile',
+      'Docker'
+    ]
   },
   {
     index: 2,
@@ -36,26 +48,40 @@ const projectsList = [
     links: [
       {
         href: 'https://github.com/codeforpdx/PASS',
-        icon: <FaGithub size={45} />
+        icon: <FaGithub />
       },
       {
         href: 'https://discord.gg/x6b573et',
-        icon: <FaDiscord size={45} />
+        icon: <FaDiscord />
       },
       {
         href: 'https://passsmartwallet-967e217a2652.herokuapp.com/',
-        icon: <FaEarthAmericas size={45} />
+        icon: <FaEarthAmericas />
       }
     ],
-    techStack: 'SOLID, React, Vite, JSDocs, MUI, NPM, ESLint'
+    techStack: ['SOLID', 'React', 'Vite', 'JSDocs', 'MUI', 'NPM', 'ESLint']
   },
   {
     index: 3,
     title: 'CODE PDX',
     description:
-      'CODE PDX itself is a project that requires constant upkeep and volunteers to maintain. This ranges from project management, assisting with organizing events, or even updating this website! We are constantly improving to better help our community.',
-    logo: '/assets/rose_logo.png',
-    techStack: 'SOLID, React, Vite, JSDocs, MUI, NPM, ESLint'
+      'Code PDX itself is a project that requires constant upkeep and volunteers to maintain. This ranges from project management, assisting with organizing events, or even updating this website! We are constantly improving to better help our community.',
+    logo: '/assets/roseLogoGreen.svg',
+    links: [
+      {
+        href: 'https://github.com/codeforpdx',
+        icon: <FaGithub />
+      },
+      {
+        href: 'https://discord.gg/JcKBq7nXvf',
+        icon: <FaDiscord />
+      },
+      {
+        href: 'https://www.codeforpdx.org/',
+        icon: <FaEarthAmericas />
+      }
+    ],
+    techStack: ['Discord', 'GitHub', 'Google Meets']
   }
 ];
 
