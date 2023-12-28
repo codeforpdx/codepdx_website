@@ -31,8 +31,8 @@ const displaySponsorValuesInGrid = ({ title, description }) => {
   return (
     <Grid item xs={12} sm={6} key={title}>
       <Box p={'0 6% 10% 6%'}>
-        <Typography variant="body1" pb={'6%'}>
-          <strong>{title}</strong>
+        <Typography variant="body1" pb={'6%'} sx={{ fontWeight: 'bold' }}>
+          {title}
         </Typography>
         <Typography variant="body1">{description}</Typography>
       </Box>

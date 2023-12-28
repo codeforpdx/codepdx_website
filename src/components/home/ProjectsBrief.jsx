@@ -43,8 +43,8 @@ const renderProjectBriefCard = ({ title, description, logo }) => {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button href="/projects" size="large" color="primary">
-            <strong>Learn More</strong>
+          <Button href="/projects" size="large" color="primary" sx={{ fontWeight: 'bold' }}>
+            Learn More
           </Button>
         </CardActions>
       </Card>
