@@ -28,7 +28,7 @@ const partnerGridStyle = {
   justifyContent: 'center',
   alignItems: 'center',
   flexDirection: 'column',
-  pt: '20px'
+  p: '4%'
 };
 
 const LargeScreenComponent = ({
@@ -60,36 +60,31 @@ const LargeScreenComponent = ({
     >
       <Grid item md={6} {...partnerGridStyle} order={logoOrder}>
         <a href={website} target="_blank" rel="noopener noreferrer">
-          <Box
-            component={'img'}
-            alt={`${company} logo`}
-            src={partnerLogo}
-            // mb={'150px'}
-            width={'250px'}
-          ></Box>
+          <Box component={'img'} alt={`${company} logo`} src={partnerLogo} width={'250px'} />
         </a>
       </Grid>
-      <Grid item pl={'6%'} {...partnerGridStyle} order={contentOrder}>
-        <Typography variant="body1" p={'5% 15% 3% 0'}>
-          {testimonial}
-        </Typography>
-        <Typography
-          variant="caption"
-          p={'15px 0 5% 0'}
-          sx={{ fontWeight: 'bold', textAlign: 'center' }}
-        >
-          {testimonialAuthor}
-        </Typography>
-        {testimonialTwo ? (
-          <Typography variant="body1" display={'flex'} p={'40px 15% 5% 0'}>
-            {testimonialTwo}
+      <Grid item {...partnerGridStyle} order={contentOrder}>
+        <Box>
+          <Typography variant="body1">{testimonial}</Typography>
+          <Typography
+            variant="caption"
+            sx={{
+              fontWeight: 'bold',
+              textAlign: 'center'
+            }}
+          >
+            {testimonialAuthor}
           </Typography>
-        ) : null}
-        {testimonialTwoAuthor ? (
-          <Typography variant="caption" pb={'10%'} sx={{ fontWeight: 'bold', textAlign: 'center' }}>
-            {testimonialTwoAuthor}
-          </Typography>
-        ) : null}
+        </Box>
+        <br />
+        <Box>
+          {testimonialTwo ? <Typography variant="body1">{testimonialTwo}</Typography> : null}
+          {testimonialTwoAuthor ? (
+            <Typography variant="caption" sx={{ fontWeight: 'bold', textAlign: 'center' }}>
+              {testimonialTwoAuthor}
+            </Typography>
+          ) : null}
+        </Box>
       </Grid>
     </Grid>
   );
@@ -141,7 +136,7 @@ const SmallScreenComponent = ({
           {testimonialAuthor}
         </Typography>
         {testimonialTwo ? (
-          <Typography variant="body1" display={'flex'} p={'5% 5% 5% 5%'}>
+          <Typography variant="body1" p={'5% 5% 5% 5%'}>
             {testimonialTwo}
           </Typography>
         ) : null}
