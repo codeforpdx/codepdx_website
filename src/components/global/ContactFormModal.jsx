@@ -16,12 +16,14 @@ import emailjs from '@emailjs/browser';
 import { PropTypes } from 'prop-types';
 
 const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => {
-  const [messageSuccess, setMessageSuccess] = useState(null);
+  const [messageSuccess, setMessageSuccess] = useState(false);
   const [messageFailure, setMessageFailure] = useState(false);
   const form = useRef();
 
   const handleClose = () => {
     setShowContactFormModal(false);
+    setMessageSuccess(false);
+    setMessageFailure(false);
   };
 
   const handleSubmit = (e) => {
@@ -34,7 +36,8 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
         e.target.reset();
         setTimeout(() => {
           setShowContactFormModal(false);
-        }, 2000);
+          setMessageSuccess(false);
+        }, 5000);
       },
       (error) => {
         setMessageFailure(true);
@@ -51,6 +54,12 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
         textAlign: 'center'
       }}
     >
+      {messageSuccess ? (
+        <Alert severity="success">Your message was successfully sent!</Alert>
+      ) : null}
+      {messageFailure ? (
+        <Alert severity="error">There was an error. Please try an again.</Alert>
+      ) : null}
       <Box
         component="form"
         ref={form}
@@ -75,6 +84,7 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
             variant="standard"
             autoComplete="true"
             required
+            inputProps={{ maxLength: 40 }}
           />
           <TextField
             margin="dense"
@@ -86,6 +96,7 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
             variant="standard"
             autoComplete="true"
             required
+            inputProps={{ maxLength: 40 }}
           />
           <TextField
             margin="dense"
@@ -96,6 +107,7 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
             fullWidth
             variant="standard"
             required
+            inputProps={{ maxLength: 40 }}
           />
           <TextField
             margin="dense"
@@ -108,6 +120,7 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
             multiline
             rows={4}
             required
+            inputProps={{ maxLength: 500 }}
           />
         </DialogContent>
         <DialogActions>
@@ -137,19 +150,6 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
           </Grid>
         </DialogActions>
       </Box>
-      {messageSuccess ? (
-        <Alert
-          severity="success"
-          sx={{ width: '100%', display: 'flex', flexDirection: 'center', alignText: 'center' }}
-        >
-          Your message was successfully sent!
-        </Alert>
-      ) : null}
-      {messageFailure ? (
-        <Alert severity="error" sx={{ width: '100%' }}>
-          There was an error. Please try an again.
-        </Alert>
-      ) : null}
     </Dialog>
   );
 };
