@@ -21,7 +21,7 @@ export const secondaryPartnerList = [
   {
     company: 'Epicodus',
     testimonial:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, quaerat saepe possimus ex dolor deleniti excepturi alias, est in tempore similique, inventore doloribus voluptatibus voluptate. Reiciendis minima nihil et dicta.',
+      "Epicodus's mission is to help people learn the skills they need to get great jobs. For us, “great jobs” means jobs in growing industries that pay well and provide rewarding work. Beyond the particular skills needed to get these jobs, we aim to help our students become confident self-teachers who can adapt to changing job markets, and great communicators who will work well in teams. We focus on serving people who, by birth or circumstance, don't have easy access to learning the skills they need to get great jobs..",
     partnerLogo: '/assets/epicodusLogo.png',
     website: 'https://www.epicodus.com/'
   },
@@ -29,7 +29,7 @@ export const secondaryPartnerList = [
     company: 'CETI',
     testimonial:
       'A Creative and Emergent Technology Institute, CETI champions lifelong learning and collaborative, interdisciplinary innovation in creative and emergent technologies',
-    partnerLogo: '/assets/epicodusLogo.png',
+    partnerLogo: '/assets/cetiLogo.svg',
     website: 'https://ceti.institute/'
   }
 ];
