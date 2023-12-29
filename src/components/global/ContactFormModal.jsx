@@ -54,12 +54,6 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
         textAlign: 'center'
       }}
     >
-      {messageSuccess ? (
-        <Alert severity="success">Your message was successfully sent!</Alert>
-      ) : null}
-      {messageFailure ? (
-        <Alert severity="error">There was an error. Please try an again.</Alert>
-      ) : null}
       <Box
         component="form"
         ref={form}
@@ -150,6 +144,12 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
           </Grid>
         </DialogActions>
       </Box>
+      {messageSuccess ? (
+        <Alert severity="success">Your message was successfully sent!</Alert>
+      ) : null}
+      {messageFailure ? (
+        <Alert severity="error">There was an error. Please try an again.</Alert>
+      ) : null}
     </Dialog>
   );
 };
