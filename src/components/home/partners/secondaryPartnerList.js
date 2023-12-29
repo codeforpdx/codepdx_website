@@ -24,5 +24,12 @@ export const secondaryPartnerList = [
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, quaerat saepe possimus ex dolor deleniti excepturi alias, est in tempore similique, inventore doloribus voluptatibus voluptate. Reiciendis minima nihil et dicta.',
     partnerLogo: '/assets/epicodusLogo.png',
     website: 'https://www.epicodus.com/'
+  },
+  {
+    company: 'CETI',
+    testimonial:
+      'A Creative and Emergent Technology Institute, CETI champions lifelong learning and collaborative, interdisciplinary innovation in creative and emergent technologies',
+    partnerLogo: '/assets/epicodusLogo.png',
+    website: 'https://ceti.institute/'
   }
 ];
