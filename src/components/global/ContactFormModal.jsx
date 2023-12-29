@@ -27,15 +27,14 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('testing', 'error', form.current, 'message').then(
-      // emailjs.sendForm('service_co2agxf', 'template_20pnwni', form.current, 'AkBl59Ya3226OfPyQ').then(
+    emailjs.sendForm('service_co2agxf', 'template_20pnwni', form.current, 'AkBl59Ya3226OfPyQ').then(
       (result) => {
         setMessageSuccess(true);
         console.log(result.text);
         e.target.reset();
         setTimeout(() => {
           setShowContactFormModal(false);
-        }, 500);
+        }, 2000);
       },
       (error) => {
         setMessageFailure(true);
