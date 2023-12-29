@@ -1,6 +1,7 @@
 // React Imports
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 // Material UI Imports
+import Alert from '@mui/material/Alert';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
@@ -10,13 +11,13 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
-// Component Imports
-import ContactFormAlert from './ContactFormAlert';
 // Other Library Imports
 import emailjs from '@emailjs/browser';
 import { PropTypes } from 'prop-types';
 
 const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => {
+  const [messageSuccess, setMessageSuccess] = useState(null);
+  const [messageFailure, setMessageFailure] = useState(false);
   const form = useRef();
 
   const handleClose = () => {
@@ -26,18 +27,21 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_co2agxf', 'template_20pnwni', form.current, 'AkBl59Ya3226OfPyQ').then(
+    emailjs.sendForm('testing', 'error', form.current, 'message').then(
+      // emailjs.sendForm('service_co2agxf', 'template_20pnwni', form.current, 'AkBl59Ya3226OfPyQ').then(
       (result) => {
+        setMessageSuccess(true);
         console.log(result.text);
+        e.target.reset();
+        setTimeout(() => {
+          setShowContactFormModal(false);
+        }, 500);
       },
       (error) => {
+        setMessageFailure(true);
         console.error(error.text);
       }
     );
-    e.target.reset();
-    setTimeout(() => {
-      setShowContactFormModal(false);
-    }, 500);
   };
 
   return (
@@ -134,7 +138,19 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
           </Grid>
         </DialogActions>
       </Box>
-      <ContactFormAlert />
+      {messageSuccess ? (
+        <Alert
+          severity="success"
+          sx={{ width: '100%', display: 'flex', flexDirection: 'center', alignText: 'center' }}
+        >
+          Your message was successfully sent!
+        </Alert>
+      ) : null}
+      {messageFailure ? (
+        <Alert severity="error" sx={{ width: '100%' }}>
+          There was an error. Please try an again.
+        </Alert>
+      ) : null}
     </Dialog>
   );
 };
