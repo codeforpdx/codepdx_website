@@ -4,8 +4,7 @@ export const imageList = [
     alt: 'head shot of Hugh, image 1 out of 5'
   },
   {
-    image:
-      'https://assets.rebelmouse.io/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8zMzI0NzU5Ni9vcmlnaW4uanBnIiwiZXhwaXJlc19hdCI6MTczNzI1Nzg5MH0.PrIBXmpEeLrVe--JDq6kE2HF-DPuyzaLgfC1tnQ10Eo/img.jpg?width=742&quality=80',
+    image: '/assets/volunteers/volunteer_kahung.webp',
     alt: 'head shot of Ka Hung, image 2 out of 5'
   },
   {
