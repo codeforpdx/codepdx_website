@@ -14,11 +14,11 @@ const cardStyle = {
   display: 'flex',
   justifyContent: 'space-between',
   flexDirection: 'column',
-  m: { xs: '10px 0 10px 0', md: '0 25px 20px 25px' },
+  m: { xs: 0, md: '0 25px 0 25px' },
   p: { xs: 1, sm: 3 },
   background: 'rgba(217, 217, 217, 0.4)',
   borderRadius: '30px',
-  height: '100%',
+  height: { xs: 'auto', sm: '100%' },
   minHeight: { xs: '0', sm: '500px' }
 };
 
