@@ -8,7 +8,7 @@ import { imageList } from './imageList';
 const TopImages = () => (
   <Grid
     container
-    spacing={{ xs: 4, sm: 4 }}
+    spacing={4}
     sx={{ justifyContent: 'center', alignItems: 'flex-end', paddingBottom: '10px' }}
   >
     {imageList.slice(0, 2).map(({ image, alt }) => (
@@ -25,7 +25,7 @@ const TopImages = () => (
 );
 
 const BottomImages = () => (
-  <Grid container spacing={{ xs: 4, sm: 4 }} sx={{ justifyContent: 'center', paddingTop: '20px' }}>
+  <Grid container spacing={4} sx={{ justifyContent: 'center', paddingTop: '20px' }}>
     {imageList.slice(2).map(({ image, alt }) => (
       <Grid item key={alt}>
         <Box
