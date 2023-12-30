@@ -38,7 +38,7 @@ const renderProjectBriefCard = ({ title, description, logo }) => {
               height: '70px'
             }}
           />
-          <Typography variant="body1" sx={{ py: { xs: '1rem', sm: '2rem' } }}>
+          <Typography variant="body1" textAlign="center" sx={{ py: { xs: '1rem', sm: '2rem' } }}>
             {description ?? null}
           </Typography>
         </CardContent>
