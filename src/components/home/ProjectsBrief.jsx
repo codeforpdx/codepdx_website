@@ -14,11 +14,12 @@ const cardStyle = {
   display: 'flex',
   justifyContent: 'space-between',
   flexDirection: 'column',
-  m: { xs: '10px 0 10px 0', md: '0 25px 20px 25px' },
-  p: { xs: '0 0 0 0', sm: 3 },
+  m: { xs: 0, md: '0 25px 0 25px' },
+  p: { xs: 1, sm: 3 },
   background: 'rgba(217, 217, 217, 0.4)',
   borderRadius: '30px',
-  height: '100%'
+  height: { xs: 'auto', sm: '100%' },
+  minHeight: { xs: '0', sm: '500px' }
 };
 
 const renderProjectBriefCard = ({ title, description, logo }) => {
@@ -34,11 +35,10 @@ const renderProjectBriefCard = ({ title, description, logo }) => {
               mx: 'auto',
               objectFit: 'contain',
               maxWidth: '90%',
-              height: '70px',
-              mb: '15%'
+              height: '70px'
             }}
           />
-          <Typography variant="body1" sx={{ py: '1rem' }}>
+          <Typography variant="body1" textAlign="center" sx={{ py: { xs: '1rem', sm: '2rem' } }}>
             {description ?? null}
           </Typography>
         </CardContent>
