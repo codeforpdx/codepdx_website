@@ -54,8 +54,8 @@ const PrimaryPartner = () => {
         display={'flex'}
         maxWidth={'100%'}
         m={'auto'}
-        alt="technology association of oregon logo"
-        src={'/assets/TAOLogo.png'}
+        alt="Technology Association of Oregon logo"
+        src={'/assets/partnerImages/TAOLogo.png'}
       />
       <Typography
         component="h3"

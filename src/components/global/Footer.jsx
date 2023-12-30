@@ -173,7 +173,7 @@ const Footer = () => {
           component="img"
           alt="CODE PDX logo"
           aria-label="Code pdx"
-          src={'/assets/rose_logo.png'}
+          src={'/assets/codepdxImages/rose_logo.png'}
           sx={{
             width: '75px',
             mt: '25px',
