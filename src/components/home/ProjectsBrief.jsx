@@ -54,22 +54,20 @@ const renderProjectBriefCard = ({ title, description, logo }) => (
   </Grid>
 );
 
-const ProjectsBrief = () => {
-  return (
-    <Box
-      as="section"
-      sx={{
-        m: { xs: '50px 0 100px 0', md: '50px 0 150px 0' }
-      }}
-    >
-      <Typography variant="h3" component="h2" textAlign={'center'} sx={{ mb: '40px' }}>
-        Our Projects
-      </Typography>
-      <Grid container rowSpacing={3}>
-        {projectsList.map(renderProjectBriefCard)}
-      </Grid>
-    </Box>
-  );
-};
+const ProjectsBrief = () => (
+  <Box
+    as="section"
+    sx={{
+      m: { xs: '50px 0 100px 0', md: '50px 0 150px 0' }
+    }}
+  >
+    <Typography variant="h3" component="h2" textAlign={'center'} sx={{ mb: '40px' }}>
+      Our Projects
+    </Typography>
+    <Grid container rowSpacing={3}>
+      {projectsList.map(renderProjectBriefCard)}
+    </Grid>
+  </Box>
+);
 
 export default ProjectsBrief;
