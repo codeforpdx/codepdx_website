@@ -21,27 +21,25 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
   const form = useRef();
 
   const handleClose = () => {
-    setShowContactFormModal(false);
     setMessageSuccess(false);
     setMessageFailure(false);
+    setShowContactFormModal(false);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     emailjs.sendForm('service_co2agxf', 'template_20pnwni', form.current, 'AkBl59Ya3226OfPyQ').then(
-      (result) => {
+      () => {
         setMessageSuccess(true);
-        console.log(result.text);
         e.target.reset();
         setTimeout(() => {
-          setShowContactFormModal(false);
           setMessageSuccess(false);
+          setShowContactFormModal(false);
         }, 5000);
       },
-      (error) => {
+      () => {
         setMessageFailure(true);
-        console.error(error.text);
       }
     );
   };
@@ -144,12 +142,8 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
           </Grid>
         </DialogActions>
       </Box>
-      {messageSuccess ? (
-        <Alert severity="success">Your message was successfully sent!</Alert>
-      ) : null}
-      {messageFailure ? (
-        <Alert severity="error">There was an error. Please try an again.</Alert>
-      ) : null}
+      {messageSuccess && <Alert severity="success">Your message was successfully sent!</Alert>}
+      {messageFailure && <Alert severity="error">There was an error. Please try again.</Alert>}
     </Dialog>
   );
 };
