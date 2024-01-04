@@ -55,7 +55,12 @@ const PrimaryPartner = () => {
         maxWidth={'100%'}
         m={'auto'}
         alt="technology association of oregon logo"
-        src={'/assets/technology-association-of-oregon-logo-600x172.webp'}
+        sx={{
+          content: {
+            xs: 'url(/assets/technology-association-of-oregon-logo-366x105.webp)',
+            md: 'url(/assets/technology-association-of-oregon-logo-600x172.webp)'
+          }
+        }}
       />
       <Typography
         component="h3"
