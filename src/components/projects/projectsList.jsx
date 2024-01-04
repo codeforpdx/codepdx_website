@@ -44,7 +44,7 @@ const projectsList = [
     description:
       'PASS is an open source digital wallet for providing home insecure individuals a safe place to store documents within their control. PASS additionally assists caseworkers with processing and providing documents needed to complete the housing assistance application process.',
     status: 'In Development',
-    logo: '/assets/PassLogo.png',
+    logo: '/assets/pass-logo.svg',
     links: [
       {
         href: 'https://github.com/codeforpdx/PASS',

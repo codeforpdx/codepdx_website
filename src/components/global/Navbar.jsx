@@ -142,7 +142,7 @@ function NavBar() {
             component="img"
             position="relative"
             alt="CODE PDX logo"
-            src={'/assets/rose_logo.png'}
+            src={'/assets/roseLogoGreen.svg'}
             sx={{
               width: '75px',
               mr: { xs: '0px', md: '30px' },
