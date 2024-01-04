@@ -13,7 +13,7 @@ const Home = () => {
     <>
       <Hero
         pageName={'home'}
-        heroImage={`linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/assets/heroImages/homeHeroImage.png)`}
+        heroImage={`linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/assets/homeHeroImage.png)`}
         heroText={`Bridging Technology and Civil Services`}
       />
       <Container maxWidth="xl">

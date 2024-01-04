@@ -71,7 +71,7 @@ const ProjectTitle = ({ index, title, logo, links }) => {
           direction="row"
           justifyContent="space-evenly"
           width="100%"
-          pt={logo === '/assets/codepdxImages/roseLogoGreen.svg' ? 4 : null}
+          pt={logo === '/assets/roseLogoGreen.svg' ? 4 : null}
         >
           <IconContext.Provider value={{ size: iconSize }}>
             {links.map(({ href, icon }) => (
@@ -185,7 +185,7 @@ const Projects = () => (
   <>
     <Hero
       pageName={'projects'}
-      heroImage={`linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/assets/heroImages/projectsHeroImage.png)`}
+      heroImage={`linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/assets/projectsHeroImage.png)`}
       heroText={`Our products blend innovation, quality, and user-centric design to meet today's needs and anticipate tomorrow's challenges`}
     />
     <Stack

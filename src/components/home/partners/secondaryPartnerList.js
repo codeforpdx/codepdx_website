@@ -4,7 +4,7 @@ export const secondaryPartnerList = [
     testimonial:
       "CODEPDX's exceptional team embodies talent and dedication, working relentlessly to enhance the lives of vulnerable citizens. Their innovative approach to utilizing technology for social betterment is truly remarkable.",
     testimonialAuthor: '- Wilfred Pinfold, President of OpenCommons',
-    partnerLogo: '/assets/partnerImages/openCommonsLogo.png',
+    partnerLogo: '/assets/openCommonsLogo.png',
     website: 'https://opencommons.org/Main_Page'
   },
   {
@@ -15,21 +15,21 @@ export const secondaryPartnerList = [
       "Digital vaults are essential components of the future 'stack' that every individual needs to control their lives in our modern economy. CODE PDX's focus on this exemplifies their understanding of what is most important for the vulnerable in our society. The remarkable team at Code for PDX should be applauded for their energy and vision.",
     testimonialAuthor: '- Siva Narendra, Co-Founder ORDSN',
     testimonialAuthorTwo: '- Carol Coye Benson, Co-Founder ORDSN',
-    partnerLogo: '/assets/partnerImages/ordsnLogo.png',
+    partnerLogo: '/assets/ordsnLogo.png',
     website: 'https://www.ordsn.org/'
   },
   {
     company: 'Epicodus',
     testimonial:
       "Epicodus's mission is to help people learn the skills they need to get great jobs. For us, “great jobs” means jobs in growing industries that pay well and provide rewarding work. Beyond the particular skills needed to get these jobs, we aim to help our students become confident self-teachers who can adapt to changing job markets, and great communicators who will work well in teams. We focus on serving people who, by birth or circumstance, don't have easy access to learning the skills they need to get great jobs.",
-    partnerLogo: '/assets/partnerImages/epicodusLogo.png',
+    partnerLogo: '/assets/epicodusLogo.png',
     website: 'https://www.epicodus.com/'
   },
   {
     company: 'CETI',
     testimonial:
       'CETI champions lifelong learning and collaborative, interdisciplinary innovation in creative and emergent technologies. Through radically inclusive community participation, we rapidly build expertise for an astonishing diverse group of people. CETI contends that our most urgent challenges can be imaginatively addressed through art, storytelling and invention.',
-    partnerLogo: '/assets/partnerImages/cetiLogo.svg',
+    partnerLogo: '/assets/cetiLogo.svg',
     website: 'https://ceti.institute/'
   }
 ];
