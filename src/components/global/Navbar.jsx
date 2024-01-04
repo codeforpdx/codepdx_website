@@ -25,7 +25,7 @@ const logoBlobStyle = {
   right: 0,
   top: -50,
   height: '250px',
-  backgroundImage: 'url(/assets/logoBlobNav.svg)',
+  backgroundImage: 'url(/assets/logo-blob-nav.svg)',
   backgroundRepeat: 'no-repeat',
   maxWidth: '200px'
 };
@@ -142,7 +142,7 @@ function NavBar() {
             component="img"
             position="relative"
             alt="CODE PDX logo"
-            src={'/assets/roseLogoGreen.svg'}
+            src={'/assets/code-pdx-rose-logo-green.svg'}
             sx={{
               width: '75px',
               mr: { xs: '0px', md: '30px' },

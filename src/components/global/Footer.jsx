@@ -122,7 +122,7 @@ const footerContainerStyle = (theme) => ({
   height: { xs: 'auto', sm: '200px' },
   '&::before': {
     content: '""',
-    backgroundImage: 'url(/assets/socialsBlob.svg)',
+    backgroundImage: 'url(/assets/socials-blob.svg)',
     backgroundSize: 'auto',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
@@ -149,7 +149,7 @@ const logoBlobStyle = {
   right: 0,
   top: 0,
   backgroundSize: 'cover',
-  backgroundImage: { md: 'url(/assets/logoBlob.svg)', sm: 'none' },
+  backgroundImage: { md: 'url(/assets/logo-blob.svg)', sm: 'none' },
   backgroundRepeat: 'no-repeat',
   zIndex: '-1',
   display: {
@@ -173,7 +173,7 @@ const Footer = () => {
           component="img"
           alt="CODE PDX logo"
           aria-label="Code pdx"
-          src={'/assets/roseLogoGreen.svg'}
+          src={'/assets/code-pdx-rose-logo-green.svg'}
           sx={{
             width: '75px',
             mt: '25px',

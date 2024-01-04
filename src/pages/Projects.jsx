@@ -61,8 +61,8 @@ const ProjectTitle = ({ index, title, logo, links }) => {
           sx={{
             objectFit: 'fill',
             maxWidth: '80%',
-            height: 'auto',
-            pt: logo != '/assets/logoRecordSponge.svg' ? '5%' : 'none'
+            height: logo === '/assets/pass-logo.svg' ? 'auto' : '150px',
+            pt: logo != '/assets/logo-record-sponge-oregon.svg' ? '5%' : 'none'
           }}
         />
       )}
@@ -71,7 +71,7 @@ const ProjectTitle = ({ index, title, logo, links }) => {
           direction="row"
           justifyContent="space-evenly"
           width="100%"
-          pt={logo === '/assets/roseLogoGreen.svg' ? 4 : null}
+          pt={logo === '/assets/code-pdx-rose-logo-green.svg' ? 4 : null}
         >
           <IconContext.Provider value={{ size: iconSize }}>
             {links.map(({ href, icon }) => (
