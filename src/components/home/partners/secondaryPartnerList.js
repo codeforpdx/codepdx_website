@@ -4,7 +4,7 @@ export const secondaryPartnerList = [
     testimonial:
       "CODEPDX's exceptional team embodies talent and dedication, working relentlessly to enhance the lives of vulnerable citizens. Their innovative approach to utilizing technology for social betterment is truly remarkable.",
     testimonialAuthor: '- Wilfred Pinfold, President of OpenCommons',
-    partnerLogo: '/assets/openCommonsLogo.png',
+    partnerLogo: '/assets/openCommons-logo-250x250.webp',
     website: 'https://opencommons.org/Main_Page'
   },
   {
@@ -15,14 +15,14 @@ export const secondaryPartnerList = [
       "Digital vaults are essential components of the future 'stack' that every individual needs to control their lives in our modern economy. CODE PDX's focus on this exemplifies their understanding of what is most important for the vulnerable in our society. The remarkable team at Code for PDX should be applauded for their energy and vision.",
     testimonialAuthor: '- Siva Narendra, Co-Founder ORDSN',
     testimonialAuthorTwo: '- Carol Coye Benson, Co-Founder ORDSN',
-    partnerLogo: '/assets/ordsnLogo.png',
+    partnerLogo: '/assets/ordsn-logo-126x58.webp',
     website: 'https://www.ordsn.org/'
   },
   {
     company: 'Epicodus',
     testimonial:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, quaerat saepe possimus ex dolor deleniti excepturi alias, est in tempore similique, inventore doloribus voluptatibus voluptate. Reiciendis minima nihil et dicta.',
-    partnerLogo: '/assets/epicodusLogo.png',
+    partnerLogo: '/assets/epicodus-logo-250x118.webp',
     website: 'https://www.epicodus.com/'
   }
 ];
