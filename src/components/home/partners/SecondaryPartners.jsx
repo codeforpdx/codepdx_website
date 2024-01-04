@@ -2,6 +2,7 @@
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
+import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
@@ -14,9 +15,9 @@ const secondaryPartnerProps = {
   index: PropTypes.number.isRequired,
   company: PropTypes.string.isRequired,
   testimonial: PropTypes.string.isRequired,
-  testimonialTwo: PropTypes.string,
-  testimonialAuthorTwo: PropTypes.string,
   testimonialAuthor: PropTypes.string,
+  testimonialTwo: PropTypes.string,
+  testimonialTwoAuthor: PropTypes.string,
   partnerLogo: PropTypes.string.isRequired,
   website: PropTypes.string.isRequired
 };
@@ -28,16 +29,16 @@ const partnerGridStyle = {
   justifyContent: 'center',
   alignItems: 'center',
   flexDirection: 'column',
-  pt: '20px'
+  p: '4%'
 };
 
 const LargeScreenComponent = ({
   index,
   company,
   testimonial,
-  testimonialTwo,
-  testimonialAuthorTwo,
   testimonialAuthor,
+  testimonialTwo,
+  testimonialTwoAuthor,
   partnerLogo,
   website
 }) => {
@@ -53,41 +54,38 @@ const LargeScreenComponent = ({
       sx={{
         background: gradientStyle,
         borderRadius: '30px',
-        minHeight: '500px',
-        marginBottom: '100px',
-        flexDirection: 'row'
+        minHeight: '350px',
+        marginBottom: '100px'
       }}
       key={company}
     >
       <Grid item md={6} {...partnerGridStyle} order={logoOrder}>
         <a href={website} target="_blank" rel="noopener noreferrer">
-          <Box
-            component={'img'}
-            alt={`${company} logo`}
-            aria-label={`${company} logo`}
-            src={partnerLogo}
-            mb={'150px'}
-            width={'250px'}
-          ></Box>
+          <Box component="img" alt={`${company} logo`} src={partnerLogo} width="250px" />
         </a>
       </Grid>
-      <Grid item pl={'6%'} {...partnerGridStyle} order={contentOrder}>
-        <Typography variant="body1" p={'5% 15% 3% 0'}>
-          {testimonial}
-        </Typography>
-        <Typography variant="caption" p={'15px 0 5% 0'}>
-          {testimonialAuthor}
-        </Typography>
-        {testimonialTwo ? (
-          <Typography variant="body1" display={'flex'} p={'40px 15% 5% 0'}>
-            {testimonialTwo}
+      <Grid item {...partnerGridStyle} order={contentOrder}>
+        <Stack spacing={1}>
+          <Typography variant="body1">{testimonial}</Typography>
+          <Typography
+            variant="subtitle2"
+            sx={{
+              fontWeight: 'bold',
+              textAlign: 'center'
+            }}
+          >
+            {testimonialAuthor}
           </Typography>
-        ) : null}
-        {testimonialAuthorTwo ? (
-          <Typography variant="caption" pb={'10%'}>
-            {testimonialAuthorTwo}
-          </Typography>
-        ) : null}
+        </Stack>
+        <br />
+        <Stack spacing={1}>
+          {testimonialTwo && <Typography variant="body1">{testimonialTwo}</Typography>}
+          {testimonialTwoAuthor && (
+            <Typography variant="subtitle2" sx={{ fontWeight: 'bold', textAlign: 'center' }}>
+              {testimonialTwoAuthor}
+            </Typography>
+          )}
+        </Stack>
       </Grid>
     </Grid>
   );
@@ -98,9 +96,9 @@ LargeScreenComponent.propTypes = secondaryPartnerProps;
 const SmallScreenComponent = ({
   company,
   testimonial,
-  testimonialTwo,
-  testimonialAuthorTwo,
   testimonialAuthor,
+  testimonialTwo,
+  testimonialTwoAuthor,
   partnerLogo,
   website
 }) => {
@@ -119,31 +117,30 @@ const SmallScreenComponent = ({
       <Grid item {...partnerGridStyle}>
         <a href={website} target="_blank" rel="noopener noreferrer">
           <Box
-            component={'img'}
+            component="img"
             alt={`${company} logo`}
             aria-label={`${company} logo`}
             src={partnerLogo}
-            width={'100px'}
-          ></Box>
+            width="100px"
+          />
         </a>
       </Grid>
       <Grid item {...partnerGridStyle}>
-        <Typography variant="body1" p={'5% 5% 5% 5%'}>
-          {testimonial}
-        </Typography>
-        <Typography variant="caption" p={'0 5% 8% 5%'}>
-          {testimonialAuthor}
-        </Typography>
-        {testimonialTwo ? (
-          <Typography variant="body1" display={'flex'} p={'5% 5% 5% 5%'}>
-            {testimonialTwo}
+        <Stack spacing={1}>
+          <Typography variant="body1">{testimonial}</Typography>
+          <Typography variant="subtitle2" sx={{ fontWeight: 'bold', textAlign: 'center' }}>
+            {testimonialAuthor}
           </Typography>
-        ) : null}
-        {testimonialAuthorTwo ? (
-          <Typography variant="caption" p={'0 5% 10% 5%'}>
-            {testimonialAuthorTwo}
-          </Typography>
-        ) : null}
+        </Stack>
+        <br />
+        <Stack spacing={1}>
+          {testimonialTwo && <Typography variant="body1">{testimonialTwo}</Typography>}
+          {testimonialTwoAuthor && (
+            <Typography variant="subtitle2" sx={{ fontWeight: 'bold', textAlign: 'center' }}>
+              {testimonialTwoAuthor}
+            </Typography>
+          )}
+        </Stack>
       </Grid>
     </Grid>
   );

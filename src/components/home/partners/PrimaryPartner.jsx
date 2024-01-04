@@ -1,3 +1,4 @@
+// Material UI Imports
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
@@ -30,8 +31,8 @@ const displaySponsorValuesInGrid = ({ title, description }) => {
   return (
     <Grid item xs={12} sm={6} key={title}>
       <Box p={'0 6% 10% 6%'}>
-        <Typography variant="body1" pb={'6%'}>
-          <strong>{title}</strong>
+        <Typography variant="body1" pb={'6%'} sx={{ fontWeight: 'bold' }}>
+          {title}
         </Typography>
         <Typography variant="body1">{description}</Typography>
       </Box>
@@ -44,7 +45,7 @@ const PrimaryPartner = () => {
     <Container
       sx={{
         mb: '100px',
-        borderRadius: '40px',
+        borderRadius: '30px',
         background:
           'linear-gradient(180deg, rgba(217, 217, 217, 0) 24.86%, rgba(217, 217, 217, 0.4) 70.55%)'
       }}
