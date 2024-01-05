@@ -6,7 +6,7 @@ import { PropTypes } from 'prop-types';
 // Component Style Imports
 import { heroStyles } from './styles';
 
-const Hero = ({ pageName, heroImage, heroText }) => {
+const Hero = ({ pageName, heroImage, mobileHeroImage, heroText }) => {
   let h1Styles = '';
   let containerStyles = '';
   switch (pageName) {
@@ -24,7 +24,9 @@ const Hero = ({ pageName, heroImage, heroText }) => {
   }
 
   return (
-    <Box sx={[heroStyles.heroBackground, { backgroundImage: heroImage }]}>
+    <Box
+      sx={[heroStyles.heroBackground, { backgroundImage: { xs: mobileHeroImage, md: heroImage } }]}
+    >
       <Box sx={containerStyles}>
         {heroText && (
           <Typography variant="h1" sx={h1Styles}>
@@ -39,6 +41,7 @@ const Hero = ({ pageName, heroImage, heroText }) => {
 Hero.propTypes = {
   pageName: PropTypes.string.isRequired,
   heroImage: PropTypes.string.isRequired,
+  mobileHeroImage: PropTypes.string.isRequired,
   heroText: PropTypes.string
 };
 

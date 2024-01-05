@@ -5,6 +5,7 @@ export const secondaryPartnerList = [
       "CODEPDX's exceptional team embodies talent and dedication, working relentlessly to enhance the lives of vulnerable citizens. Their innovative approach to utilizing technology for social betterment is truly remarkable.",
     testimonialAuthor: '- Wilfred Pinfold, President of OpenCommons',
     partnerLogo: '/assets/openCommons-logo-250x250.webp',
+    mobilePartnerLogo: '/assets/openCommons-logo-100x100.webp',
     website: 'https://opencommons.org/Main_Page'
   },
   {
@@ -16,6 +17,7 @@ export const secondaryPartnerList = [
     testimonialAuthor: '- Siva Narendra, Co-Founder ORDSN',
     testimonialAuthorTwo: '- Carol Coye Benson, Co-Founder ORDSN',
     partnerLogo: '/assets/ordsn-logo-126x58.webp',
+    mobilePartnerLogo: '/assets/ordsn-logo-100x46.webp',
     website: 'https://www.ordsn.org/'
   },
   {
@@ -23,6 +25,7 @@ export const secondaryPartnerList = [
     testimonial:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, quaerat saepe possimus ex dolor deleniti excepturi alias, est in tempore similique, inventore doloribus voluptatibus voluptate. Reiciendis minima nihil et dicta.',
     partnerLogo: '/assets/epicodus-logo-250x118.webp',
+    mobilePartnerLogo: '/assets/epicodus-logo-100x47.webp',
     website: 'https://www.epicodus.com/'
   }
 ];

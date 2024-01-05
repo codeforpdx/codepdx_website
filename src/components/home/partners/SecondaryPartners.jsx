@@ -18,6 +18,7 @@ const secondaryPartnerProps = {
   testimonialAuthorTwo: PropTypes.string,
   testimonialAuthor: PropTypes.string,
   partnerLogo: PropTypes.string.isRequired,
+  mobilePartnerLogo: PropTypes.string.isRequired,
   website: PropTypes.string.isRequired
 };
 
@@ -101,7 +102,7 @@ const SmallScreenComponent = ({
   testimonialTwo,
   testimonialAuthorTwo,
   testimonialAuthor,
-  partnerLogo,
+  mobilePartnerLogo,
   website
 }) => {
   return (
@@ -122,7 +123,7 @@ const SmallScreenComponent = ({
             component={'img'}
             alt={`${company} logo`}
             aria-label={`${company} logo`}
-            src={partnerLogo}
+            src={mobilePartnerLogo}
             width={'100px'}
           ></Box>
         </a>

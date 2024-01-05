@@ -186,6 +186,7 @@ const Projects = () => (
     <Hero
       pageName={'projects'}
       heroImage={`linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/assets/project-board-1680x600.webp)`}
+      mobileHeroImage={`linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/assets/project-board-800x286.webp)`}
       heroText={`Our products blend innovation, quality, and user-centric design to meet today's needs and anticipate tomorrow's challenges`}
     />
     <Stack
