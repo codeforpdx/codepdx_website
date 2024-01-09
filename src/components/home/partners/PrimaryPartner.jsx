@@ -57,8 +57,8 @@ const PrimaryPartner = () => {
         alt="technology association of oregon logo"
         sx={{
           content: {
-            xs: 'url(/assets/technology-association-of-oregon-logo-366x105.webp)',
-            md: 'url(/assets/technology-association-of-oregon-logo-600x172.webp)'
+            xs: 'url(/assets/partnerLogos/technology-association-of-oregon-logo-366x105.webp)',
+            md: 'url(/assets/partnerLogos/technology-association-of-oregon-logo-600x172.webp)'
           }
         }}
       />
