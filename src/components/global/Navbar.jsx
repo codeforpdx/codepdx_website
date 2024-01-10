@@ -25,7 +25,7 @@ const logoBlobStyle = {
   right: 0,
   top: -50,
   height: '250px',
-  backgroundImage: 'url(/assets/codePdx/codePdx/logo-blob-nav.svg)',
+  backgroundImage: 'url(/assets/codePdx/logo-blob-nav.svg)',
   backgroundRepeat: 'no-repeat',
   maxWidth: '200px'
 };
