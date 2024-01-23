@@ -8,10 +8,10 @@ import Typography from '@mui/material/Typography';
 const leftSidePaperStyles = {
   elevation: 3,
   sx: {
-    mr: '20%',
+    mr: '30%',
     mb: '40px',
-    borderRadius: '30px',
-    background: '#d9d9d9'
+    borderRadius: '20px',
+    background: 'rgba(217, 217, 217, 0.4)'
   }
 };
 
@@ -27,46 +27,39 @@ const Events = () => {
             <Typography p={2}>
               CODE PDX meets up in-person once a month for a project demo night and onboarding
               event. We also occasionally do social meetups.
-              <br />
-              <br />
-              Not sure if we need three boxes. I Need to find more content to put here or remove a
-              bubble and maybe toss in a blob since this will be mid page.
             </Typography>
           </Paper>
           <Paper
             elevation={3}
-            sx={{ ml: '20%', mb: '40px', borderRadius: '30px', background: '#d9d9d9' }}
+            sx={{
+              ml: '20%',
+              mb: '40px',
+              mr: '10%',
+              borderRadius: '20px',
+              background: 'rgba(217, 217, 217, 0.4)'
+            }}
           >
             <Typography p={2}>
               Individual projects often meet online weekly with schedules being determined per
               group. Additionally there is a biweekly in person work session once a month.
             </Typography>
           </Paper>
-          <Paper {...leftSidePaperStyles}>
-            <Typography p={2}>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea delectus error expedita
-              voluptates? Commodi nam proasdasdasdasddasd asd asvident velit quidem nostrum ! Lorem
-              ipsum dolor sit amet consectetur adipisicing elit. Consectetur vero hic a voluptate
-              ratione perferendis numquam quis eius laboriosam fugiat! Laboriosam velit magni
-              tenetur pariatur blanditiis soluta sapiente ratione dolorum.
-            </Typography>
-          </Paper>
+          <Paper {...leftSidePaperStyles}></Paper>
         </Grid>
         {/* box for calendar */}
         <Grid item xs={12} md={6}>
           {/* will be google calendar I promise*/}
-          <Typography zIndex={1}>I AM GOOBLE CANDLER I MAKE LIFE EASY</Typography>
-          <Box height={'400px'} pb={'100%'} mt={'40px'} width={'100%'} bgcolor={'#FD0E89'}>
-            <Typography
-              variant="h4"
-              display={'flex'}
-              justifyContent={'center'}
-              alignItems={'center'}
-              zIndex={1}
-            >
-              PUT THE GOOGLE IN THE SQUARE
-            </Typography>
-          </Box>
+          <Typography variant="h3" align="center">
+            CODE pdx Event Calendar
+          </Typography>
+          <iframe
+            src="https://calendar.google.com/calendar/embed?src=ae96d1ee5deb4350a31a490321125fd21a0845e9ee921581ce27b925d5d707c5%40group.calendar.google.com&ctz=America%2FLos_Angeles&showTitle=0&showNav=0&showPrint=0&showTabs=0&showCalendars=0&src=YWU5NmQxZWU1ZGViNDM1MGEzMWE0OTAzMjExMjVmZDIxYTA4NDVlOWVlOTIxNTgxY2UyN2I5MjVkNWQ3MDdjNUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23A79B8E&color=%230B8043"
+            // style="border-width:0"
+            width="100%"
+            height="550"
+            frameBorder="0"
+            scrolling="no"
+          ></iframe>
         </Grid>
       </Grid>
     </Container>
