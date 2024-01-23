@@ -52,7 +52,7 @@ const Events = () => {
             CODE PDX Event Calendar
           </Typography>
           <iframe
-            src="https://calendar.google.com/calendar/embed?src=ae96d1ee5deb4350a31a490321125fd21a0845e9ee921581ce27b925d5d707c5%40group.calendar.google.com&ctz=America%2FLos_Angeles&showTitle=0&showNav=0&showPrint=0&showTabs=0&showCalendars=0&src=YWU5NmQxZWU1ZGViNDM1MGEzMWE0OTAzMjExMjVmZDIxYTA4NDVlOWVlOTIxNTgxY2UyN2I5MjVkNWQ3MDdjNUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23A79B8E&color=%230B8043"
+            src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FLos_Angeles&showNav=1&showTitle=0&showDate=1&showPrint=0&showTabs=0&src=YWU5NmQxZWU1ZGViNDM1MGEzMWE0OTAzMjExMjVmZDIxYTA4NDVlOWVlOTIxNTgxY2UyN2I5MjVkNWQ3MDdjNUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23A79B8E&color=%230B8043"
             width="100%"
             height="550px"
             frameBorder="0"
