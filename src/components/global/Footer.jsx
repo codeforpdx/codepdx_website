@@ -142,22 +142,22 @@ const footerContainerStyle = (theme) => ({
   }
 });
 
-const logoBlobStyle = {
-  position: 'absolute',
-  bottom: 0,
-  left: 0,
-  right: 0,
-  top: 0,
-  backgroundSize: 'cover',
-  backgroundImage: { md: 'url(/assets/codePdx/logo-blob.svg)', sm: 'none' },
-  backgroundRepeat: 'no-repeat',
-  zIndex: '-1',
-  display: {
-    lg: 'flex',
-    xs: 'none'
-  },
-  maxWidth: '200px'
-};
+// const logoBlobStyle = {
+//   position: 'absolute',
+//   bottom: 0,
+//   left: 0,
+//   right: 0,
+//   top: 0,
+//   backgroundSize: 'cover',
+//   backgroundImage: { md: 'url(/assets/codePdx/logo-blob.svg)', sm: 'none' },
+//   backgroundRepeat: 'no-repeat',
+//   zIndex: '-1',
+//   display: {
+//     lg: 'flex',
+//     xs: 'none'
+//   },
+//   maxWidth: '200px'
+// };
 
 const Footer = () => {
   const theme = useTheme();
@@ -166,7 +166,7 @@ const Footer = () => {
     // this container contains the entire footer
     <Container component="footer" maxWidth="100%" sx={footerContainerStyle}>
       {/* this box contains the blob behind the roseLogo */}
-      <Box sx={logoBlobStyle}></Box>
+      {/* <Box sx={logoBlobStyle}></Box> */}
       <Stack direction={{ xs: 'row', sm: 'column', lg: 'row' }} flex={1}>
         {/* roseLogo box */}
         <Box
