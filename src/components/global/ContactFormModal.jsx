@@ -1,6 +1,7 @@
 // React Imports
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 // Material UI Imports
+import Alert from '@mui/material/Alert';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
@@ -15,9 +16,13 @@ import emailjs from '@emailjs/browser';
 import { PropTypes } from 'prop-types';
 
 const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => {
+  const [messageSuccess, setMessageSuccess] = useState(false);
+  const [messageFailure, setMessageFailure] = useState(false);
   const form = useRef();
 
   const handleClose = () => {
+    setMessageSuccess(false);
+    setMessageFailure(false);
     setShowContactFormModal(false);
   };
 
@@ -25,17 +30,18 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
     e.preventDefault();
 
     emailjs.sendForm('service_co2agxf', 'template_20pnwni', form.current, 'AkBl59Ya3226OfPyQ').then(
-      (result) => {
-        console.log(result.text);
+      () => {
+        setMessageSuccess(true);
+        e.target.reset();
+        setTimeout(() => {
+          setMessageSuccess(false);
+          setShowContactFormModal(false);
+        }, 1000);
       },
-      (error) => {
-        console.error(error.text);
+      () => {
+        setMessageFailure(true);
       }
     );
-    e.target.reset();
-    setTimeout(() => {
-      setShowContactFormModal(false);
-    }, 500);
   };
 
   return (
@@ -56,9 +62,6 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
       >
         <DialogTitle>Contact Us</DialogTitle>
         <DialogContent>
-          <DialogContentText>
-            For any questions or to just reach out, contact us today!
-          </DialogContentText>
           <TextField
             autoFocus
             margin="dense"
@@ -70,6 +73,7 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
             variant="standard"
             autoComplete="true"
             required
+            inputProps={{ maxLength: 40 }}
           />
           <TextField
             margin="dense"
@@ -81,6 +85,7 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
             variant="standard"
             autoComplete="true"
             required
+            inputProps={{ maxLength: 40 }}
           />
           <TextField
             margin="dense"
@@ -91,6 +96,7 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
             fullWidth
             variant="standard"
             required
+            inputProps={{ maxLength: 40 }}
           />
           <TextField
             margin="dense"
@@ -103,6 +109,7 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
             multiline
             rows={4}
             required
+            inputProps={{ maxLength: 500 }}
           />
         </DialogContent>
         <DialogActions>
@@ -132,6 +139,8 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
           </Grid>
         </DialogActions>
       </Box>
+      {messageSuccess && <Alert severity="success">Your message was successfully sent!</Alert>}
+      {messageFailure && <Alert severity="error">There was an error. Please try again.</Alert>}
     </Dialog>
   );
 };
