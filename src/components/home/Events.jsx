@@ -52,7 +52,7 @@ const Events = () => {
               CODE PDX meets up in-person twice a month at <GrayboxLink /> in Portland. Once for a
               project demo night and onboarding event and again for in person work session at a
               bi-weekly cadence. We also occasionally do non working social meetups. Event times and
-              details can be found on the calendar <MeetupLink /> or in our <DiscordLink /> through
+              details can be found on the calendar, <MeetupLink /> or in our <DiscordLink /> through
               the events section.
             </Typography>
           </Paper>
