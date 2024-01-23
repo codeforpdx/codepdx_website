@@ -47,7 +47,7 @@ const NoPageFound = () => {
   } else if (photoUrl) {
     backgroundStyle = `url(${photoUrl}) center/cover no-repeat`;
   } else {
-    backgroundStyle = 'url(/assets/notfound.webp) center/cover no-repeat';
+    backgroundStyle = 'url(/assets/searchlight-in-night-sky.webp) center/cover no-repeat';
   }
 
   return (

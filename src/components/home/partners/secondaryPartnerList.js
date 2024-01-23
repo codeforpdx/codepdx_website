@@ -2,9 +2,10 @@ export const secondaryPartnerList = [
   {
     company: 'Open Commons',
     testimonial:
-      "CODE PDX's exceptional team embodies talent and dedication, working relentlessly to enhance the lives of vulnerable citizens. Their innovative approach to utilizing technology for social betterment is truly remarkable.",
-    testimonialAuthor: 'Wilfred Pinfold, President of OpenCommons',
-    partnerLogo: '/assets/openCommonsLogo.png',
+      "CODEPDX's exceptional team embodies talent and dedication, working relentlessly to enhance the lives of vulnerable citizens. Their innovative approach to utilizing technology for social betterment is truly remarkable.",
+    testimonialAuthor: '- Wilfred Pinfold, President of OpenCommons',
+    partnerLogo: '/assets/partnerLogos/openCommons-logo-250x250.webp',
+    mobilePartnerLogo: '/assets/partnerLogos/openCommons-logo-100x100.webp',
     website: 'https://opencommons.org/Main_Page'
   },
   {
@@ -13,23 +14,26 @@ export const secondaryPartnerList = [
       'By harnessing the diverse talents and enthusiasm of both tech-savvy and non-tech individuals, CODE PDX is carving a pathway to a more vibrant and inclusive Portland. CODE PDX exemplifies the very essence of what collaborative endeavors like ours at ORDSN aim to achieve.',
     testimonialAuthor: 'Siva Narendra, Co-Founder ORDSN',
     testimonialTwo:
-      "Digital vaults are essential components of the future 'stack' that every individual needs to control their lives in our modern economy. CODE PDX's focus on this exemplifies their understanding of what is most important for the vulnerable in our society. The remarkable team at CODE PDX should be applauded for their energy and vision.",
-    testimonialTwoAuthor: 'Carol Coye Benson, Co-Founder ORDSN',
-    partnerLogo: '/assets/ordsnLogo.png',
+      "Digital vaults are essential components of the future 'stack' that every individual needs to control their lives in our modern economy. CODE PDX's focus on this exemplifies their understanding of what is most important for the vulnerable in our society. The remarkable team at Code for PDX should be applauded for their energy and vision.",
+    testimonialAuthor: '- Siva Narendra, Co-Founder ORDSN',
+    testimonialAuthorTwo: '- Carol Coye Benson, Co-Founder ORDSN',
+    partnerLogo: '/assets/partnerLogos/ordsn-logo-126x58.webp',
+    mobilePartnerLogo: '/assets/partnerLogos/ordsn-logo-100x46.webp',
     website: 'https://www.ordsn.org/'
   },
   {
     company: 'Epicodus',
-    testimonial:
-      "Epicodus's mission is to help people learn the skills they need to get great jobs. For us, “great jobs” means jobs in growing industries that pay well and provide rewarding work. Beyond the particular skills needed to get these jobs, we aim to help our students become confident self-teachers who can adapt to changing job markets, and great communicators who will work well in teams. We focus on serving people who, by birth or circumstance, don't have easy access to learning the skills they need to get great jobs.",
-    partnerLogo: '/assets/epicodusLogo.png',
+    testimonial: "Epicodus's mission is to help people learn the skills they need to get great jobs. For us, “great jobs” means jobs in growing industries that pay well and provide rewarding work. Beyond the particular skills needed to get these jobs, we aim to help our students become confident self-teachers who can adapt to changing job markets, and great communicators who will work well in teams. We focus on serving people who, by birth or circumstance, don't have easy access to learning the skills they need to get great jobs.",
+    partnerLogo: '/assets/partnerLogos/epicodus-logo-250x118.webp',
+    mobilePartnerLogo: '/assets/partnerLogos/epicodus-logo-100x47.webp',
     website: 'https://www.epicodus.com/'
   },
   {
     company: 'CETI',
     testimonial:
       'CETI champions lifelong learning and collaborative, interdisciplinary innovation in creative and emergent technologies. Through radically inclusive community participation, we rapidly build expertise for an astonishing diverse group of people. CETI contends that our most urgent challenges can be imaginatively addressed through art, storytelling and invention.',
-    partnerLogo: '/assets/cetiLogo.svg',
+    partnerLogo: '/assets/partnerLogos/cetiLogo.svg',
+    mobilePartnerLogo: '/assets/partnerLogos/cetiLogo.svg',
     website: 'https://ceti.institute/'
   }
 ];

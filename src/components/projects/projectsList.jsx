@@ -8,7 +8,7 @@ const projectsList = [
     description:
       'Having been utilized by over 10,000 individuals and honored with the 2021 Achievement in Legal Technology Award by the Oregon State Bar, RecordSponge is an innovative tool with proven community impact. Designed to analyze an individuals criminal history and determine their eligibility for record expungement, RecordSponge reduces obstruction of costly legal services and assists in reduction of inequalities within our justice system.',
     status: 'Live',
-    logo: '/assets/logoRecordSponge.svg',
+    logo: '/assets/codePdx/logo-record-sponge-oregon.svg',
     links: [
       {
         href: 'https://github.com/codeforpdx/recordexpungPDX',
@@ -44,7 +44,7 @@ const projectsList = [
     description:
       'PASS is an open source digital wallet for providing home insecure individuals a safe place to store documents within their control. PASS additionally assists caseworkers with processing and providing documents needed to complete the housing assistance application process.',
     status: 'In Development',
-    logo: '/assets/PassLogo.png',
+    logo: '/assets/codePdx/pass-logo.svg',
     links: [
       {
         href: 'https://github.com/codeforpdx/PASS',
@@ -66,7 +66,7 @@ const projectsList = [
     title: 'CODE PDX',
     description:
       'CODE PDX itself is a project that requires constant upkeep and volunteers to maintain. This ranges from project management, assisting with organizing events, or even updating this website! We are constantly improving to better help our community.',
-    logo: '/assets/roseLogoGreen.svg',
+    logo: '/assets/codePdx/code-pdx-rose-logo-green.svg',
     links: [
       {
         href: 'https://github.com/codeforpdx',
