@@ -1,6 +1,7 @@
 // Material UI Imports
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
+import Link from '@mui/material/Link';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 
@@ -14,6 +15,30 @@ const leftSidePaperStyles = {
   }
 };
 
+const DiscordLink = () => {
+  return (
+    <Link href="https://discord.gg/h2pTvDbJeu" target="_blank" rel="noopener noreferrer">
+      Discord
+    </Link>
+  );
+};
+
+const GrayboxLink = () => {
+  return (
+    <Link href="https://graybox.co" target="_blank" rel="noopener noreferrer">
+      GrayBox
+    </Link>
+  );
+};
+
+const MeetupLink = () => {
+  return (
+    <Link href="https://www.meetup.com/code-for-pdx/" target="_blank" rel="noopener noreferrer">
+      Meetup
+    </Link>
+  );
+};
+
 const Events = () => {
   return (
     <Container maxWidth={false} as="section" id="events">
@@ -24,10 +49,11 @@ const Events = () => {
           </Typography>
           <Paper {...leftSidePaperStyles}>
             <Typography p={2}>
-              CODE PDX meets up in-person twice a month at GRAYBOX in Portland. Once for a project
-              demo night and onboarding event and again for in person work session. We also
-              occasionally do non working social meetups. Event times and details can be found on
-              the calendar.
+              CODE PDX meets up in-person twice a month at <GrayboxLink /> in Portland. Once for a
+              project demo night and onboarding event and again for in person work session at a
+              bi-weekly cadence. We also occasionally do non working social meetups. Event times and
+              details can be found on the calendar <MeetupLink /> or in our <DiscordLink /> through
+              the events section.
             </Typography>
           </Paper>
           <Paper
@@ -41,8 +67,9 @@ const Events = () => {
             }}
           >
             <Typography p={2}>
-              Individual projects often meet online weekly with schedules being determined per
-              group. Additionally there is a biweekly in person work session once a month.
+              Individual projects meet online weekly in Google meet with schedules being determined
+              per group. Meeting Links are found in the events on <DiscordLink />. Additionally
+              there is a biweekly in person work session once a month.
             </Typography>
           </Paper>
           <Paper {...leftSidePaperStyles}></Paper>
