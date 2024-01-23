@@ -71,7 +71,7 @@ const NoPageFound = () => {
           WebkitBackdropFilter: 'blur(5px) saturate(180%)',
           backgroundColor: 'rgba(17, 25, 40, 0.5)',
           border: '1px solid rgba(236, 236, 236, 0.1)',
-          borderRadius: '10px'
+          borderRadius: '30px'
         }}
       >
         <Container maxWidth="sm">

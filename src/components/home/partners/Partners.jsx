@@ -1,4 +1,6 @@
+// Material UI Imports
 import Typography from '@mui/material/Typography';
+// Component Imports
 import PrimaryPartner from './PrimaryPartner';
 import SecondaryPartners from './SecondaryPartners';
 import CallToAction from './CallToAction';
