@@ -36,7 +36,7 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
         setTimeout(() => {
           setMessageSuccess(false);
           setShowContactFormModal(false);
-        }, 5000);
+        }, 1000);
       },
       () => {
         setMessageFailure(true);
@@ -62,9 +62,6 @@ const ContactFormModal = ({ showContactFormModal, setShowContactFormModal }) => 
       >
         <DialogTitle>Contact Us</DialogTitle>
         <DialogContent>
-          <DialogContentText>
-            For any questions or to just reach out, contact us today!
-          </DialogContentText>
           <TextField
             autoFocus
             margin="dense"
