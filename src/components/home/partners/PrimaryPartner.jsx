@@ -54,8 +54,13 @@ const PrimaryPartner = () => {
         display={'flex'}
         maxWidth={'100%'}
         m={'auto'}
-        alt="Technology Association of Oregon logo"
-        src={'/assets/TAOLogo.png'}
+        alt="technology association of oregon logo"
+        sx={{
+          content: {
+            xs: 'url(/assets/partnerLogos/technology-association-of-oregon-logo-366x105.webp)',
+            md: 'url(/assets/partnerLogos/technology-association-of-oregon-logo-600x172.webp)'
+          }
+        }}
       />
       <Typography
         component="h3"

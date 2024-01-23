@@ -61,8 +61,8 @@ const ProjectTitle = ({ index, title, logo, links }) => {
           sx={{
             objectFit: 'fill',
             maxWidth: '80%',
-            height: logo === '/assets/PassLogo.png' ? 'auto' : '150px',
-            pt: logo != '/assets/logoRecordSponge.svg' ? '5%' : 'none'
+            height: logo === '/assets/codePdx/pass-logo.svg' ? 'auto' : '150px',
+            pt: logo != '/assets/codePdx/logo-record-sponge-oregon.svg' ? '5%' : 'none'
           }}
         />
       )}
@@ -71,7 +71,7 @@ const ProjectTitle = ({ index, title, logo, links }) => {
           direction="row"
           justifyContent="space-evenly"
           width="100%"
-          pt={logo === '/assets/roseLogoGreen.svg' ? 4 : null}
+          pt={logo === '/assets/codePdx/code-pdx-rose-logo-green.svg' ? 4 : null}
         >
           <IconContext.Provider value={{ size: iconSize }}>
             {links.map(({ href, icon }) => (
@@ -185,7 +185,8 @@ const Projects = () => (
   <>
     <Hero
       pageName={'projects'}
-      heroImage={`linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/assets/projectsHeroImage.png)`}
+      heroImage={`linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/assets/heroImages/project-board-1680x600.webp)`}
+      mobileHeroImage={`linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/assets/heroImages/project-board-800x286.webp)`}
       heroText={`Our products blend innovation, quality, and user-centric design to meet today's needs and anticipate tomorrow's challenges`}
     />
     <Stack
