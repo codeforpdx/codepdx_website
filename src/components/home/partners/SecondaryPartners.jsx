@@ -102,8 +102,6 @@ const SmallScreenComponent = ({
   testimonialTwo,
   testimonialAuthorTwo,
   testimonialAuthor,
-  testimonialTwo,
-  testimonialTwoAuthor,
   mobilePartnerLogo,
   website
 }) => {
