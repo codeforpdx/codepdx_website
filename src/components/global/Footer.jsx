@@ -26,7 +26,7 @@ const legalLinks = [
     title: 'Contact Us'
   },
   {
-    href: 'link to home',
+    href: 'https://www.codepdx.org',
     ml: 0.5,
     text: `©${dayjs().year()}`,
     title: 'CODE PDX'
