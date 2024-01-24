@@ -17,7 +17,12 @@ const leftSidePaperStyles = {
 
 const DiscordLink = () => {
   return (
-    <Link href="https://discord.gg/h2pTvDbJeu" target="_blank" rel="noopener noreferrer">
+    <Link
+      href="https://discord.gg/h2pTvDbJeu"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{ textDecoration: 'none' }}
+    >
       Discord
     </Link>
   );
@@ -25,7 +30,12 @@ const DiscordLink = () => {
 
 const GrayboxLink = () => {
   return (
-    <Link href="https://graybox.co" target="_blank" rel="noopener noreferrer">
+    <Link
+      href="https://graybox.co"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{ textDecoration: 'none' }}
+    >
       GrayBox
     </Link>
   );
@@ -33,7 +43,12 @@ const GrayboxLink = () => {
 
 const MeetupLink = () => {
   return (
-    <Link href="https://www.meetup.com/code-for-pdx/" target="_blank" rel="noopener noreferrer">
+    <Link
+      href="https://www.meetup.com/code-for-pdx/"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{ textDecoration: 'none' }}
+    >
       Meetup
     </Link>
   );
