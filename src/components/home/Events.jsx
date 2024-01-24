@@ -22,7 +22,7 @@ const DiscordLink = () => {
       href="https://discord.gg/h2pTvDbJeu"
       target="_blank"
       rel="noopener noreferrer"
-      style={{ textDecoration: 'none' }}
+      style={{ textDecoration: 'none', fontWeight: 600 }}
     >
       Discord
     </Link>
@@ -35,7 +35,7 @@ const GrayboxLink = () => {
       href="https://graybox.co"
       target="_blank"
       rel="noopener noreferrer"
-      style={{ textDecoration: 'none' }}
+      style={{ textDecoration: 'none', fontWeight: 600 }}
     >
       GrayBox
     </Link>
@@ -48,7 +48,7 @@ const MeetupLink = () => {
       href="https://www.meetup.com/code-for-pdx/"
       target="_blank"
       rel="noopener noreferrer"
-      style={{ textDecoration: 'none' }}
+      style={{ textDecoration: 'none', fontWeight: 600 }}
     >
       Meetup
     </Link>

@@ -35,7 +35,7 @@ const NoPageFound = () => {
   const isPhotoFound = photoUrl !== null && photoUrl !== undefined;
 
   const primaryText = isPhotoFound
-    ? 'You are lost in internet space!'
+    ? 'You are lost in space!'
     : "We can't find that page even with this spotlight!";
 
   const buttonText = isPhotoFound ? 'Take me back to earth' : 'Take me back';

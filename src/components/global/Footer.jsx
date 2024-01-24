@@ -13,20 +13,20 @@ import { FaDiscord, FaGithub, FaLinkedin, FaMeetup } from 'react-icons/fa6';
 
 // Legal links
 const legalLinks = [
+  // {
+  //   href: 'https://www.codepdx.org/',
+  //   title: 'About'
+  // },
   {
-    href: 'https://www.codepdx.org/',
-    title: 'About'
-  },
-  {
-    href: 'https://www.codepdx.org/',
+    href: 'https://github.com/codeforpdx/codeofconduct',
     title: 'Code of Conduct'
   },
   {
-    href: 'https://www.codepdx.org/',
-    title: 'Contact Us'
+    href: 'https://docs.google.com/forms/d/e/1FAIpQLSfu4u9FB00RXd2TncbMLws_Ckot-vYqPK0oUHr81uLDjThE7Q/viewform',
+    title: 'Sign Up to Volunteer'
   },
   {
-    href: 'https://www.codepdx.org/',
+    href: 'https://www.codepdx.org',
     ml: 0.5,
     text: `©${dayjs().year()}`,
     title: 'CODE PDX'
@@ -97,6 +97,8 @@ const renderLegalLinks = legalLinks.map((link, index) => (
       <Link
         component={ReactRouterLink}
         to={link.href}
+        target="_blank"
+        rel="noopener noreferrer"
         underline="none"
         aria-label={`${link.title}`}
         ml={link.ml ?? null}
@@ -180,7 +182,7 @@ const Footer = () => {
             ml: { xs: '0px', sm: '40px', lg: '35px' }
           }}
         />
-        <Typography ml={{ xs: '10px', lg: '80px' }} mt="35px" variant="h5">
+        <Typography ml={{ xs: '10px', lg: '20px' }} mt="35px" variant="h5">
           CODE PDX
         </Typography>
       </Stack>

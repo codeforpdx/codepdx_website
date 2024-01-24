@@ -147,7 +147,7 @@ function NavBar() {
             component="img"
             position="relative"
             alt="CODE PDX logo"
-            src={'/assets/codePdx/code-pdx-rose-logo-green.svg'}
+            src={'/assets/codePdx/code-pdx-rose-logo-white.svg'}
             sx={{
               width: '75px',
               mr: { xs: '0px', md: '30px' },
