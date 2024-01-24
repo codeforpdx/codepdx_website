@@ -1,4 +1,5 @@
 // Material UI Imports
+import CardMedia from '@mui/material/CardMedia';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
@@ -93,13 +94,23 @@ const Events = () => {
           <Typography variant="h3" align="center">
             CODE PDX Event Calendar
           </Typography>
-          <iframe
-            src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FLos_Angeles&showNav=1&showTitle=0&showDate=1&showPrint=0&showTabs=0&src=YWU5NmQxZWU1ZGViNDM1MGEzMWE0OTAzMjExMjVmZDIxYTA4NDVlOWVlOTIxNTgxY2UyN2I5MjVkNWQ3MDdjNUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23A79B8E&color=%230B8043"
-            width="100%"
-            height="500px"
-            frameBorder="0"
-            scrolling="no"
-          ></iframe>
+          <Container
+            maxWidth={'100%'}
+            sx={{
+              overflow: 'hidden',
+              mt: '50px'
+            }}
+          >
+            <CardMedia
+              component="iframe"
+              src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FLos_Angeles&showNav=1&showTitle=0&showDate=1&showPrint=0&showTabs=0&src=YWU5NmQxZWU1ZGViNDM1MGEzMWE0OTAzMjExMjVmZDIxYTA4NDVlOWVlOTIxNTgxY2UyN2I5MjVkNWQ3MDdjNUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23A79B8E&color=%230B8043"
+              sx={{
+                width: '100%',
+                height: { xs: '300px', md: '550px' },
+                border: 'none'
+              }}
+            ></CardMedia>
+          </Container>
         </Grid>
       </Grid>
     </Container>
