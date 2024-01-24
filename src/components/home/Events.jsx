@@ -21,7 +21,7 @@ const DiscordLink = () => {
       href="https://discord.gg/h2pTvDbJeu"
       target="_blank"
       rel="noopener noreferrer"
-      style={{ textDecoration: 'none' }}
+      style={{ textDecoration: 'none', fontWeight: 600 }}
     >
       Discord
     </Link>
@@ -34,7 +34,7 @@ const GrayboxLink = () => {
       href="https://graybox.co"
       target="_blank"
       rel="noopener noreferrer"
-      style={{ textDecoration: 'none' }}
+      style={{ textDecoration: 'none', fontWeight: 600 }}
     >
       GrayBox
     </Link>
@@ -47,7 +47,7 @@ const MeetupLink = () => {
       href="https://www.meetup.com/code-for-pdx/"
       target="_blank"
       rel="noopener noreferrer"
-      style={{ textDecoration: 'none' }}
+      style={{ textDecoration: 'none', fontWeight: 600 }}
     >
       Meetup
     </Link>
@@ -96,7 +96,7 @@ const Events = () => {
           <iframe
             src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FLos_Angeles&showNav=1&showTitle=0&showDate=1&showPrint=0&showTabs=0&src=YWU5NmQxZWU1ZGViNDM1MGEzMWE0OTAzMjExMjVmZDIxYTA4NDVlOWVlOTIxNTgxY2UyN2I5MjVkNWQ3MDdjNUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23A79B8E&color=%230B8043"
             width="100%"
-            height="550px"
+            height="500px"
             frameBorder="0"
             scrolling="no"
           ></iframe>

@@ -12,8 +12,8 @@ export const imageList = [
     alt: 'head shot of Ka Hung, image 3 out of 5'
   },
   {
-    image: '/assets/volunteers/code-pdx-volunteer-andy.webp',
-    alt: 'head shot of Andy, image 4 out of 5 '
+    image: '/assets/volunteers/code-pdx-volunteer-gabby.webp',
+    alt: 'head shot of Gabby, image 4 out of 5 '
   },
   {
     image: 'assets/volunteers/code-pdx-volunteer-scott.webp',

@@ -54,7 +54,7 @@ const LargeScreenComponent = ({
       sx={{
         background: gradientStyle,
         borderRadius: '30px',
-        minHeight: '500px',
+        minHeight: '450px',
         marginBottom: '100px',
         flexDirection: 'row'
       }}
@@ -76,16 +76,16 @@ const LargeScreenComponent = ({
         <Typography variant="body1" p={'5% 15% 3% 0'}>
           {testimonial}
         </Typography>
-        <Typography variant="caption" p={'15px 0 5% 0'}>
+        <Typography variant="caption" sx={{ fontWeight: 'bold' }} p={'0 0 5% 0'}>
           {testimonialAuthor}
         </Typography>
         {testimonialTwo ? (
-          <Typography variant="body1" display={'flex'} p={'40px 15% 5% 0'}>
+          <Typography variant="body1" display={'flex'} p={'3% 15% 3% 0'}>
             {testimonialTwo}
           </Typography>
         ) : null}
         {testimonialAuthorTwo ? (
-          <Typography variant="caption" pb={'10%'}>
+          <Typography variant="caption" sx={{ fontWeight: 'bold' }} pb={'10%'}>
             {testimonialAuthorTwo}
           </Typography>
         ) : null}
@@ -132,7 +132,7 @@ const SmallScreenComponent = ({
         <Typography variant="body1" p={'5% 5% 5% 5%'}>
           {testimonial}
         </Typography>
-        <Typography variant="caption" p={'0 5% 8% 5%'}>
+        <Typography variant="caption" sx={{ fontWeight: 'bold' }} p={'0 5% 8% 5%'}>
           {testimonialAuthor}
         </Typography>
         {testimonialTwo ? (
@@ -141,7 +141,7 @@ const SmallScreenComponent = ({
           </Typography>
         ) : null}
         {testimonialAuthorTwo ? (
-          <Typography variant="caption" p={'0 5% 10% 5%'}>
+          <Typography variant="caption" sx={{ fontWeight: 'bold' }} p={'0 5% 10% 5%'}>
             {testimonialAuthorTwo}
           </Typography>
         ) : null}
