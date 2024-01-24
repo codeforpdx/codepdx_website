@@ -23,7 +23,7 @@ const legalLinks = [
   },
   {
     href: 'https://docs.google.com/forms/d/e/1FAIpQLSfu4u9FB00RXd2TncbMLws_Ckot-vYqPK0oUHr81uLDjThE7Q/viewform',
-    title: 'Contact Us'
+    title: 'Sign Up to Volunteer'
   },
   {
     href: 'https://www.codepdx.org',
