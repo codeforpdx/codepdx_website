@@ -62,8 +62,7 @@ const ProjectTitle = ({ index, title, logo, links }) => {
           sx={{
             objectFit: 'fill',
             maxWidth: '80%',
-            height: { xs: '55px', sm: '100px' }, //55 logo === '/assets/codePdx/pass-logo.svg' ? 'auto' : '150px'
-            // pt: logo != '/assets/codePdx/logo-record-sponge-oregon.svg' ? '5%' : 'none'
+            height: { xs: '55px', sm: '100px' },
             paddingTop: { xs: 2 }
           }}
         />
