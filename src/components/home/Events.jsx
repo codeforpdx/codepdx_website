@@ -84,8 +84,8 @@ const Events = () => {
           >
             <Typography p={2}>
               Individual projects meet online weekly in Google meet with schedules being determined
-              per group. Meeting Links are found in the events on <DiscordLink />. Additionally
-              there is a biweekly in person work session once a month.
+              per group. Meeting links are found in the events on <DiscordLink />. Additionally
+              there is a biweekly in person work session that all project groups can attend.
             </Typography>
           </Paper>
           <Paper {...leftSidePaperStyles}></Paper>
