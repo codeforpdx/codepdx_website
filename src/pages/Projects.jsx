@@ -1,7 +1,10 @@
 // PropTypes Imports
 import PropTypes from 'prop-types';
-// React Router Imports
-import { Link as ReactRouterLink } from 'react-router-dom';
+// React Imports
+import { useEffect } from 'react';
+// import { useLocation } from 'react-router-dom';
+import { Link as ReactRouterLink, useLocation } from 'react-router-dom';
+import { IconContext } from 'react-icons';
 // Material UI Imports
 import Box from '@mui/material/Box';
 import CardContent from '@mui/material/CardContent';
@@ -12,8 +15,6 @@ import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { useMediaQuery } from '@mui/material';
-// React Icons Import
-import { IconContext } from 'react-icons';
 // Component Imports
 import Hero from '../components/global/Hero/Hero';
 import projectsList from '../components/projects/projectsList';
@@ -89,6 +90,23 @@ const ProjectTitle = ({ index, title, logo, links }) => {
   );
 };
 
+//scrolls to projects location starting at the top of screen. Used for routing from home page.
+const ProjectLocation = () => {
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    if (location.hash) {
+      setTimeout(() => {
+        const id = location.hash.replace('#', '');
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 0);
+    }
+  }, [location]);
+};
+
 ProjectTitle.propTypes = {
   index: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
@@ -102,7 +120,15 @@ ProjectTitle.propTypes = {
 };
 
 const ProjectInfo = ({ index, title, description, status, techStack }) => (
-  <Stack maxWidth={{ xs: '100%', md: '50%' }} order={{ xs: 0, md: index % 2 === 0 ? 1 : 2 }}>
+  <Stack
+    //regex removes non url friendly chars limiting to lowercase and numbers, replaces spaces with "-", and makes it all lowercase.
+    id={title
+      .replace(/\s+/g, '-')
+      .replace(/[^a-zA-Z0-9-_]/g, '')
+      .toLowerCase()}
+    maxWidth={{ xs: '100%', md: '50%' }}
+    order={{ xs: 0, md: index % 2 === 0 ? 1 : 2 }}
+  >
     <CardContent>
       <Stack
         direction={{ xs: 'column', sm: 'row' }}
@@ -177,41 +203,52 @@ ProjectInfo.propTypes = {
   techStack: PropTypes.arrayOf(PropTypes.string)
 };
 
-const Projects = () => (
-  <>
-    <Hero
-      pageName={'projects'}
-      heroImage={`linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/assets/heroImages/project-board-1680x600.webp)`}
-      mobileHeroImage={`linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/assets/heroImages/project-board-800x286.webp)`}
-      heroText={`Our products blend innovation, quality, and user-centric design to meet today's needs and anticipate tomorrow's challenges`}
-    />
-    <Stack
-      as="section"
-      sx={{
-        alignItems: 'center',
-        justifyContent: 'center',
-        px: 2,
-        maxWidth: 'xl',
-        mx: 'auto'
-      }}
-    >
-      <Typography variant="h2" sx={{ m: 5, textAlign: 'center' }}>
-        Our Projects
-      </Typography>
-      {projectsList.map(({ index, title, description, status, logo, links, techStack }) => (
-        <Box key={title} sx={boxStyle(index)}>
-          <ProjectTitle index={index} title={title} logo={logo} links={links} />
-          <ProjectInfo
-            index={index}
-            title={title}
-            description={description}
-            status={status}
-            techStack={techStack}
-          />
-        </Box>
-      ))}
-    </Stack>
-  </>
-);
+const Projects = () => {
+  ProjectLocation();
+
+  return (
+    <>
+      <Hero
+        pageName={'projects'}
+        heroImage={`linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/assets/heroImages/project-board-1680x600.webp)`}
+        mobileHeroImage={`linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/assets/heroImages/project-board-800x286.webp)`}
+        heroText={`Our products blend innovation, quality, and user-centric design to meet today's needs and anticipate tomorrow's challenges`}
+      />
+      <Stack
+        as="section"
+        sx={{
+          alignItems: 'center',
+          justifyContent: 'center',
+          px: 2,
+          maxWidth: 'xl',
+          mx: 'auto'
+        }}
+      >
+        <Typography variant="h2" sx={{ m: 5, textAlign: 'center' }}>
+          Our Projects
+        </Typography>
+        {projectsList.map(({ index, title, description, status, logo, links, techStack }) => (
+          <Box
+            id={title
+              .replace(/\s+/g, '-')
+              .replace(/[^a-zA-Z0-9-_]/g, '')
+              .toLowerCase()}
+            key={title}
+            sx={boxStyle(index)}
+          >
+            <ProjectTitle index={index} title={title} logo={logo} links={links} />
+            <ProjectInfo
+              index={index}
+              title={title}
+              description={description}
+              status={status}
+              techStack={techStack}
+            />
+          </Box>
+        ))}
+      </Stack>
+    </>
+  );
+};
 
 export default Projects;

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 // Material UI Imports
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -46,9 +47,16 @@ const renderProjectBriefCard = ({ title, description, logo }) => (
         )}
       </CardContent>
       <CardActions>
-        <Button href="/projects" size="large" color="primary">
-          <strong>Learn More</strong>
-        </Button>
+        <Link
+          to={`/projects#${title
+            .replace(/\s+/g, '-')
+            .replace(/[^a-zA-Z0-9-_]/g, '')
+            .toLowerCase()}`}
+        >
+          <Button size="large" color="primary">
+            <strong>Learn More</strong>
+          </Button>
+        </Link>
       </CardActions>
     </Card>
   </Grid>
