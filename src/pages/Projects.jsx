@@ -2,7 +2,6 @@
 import PropTypes from 'prop-types';
 // React Imports
 import { useEffect } from 'react';
-// import { useLocation } from 'react-router-dom';
 import { Link as ReactRouterLink, useLocation } from 'react-router-dom';
 import { IconContext } from 'react-icons';
 // Material UI Imports
