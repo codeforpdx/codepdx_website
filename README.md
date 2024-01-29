@@ -1,10 +1,8 @@
-# Welcome to the readme for the CODE PDX website.
+# Welcome to the CODE PDX website repo.
 
-Welcome! 👋👋🏿👋🏽👋🏻👋🏾👋🏼
+👋👋🏿👋🏽👋🏻👋🏾👋🏼
 
-🚧UNDER CONSTRUCTION!🚧
-
-We are currently structuring the CODE PDX website repo. Detailed information for those looking to contribute can be found in [contributing.md](./contributing.md). We are in the process of structuring out the build and creating issues for tasks.
+The website is currently live at www.codepdx.org. Detailed information for those looking to contribute can be found in [contributing.md](./contributing.md). Check the issues tab for current issues or feel free to create your own, write some code, then make a pull request. The fastest way to reach out for questions is the website-general channel in discord. 
 
 **to run dev environment:**
 
