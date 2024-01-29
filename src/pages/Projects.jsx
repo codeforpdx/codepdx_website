@@ -119,15 +119,7 @@ ProjectTitle.propTypes = {
 };
 
 const ProjectInfo = ({ index, title, description, status, techStack }) => (
-  <Stack
-    //regex removes non url friendly chars limiting to lowercase and numbers, replaces spaces with "-", and makes it all lowercase.
-    id={title
-      .replace(/\s+/g, '-')
-      .replace(/[^a-zA-Z0-9-_]/g, '')
-      .toLowerCase()}
-    maxWidth={{ xs: '100%', md: '50%' }}
-    order={{ xs: 0, md: index % 2 === 0 ? 1 : 2 }}
-  >
+  <Stack maxWidth={{ xs: '100%', md: '50%' }} order={{ xs: 0, md: index % 2 === 0 ? 1 : 2 }}>
     <CardContent>
       <Stack
         direction={{ xs: 'column', sm: 'row' }}
@@ -228,6 +220,7 @@ const Projects = () => {
         </Typography>
         {projectsList.map(({ index, title, description, status, logo, links, techStack }) => (
           <Box
+            //regex removes non url friendly chars limiting to lowercase and numbers, replaces spaces with "-", and makes it all lowercase.
             id={title
               .replace(/\s+/g, '-')
               .replace(/[^a-zA-Z0-9-_]/g, '')
