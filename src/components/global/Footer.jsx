@@ -13,10 +13,6 @@ import { FaDiscord, FaGithub, FaLinkedin, FaMeetup } from 'react-icons/fa6';
 
 // Legal links
 const legalLinks = [
-  // {
-  //   href: 'https://www.codepdx.org/',
-  //   title: 'About'
-  // },
   {
     href: 'https://github.com/codeforpdx/codeofconduct',
     title: 'Code of Conduct'
@@ -57,10 +53,9 @@ const socialMediaLinks = [
   }
 ];
 
-// renders socialMediaLinks for placement in stack below
+// Renders socialMediaLinks for placement in stack below
 const renderSocialLinks = socialMediaLinks.map(({ ariaLabel, href, icon }) => (
   <Link
-    component={ReactRouterLink}
     key={href}
     href={href}
     aria-label={`Check us out on ${ariaLabel}`}
@@ -79,7 +74,7 @@ const renderSocialLinks = socialMediaLinks.map(({ ariaLabel, href, icon }) => (
   </Link>
 ));
 
-// maps legalLinks used for placement in stack below
+// Maps legalLinks used for placement in stack below
 const renderLegalLinks = legalLinks.map((link, index) => (
   <Box key={link.title + index}>
     <Typography
@@ -165,9 +160,9 @@ const Footer = () => {
   const theme = useTheme();
 
   return (
-    // this container contains the entire footer
+    // This container contains the entire footer
     <Container component="footer" maxWidth="100%" sx={footerContainerStyle}>
-      {/* this box contains the blob behind the roseLogo */}
+      {/* This box contains the blob behind the roseLogo */}
       {/* <Box sx={logoBlobStyle}></Box> */}
       <Stack direction={{ xs: 'row', sm: 'column', lg: 'row' }} flex={1}>
         {/* roseLogo box */}
@@ -186,11 +181,11 @@ const Footer = () => {
           CODE PDX
         </Typography>
       </Stack>
-      {/* this box contains social links*/}
+      {/* This box contains the social media links */}
       <Stack direction="row" spacing={{ xs: 2, sm: 3 }}>
         {renderSocialLinks}
       </Stack>
-      {/* this box contains the legal links and hook to add padding on viewport scale down */}
+      {/* This box contains the legal links and hook to add padding on viewport scale down */}
       <Box
         sx={{
           flex: '1',
