@@ -27,5 +27,13 @@ export const secondaryPartnerList = [
     partnerLogo: '/assets/partnerLogos/cetiLogo.svg',
     mobilePartnerLogo: '/assets/partnerLogos/cetiLogo.svg',
     website: 'https://ceti.institute/'
+  },
+  {
+    company: 'Urban Systems',
+    testimonial:
+      'Urban.Systems connects vibrant communities using technology to facilitate civic engagement, deliver services and share resources. Urban’s business model is that of providing “City as a Service” in these following areas (but not limited to): Scalable, Open, Distributed, Secure, Transaction Platform. Branded Community To Guarantee Interoperability Promise. "Citizen Oriented Identity” To Facilitate Secure Data Transactions.',
+    partnerLogo: '/assets/partnerLogos/urban-systems-logo-180x113.webp',
+    mobilePartnerLogo: '/assets/partnerLogos/urban-systems-logo-180x113.webp',
+    website: 'https://urban.systems/Main_Page'
   }
 ];
