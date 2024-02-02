@@ -75,19 +75,21 @@ const LargeScreenComponent = ({
         <Typography variant="body1" p={'5% 10% 3% 10%'}>
           {testimonial}
         </Typography>
-        <Typography variant="caption" sx={{ fontWeight: 'bold' }} p={'0 0 0 0'}>
-          {testimonialAuthor}
-        </Typography>
-        {testimonialTwo ? (
+        {testimonialAuthor && (
+          <Typography variant="caption" sx={{ fontWeight: 'bold' }} p={'0 0 0 0'}>
+            {testimonialAuthor}
+          </Typography>
+        )}
+        {testimonialTwo && (
           <Typography variant="body1" display={'flex'} p={'5% 10% 3% 10%'}>
             {testimonialTwo}
           </Typography>
-        ) : null}
-        {testimonialAuthorTwo ? (
+        )}
+        {testimonialAuthorTwo && (
           <Typography variant="caption" sx={{ fontWeight: 'bold' }} pb={'10%'}>
             {testimonialAuthorTwo}
           </Typography>
-        ) : null}
+        )}
       </Grid>
     </Grid>
   );
