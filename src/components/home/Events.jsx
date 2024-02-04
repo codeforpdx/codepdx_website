@@ -8,14 +8,14 @@ import Typography from '@mui/material/Typography';
 
 const mobileStyle = {
   position: 'relative',
-  paddingBottom: '100%', // larger for mobile
+  paddingBottom: '100%', 
   height: 0,
   overflow: 'hidden'
 };
 
 const desktopStyle = {
   position: 'relative',
-  paddingBottom: '75%', // smaller for desktop
+  paddingBottom: '75%', 
   height: 0,
   overflow: 'hidden'
 };
@@ -125,7 +125,7 @@ const Events = () => {
             gutterBottom
             sx={{
               textAlign: 'center',
-              mb: 8 // Adjust this value for more or less space
+              mb: 8 
             }}
           >
             CODE PDX Event Calendar
