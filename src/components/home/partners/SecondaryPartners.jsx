@@ -9,6 +9,8 @@ import { useTheme } from '@mui/material/styles';
 import { PropTypes } from 'prop-types';
 // Component Imports
 import { secondaryPartnerList } from './secondaryPartnerList';
+import { useLocation } from 'react-router-dom';
+import ListItem from '@mui/material/ListItem';
 
 const secondaryPartnerProps = {
   index: PropTypes.number.isRequired,
@@ -19,7 +21,8 @@ const secondaryPartnerProps = {
   testimonialAuthor: PropTypes.string,
   partnerLogo: PropTypes.string.isRequired,
   mobilePartnerLogo: PropTypes.string.isRequired,
-  website: PropTypes.string.isRequired
+  website: PropTypes.string.isRequired,
+  bulletedList: PropTypes.array.isRequired
 };
 
 const partnerGridStyle = {
@@ -33,6 +36,7 @@ const partnerGridStyle = {
 };
 
 const LargeScreenComponent = ({
+  bulletedList,
   index,
   company,
   testimonial,
@@ -76,6 +80,13 @@ const LargeScreenComponent = ({
         <Typography variant="body1" p={'5% 15% 3% 0'}>
           {testimonial}
         </Typography>
+        {bulletedList &&
+          bulletedList.length > 0 &&
+          bulletedList.map((listItem, itemIndex) => (
+            <ListItem sx={{ display: 'list-item' }} key={itemIndex} variant="body2">
+              {listItem}
+            </ListItem>
+          ))}
         <Typography variant="caption" sx={{ fontWeight: 'bold' }} p={'0 0 5% 0'}>
           {testimonialAuthor}
         </Typography>
