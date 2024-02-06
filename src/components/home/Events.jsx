@@ -6,19 +6,7 @@ import Link from '@mui/material/Link';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 
-const mobileStyle = {
-  position: 'relative',
-  paddingBottom: '100%', 
-  height: 0,
-  overflow: 'hidden'
-};
 
-const desktopStyle = {
-  position: 'relative',
-  paddingBottom: '75%', 
-  height: 0,
-  overflow: 'hidden'
-};
 const leftSidePaperStyles = {
   elevation: 3,
   sx: {
@@ -116,7 +104,6 @@ const Events = () => {
               there is a biweekly in person work session that all project groups can attend.
             </Typography>
           </Paper>
-          <Paper {...leftSidePaperStyles}></Paper>
         </Grid>
         <Grid item xs={12} md={6}>
           <Typography
