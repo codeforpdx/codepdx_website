@@ -1,5 +1,5 @@
 // React Router Imports
-import { Link as ReactRouterLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 // Material UI Imports
 import Box from '@mui/material/Box';
 import Container from '@mui/system/Container';
@@ -75,40 +75,45 @@ const renderSocialLinks = socialMediaLinks.map(({ ariaLabel, href, icon }) => (
 ));
 
 // Maps legalLinks used for placement in stack below
-const renderLegalLinks = legalLinks.map((link, index) => (
-  <Box key={link.title + index}>
-    <Typography
-      key={link.title}
-      variant="body1"
-      color="tertiary.main"
-      mr={{ sm: '10px' }}
-      sx={{
-        display: 'flex',
-        justifyContent: { xs: 'center', sm: 'flex-end' },
-        p: { xs: '10px', sm: '5px' }
-      }}
-    >
-      {link.text ?? null}
-      <Link
-        component={ReactRouterLink}
-        to={link.href}
-        target="_blank"
-        rel="noopener noreferrer"
-        underline="none"
-        aria-label={`${link.title}`}
-        ml={link.ml ?? null}
+const renderLegalLinks = (navigate) => {
+  return legalLinks.map((link, index) => (
+    <Box key={link.title + index}>
+      <Typography
+        variant="body1"
+        color="tertiary.main"
+        mr={{ sm: '10px' }}
         sx={{
-          color: '#000',
-          '&:hover': {
-            color: 'primary.main'
-          }
+          display: 'flex',
+          justifyContent: { xs: 'center', sm: 'flex-end' },
+          p: { xs: '10px', sm: '5px' }
         }}
       >
-        {link.title}
-      </Link>
-    </Typography>
-  </Box>
-));
+        {link.text ?? null}
+        <Link
+          href={link.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          underline="none"
+          aria-label={`${link.title}`}
+          ml={link.ml ?? null}
+          sx={{
+            color: '#000',
+            '&:hover': {
+              color: 'primary.main'
+            }
+          }}
+          onClick={(event) => {
+            event.preventDefault();
+            navigate('/');
+            window.scrollTo({ top: 0, left: 0 });
+          }}
+        >
+          {link.title}
+        </Link>
+      </Typography>
+    </Box>
+  ));
+};
 
 const footerContainerStyle = (theme) => ({
   display: 'flex',
@@ -158,6 +163,7 @@ const footerContainerStyle = (theme) => ({
 
 const Footer = () => {
   const theme = useTheme();
+  const navigate = useNavigate();
 
   return (
     // This container contains the entire footer
@@ -195,7 +201,7 @@ const Footer = () => {
           }
         }}
       >
-        {renderLegalLinks}
+        {renderLegalLinks(navigate)}
       </Box>
     </Container>
   );
