@@ -28,8 +28,7 @@ const partnerGridStyle = {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  flexDirection: 'column',
-  pt: '20px'
+  flexDirection: 'column'
 };
 
 const LargeScreenComponent = ({
@@ -56,11 +55,20 @@ const LargeScreenComponent = ({
         borderRadius: '30px',
         minHeight: '450px',
         marginBottom: '100px',
-        flexDirection: 'row'
+        flexDirection: 'row',
+        pt: '5%'
       }}
       key={company}
     >
-      <Grid item {...partnerGridStyle} md={5} order={logoOrder}>
+      <Grid
+        item
+        {...partnerGridStyle}
+        md={5}
+        order={logoOrder}
+        sx={{
+          justifyContent: 'flex-start'
+        }}
+      >
         <a href={website} target="_blank" rel="noopener noreferrer">
           <Box
             component={'img'}
@@ -72,7 +80,7 @@ const LargeScreenComponent = ({
         </a>
       </Grid>
       <Grid item {...partnerGridStyle} md={7} order={contentOrder}>
-        <Typography variant="body1" p={'5% 10% 3% 10%'}>
+        <Typography variant="body1" p={'0% 10% 3% 10%'}>
           {testimonial}
         </Typography>
         {testimonialAuthor && (
