@@ -26,11 +26,11 @@ All assets for contributors can be pulled from the [Figma Board](https://www.fig
 
 ## 3. Code of Conduct
 
-By participating in this project, you are expected to uphold our [Code of Conduct](./CODE_OF_CONDUCT.md). Please make sure to read and understand it before contributing. (code of conduct subject to change post Code For America re-branding)
+By participating in this project, you are expected to uphold our [Code of Conduct](https://github.com/codeforpdx/codeofconduct). Please make sure to read and understand it before contributing.
 
 ## 4. Connect With the Team
 
-- Join [Code for PDX Discord](https://discord.gg/uwqrPpyuap). If you run into any issues join the discord and drop a message in [introductions](https://discord.com/channels/1068260532806766733/1075286322530484256) or [general-chat](https://discord.com/channels/1068260532806766733/1068260535080063028).
+- Join [CODE PDX Discord](https://discord.gg/uwqrPpyuap). If you run into any issues join the discord and drop a message in [introductions](https://discord.com/channels/1068260532806766733/1075286322530484256) or [general-chat](https://discord.com/channels/1068260532806766733/1068260535080063028).
 - Post your GitHub name in the [**#github-access-request**](https://discord.com/channels/1068260532806766733/1078124139983945858) channel and we’ll add you to our [GitHub](https://github.com/codeforpdx).
 
 ## 5. Development Process

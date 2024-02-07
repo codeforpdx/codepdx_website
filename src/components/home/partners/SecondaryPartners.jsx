@@ -2,6 +2,7 @@
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
+import ListItem from '@mui/material/ListItem';
 import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
@@ -12,12 +13,13 @@ import { secondaryPartnerList } from './secondaryPartnerList';
 
 const secondaryPartnerProps = {
   index: PropTypes.number.isRequired,
+  bulletedList: PropTypes.array,
   company: PropTypes.string.isRequired,
+  partnerLogo: PropTypes.string.isRequired,
   testimonial: PropTypes.string.isRequired,
   testimonialTwo: PropTypes.string,
-  testimonialAuthorTwo: PropTypes.string,
   testimonialAuthor: PropTypes.string,
-  partnerLogo: PropTypes.string.isRequired,
+  testimonialAuthorTwo: PropTypes.string,
   mobilePartnerLogo: PropTypes.string.isRequired,
   website: PropTypes.string.isRequired
 };
@@ -34,12 +36,13 @@ const partnerGridStyle = {
 
 const LargeScreenComponent = ({
   index,
+  bulletedList,
   company,
+  partnerLogo,
   testimonial,
   testimonialTwo,
-  testimonialAuthorTwo,
   testimonialAuthor,
-  partnerLogo,
+  testimonialAuthorTwo,
   website
 }) => {
   const gradientStyle =
@@ -76,6 +79,13 @@ const LargeScreenComponent = ({
         <Typography variant="body1" p={'5% 15% 3% 0'}>
           {testimonial}
         </Typography>
+        {bulletedList &&
+          bulletedList.length > 0 &&
+          bulletedList.map((listItem, itemIndex) => (
+            <ListItem sx={{ display: 'list-item' }} key={itemIndex} variant="body2">
+              {listItem}
+            </ListItem>
+          ))}
         <Typography variant="caption" sx={{ fontWeight: 'bold' }} p={'0 0 5% 0'}>
           {testimonialAuthor}
         </Typography>
@@ -98,11 +108,12 @@ LargeScreenComponent.propTypes = secondaryPartnerProps;
 
 const SmallScreenComponent = ({
   company,
+  bulletedList,
+  mobilePartnerLogo,
   testimonial,
   testimonialTwo,
-  testimonialAuthorTwo,
   testimonialAuthor,
-  mobilePartnerLogo,
+  testimonialAuthorTwo,
   website
 }) => {
   return (
@@ -132,6 +143,13 @@ const SmallScreenComponent = ({
         <Typography variant="body1" p={'5% 5% 5% 5%'}>
           {testimonial}
         </Typography>
+        {bulletedList &&
+          bulletedList.length > 0 &&
+          bulletedList.map((listItem, itemIndex) => (
+            <ListItem sx={{ display: 'list-item' }} key={itemIndex} variant="body2">
+              {listItem}
+            </ListItem>
+          ))}
         <Typography variant="caption" sx={{ fontWeight: 'bold' }} p={'0 5% 8% 5%'}>
           {testimonialAuthor}
         </Typography>
