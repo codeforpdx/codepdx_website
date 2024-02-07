@@ -28,8 +28,7 @@ const partnerGridStyle = {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  flexDirection: 'column',
-  pt: '20px'
+  flexDirection: 'column'
 };
 
 const LargeScreenComponent = ({
@@ -56,39 +55,49 @@ const LargeScreenComponent = ({
         borderRadius: '30px',
         minHeight: '450px',
         marginBottom: '100px',
-        flexDirection: 'row'
+        flexDirection: 'row',
+        pt: '5%'
       }}
       key={company}
     >
-      <Grid item md={6} {...partnerGridStyle} order={logoOrder}>
+      <Grid
+        item
+        {...partnerGridStyle}
+        md={5}
+        order={logoOrder}
+        sx={{
+          justifyContent: 'flex-start'
+        }}
+      >
         <a href={website} target="_blank" rel="noopener noreferrer">
           <Box
             component={'img'}
             alt={`${company} logo`}
             aria-label={`${company} logo`}
             src={partnerLogo}
-            mb={'150px'}
             width={'250px'}
           ></Box>
         </a>
       </Grid>
-      <Grid item pl={'6%'} {...partnerGridStyle} order={contentOrder}>
-        <Typography variant="body1" p={'5% 15% 3% 0'}>
+      <Grid item {...partnerGridStyle} md={7} order={contentOrder}>
+        <Typography variant="body1" p={'0% 10% 3% 10%'}>
           {testimonial}
         </Typography>
-        <Typography variant="caption" sx={{ fontWeight: 'bold' }} p={'0 0 5% 0'}>
-          {testimonialAuthor}
-        </Typography>
-        {testimonialTwo ? (
-          <Typography variant="body1" display={'flex'} p={'3% 15% 3% 0'}>
+        {testimonialAuthor && (
+          <Typography variant="caption" sx={{ fontWeight: 'bold' }} p={'0 0 0 0'}>
+            {testimonialAuthor}
+          </Typography>
+        )}
+        {testimonialTwo && (
+          <Typography variant="body1" display={'flex'} p={'5% 10% 3% 10%'}>
             {testimonialTwo}
           </Typography>
-        ) : null}
-        {testimonialAuthorTwo ? (
+        )}
+        {testimonialAuthorTwo && (
           <Typography variant="caption" sx={{ fontWeight: 'bold' }} pb={'10%'}>
             {testimonialAuthorTwo}
           </Typography>
-        ) : null}
+        )}
       </Grid>
     </Grid>
   );
