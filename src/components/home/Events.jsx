@@ -6,7 +6,6 @@ import Link from '@mui/material/Link';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 
-
 const leftSidePaperStyles = {
   elevation: 3,
   sx: {
@@ -112,7 +111,7 @@ const Events = () => {
             gutterBottom
             sx={{
               textAlign: 'center',
-              mb: 8 
+              mb: 8
             }}
           >
             CODE PDX Event Calendar
@@ -128,7 +127,7 @@ const Events = () => {
           >
             <CardMedia
               component="iframe"
-              src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FLos_Angeles&showNav=1&showTitle=0&showDate=1&showPrint=0&showTabs=0&src=YWU5NmQxZWU1ZGViNDM1MGEzMWE0OTAzMjExMjVmZDIxYTA4NDVlOWVlOTIxNTgxY2UyN2I5MjVkNWQ3MDdjNUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23A79B8E&color=%230B8043"
+              src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FLos_Angeles&src=Y29kZXBkeEBjaXZ0ZWNob3JlZ29uLm9yZw&src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23039BE5&color=%230B8043"
               sx={{
                 position: 'absolute',
                 top: 0,
@@ -146,4 +145,3 @@ const Events = () => {
 };
 
 export default Events;
-
