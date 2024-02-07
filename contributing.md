@@ -26,9 +26,7 @@ All assets for contributors can be pulled from the [Figma Board](https://www.fig
 
 ## 3. Code of Conduct
 
-<!-- TODO: Will this contain its own Code of Conduct file? Or will it simply link to https://github.com/codeforpdx/codeofconduct? -->
-
-By participating in this project, you are expected to uphold our [Code of Conduct](./CODE_OF_CONDUCT.md). Please make sure to read and understand it before contributing.
+By participating in this project, you are expected to uphold our [Code of Conduct](https://github.com/codeforpdx/codeofconduct). Please make sure to read and understand it before contributing.
 
 ## 4. Connect With the Team
 
