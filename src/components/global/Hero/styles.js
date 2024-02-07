@@ -11,7 +11,7 @@ export const heroStyles = {
     flexFlow: 'column',
     justifyContent: 'flex-start',
     alignItems: { xs: 'center', md: 'flex-start' },
-    width: { xs: '100%', md: '575px' },
+    width: { xs: '100%', md: '750px' },
     height: '100%'
   },
   heroContainerAlt: {
@@ -33,7 +33,7 @@ export const heroStyles = {
     textShadow: '0px 4px 4px #0000004D',
     lineHeight: { xs: '45px', md: '80px' },
     flexBasis: { xs: '100px', md: '160px' },
-    fontSize: { xs: '30px', md: '56px' },
+    fontSize: { xs: '30px', md: '50px' },
     pt: { xs: '25px', md: '113px' },
     pl: { xs: 0, md: '56px' },
     width: { xs: '80%', md: '100%' },
