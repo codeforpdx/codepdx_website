@@ -40,13 +40,6 @@ const volunteerStepsData = [
         linkText: 'ADA Compliance Guide',
         postText: ', all CODE PDX projects are inclusive by design.',
         numbered: true
-      },
-      {
-        preText: 'Join a project demo night & onboarding session listed on ',
-        link: 'https://www.meetup.com/code-for-pdx/',
-        linkText: 'Meetup',
-        postText: '.',
-        numbered: true
       }
     ]
   },
@@ -136,12 +129,16 @@ const volunteerStepsData = [
         preText: '- All of these steps can be completed remotely or at an in-person event.'
       },
       {
-        preText:
-          '- We invite people to contribute to CODE PDX regardless of skill set or skill level.'
+        preText: '- Join a project demo night & onboarding session listed on ',
+        link: 'https://www.meetup.com/code-for-pdx/',
+        linkText: 'Meetup',
+        postText: '.'
       },
       {
-        preText:
-          '- When in doubt, proactively reach out in the Discord text channels. They are frequently checked by members and will likely yield a swift response.'
+        preText: '- People of all skill sets and skill levels are welcome at CODE PDX.'
+      },
+      {
+        preText: '- When in doubt, reach out! Our Discord channels are active and open.'
       }
     ]
   }
