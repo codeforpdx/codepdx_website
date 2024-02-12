@@ -78,7 +78,25 @@ const VolunteerBrief = () => {
       </Typography>
       <Card sx={{ p: 4, backgroundColor: 'rgba(217, 217, 217, 0.4)', borderRadius: '30px' }}>
         <Typography variant="h6" component="h3" sx={{ px: '1rem' }}>
-          Use your skills for the greater good or build your resume!
+          Volunteering is all about making a difference and having fun while doing it. You
+          don&apos;t need to worry about being the perfect fit - just bring your willingness to help
+          out, and you&apos;re good to go!
+          <br />
+          <br />
+          We welcome people from all walks of life, whether you&apos;re a seasoned pro or just
+          starting out. Maybe you&apos;re an engineer with a wealth of knowledge to share, or
+          perhaps you&apos;re changing careers and looking to learn something new - either way,
+          there&apos;s a place for you here.
+          <br />
+          <br />
+          And don&apos;t stress about time commitments. We get it - life can be busy! Just
+          contribute what you can, when you can, and know that your efforts are appreciated. If you
+          need to take a break, no problem! We&apos;ll be here whenever you&apos;re ready to jump
+          back in.
+          <br />
+          <br />
+          So go ahead, dive into volunteering with enthusiasm, and let&apos;s make a positive impact
+          together!
         </Typography>
         <Grid
           container
