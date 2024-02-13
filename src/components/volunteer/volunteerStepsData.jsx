@@ -97,11 +97,13 @@ const volunteerStepsData = [
     listItems: [
       {
         preText:
-          '- After seeing what we are up to, reach out to team members of a project to connect & let them know how you would like to contribute. You can find active members by seeing who recently contributed to a repository or the recent discord chat history of a project.'
+          'After seeing what we are up to, reach out to team members of a project to connect & let them know how you would like to contribute. You can find active members by seeing who recently contributed to a repository or the recent discord chat history of a project.',
+        numbered: true
       },
       {
         preText:
-          "- The GitHub repository is a good place to see what's active within CODE PDX and contains a writeup of our contribution guidelines that we follow to standardize our workflow."
+          "The GitHub repository is a good place to see what's active within CODE PDX and contains a writeup of our contribution guidelines that we follow to standardize our workflow.",
+        numbered: true
       }
     ]
   },
@@ -133,15 +135,18 @@ const volunteerStepsData = [
     icon: <BsFill5CircleFill />,
     listItems: [
       {
-        preText: '- All of these steps can be completed remotely or at an in-person event.'
+        preText: 'All of these steps can be completed remotely or at an in-person event.',
+        numbered: true
       },
       {
         preText:
-          '- We invite people to contribute to CODE PDX regardless of skill set or skill level.'
+          'We invite people to contribute to CODE PDX regardless of skill set or skill level.',
+        numbered: true
       },
       {
         preText:
-          '- When in doubt, proactively reach out in the Discord text channels. They are frequently checked by members and will likely yield a swift response.'
+          'When in doubt, proactively reach out in the Discord text channels. They are frequently checked by members and will likely yield a swift response.',
+        numbered: true
       }
     ]
   }
