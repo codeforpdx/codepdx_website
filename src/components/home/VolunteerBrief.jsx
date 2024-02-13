@@ -77,6 +77,7 @@ const VolunteerBrief = () => {
         Volunteer With Us
       </Typography>
       <Card
+        component="section"
         sx={{
           p: { xs: 2, sm: 4 },
           backgroundColor: 'rgba(217, 217, 217, 0.4)',
@@ -85,19 +86,13 @@ const VolunteerBrief = () => {
       >
         <Typography variant="h6" component="article" sx={{ px: { xs: 0, md: '1rem' }, mb: '1em' }}>
           Volunteering is all about making a difference and having fun while doing it. You
-          don&apos;t need to worry about being the perfect fit - just bring your willingness to help
-          out, and you&apos;re good to go!
-        </Typography>
-        <Typography variant="h6" component="article" sx={{ px: { xs: 0, md: '1rem' }, mb: '1em' }}>
-          We welcome people from all walks of life. Whether you&apos;re a seasoned pro, just
+          don&apos;t need to worry about being the perfect fit - just bring your passion and
+          you&apos;re good to go! We welcome all kinds. Whether you&apos;re a seasoned pro, just
           starting out, or looking to learn something new, there&apos;s a place for you here.
         </Typography>
         <Typography variant="h6" component="article" sx={{ px: { xs: 0, md: '1rem' }, mb: '1em' }}>
-          So go ahead, dive into volunteering with enthusiasm, and let&apos;s make a positive impact
-          together!
-        </Typography>
-        <Typography variant="h6" component="article" sx={{ px: { xs: 0, md: '1rem' }, mb: '1em' }}>
-          Contribute what you can, when you can, and know that your efforts are appreciated.
+          Let&apos;s make a positive impact together! Contribute what you can, when you can, and
+          know that your efforts are appreciated.
         </Typography>
         <Grid
           container
