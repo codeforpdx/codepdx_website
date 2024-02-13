@@ -91,12 +91,12 @@ const volunteerStepsData = [
       {
         preText:
           'After seeing what we are up to, reach out to team members of a project to connect & let them know how you would like to contribute. You can find active members by seeing who recently contributed to a repository or the recent discord chat history of a project.',
-          numbered: true
+        numbered: true
       },
       {
         preText:
           "The GitHub repository is a good place to see what's active within CODE PDX and contains a writeup of our contribution guidelines that we follow to standardize our workflow.",
-          numbered: true
+        numbered: true
       }
     ]
   },
@@ -107,7 +107,7 @@ const volunteerStepsData = [
       {
         preText:
           'Find your first issue to work on from the GitHub repo of the project of your choice. Check out our ',
-        link: 'https://github.com/codeforpdx',
+        link: 'https://github.com/codeforpdx/PASS/wiki/Development#contribution-guidelines',
         linkText: 'Wiki',
         postText: ' for guidance on picking your first issue.',
         numbered: true
