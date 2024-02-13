@@ -40,13 +40,6 @@ const volunteerStepsData = [
         linkText: 'ADA Compliance Guide',
         postText: ', all CODE PDX projects are inclusive by design.',
         numbered: true
-      },
-      {
-        preText: 'Join a project demo night & onboarding session listed on ',
-        link: 'https://www.meetup.com/code-for-pdx/',
-        linkText: 'Meetup',
-        postText: '.',
-        numbered: true
       }
     ]
   },
@@ -114,7 +107,7 @@ const volunteerStepsData = [
       {
         preText:
           'Find your first issue to work on from the GitHub repo of the project of your choice. Check out our ',
-        link: 'https://github.com/codeforpdx',
+        link: 'https://github.com/codeforpdx/PASS/wiki/Development#contribution-guidelines',
         linkText: 'Wiki',
         postText: ' for guidance on picking your first issue.',
         numbered: true
@@ -139,13 +132,18 @@ const volunteerStepsData = [
         numbered: true
       },
       {
-        preText:
-          'We invite people to contribute to CODE PDX regardless of skill set or skill level.',
+        preText: 'Join a project demo night & onboarding session listed on ',
+        link: 'https://www.meetup.com/code-for-pdx/',
+        linkText: 'Meetup',
+        postText: '.',
         numbered: true
       },
       {
-        preText:
-          'When in doubt, proactively reach out in the Discord text channels. They are frequently checked by members and will likely yield a swift response.',
+        preText: 'People of all skill sets and skill levels are welcome at CODE PDX.',
+        numbered: true
+      },
+      {
+        preText: 'When in doubt, reach out! Our Discord channels are active and open.',
         numbered: true
       }
     ]
