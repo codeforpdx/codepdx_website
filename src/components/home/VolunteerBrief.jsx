@@ -76,9 +76,23 @@ const VolunteerBrief = () => {
       <Typography variant="h3" component="h2" sx={{ mb: '40px' }}>
         Volunteer With Us
       </Typography>
-      <Card sx={{ p: 4, backgroundColor: 'rgba(217, 217, 217, 0.4)', borderRadius: '30px' }}>
-        <Typography variant="h6" component="h3" sx={{ px: '1rem' }}>
-          Use your skills for the greater good or build your resume!
+      <Card
+        component="section"
+        sx={{
+          p: { xs: 2, sm: 4 },
+          backgroundColor: 'rgba(217, 217, 217, 0.4)',
+          borderRadius: '30px'
+        }}
+      >
+        <Typography variant="h6" component="article" sx={{ px: { xs: 0, md: '1rem' }, mb: '1em' }}>
+          Volunteering is all about making a difference and having fun while doing it. You
+          don&apos;t need to worry about being the perfect fit - just bring your passion and
+          you&apos;re good to go! We welcome all kinds. Whether you&apos;re a seasoned pro, just
+          starting out, or looking to learn something new, there&apos;s a place for you here.
+        </Typography>
+        <Typography variant="h6" component="article" sx={{ px: { xs: 0, md: '1rem' }, mb: '1em' }}>
+          Let&apos;s make a positive impact together! Contribute what you can, when you can, and
+          know that your efforts are appreciated.
         </Typography>
         <Grid
           container
@@ -97,7 +111,8 @@ const VolunteerBrief = () => {
         <Button
           variant="contained"
           sx={{
-            mt: '2rem'
+            mt: { xs: '2em', md: '2em' },
+            mb: { xs: '1em', md: 0 }
           }}
           onClick={scrollToTop}
         >
