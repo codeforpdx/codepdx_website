@@ -1,35 +1,23 @@
 ---
 name: Feature request
 about: Suggest an idea for this project
-title: ''
-labels: ''
+title: '[Feature Request] - Your Title Here '
+labels: 'new feature'
 assignees: ''
----
-
-### Figma link for component:
-
-A link to the section of Figma board.
 
 ---
 
 ### Feature Description:
+Briefly describe the feature.
 
-Please provide a DETAILED description of the proposed feature.
-
----
+### Problem it Solves:
+Describe the problem that this feature would solve. Explain any current workaround and how this will solve it.
 
 ### Proposed Solution:
+If you have a specific solution in mind, outline it here. Include as many details as possible about how this feature should work and any considerations that need to be taken into account.
 
-If you have a solution in mind, please outline it here.
+### Alternatives Considered:
+A clear and concise description of any alternative solutions or features you've considered and why they could or could not work.
 
----
-
-### Alternative Solutions:
-
-If there are alternative ways to solve this problem, please list them here.
-
----
-
-### Screenshots (if applicable):
-
-Include any screenshots that may be helpful.
+### Additional Context:
+Add any other context or screenshots about the feature request here. If you have mock-ups, prototypes, or any visual aids that could help illustrate the feature, please include them.
