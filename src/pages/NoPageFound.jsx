@@ -1,6 +1,5 @@
 // React Imports
 import { useEffect, useState } from 'react';
-// React Router Imports
 import { useNavigate } from 'react-router-dom';
 // Material UI Imports
 import Box from '@mui/material/Box';

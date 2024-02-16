@@ -1,4 +1,4 @@
-// React Router Imports
+// React Imports
 import { Link as ReactRouterLink } from 'react-router-dom';
 // Material UI Imports
 import Box from '@mui/material/Box';
