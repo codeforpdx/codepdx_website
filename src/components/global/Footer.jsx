@@ -102,11 +102,15 @@ const renderLegalLinks = (navigate) => {
               color: 'primary.main'
             }
           }}
-          onClick={(event) => {
-            event.preventDefault();
-            navigate('/');
-            window.scrollTo({ top: 0, left: 0 });
-          }}
+          onClick={
+            link.title === 'CODE PDX'
+              ? (event) => {
+                  event.preventDefault();
+                  navigate('/');
+                  window.scrollTo({ top: 0, left: 0 });
+                }
+              : null
+          }
         >
           {link.title}
         </Link>
