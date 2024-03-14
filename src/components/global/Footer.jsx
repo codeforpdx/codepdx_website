@@ -1,5 +1,3 @@
-// React Router Imports
-import { useNavigate } from 'react-router-dom';
 // Material UI Imports
 import Box from '@mui/material/Box';
 import Container from '@mui/system/Container';
@@ -75,7 +73,7 @@ const renderSocialLinks = socialMediaLinks.map(({ ariaLabel, href, icon }) => (
 ));
 
 // Maps legalLinks used for placement in stack below
-const renderLegalLinks = (navigate) => {
+const renderLegalLinks = () => {
   return legalLinks.map((link, index) => (
     <Box key={link.title + index}>
       <Typography
@@ -106,7 +104,6 @@ const renderLegalLinks = (navigate) => {
             link.title === 'CODE PDX'
               ? (event) => {
                   event.preventDefault();
-                  navigate('/');
                   window.scrollTo({ top: 0, left: 0 });
                 }
               : null
@@ -167,7 +164,6 @@ const footerContainerStyle = (theme) => ({
 
 const Footer = () => {
   const theme = useTheme();
-  const navigate = useNavigate();
 
   return (
     // This container contains the entire footer
@@ -205,7 +201,7 @@ const Footer = () => {
           }
         }}
       >
-        {renderLegalLinks(navigate)}
+        {renderLegalLinks()}
       </Box>
     </Container>
   );
