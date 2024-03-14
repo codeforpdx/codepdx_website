@@ -4,6 +4,9 @@
 
 The website is currently live at www.codepdx.org. Detailed information for those looking to contribute can be found in [contributing.md](./contributing.md). Check the issues tab for current issues or feel free to create your own, write some code, then make a pull request. The fastest way to reach out for questions is the website-general channel in discord. 
 
+
+**to install prerequisites**
+
  1. Clone this repo to your local computer:
     ```bash
     git clone https://github.com/codeforpdx/codepdx_website.git
@@ -13,8 +16,10 @@ The website is currently live at www.codepdx.org. Detailed information for those
     cd codepdx_website
     ``` 
 3. If you don't have nvm, install that:
-    For Mac, Linux, and other POSIX users: https://github.com/nvm-sh/nvm
-    For Windows users: https://github.com/coreybutler/nvm-windows
+
+- For Mac, Linux, and other POSIX users: [https://github.com/nvm-sh/nvm](https://github.com/nvm-sh/nvm)
+- For Windows users: [https://github.com/coreybutler/nvm-windows](https://github.com/coreybutler/nvm-windows)
+
 4. If you don't have node, install it using nvm by running:
    ```bash
    nvm install node
