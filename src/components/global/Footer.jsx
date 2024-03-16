@@ -1,5 +1,3 @@
-// React Router Imports
-import { Link as ReactRouterLink } from 'react-router-dom';
 // Material UI Imports
 import Box from '@mui/material/Box';
 import Container from '@mui/system/Container';
@@ -13,10 +11,6 @@ import { FaDiscord, FaGithub, FaLinkedin, FaMeetup } from 'react-icons/fa6';
 
 // Legal links
 const legalLinks = [
-  // {
-  //   href: 'https://www.codepdx.org/',
-  //   title: 'About'
-  // },
   {
     href: 'https://github.com/codeforpdx/codeofconduct',
     title: 'Code of Conduct'
@@ -51,16 +45,15 @@ const socialMediaLinks = [
     ariaLabel: 'Meetup.com'
   },
   {
-    href: 'https://discord.gg/x6b573et',
+    href: 'https://discord.gg/7SjkuMmkQq',
     icon: <FaDiscord size={45} />,
     ariaLabel: 'Discord'
   }
 ];
 
-// renders socialMediaLinks for placement in stack below
+// Renders socialMediaLinks for placement in stack below
 const renderSocialLinks = socialMediaLinks.map(({ ariaLabel, href, icon }) => (
   <Link
-    component={ReactRouterLink}
     key={href}
     href={href}
     aria-label={`Check us out on ${ariaLabel}`}
@@ -79,41 +72,49 @@ const renderSocialLinks = socialMediaLinks.map(({ ariaLabel, href, icon }) => (
   </Link>
 ));
 
-// maps legalLinks used for placement in stack below
-const renderLegalLinks = legalLinks.map((link, index) => (
-  <Box key={link.title + index}>
-    <Typography
-      key={link.title}
-      variant="body1"
-      color="tertiary.main"
-      mr={{ sm: '10px' }}
-      sx={{
-        display: 'flex',
-        justifyContent: { xs: 'center', sm: 'flex-end' },
-        p: { xs: '10px', sm: '5px' }
-      }}
-    >
-      {link.text ?? null}
-      <Link
-        component={ReactRouterLink}
-        to={link.href}
-        target="_blank"
-        rel="noopener noreferrer"
-        underline="none"
-        aria-label={`${link.title}`}
-        ml={link.ml ?? null}
+// Maps legalLinks used for placement in stack below
+const renderLegalLinks = () => {
+  return legalLinks.map((link, index) => (
+    <Box key={link.title + index}>
+      <Typography
+        variant="body1"
+        color="tertiary.main"
+        mr={{ sm: '10px' }}
         sx={{
-          color: '#000',
-          '&:hover': {
-            color: 'primary.main'
-          }
+          display: 'flex',
+          justifyContent: { xs: 'center', sm: 'flex-end' },
+          p: { xs: '10px', sm: '5px' }
         }}
       >
-        {link.title}
-      </Link>
-    </Typography>
-  </Box>
-));
+        {link.text ?? null}
+        <Link
+          href={link.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          underline="none"
+          aria-label={`${link.title}`}
+          ml={link.ml ?? null}
+          sx={{
+            color: '#000',
+            '&:hover': {
+              color: 'primary.main'
+            }
+          }}
+          onClick={
+            link.title === 'CODE PDX'
+              ? (event) => {
+                  event.preventDefault();
+                  window.scrollTo({ top: 0, left: 0 });
+                }
+              : null
+          }
+        >
+          {link.title}
+        </Link>
+      </Typography>
+    </Box>
+  ));
+};
 
 const footerContainerStyle = (theme) => ({
   display: 'flex',
@@ -165,9 +166,9 @@ const Footer = () => {
   const theme = useTheme();
 
   return (
-    // this container contains the entire footer
+    // This container contains the entire footer
     <Container component="footer" maxWidth="100%" sx={footerContainerStyle}>
-      {/* this box contains the blob behind the roseLogo */}
+      {/* This box contains the blob behind the roseLogo */}
       {/* <Box sx={logoBlobStyle}></Box> */}
       <Stack direction={{ xs: 'row', sm: 'column', lg: 'row' }} flex={1}>
         {/* roseLogo box */}
@@ -186,11 +187,11 @@ const Footer = () => {
           CODE PDX
         </Typography>
       </Stack>
-      {/* this box contains social links*/}
+      {/* This box contains the social media links */}
       <Stack direction="row" spacing={{ xs: 2, sm: 3 }}>
         {renderSocialLinks}
       </Stack>
-      {/* this box contains the legal links and hook to add padding on viewport scale down */}
+      {/* This box contains the legal links and hook to add padding on viewport scale down */}
       <Box
         sx={{
           flex: '1',
@@ -200,7 +201,7 @@ const Footer = () => {
           }
         }}
       >
-        {renderLegalLinks}
+        {renderLegalLinks()}
       </Box>
     </Container>
   );
