@@ -1,6 +1,5 @@
 // React Imports
 import { useState, useRef } from 'react';
-// React Router Imports
 import { Link } from 'react-router-dom';
 // Material UI Imports
 import AppBar from '@mui/material/AppBar';

@@ -1,9 +1,9 @@
-// PropTypes Imports
-import PropTypes from 'prop-types';
 // React Imports
 import { useEffect } from 'react';
 import { Link as ReactRouterLink, useLocation } from 'react-router-dom';
 import { IconContext } from 'react-icons';
+// PropTypes Imports
+import PropTypes from 'prop-types';
 // Material UI Imports
 import Box from '@mui/material/Box';
 import CardContent from '@mui/material/CardContent';
