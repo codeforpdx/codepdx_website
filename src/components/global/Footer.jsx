@@ -1,5 +1,3 @@
-// React Imports
-import { Link as ReactRouterLink } from 'react-router-dom';
 // Material UI Imports
 import Box from '@mui/material/Box';
 import Container from '@mui/system/Container';
