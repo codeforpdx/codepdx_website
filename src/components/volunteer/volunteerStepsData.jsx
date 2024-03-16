@@ -49,7 +49,7 @@ const volunteerStepsData = [
     listItems: [
       {
         preText: 'Join the ',
-        link: 'https://discord.gg/qQ2sNXMagU',
+        link: 'https://discord.gg/7SjkuMmkQq',
         linkText: 'CODE PDX Discord server',
         postText:
           ' and self assign roles. These roles will display project channels and help others identify the roles you intend to fulfill.',

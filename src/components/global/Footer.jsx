@@ -45,7 +45,7 @@ const socialMediaLinks = [
     ariaLabel: 'Meetup.com'
   },
   {
-    href: 'https://discord.com/invite/qQ2sNXMagU',
+    href: 'https://discord.gg/7SjkuMmkQq',
     icon: <FaDiscord size={45} />,
     ariaLabel: 'Discord'
   }
