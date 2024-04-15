@@ -19,6 +19,7 @@ import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 // Prop Types
 import PropTypes from 'prop-types';
+import { useTheme } from '@emotion/react';
 
 // const logoBlobStyle = {
 //   position: 'absolute',
@@ -31,10 +32,8 @@ import PropTypes from 'prop-types';
 //   backgroundRepeat: 'no-repeat',
 //   maxWidth: '200px'
 // };
-
 const navTextStyle = {
   textDecoration: 'none',
-  color: 'inherit',
   justifyContent: 'center',
   '&:hover': {
     transform: 'scale(1.2)',
@@ -44,7 +43,6 @@ const navTextStyle = {
 };
 
 const hamburgerMenuTextStyle = {
-  color: 'inherit',
   justifyContent: 'center',
   transition: ' transform 0.3s, textDecoration 0.3s',
   pt: '15px',
@@ -103,15 +101,11 @@ const DarkModeToggle = styled(Switch)(({ theme }) => ({
 }));
 
 function NavBar({ darkMode, handleThemeChange }) {
-  // const [darkMode, setDarkMode] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const theme = useTheme();
 
   // anchor for menu to pop from
   const anchorRef = useRef(null);
-
-  // const handleThemeChange = () => {
-  //   setDarkMode(!darkMode);
-  // };
 
   const handleToggle = () => {
     setMenuOpen(!menuOpen);
@@ -123,25 +117,35 @@ function NavBar({ darkMode, handleThemeChange }) {
 
   const menuItems = (
     <List>
-      <ListItem sx={hamburgerMenuTextStyle} component={Link} to="/" onClick={handleClose}>
+      <ListItem
+        sx={{ ...hamburgerMenuTextStyle, color: theme.palette.primary.contrastText }}
+        component={Link}
+        to="/"
+        onClick={handleClose}
+      >
         Home
       </ListItem>
-      <ListItem sx={hamburgerMenuTextStyle} component={Link} to="/projects" onClick={handleClose}>
+      <ListItem
+        sx={{ ...hamburgerMenuTextStyle, color: theme.palette.primary.contrastText }}
+        component={Link}
+        to="/projects"
+        onClick={handleClose}
+      >
         Projects
       </ListItem>
-      <ListItem sx={hamburgerMenuTextStyle} component={Link} to="/volunteer" onClick={handleClose}>
+      <ListItem
+        sx={{ ...hamburgerMenuTextStyle, color: theme.palette.primary.contrastText }}
+        component={Link}
+        to="/volunteer"
+        onClick={handleClose}
+      >
         Volunteer
       </ListItem>
     </List>
   );
 
   return (
-    <AppBar
-      ref={anchorRef}
-      component="nav"
-      position="static"
-      color={/*darkMode ? 'dark' :*/ 'primary'}
-    >
+    <AppBar ref={anchorRef} component="nav" position="static" color={'primary'} enableColorOnDark>
       <Toolbar sx={{ height: '100px', alignItems: 'center' }}>
         {/* <Box sx={logoBlobStyle} display={{ xs: 'none', md: 'block' }} /> */}
         <Link to="/" style={navTextStyle} aria-label="Home">
@@ -223,7 +227,8 @@ function NavBar({ darkMode, handleThemeChange }) {
             '& .navPopoverPaper': {
               width: '100%',
               maxWidth: '100%',
-              ml: '-16px'
+              ml: '-16px',
+              borderRadius: '0'
             }
           }}
           TransitionComponent={Grow}
