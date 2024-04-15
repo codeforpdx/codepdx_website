@@ -10,7 +10,11 @@ import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeli
 // Component Imports
 import volunteerStepsData from './volunteerStepsData';
 
-const getBackgroundStyle = (isSingleColumn, index) => {
+const getBackgroundStyle = (isSingleColumn, index, theme) => {
+  if (theme.palette.mode === 'dark') {
+    return theme.palette.primary.main;
+  }
+  // gradient only for light mode
   if (isSingleColumn) {
     return 'linear-gradient(0deg, rgba(217, 217, 217, 0) 38.54%, rgba(217, 217, 217, 0.4) 82.29%)';
   } else if (index % 2 === 0) {
@@ -28,8 +32,15 @@ const VolunteerSteps = () => {
       {volunteerStepsData.map(({ title, subtitle, icon, listItems, extraText }, index) => (
         <VerticalTimelineElement
           key={title}
-          contentStyle={{ background: getBackgroundStyle(isSingleColumn, index) }}
-          contentArrowStyle={{ borderRight: '7px solid rgba(217, 217, 217, 0.4)' }}
+          contentStyle={{
+            border: theme.palette.mode === 'dark' ? '2px #fff solid' : '',
+            background: getBackgroundStyle(isSingleColumn, index, theme)
+          }}
+          contentArrowStyle={{
+            borderRight: `7px solid ${
+              theme.palette.mode === 'dark' ? 'rgba(255, 255, 255, 1)' : 'rgba(217, 217, 217, 0.4)'
+            }`
+          }}
           iconStyle={{ background: theme.palette.primary.main, color: '#fff' }}
           icon={icon}
         >
@@ -56,7 +67,7 @@ const VolunteerSteps = () => {
                       target="_blank"
                       rel="noreferrer"
                       style={{
-                        color: theme.palette.primary.main,
+                        color: theme.palette.primary.contrastText,
                         textDecoration: 'none',
                         fontWeight: 600
                       }}
