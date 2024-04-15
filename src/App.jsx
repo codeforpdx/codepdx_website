@@ -18,8 +18,8 @@ function App() {
 
   return (
     <>
-      <CssBaseline />
       <ThemeProvider theme={theme}>
+        <CssBaseline />
         <BrowserRouter>
           <Layout darkMode={isDarkMode} setDarkMode={setIsDarkMode} />
         </BrowserRouter>
