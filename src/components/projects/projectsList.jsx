@@ -19,7 +19,7 @@ const projectsList = [
         icon: <FaDiscord />
       },
       {
-        href: 'https://codeforpdx.github.io/recordexpungPDX',
+        href: 'https://recordsponge.com/',
         icon: <FaEarthAmericas />
       }
     ],
