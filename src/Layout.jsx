@@ -7,11 +7,13 @@ import Navbar from './components/global/Navbar';
 import NoPageFound from './pages/NoPageFound';
 import Projects from './pages/Projects';
 import Volunteer from './pages/Volunteer';
+// Props Types
+import PropTypes from 'prop-types';
 
-const Layout = () => {
+const Layout = ({ darkMode, handleThemeChange }) => {
   return (
     <>
-      <Navbar />
+      <Navbar darkMode={darkMode} handleThemeChange={handleThemeChange} />
       <main>
         <Routes>
           <Route exact path="/" element={<Home />} />
@@ -24,5 +26,8 @@ const Layout = () => {
     </>
   );
 };
-
+Layout.propTypes = {
+  darkMode: PropTypes.bool.isRequired,
+  handleThemeChange: PropTypes.func.isRequired
+};
 export default Layout;
