@@ -5,10 +5,6 @@ const getTheme = (mode) =>
     typography: { fontFamily: 'Mathilda, Monserrat, Roboto, sans-serif' },
     palette: {
       mode,
-      dark: {
-        main: '#121212',
-        contrastText: '#fff'
-      },
       primary: {
         main: mode === 'dark' ? '#121212' : '#56B6A1',
         contrastText: mode === 'dark' ? '#121212' : '#fff'
