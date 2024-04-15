@@ -63,10 +63,6 @@ const projectsList = [
       {
         href: 'https://github.com/codeforpdx',
         icon: <FaGithub />
-      },
-      {
-        href: 'https://www.codeforpdx.org/',
-        icon: <FaEarthAmericas />
       }
     ],
     techStack: ['Discord', 'GitHub', 'Google Meets']
