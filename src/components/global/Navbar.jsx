@@ -212,9 +212,8 @@ function NavBar({ darkMode, handleThemeChange }) {
         {/* Hamburger menu for smaller viewports */}
         <Hidden smUp>
           <IconButton
-            sx={{ ml: 'auto', mr: 3 }}
+            sx={{ ml: 'auto', mr: 3, fill: 'white' }}
             edge="end"
-            color="inherit"
             aria-label="menu"
             onClick={handleToggle}
           >
