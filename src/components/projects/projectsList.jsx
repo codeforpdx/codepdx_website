@@ -1,5 +1,5 @@
 // React Icons Imports
-import { FaDiscord, FaEarthAmericas, FaGithub } from 'react-icons/fa6';
+import { FaEarthAmericas, FaGithub } from 'react-icons/fa6';
 
 const projectsList = [
   {
@@ -15,11 +15,7 @@ const projectsList = [
         icon: <FaGithub />
       },
       {
-        href: 'https://discord.gg/x6b573et',
-        icon: <FaDiscord />
-      },
-      {
-        href: 'https://codeforpdx.github.io/recordexpungPDX',
+        href: 'https://recordsponge.com/',
         icon: <FaEarthAmericas />
       }
     ],
@@ -51,10 +47,6 @@ const projectsList = [
         icon: <FaGithub />
       },
       {
-        href: 'https://discord.gg/x6b573et',
-        icon: <FaDiscord />
-      },
-      {
         href: 'https://passsmartwallet-967e217a2652.herokuapp.com/',
         icon: <FaEarthAmericas />
       }
@@ -71,14 +63,6 @@ const projectsList = [
       {
         href: 'https://github.com/codeforpdx',
         icon: <FaGithub />
-      },
-      {
-        href: 'https://discord.gg/JcKBq7nXvf',
-        icon: <FaDiscord />
-      },
-      {
-        href: 'https://www.codeforpdx.org/',
-        icon: <FaEarthAmericas />
       }
     ],
     techStack: ['Discord', 'GitHub', 'Google Meets']

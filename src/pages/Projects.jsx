@@ -68,7 +68,13 @@ const ProjectTitle = ({ index, title, logo, links }) => {
         />
       )}
       {links && (
-        <Stack direction="row" justifyContent="space-evenly" width="100%" pt={{ xs: 2, md: 4 }}>
+        <Stack
+          direction="row"
+          justifyContent="center"
+          width="100%"
+          spacing={{ xs: 5, md: 10 }}
+          pt={{ xs: 2, md: 4 }}
+        >
           <IconContext.Provider value={{ size: iconSize }}>
             {links.map(({ href, icon }) => (
               <Link
