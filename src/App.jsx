@@ -16,12 +16,16 @@ function App() {
   const [isDarkMode, setIsDarkMode] = useState(prefersDark);
   const theme = useMemo(() => getTheme(isDarkMode ? 'dark' : 'light'), [isDarkMode]);
 
+  const handleThemeChange = () => {
+    setIsDarkMode((prev) => !prev);
+  };
+
   return (
     <>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <BrowserRouter>
-          <Layout darkMode={isDarkMode} setDarkMode={setIsDarkMode} />
+          <Layout darkMode={isDarkMode} handleThemeChange={handleThemeChange} />
         </BrowserRouter>
       </ThemeProvider>
     </>
