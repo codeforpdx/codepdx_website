@@ -6,8 +6,8 @@ const getTheme = (mode) =>
     palette: {
       mode,
       primary: {
-        main: mode === 'dark' ? '#121212' : '#56B6A1',
-        contrastText: mode === 'dark' ? '#121212' : '#fff'
+        main: mode === 'dark' ? '#1D1B20' : '#56B6A1',
+        contrastText: mode === 'dark' ? '#fff' : '#1D1B20'
       },
       secondary: {
         main: '#B6ECE2',

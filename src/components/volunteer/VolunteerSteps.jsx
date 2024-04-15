@@ -23,7 +23,6 @@ const getBackgroundStyle = (isSingleColumn, index) => {
 const VolunteerSteps = () => {
   const theme = useTheme();
   const isSingleColumn = useMediaQuery('(max-width:1169px)');
-
   return (
     <VerticalTimeline animate lineColor={theme.palette.secondary.main}>
       {volunteerStepsData.map(({ title, subtitle, icon, listItems, extraText }, index) => (
