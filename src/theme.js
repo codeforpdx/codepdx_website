@@ -7,7 +7,8 @@ const getTheme = (mode) =>
       mode,
       primary: {
         main: mode === 'dark' ? '#1D1B20' : '#56B6A1',
-        contrastText: mode === 'dark' ? '#fff' : '#1D1B20'
+        contrastText: mode === 'dark' ? '#fff' : '#1D1B20',
+        boxOutline: mode === 'dark' ? '#30363d' : '#B6ECE2'
       },
       secondary: {
         main: '#B6ECE2',
