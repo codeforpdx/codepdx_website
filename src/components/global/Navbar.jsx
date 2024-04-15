@@ -162,7 +162,11 @@ function NavBar({ darkMode, handleThemeChange }) {
           />
         </Link>
         <Typography component="h1" variant="h4" display={{ xs: 'none', sm: 'block' }} pl={'10px'}>
-          <Link to="/" style={navTextStyle} aria-label="CODE PDX">
+          <Link
+            to="/"
+            style={{ ...navTextStyle, color: theme.palette.primary.contrastText }}
+            aria-label="CODE PDX"
+          >
             CODE PDX
           </Link>
         </Typography>
@@ -173,9 +177,13 @@ function NavBar({ darkMode, handleThemeChange }) {
           ml={'auto'}
           display={{ xs: 'none', sm: 'block' }}
           marginRight={2}
-          sx={navTextStyle}
+          sx={{ ...navTextStyle, color: theme.palette.primary.contrastText }}
         >
-          <Link to="/" style={navTextStyle} aria-label="Home">
+          <Link
+            to="/"
+            style={{ ...navTextStyle, color: theme.palette.primary.contrastText }}
+            aria-label="Home"
+          >
             Home
           </Link>
         </Typography>
@@ -184,9 +192,13 @@ function NavBar({ darkMode, handleThemeChange }) {
           // ml={'auto'}
           display={{ xs: 'none', sm: 'block' }}
           marginRight={2}
-          sx={navTextStyle}
+          sx={{ ...navTextStyle, color: theme.palette.primary.contrastText }}
         >
-          <Link to="/projects" style={navTextStyle} aria-label="Our Projects">
+          <Link
+            to="/projects"
+            style={{ ...navTextStyle, color: theme.palette.primary.contrastText }}
+            aria-label="Our Projects"
+          >
             Projects
           </Link>
         </Typography>
@@ -194,9 +206,13 @@ function NavBar({ darkMode, handleThemeChange }) {
           variant="body1"
           display={{ xs: 'none', sm: 'block' }}
           marginRight={2}
-          sx={navTextStyle}
+          sx={{ ...navTextStyle, color: theme.palette.primary.contrastText }}
         >
-          <Link to="/volunteer" style={navTextStyle} aria-label="Volunteer for CODE PDX">
+          <Link
+            to="/volunteer"
+            style={{ ...navTextStyle, color: theme.palette.primary.contrastText }}
+            aria-label="Volunteer for CODE PDX"
+          >
             Volunteer
           </Link>
         </Typography>
