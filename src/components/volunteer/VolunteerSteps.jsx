@@ -23,25 +23,41 @@ const getBackgroundStyle = (isSingleColumn, index, theme) => {
     return 'linear-gradient(270deg, rgba(217, 217, 217, 0) 38.54%, rgba(217, 217, 217, 0.4) 82.29%)';
   }
 };
+const getTimelineColor = (theme) => {
+  if (theme.palette.mode === 'dark') {
+    return {
+      color: '#eee',
+      boxShadow: `0 0 0 4px ${theme.palette.primary.boxOutline},inset 0 2px 0 rgba(0,0,0,.08),0 3px 0 4px rgba(0,0,0,.05)`
+    };
+  } else
+    return {
+      color: '#fff',
+      boxShadow: `0 0 0 4px ${theme.palette.primary.boxOutline},inset 0 2px 0 rgba(0,0,0,.08),0 3px 0 4px rgba(0,0,0,.05)`
+    };
+};
 
 const VolunteerSteps = () => {
   const theme = useTheme();
   const isSingleColumn = useMediaQuery('(max-width:1169px)');
   return (
-    <VerticalTimeline animate lineColor={theme.palette.secondary.main}>
+    <VerticalTimeline animate lineColor={theme.palette.primary.boxOutline}>
       {volunteerStepsData.map(({ title, subtitle, icon, listItems, extraText }, index) => (
         <VerticalTimelineElement
           key={title}
           contentStyle={{
-            border: theme.palette.mode === 'dark' ? '2px #fff solid' : '',
+            boxShadow: theme.palette.mode === 'dark' ? 'none' : '0 3px #ddd',
+            border:
+              theme.palette.mode === 'dark' && `1px ${theme.palette.primary.boxOutline} solid`,
             background: getBackgroundStyle(isSingleColumn, index, theme)
           }}
           contentArrowStyle={{
             borderRight: `7px solid ${
-              theme.palette.mode === 'dark' ? 'rgba(255, 255, 255, 1)' : 'rgba(217, 217, 217, 0.4)'
+              theme.palette.mode === 'dark'
+                ? theme.palette.primary.boxOutline
+                : 'rgba(217, 217, 217, 0.4)'
             }`
           }}
-          iconStyle={{ background: theme.palette.primary.main, color: '#fff' }}
+          iconStyle={{ background: theme.palette.primary.main, ...getTimelineColor(theme) }}
           icon={icon}
         >
           <Typography
