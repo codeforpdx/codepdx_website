@@ -17,6 +17,7 @@ import { useMediaQuery } from '@mui/material';
 // Component Imports
 import Hero from '../components/global/Hero/Hero';
 import projectsList from '../components/projects/projectsList';
+import { useTheme } from '@emotion/react';
 
 const linkStyle = {
   color: '#000',
@@ -27,17 +28,21 @@ const linkStyle = {
   }
 };
 
-const boxStyle = (index) => ({
+const boxStyle = (index, theme) => ({
   mb: { xs: 5, sm: 10 },
   p: 2,
   borderRadius: '25px',
-  background: {
-    md:
-      index % 2 === 0
-        ? 'linear-gradient(270deg, rgba(217, 217, 217, 0) 25.54%, rgba(217, 217, 217, 0.4) 54.29%)'
-        : 'linear-gradient(90deg, rgba(217, 217, 217, 0) 25.54%, rgba(217, 217, 217, 0.4) 54.29%)',
-    xs: 'linear-gradient(0deg, rgba(217, 217, 217, 0) 18.54%, rgba(217, 217, 217, 0.4) 82.29%)'
-  },
+  border: theme.palette.mode === 'dark' ? `1px ${theme.palette.primary.boxOutline} solid` : 'none',
+  background:
+    theme.palette.mode === 'dark'
+      ? `${theme.palette.primary.cardFill}`
+      : {
+          md:
+            index % 2 === 0
+              ? 'linear-gradient(270deg, rgba(217, 217, 217, 0) 25.54%, rgba(217, 217, 217, 0.4) 54.29%)'
+              : 'linear-gradient(90deg, rgba(217, 217, 217, 0) 25.54%, rgba(217, 217, 217, 0.4) 54.29%)',
+          xs: 'linear-gradient(0deg, rgba(217, 217, 217, 0) 18.54%, rgba(217, 217, 217, 0.4) 82.29%)'
+        },
   display: 'flex',
   flexDirection: { xs: 'column', md: 'row' }
 });
@@ -202,7 +207,7 @@ ProjectInfo.propTypes = {
 
 const Projects = () => {
   ProjectLocation();
-
+  const theme = useTheme();
   return (
     <>
       <Hero
@@ -232,7 +237,7 @@ const Projects = () => {
               .replace(/[^a-zA-Z0-9-_]/g, '')
               .toLowerCase()}
             key={title}
-            sx={boxStyle(index)}
+            sx={boxStyle(index, theme)}
           >
             <ProjectTitle index={index} title={title} logo={logo} links={links} />
             <ProjectInfo
