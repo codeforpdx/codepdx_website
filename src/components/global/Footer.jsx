@@ -60,11 +60,11 @@ const renderSocialLinks = socialMediaLinks.map(({ ariaLabel, href, icon }) => (
     target="_blank"
     rel="noopener"
     sx={{
-      color: '#000',
+      color: 'primary.contrastText',
       display: 'flex',
       py: '25px',
       '&:hover': {
-        color: 'secondary.main'
+        color: 'senary.main'
       }
     }}
   >
