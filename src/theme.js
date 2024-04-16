@@ -8,6 +8,8 @@ const getTheme = (mode) =>
       primary: {
         main: mode === 'dark' ? '#1D1B20' : '#56B6A1',
         contrastText: mode === 'dark' ? '#fff' : '#1D1B20',
+        starkContrast: mode === 'dark' ? '#fff' : '#000',
+        invertContrast: mode === 'dark' ? '#000' : '#fff',
         boxOutline: mode === 'dark' ? '#30363d' : '#B6ECE2',
         cardFill: mode === 'dark' ? 'rgb(29, 27, 32)' : 'rgba(217, 217, 217, 0.4)'
       },
