@@ -104,7 +104,7 @@ const VolunteerSteps = () => {
                     target="_blank"
                     rel="noreferrer"
                     style={{
-                      color: theme.palette.primary.main,
+                      color: theme.palette.primary.contrastText,
                       textDecoration: 'none',
                       fontWeight: 600
                     }}
