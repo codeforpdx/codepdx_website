@@ -20,7 +20,6 @@ import projectsList from '../components/projects/projectsList';
 import { useTheme } from '@emotion/react';
 
 const linkStyle = {
-  color: '#000',
   textDecoration: 'none',
   display: 'flex',
   '&:hover': {
@@ -50,7 +49,7 @@ const boxStyle = (index, theme) => ({
 const ProjectTitle = ({ index, title, logo, links }) => {
   const isSmallScreen = useMediaQuery('(max-width:500px)');
   const iconSize = isSmallScreen ? '30' : '45';
-
+  const theme = useTheme();
   return (
     <Stack
       minWidth={{ xs: '100%', md: '50%' }}
@@ -88,7 +87,14 @@ const ProjectTitle = ({ index, title, logo, links }) => {
                 to={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                sx={linkStyle}
+                sx={{
+                  ...linkStyle,
+                  '&:hover': { color: 'senary.main' },
+                  color:
+                    theme.palette.mode === 'dark'
+                      ? `${theme.palette.primary.starkContrast}`
+                      : '#000'
+                }}
               >
                 {icon}
               </Link>
