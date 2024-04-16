@@ -28,7 +28,12 @@ const getTheme = (mode) =>
         contrastText: '#fff'
       },
       senary: {
-        main: '#56B6A1'
+        main: '#56B6A1',
+        contrastText: '#fff'
+      },
+      septenary: {
+        main: mode === 'dark' ? '#56B6A1' : '#1D1B20',
+        contrastText: '#fff'
       }
     }
   });

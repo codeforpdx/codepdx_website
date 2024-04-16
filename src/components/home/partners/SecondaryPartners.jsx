@@ -11,6 +11,9 @@ import { PropTypes } from 'prop-types';
 // Component Imports
 import { secondaryPartnerList } from './secondaryPartnerList';
 
+// Rename useTheme due to namespace clash
+import { useTheme as useEmotionTheme } from '@emotion/react';
+
 const secondaryPartnerProps = {
   index: PropTypes.number.isRequired,
   bulletedList: PropTypes.array,
@@ -45,6 +48,8 @@ const LargeScreenComponent = ({
   testimonialAuthorTwo,
   website
 }) => {
+  const theme = useEmotionTheme();
+
   const gradientStyle =
     index % 2 === 0
       ? 'linear-gradient(90deg, rgba(217, 217, 217, 0) 38.54%, rgba(217, 217, 217, 0.4) 82.29%)'
@@ -55,7 +60,8 @@ const LargeScreenComponent = ({
     <Grid
       container
       sx={{
-        background: gradientStyle,
+        background:
+          theme.palette.mode === 'dark' ? `${theme.palette.primary.cardFill}` : gradientStyle,
         borderRadius: '30px',
         minHeight: '450px',
         marginBottom: '100px',
@@ -116,12 +122,15 @@ const SmallScreenComponent = ({
   testimonialAuthorTwo,
   website
 }) => {
+  const theme = useEmotionTheme();
   return (
     <Grid
       container
       sx={{
         background:
-          'linear-gradient(180deg, rgba(217, 217, 217, 0) 38.54%, rgba(217, 217, 217, 0.4) 82.29%)',
+          theme.palette.mode === 'dark'
+            ? `${theme.palette.primary.cardFill}`
+            : 'linear-gradient(180deg, rgba(217, 217, 217, 0) 38.54%, rgba(217, 217, 217, 0.4) 82.29%)',
         borderRadius: '30px',
         minHeight: 'auto',
         marginBottom: '15%'

@@ -1,4 +1,5 @@
 // Material UI Imports
+import { useTheme } from '@emotion/react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
@@ -41,13 +42,18 @@ const displaySponsorValuesInGrid = ({ title, description }) => {
 };
 
 const PrimaryPartner = () => {
+  const theme = useTheme();
+
   return (
     <Container
       sx={{
         mb: '100px',
         borderRadius: '30px',
+        paddingTop: theme.palette.mode === 'dark' ? '10px' : '0px',
         background:
-          'linear-gradient(180deg, rgba(217, 217, 217, 0) 24.86%, rgba(217, 217, 217, 0.4) 70.55%)'
+          theme.palette.mode === 'dark'
+            ? `${theme.palette.primary.cardFill}`
+            : 'linear-gradient(180deg, rgba(217, 217, 217, 0) 24.86%, rgba(217, 217, 217, 0.4) 70.55%)'
       }}
     >
       <Box
