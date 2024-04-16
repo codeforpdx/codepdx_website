@@ -27,7 +27,7 @@ const CallToAction = () => {
           </Typography>
         </Grid>
         <Grid item xs={12}>
-          <Button variant="contained" color="primary" size="large" onClick={handleContactForm}>
+          <Button variant="contained" color="septenary" size="large" onClick={handleContactForm}>
             Contact us
           </Button>
         </Grid>
