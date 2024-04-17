@@ -31,6 +31,7 @@ import Typography from '@mui/material/Typography';
 // };
 
 const navTextStyle = {
+  fontWeight: 600,
   textDecoration: 'none',
   color: 'inherit',
   justifyContent: 'center',
