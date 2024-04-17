@@ -31,7 +31,6 @@ import Typography from '@mui/material/Typography';
 // };
 
 const navTextStyle = {
-  fontWeight: 600,
   textDecoration: 'none',
   color: 'inherit',
   justifyContent: 'center',
@@ -170,7 +169,7 @@ function NavBar() {
           marginRight={2}
           sx={navTextStyle}
         >
-          <Link to="/" style={navTextStyle} aria-label="Home">
+          <Link to="/" style={{ ...navTextStyle, fontWeight: 600 }} aria-label="Home">
             Home
           </Link>
         </Typography>
@@ -181,7 +180,11 @@ function NavBar() {
           marginRight={2}
           sx={navTextStyle}
         >
-          <Link to="/projects" style={navTextStyle} aria-label="Our Projects">
+          <Link
+            to="/projects"
+            style={{ ...navTextStyle, fontWeight: 600 }}
+            aria-label="Our Projects"
+          >
             Projects
           </Link>
         </Typography>
@@ -191,7 +194,11 @@ function NavBar() {
           marginRight={2}
           sx={navTextStyle}
         >
-          <Link to="/volunteer" style={navTextStyle} aria-label="Volunteer for CODE PDX">
+          <Link
+            to="/volunteer"
+            style={{ ...navTextStyle, fontWeight: 600 }}
+            aria-label="Volunteer for CODE PDX"
+          >
             Volunteer
           </Link>
         </Typography>
