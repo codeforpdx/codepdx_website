@@ -59,29 +59,22 @@ By participating in this project, you are expected to uphold our [Code of Conduc
      origin https://github.com/codeforpdx/codepdx_website.git (push)
      ```
 
-2. Create a new branch to work on your feature (We recommend doing this via terminal) Branches should all be based off of `Development`:
+2. Create a new branch to work on your feature (We recommend doing this via terminal) Branches should all be based off of `main`:
 
-   A. `git switch Development` or `git checkout Development` - to switch to the Development branch.
-
-   B. `git checkout -b "<your branch name>"` [learn more about git branches](https://www.atlassian.com/git/tutorials/using-branches/git-checkout) using the recommended naming convention:`<issue number><branch name>` with a concise title.
+   - `git checkout -b "<your branch name>"` [learn more about git branches](https://www.atlassian.com/git/tutorials/using-branches/git-checkout) using the recommended naming convention:`<issue number><branch name>` with a concise title.
 
    > Example: `112/delete-client-modal`
 
-  <!-- This section will need images reflecting the website repo not pass, cant do because on flight -->
+> This can also be done directly from an issue in GitHub with the following steps. If done manually via command line, link branch to corresponding GitHub issue.
+>
+> A. Create a branch by clicking `create a branch` under `main` within the issues page.
+>
+> <img width="200" alt="How to create a branch screenshot" src="https://github.com/codeforpdx/codepdx_website/assets/55254544/0e6999b7-8aac-4e70-aec0-444fff352ec3">
 
-> This can also be done directly from an issue in GitHub with the following three steps(Default branch is Master and will need to be changed to Development). If done manually via command line, link branch to corresponding GitHub issue.
+>  
+> B. Here you can change the branch source, the default should be `main`.  Click `Create branch` to get started.
 >
-> A. Create a branch by clicking `create a branch` under Development within the issues page.
->
->  <img src="https://drive.google.com/uc?id=11zUuOYSkv8K0CJE_snet12YSdyLDKP8q" width="200"/>
-
-> B. Select `change branch source`.
->
->  <img src="https://drive.google.com/uc?id=1ciU2NgtAjkEx3Pi5FnzxNxDjw0KkZXF-" width="200">
-
-> C. Select Development as the base branch.
->
->  <img src="https://drive.google.com/uc?id=1rqRkau7lxTVEcwRFc8NcHRf-Z4U_lVxb" width="200">
+> <img width="200" alt="Screenshot to create branch" src="https://github.com/codeforpdx/codepdx_website/assets/55254544/fdf31b6d-e490-4e0f-baba-bbb955753d6e">
 
 - Work on feature in your own branch.
 
@@ -95,7 +88,7 @@ By participating in this project, you are expected to uphold our [Code of Conduc
 
   If you are new to GitHub and/or the team, feel free to make your first pull request on the README/Contributing documentation to familiarize yourself with the project and GitHub. Add any comments and/or feedback and request reviews.
 
-- Make a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/requesting-a-pull-request-review) to the `Development` branch. Request reviews from members of the team - you’ll need their approval to merge. \*\*Make sure to close your branch once merged.
+- Make a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/requesting-a-pull-request-review) to the `main` branch. Request reviews from members of the team - you’ll need their approval to merge. \*\*Make sure to close your branch once merged.
 
 - ## Code Styling/Linting
 
