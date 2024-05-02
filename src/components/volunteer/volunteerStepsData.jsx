@@ -36,7 +36,7 @@ const volunteerStepsData = [
       },
       {
         preText: 'Read the ',
-        link: 'https://github.com/codeforpdx',
+        link: 'https://www.ada.gov/resources/web-guidance',
         linkText: 'ADA Compliance Guide',
         postText: ', all CODE PDX projects are inclusive by design.',
         numbered: true
