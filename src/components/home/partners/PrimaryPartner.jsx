@@ -1,5 +1,6 @@
 // Material UI Imports
 import { useTheme } from '@emotion/react';
+import { useMediaQuery } from '@mui/material';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
@@ -43,7 +44,14 @@ const displaySponsorValuesInGrid = ({ title, description }) => {
 
 const PrimaryPartner = () => {
   const theme = useTheme();
-
+  const isMinMd = useMediaQuery(theme.breakpoints.up('md'));
+  const darkModeStyles = {
+    backgroundImage:
+      theme.palette.mode === 'dark' ? 'url(/assets/partnerLogos/backgroundBlobs/blob3.webp)' : null,
+    backgroundRepeat: theme.palette.mode === 'dark' ? 'no-repeat' : null,
+    backgroundPosition: theme.palette.mode === 'dark' ? 'top' : null,
+    backgroundSize: theme.palette.mode === 'dark' ? (isMinMd ? '850px 250px' : '200% 130px') : null
+  };
   return (
     <Container
       sx={{
@@ -53,7 +61,8 @@ const PrimaryPartner = () => {
         background:
           theme.palette.mode === 'dark'
             ? `${theme.palette.primary.cardFill}`
-            : 'linear-gradient(180deg, rgba(217, 217, 217, 0) 24.86%, rgba(217, 217, 217, 0.4) 70.55%)'
+            : 'linear-gradient(180deg, rgba(217, 217, 217, 0) 24.86%, rgba(217, 217, 217, 0.4) 70.55%)',
+        ...darkModeStyles
       }}
     >
       <Box
@@ -63,12 +72,14 @@ const PrimaryPartner = () => {
         m={'auto'}
         alt="technology association of oregon logo"
         sx={{
+          zIndex: 2,
           content: {
             xs: 'url(/assets/partnerLogos/technology-association-of-oregon-logo-366x105.webp)',
             md: 'url(/assets/partnerLogos/technology-association-of-oregon-logo-600x172.webp)'
           }
         }}
       />
+
       <Typography
         component="h3"
         textAlign={'center'}

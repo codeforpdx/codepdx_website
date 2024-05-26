@@ -49,7 +49,15 @@ const LargeScreenComponent = ({
   website
 }) => {
   const theme = useEmotionTheme();
-
+  const darkModeStyles = {
+    backgroundImage:
+      theme.palette.mode === 'dark' && company === 'CETI'
+        ? 'url(/assets/partnerLogos/backgroundBlobs/blob3.webp)'
+        : null,
+    backgroundRepeat: theme.palette.mode === 'dark' ? 'no-repeat' : null,
+    backgroundPosition: theme.palette.mode === 'dark' ? 'center' : null,
+    backgroundSize: theme.palette.mode === 'dark' ? '360px 210px' : null
+  };
   const gradientStyle =
     index % 2 === 0
       ? 'linear-gradient(90deg, rgba(217, 217, 217, 0) 38.54%, rgba(217, 217, 217, 0.4) 82.29%)'
@@ -70,16 +78,27 @@ const LargeScreenComponent = ({
       key={company}
     >
       <Grid item md={6} {...partnerGridStyle} order={logoOrder}>
-        <a href={website} target="_blank" rel="noopener noreferrer">
-          <Box
-            component={'img'}
-            alt={`${company} logo`}
-            aria-label={`${company} logo`}
-            src={partnerLogo}
-            mb={'150px'}
-            width={'250px'}
-          ></Box>
-        </a>
+        <Container
+          sx={{
+            ...darkModeStyles,
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: 210,
+            width: 360
+          }}
+        >
+          <a href={website} target="_blank" rel="noopener noreferrer">
+            <Box
+              component={'img'}
+              alt={`${company} logo`}
+              aria-label={`${company} logo`}
+              src={partnerLogo}
+              mb={theme.palette.mode === 'dark' ? 0 : '150px'}
+              width={'250px'}
+            ></Box>
+          </a>
+        </Container>
       </Grid>
       <Grid item pl={'6%'} {...partnerGridStyle} order={contentOrder}>
         <Typography variant="body1" p={'5% 15% 3% 0'}>
@@ -123,6 +142,15 @@ const SmallScreenComponent = ({
   website
 }) => {
   const theme = useEmotionTheme();
+  const darkModeStyles = {
+    backgroundImage:
+      theme.palette.mode === 'dark' && company === 'CETI'
+        ? 'url(/assets/partnerLogos/backgroundBlobs/blob3.webp)'
+        : null,
+    backgroundRepeat: theme.palette.mode === 'dark' ? 'no-repeat' : null,
+    backgroundPosition: theme.palette.mode === 'dark' ? 'center' : null,
+    backgroundSize: theme.palette.mode === 'dark' ? '120% 90px' : null
+  };
   return (
     <Grid
       container
@@ -137,16 +165,27 @@ const SmallScreenComponent = ({
       }}
       key={company}
     >
-      <Grid item {...partnerGridStyle}>
-        <a href={website} target="_blank" rel="noopener noreferrer">
-          <Box
-            component={'img'}
-            alt={`${company} logo`}
-            aria-label={`${company} logo`}
-            src={mobilePartnerLogo}
-            width={'100px'}
-          ></Box>
-        </a>
+      <Grid item {...partnerGridStyle} pt={theme.palette.mode === 'dark' && '0px'}>
+        <Container
+          sx={{
+            ...darkModeStyles,
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: 120,
+            width: '100%'
+          }}
+        >
+          <a href={website} target="_blank" rel="noopener noreferrer">
+            <Box
+              component={'img'}
+              alt={`${company} logo`}
+              aria-label={`${company} logo`}
+              src={mobilePartnerLogo}
+              width={'100px'}
+            ></Box>
+          </a>
+        </Container>
       </Grid>
       <Grid item {...partnerGridStyle}>
         <Typography variant="body1" p={'5% 5% 5% 5%'}>
