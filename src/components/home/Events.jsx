@@ -148,7 +148,10 @@ const Events = () => {
                 left: 0,
                 width: '100%',
                 height: '100%',
-                border: 'none'
+                border: 'none',
+                opacity: theme.palette.mode === 'dark' ? 0.85 : null,
+                filter: theme.palette.mode === 'dark' ? 'invert(80%) hue-rotate(180deg)' : null,
+                transition: theme.palette.mode === 'dark' ? 'opacity 0.2s ease-in-out' : null
               }}
             />
           </div>
