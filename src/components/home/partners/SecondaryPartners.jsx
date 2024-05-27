@@ -145,7 +145,7 @@ const SmallScreenComponent = ({
   const darkModeStyles = {
     backgroundImage:
       theme.palette.mode === 'dark' && company === 'CETI'
-        ? 'url(/assets/partnerLogos/backgroundBlobs/blob3.webp)'
+        ? 'url(/assets/partnerLogos/backgroundBlobs/mobileBlob.webp)'
         : null,
     backgroundRepeat: theme.palette.mode === 'dark' ? 'no-repeat' : null,
     backgroundPosition: theme.palette.mode === 'dark' ? 'center' : null,
@@ -161,7 +161,8 @@ const SmallScreenComponent = ({
             : 'linear-gradient(180deg, rgba(217, 217, 217, 0) 38.54%, rgba(217, 217, 217, 0.4) 82.29%)',
         borderRadius: '30px',
         minHeight: 'auto',
-        marginBottom: '15%'
+        marginBottom: '15%',
+        overflow: 'hidden'
       }}
       key={company}
     >
@@ -173,7 +174,8 @@ const SmallScreenComponent = ({
             justifyContent: 'center',
             alignItems: 'center',
             height: 120,
-            width: '100%'
+            width: '100%',
+            mt: theme.palette.mode === 'dark' && company === 'CETI' ? '-15px' : null
           }}
         >
           <a href={website} target="_blank" rel="noopener noreferrer">

@@ -25,7 +25,6 @@ export const secondaryPartnerList = [
     testimonial:
       'CETI champions lifelong learning and collaborative, interdisciplinary innovation in creative and emergent technologies. Through radically inclusive community participation, we rapidly build expertise for an astonishing diverse group of people. CETI contends that our most urgent challenges can be imaginatively addressed through art, storytelling and invention.',
     partnerLogo: '/assets/partnerLogos/cetiLogo.svg',
-    partnerLogoVariant: '/assets/partnerLogos/cetiLogoWhite.svg',
     mobilePartnerLogo: '/assets/partnerLogos/cetiLogo.svg',
     website: 'https://ceti.institute/'
   },
