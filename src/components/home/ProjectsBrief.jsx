@@ -38,44 +38,46 @@ const cardStyle = (theme, isSmallScreen) => {
   };
 };
 
-const renderProjectBriefCard = (title, description, logo, theme, isSmallScreen) => (
-  <Grid key={title} item xs={12} md={6} lg={4}>
-    <Card sx={cardStyle(theme, isSmallScreen)}>
-      <CardContent>
-        {logo && (
-          <CardMedia
-            component="img"
-            image={logo}
-            alt={`${title} logo`}
-            sx={{
-              mx: 'auto',
-              objectFit: 'contain',
-              maxWidth: '90%',
-              height: '70px'
-            }}
-          />
-        )}
-        {description && (
-          <Typography variant="body1" textAlign="center" sx={{ py: { xs: '1rem', sm: '2rem' } }}>
-            {description}
-          </Typography>
-        )}
-      </CardContent>
-      <CardActions>
-        <Link
-          to={`/projects#${title
-            .replace(/\s+/g, '-')
-            .replace(/[^a-zA-Z0-9-_]/g, '')
-            .toLowerCase()}`}
-        >
-          <Button size="large" color="senary">
-            <strong>Learn More</strong>
-          </Button>
-        </Link>
-      </CardActions>
-    </Card>
-  </Grid>
-);
+const renderProjectBriefCard = (title, description, logo, lightLogo, theme, isSmallScreen) => {
+  return (
+    <Grid key={title} item xs={12} md={6} lg={4}>
+      <Card sx={cardStyle(theme, isSmallScreen)}>
+        <CardContent>
+          {logo && (
+            <CardMedia
+              component="img"
+              image={theme.palette.mode === 'dark' && lightLogo ? lightLogo : logo}
+              alt={`${title} logo`}
+              sx={{
+                mx: 'auto',
+                objectFit: 'contain',
+                maxWidth: '90%',
+                height: '70px'
+              }}
+            />
+          )}
+          {description && (
+            <Typography variant="body1" textAlign="center" sx={{ py: { xs: '1rem', sm: '2rem' } }}>
+              {description}
+            </Typography>
+          )}
+        </CardContent>
+        <CardActions>
+          <Link
+            to={`/projects#${title
+              .replace(/\s+/g, '-')
+              .replace(/[^a-zA-Z0-9-_]/g, '')
+              .toLowerCase()}`}
+          >
+            <Button size="large" color="senary">
+              <strong>Learn More</strong>
+            </Button>
+          </Link>
+        </CardActions>
+      </Card>
+    </Grid>
+  );
+};
 
 const ProjectsBrief = () => {
   const theme = useTheme();
@@ -93,7 +95,14 @@ const ProjectsBrief = () => {
       </Typography>
       <Grid container rowSpacing={3}>
         {projectsList.map((el) =>
-          renderProjectBriefCard(el.title, el.description, el.logo, theme, isSmallScreen)
+          renderProjectBriefCard(
+            el.title,
+            el.description,
+            el.logo,
+            el.lightLogo,
+            theme,
+            isSmallScreen
+          )
         )}
       </Grid>
     </Box>
