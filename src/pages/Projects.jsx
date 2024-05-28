@@ -46,10 +46,12 @@ const boxStyle = (index, theme) => ({
   flexDirection: { xs: 'column', md: 'row' }
 });
 
-const ProjectTitle = ({ index, title, logo, links }) => {
+const ProjectTitle = ({ index, title, logo, lightLogo, links }) => {
   const isSmallScreen = useMediaQuery('(max-width:500px)');
   const iconSize = isSmallScreen ? '30' : '45';
   const theme = useTheme();
+  const blobId = index + 9;
+
   return (
     <Stack
       minWidth={{ xs: '100%', md: '50%' }}
@@ -59,17 +61,34 @@ const ProjectTitle = ({ index, title, logo, links }) => {
       justifyContent="center"
     >
       {logo && (
-        <CardMedia
-          component="img"
-          image={logo}
-          alt={title ? `${title} logo` : 'project logo'}
-          sx={{
-            objectFit: 'fill',
-            maxWidth: '80%',
-            height: { xs: '55px', sm: '100px' },
-            paddingTop: { xs: 2 }
+        <div
+          style={{
+            width: '100%',
+            height: 150,
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundImage:
+              theme.palette.mode === 'dark'
+                ? `url(/assets/partnerLogos/backgroundBlobs/blob${blobId}.webp)`
+                : null,
+            backgroundRepeat: theme.palette.mode === 'dark' ? 'no-repeat' : null,
+            backgroundPosition: theme.palette.mode === 'dark' ? 'contain' : null,
+            backgroundSize: theme.palette.mode === 'dark' ? '100% 100%' : null
           }}
-        />
+        >
+          <CardMedia
+            component="img"
+            image={theme.palette.mode === 'dark' && lightLogo ? lightLogo : logo}
+            alt={title ? `${title} logo` : 'project logo'}
+            sx={{
+              objectFit: 'fill',
+              maxWidth: '80%',
+              height: { xs: '55px', sm: '100px' },
+              paddingTop: { xs: 2 }
+            }}
+          />
+        </div>
       )}
       {links && (
         <Stack
@@ -127,6 +146,7 @@ ProjectTitle.propTypes = {
   index: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   logo: PropTypes.string.isRequired,
+  lightLogo: PropTypes.string || null,
   links: PropTypes.arrayOf(
     PropTypes.shape({
       href: PropTypes.string.isRequired,
@@ -235,26 +255,34 @@ const Projects = () => {
         <Typography variant="h2" sx={{ m: 5, textAlign: 'center' }}>
           Our Projects
         </Typography>
-        {projectsList.map(({ index, title, description, status, logo, links, techStack }) => (
-          <Box
-            //regex removes non url friendly chars limiting to lowercase and numbers, replaces spaces with "-", and makes it all lowercase.
-            id={title
-              .replace(/\s+/g, '-')
-              .replace(/[^a-zA-Z0-9-_]/g, '')
-              .toLowerCase()}
-            key={title}
-            sx={boxStyle(index, theme)}
-          >
-            <ProjectTitle index={index} title={title} logo={logo} links={links} />
-            <ProjectInfo
-              index={index}
-              title={title}
-              description={description}
-              status={status}
-              techStack={techStack}
-            />
-          </Box>
-        ))}
+        {projectsList.map(
+          ({ index, title, description, status, logo, lightLogo, links, techStack }) => (
+            <Box
+              //regex removes non url friendly chars limiting to lowercase and numbers, replaces spaces with "-", and makes it all lowercase.
+              id={title
+                .replace(/\s+/g, '-')
+                .replace(/[^a-zA-Z0-9-_]/g, '')
+                .toLowerCase()}
+              key={title}
+              sx={boxStyle(index, theme)}
+            >
+              <ProjectTitle
+                index={index}
+                title={title}
+                logo={logo}
+                lightLogo={lightLogo}
+                links={links}
+              />
+              <ProjectInfo
+                index={index}
+                title={title}
+                description={description}
+                status={status}
+                techStack={techStack}
+              />
+            </Box>
+          )
+        )}
       </Stack>
     </>
   );
