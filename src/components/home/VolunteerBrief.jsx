@@ -15,6 +15,7 @@ import QueryStatsOutlinedIcon from '@mui/icons-material/QueryStatsOutlined';
 import StorageRoundedIcon from '@mui/icons-material/StorageRounded';
 import TerminalOutlinedIcon from '@mui/icons-material/TerminalOutlined';
 import VolunteerActivismOutlinedIcon from '@mui/icons-material/VolunteerActivismOutlined';
+import { useTheme } from '@emotion/react';
 
 const volunteerGrid = [
   {
@@ -63,6 +64,7 @@ const VolunteerBrief = () => {
   const scrollToTop = () => {
     window.scrollTo(0, 0);
   };
+  const theme = useTheme();
 
   return (
     <Stack
@@ -80,7 +82,7 @@ const VolunteerBrief = () => {
         component="section"
         sx={{
           p: { xs: 2, sm: 4 },
-          backgroundColor: 'rgba(217, 217, 217, 0.4)',
+          backgroundColor: theme.palette.primary.cardFill,
           borderRadius: '30px'
         }}
       >
@@ -110,6 +112,7 @@ const VolunteerBrief = () => {
         </Grid>
         <Button
           variant="contained"
+          color="senary"
           sx={{
             mt: { xs: '2em', md: '2em' },
             mb: { xs: '1em', md: 0 }

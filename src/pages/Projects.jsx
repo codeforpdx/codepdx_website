@@ -17,9 +17,9 @@ import { useMediaQuery } from '@mui/material';
 // Component Imports
 import Hero from '../components/global/Hero/Hero';
 import projectsList from '../components/projects/projectsList';
+import { useTheme } from '@emotion/react';
 
 const linkStyle = {
-  color: '#000',
   textDecoration: 'none',
   display: 'flex',
   '&:hover': {
@@ -27,24 +27,30 @@ const linkStyle = {
   }
 };
 
-const boxStyle = (index) => ({
+const boxStyle = (index, theme) => ({
   mb: { xs: 5, sm: 10 },
   p: 2,
   borderRadius: '25px',
-  background: {
-    md:
-      index % 2 === 0
-        ? 'linear-gradient(270deg, rgba(217, 217, 217, 0) 25.54%, rgba(217, 217, 217, 0.4) 54.29%)'
-        : 'linear-gradient(90deg, rgba(217, 217, 217, 0) 25.54%, rgba(217, 217, 217, 0.4) 54.29%)',
-    xs: 'linear-gradient(0deg, rgba(217, 217, 217, 0) 18.54%, rgba(217, 217, 217, 0.4) 82.29%)'
-  },
+  border: theme.palette.mode === 'dark' ? `1px ${theme.palette.primary.boxOutline} solid` : 'none',
+  background:
+    theme.palette.mode === 'dark'
+      ? `${theme.palette.primary.cardFill}`
+      : {
+          md:
+            index % 2 === 0
+              ? 'linear-gradient(270deg, rgba(217, 217, 217, 0) 25.54%, rgba(217, 217, 217, 0.4) 54.29%)'
+              : 'linear-gradient(90deg, rgba(217, 217, 217, 0) 25.54%, rgba(217, 217, 217, 0.4) 54.29%)',
+          xs: 'linear-gradient(0deg, rgba(217, 217, 217, 0) 18.54%, rgba(217, 217, 217, 0.4) 82.29%)'
+        },
   display: 'flex',
   flexDirection: { xs: 'column', md: 'row' }
 });
 
-const ProjectTitle = ({ index, title, logo, links }) => {
+const ProjectTitle = ({ index, title, logo, lightLogo, links }) => {
   const isSmallScreen = useMediaQuery('(max-width:500px)');
   const iconSize = isSmallScreen ? '30' : '45';
+  const theme = useTheme();
+  const blobId = index + 9;
 
   return (
     <Stack
@@ -55,17 +61,34 @@ const ProjectTitle = ({ index, title, logo, links }) => {
       justifyContent="center"
     >
       {logo && (
-        <CardMedia
-          component="img"
-          image={logo}
-          alt={title ? `${title} logo` : 'project logo'}
-          sx={{
-            objectFit: 'fill',
-            maxWidth: '80%',
-            height: { xs: '55px', sm: '100px' },
-            paddingTop: { xs: 2 }
+        <div
+          style={{
+            width: '100%',
+            height: 200,
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundImage:
+              theme.palette.mode === 'dark'
+                ? `url(/assets/partnerLogos/backgroundBlobs/blob${blobId}.webp)`
+                : null,
+            backgroundRepeat: theme.palette.mode === 'dark' ? 'no-repeat' : null,
+            backgroundPosition: theme.palette.mode === 'dark' ? 'contain' : null,
+            backgroundSize: theme.palette.mode === 'dark' ? '100% 100%' : null
           }}
-        />
+        >
+          <CardMedia
+            component="img"
+            image={theme.palette.mode === 'dark' && lightLogo ? lightLogo : logo}
+            alt={title ? `${title} logo` : 'project logo'}
+            sx={{
+              objectFit: 'fill',
+              maxWidth: '80%',
+              height: { xs: '55px', sm: '100px' },
+              paddingTop: { xs: 2 }
+            }}
+          />
+        </div>
       )}
       {links && (
         <Stack
@@ -83,7 +106,14 @@ const ProjectTitle = ({ index, title, logo, links }) => {
                 to={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                sx={linkStyle}
+                sx={{
+                  ...linkStyle,
+                  '&:hover': { color: 'senary.main' },
+                  color:
+                    theme.palette.mode === 'dark'
+                      ? `${theme.palette.primary.starkContrast}`
+                      : '#000'
+                }}
               >
                 {icon}
               </Link>
@@ -116,6 +146,7 @@ ProjectTitle.propTypes = {
   index: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   logo: PropTypes.string.isRequired,
+  lightLogo: PropTypes.string || null,
   links: PropTypes.arrayOf(
     PropTypes.shape({
       href: PropTypes.string.isRequired,
@@ -202,7 +233,7 @@ ProjectInfo.propTypes = {
 
 const Projects = () => {
   ProjectLocation();
-
+  const theme = useTheme();
   return (
     <>
       <Hero
@@ -224,26 +255,34 @@ const Projects = () => {
         <Typography variant="h2" sx={{ m: 5, textAlign: 'center' }}>
           Our Projects
         </Typography>
-        {projectsList.map(({ index, title, description, status, logo, links, techStack }) => (
-          <Box
-            //regex removes non url friendly chars limiting to lowercase and numbers, replaces spaces with "-", and makes it all lowercase.
-            id={title
-              .replace(/\s+/g, '-')
-              .replace(/[^a-zA-Z0-9-_]/g, '')
-              .toLowerCase()}
-            key={title}
-            sx={boxStyle(index)}
-          >
-            <ProjectTitle index={index} title={title} logo={logo} links={links} />
-            <ProjectInfo
-              index={index}
-              title={title}
-              description={description}
-              status={status}
-              techStack={techStack}
-            />
-          </Box>
-        ))}
+        {projectsList.map(
+          ({ index, title, description, status, logo, lightLogo, links, techStack }) => (
+            <Box
+              //regex removes non url friendly chars limiting to lowercase and numbers, replaces spaces with "-", and makes it all lowercase.
+              id={title
+                .replace(/\s+/g, '-')
+                .replace(/[^a-zA-Z0-9-_]/g, '')
+                .toLowerCase()}
+              key={title}
+              sx={boxStyle(index, theme)}
+            >
+              <ProjectTitle
+                index={index}
+                title={title}
+                logo={logo}
+                lightLogo={lightLogo}
+                links={links}
+              />
+              <ProjectInfo
+                index={index}
+                title={title}
+                description={description}
+                status={status}
+                techStack={techStack}
+              />
+            </Box>
+          )
+        )}
       </Stack>
     </>
   );

@@ -1,5 +1,5 @@
 // React Imports
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 // React Router Imports
 import { BrowserRouter } from 'react-router-dom';
 // Material UI Imports
@@ -9,16 +9,23 @@ import { ThemeProvider } from '@mui/material/styles';
 import getTheme from './theme';
 // Component Imports
 import Layout from './Layout';
+import { useMediaQuery } from '@mui/material';
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  const prefersDark = useMediaQuery('(prefers-color-scheme: dark)');
+  const [isDarkMode, setIsDarkMode] = useState(prefersDark);
+  const theme = useMemo(() => getTheme(isDarkMode ? 'dark' : 'light'), [isDarkMode]);
+
+  const handleThemeChange = () => {
+    setIsDarkMode((prev) => !prev);
+  };
 
   return (
     <>
-      <CssBaseline />
-      <ThemeProvider theme={getTheme(darkMode ? 'dark' : 'light')}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
         <BrowserRouter>
-          <Layout darkMode={darkMode} setDarkMode={setDarkMode} />
+          <Layout darkMode={isDarkMode} handleThemeChange={handleThemeChange} />
         </BrowserRouter>
       </ThemeProvider>
     </>

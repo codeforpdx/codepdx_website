@@ -60,11 +60,11 @@ const renderSocialLinks = socialMediaLinks.map(({ ariaLabel, href, icon }) => (
     target="_blank"
     rel="noopener"
     sx={{
-      color: '#000',
+      color: 'primary.starkContrast',
       display: 'flex',
       py: '25px',
       '&:hover': {
-        color: 'secondary.main'
+        color: { xs: 'senary.main', md: 'primary.invertContrast' }
       }
     }}
   >
@@ -95,9 +95,9 @@ const renderLegalLinks = () => {
           aria-label={`${link.title}`}
           ml={link.ml ?? null}
           sx={{
-            color: '#000',
+            color: 'primary.starkContrast',
             '&:hover': {
-              color: 'primary.main'
+              color: 'senary.main'
             }
           }}
           onClick={

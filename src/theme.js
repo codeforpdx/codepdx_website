@@ -5,13 +5,13 @@ const getTheme = (mode) =>
     typography: { fontFamily: 'Mathilda, Monserrat, Roboto, sans-serif' },
     palette: {
       mode,
-      dark: {
-        main: '#121212',
-        contrastText: '#fff'
-      },
       primary: {
-        main: mode === 'dark' ? '#121212' : '#56B6A1',
-        contrastText: mode === 'dark' ? '#121212' : '#fff'
+        main: mode === 'dark' ? '#1D1B20' : '#56B6A1',
+        contrastText: mode === 'dark' ? '#fff' : '#1D1B20',
+        starkContrast: mode === 'dark' ? '#fff' : '#000',
+        invertContrast: mode === 'dark' ? '#000' : '#fff',
+        boxOutline: mode === 'dark' ? '#30363d' : '#B6ECE2',
+        cardFill: mode === 'dark' ? 'rgb(29, 27, 32)' : 'rgba(217, 217, 217, 0.4)'
       },
       secondary: {
         main: '#B6ECE2',
@@ -27,6 +27,14 @@ const getTheme = (mode) =>
       },
       quinary: {
         main: '#1F2725',
+        contrastText: '#fff'
+      },
+      senary: {
+        main: '#56B6A1',
+        contrastText: '#fff'
+      },
+      septenary: {
+        main: mode === 'dark' ? '#56B6A1' : '#1D1B20',
         contrastText: '#fff'
       }
     }
