@@ -28,18 +28,25 @@ const BottomImages = () => {
   // Shuffle array
   const shuffled = imageList.slice(2).sort(() => 0.5 - Math.random());
 
-  // Get sub-array of first n elements after shuffled
+  // Get sub-array of first 3 elements after shuffled
   let selected = shuffled.slice(0, 3);
 
+  const heights = ['206px', '274px', '206px'];
   return (
     <Grid container spacing={4} sx={{ justifyContent: 'center', paddingTop: '20px' }}>
-      {selected.map(({ image, alt }) => (
+      {selected.map(({ image, alt }, index) => (
         <Grid item key={alt}>
           <Box
             component="img"
             src={image}
             alt={alt}
-            style={{ width: '200px', borderRadius: '10px' }}
+            style={{
+              width: '200px',
+              height: heights[index],
+              borderRadius: '10px',
+              objectFit: 'cover',
+              objectPosition: 'top'
+            }}
           />
         </Grid>
       ))}
