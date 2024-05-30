@@ -64,7 +64,7 @@ const ProjectTitle = ({ index, title, logo, lightLogo, links }) => {
         <div
           style={{
             width: '100%',
-            height: 150,
+            height: 200,
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
