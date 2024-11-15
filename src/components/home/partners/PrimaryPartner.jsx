@@ -47,7 +47,7 @@ const PrimaryPartner = () => {
   const isMinMd = useMediaQuery(theme.breakpoints.up('md'));
   const darkModeStyles = {
     backgroundImage:
-      theme.palette.mode === 'dark' ? 'url(/assets/partnerLogos/backgroundBlobs/blob3.webp)' : null,
+      theme.palette.mode === 'dark' ? 'url(/assets/partnerLogos/technology-association-of-oregon-logo-500x114.webp)' : null,
     backgroundRepeat: theme.palette.mode === 'dark' ? 'no-repeat' : null,
     backgroundPosition: theme.palette.mode === 'dark' ? 'top' : null,
     backgroundSize: theme.palette.mode === 'dark' ? (isMinMd ? '850px 250px' : '200% 130px') : null
@@ -65,20 +65,22 @@ const PrimaryPartner = () => {
         ...darkModeStyles
       }}
     >
-      <Box
-        component="img"
-        display={'flex'}
-        maxWidth={'100%'}
-        m={'auto'}
-        alt="technology association of oregon logo"
-        sx={{
-          zIndex: 2,
-          content: {
-            xs: 'url(/assets/partnerLogos/technology-association-of-oregon-logo-366x105.webp)',
-            md: 'url(/assets/partnerLogos/technology-association-of-oregon-logo-600x172.webp)'
-          }
-        }}
-      />
+      <a href={"https://www.oregonif.org/"} target="_blank" rel="noopener noreferrer">
+        <Box
+          component="img"
+          display={'flex'}
+          maxWidth={'100%'}
+          m={'auto'}
+          alt="technology association of oregon logo"
+          sx={{
+            zIndex: 2,
+            content: {
+              xs: 'url(/assets/partnerLogos/technology-association-of-oregon-logo-366x105.webp)',
+              md: 'url(/assets/partnerLogos/technology-association-of-oregon-logo-transparent.webp)'
+            }
+          }}
+        />
+      </a>
 
       <Typography
         component="h3"
