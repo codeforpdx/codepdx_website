@@ -47,7 +47,9 @@ const PrimaryPartner = () => {
   const isMinMd = useMediaQuery(theme.breakpoints.up('md'));
   const darkModeStyles = {
     backgroundImage:
-      theme.palette.mode === 'dark' ? 'url(/assets/partnerLogos/background-grey-rectangle.webp)' : null,
+      theme.palette.mode === 'dark'
+        ? 'url(/assets/partnerLogos/background-grey-rectangle.webp)'
+        : null,
     backgroundRepeat: theme.palette.mode === 'dark' ? 'no-repeat' : null,
     backgroundPosition: theme.palette.mode === 'dark' ? 'top' : null,
     backgroundSize: theme.palette.mode === 'dark' ? (isMinMd ? '750px 200px' : '200% 130px') : null
@@ -65,7 +67,7 @@ const PrimaryPartner = () => {
         ...darkModeStyles
       }}
     >
-      <a href={"https://www.oregonif.org/"} target="_blank" rel="noopener noreferrer">
+      <a href={'https://www.oregonif.org/'} target="_blank" rel="noopener noreferrer">
         <Box
           component="img"
           display={'flex'}

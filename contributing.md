@@ -71,8 +71,7 @@ By participating in this project, you are expected to uphold our [Code of Conduc
 >
 > <img width="200" alt="How to create a branch screenshot" src="https://github.com/codeforpdx/codepdx_website/assets/55254544/0e6999b7-8aac-4e70-aec0-444fff352ec3">
 
->  
-> B. Here you can change the branch source, the default should be `main`.  Click `Create branch` to get started.
+> B. Here you can change the branch source, the default should be `main`. Click `Create branch` to get started.
 >
 > <img width="200" alt="Screenshot to create branch" src="https://github.com/codeforpdx/codepdx_website/assets/55254544/fdf31b6d-e490-4e0f-baba-bbb955753d6e">
 
