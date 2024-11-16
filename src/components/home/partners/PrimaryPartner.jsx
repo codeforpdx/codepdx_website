@@ -47,10 +47,10 @@ const PrimaryPartner = () => {
   const isMinMd = useMediaQuery(theme.breakpoints.up('md'));
   const darkModeStyles = {
     backgroundImage:
-      theme.palette.mode === 'dark' ? 'url(/assets/partnerLogos/technology-association-of-oregon-logo-500x114.webp)' : null,
+      theme.palette.mode === 'dark' ? 'url(/assets/partnerLogos/background-grey-rectangle.webp)' : null,
     backgroundRepeat: theme.palette.mode === 'dark' ? 'no-repeat' : null,
     backgroundPosition: theme.palette.mode === 'dark' ? 'top' : null,
-    backgroundSize: theme.palette.mode === 'dark' ? (isMinMd ? '850px 250px' : '200% 130px') : null
+    backgroundSize: theme.palette.mode === 'dark' ? (isMinMd ? '750px 200px' : '200% 130px') : null
   };
   return (
     <Container
@@ -75,8 +75,8 @@ const PrimaryPartner = () => {
           sx={{
             zIndex: 2,
             content: {
-              xs: 'url(/assets/partnerLogos/technology-association-of-oregon-logo-366x105.webp)',
-              md: 'url(/assets/partnerLogos/technology-association-of-oregon-logo-transparent.webp)'
+              xs: 'url(/assets/partnerLogos/technology-association-of-oregon-logo-transparent-397x90.webp)',
+              md: 'url(/assets/partnerLogos/technology-association-of-oregon-logo-transparent-661x150.webp)'
             }
           }}
         />
@@ -88,7 +88,7 @@ const PrimaryPartner = () => {
         p={{ xs: '50px 0 50px 0', md: '75px 15% 75px 15%' }}
         sx={{ typography: { xs: 'h5', sm: 'h4' } }}
       >
-        Empowering businesses and entrepreneurs, the TAO Foundation is creating and uniting a
+        Empowering businesses and entrepreneurs, the OIF Foundation is creating and uniting a
         world-class innovation economy in Oregon and beyond.
       </Typography>
       <Grid
