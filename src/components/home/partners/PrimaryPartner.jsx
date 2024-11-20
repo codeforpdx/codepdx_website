@@ -44,16 +44,6 @@ const displaySponsorValuesInGrid = ({ title, description }) => {
 
 const PrimaryPartner = () => {
   const theme = useTheme();
-  const isMinMd = useMediaQuery(theme.breakpoints.up('md'));
-  const darkModeStyles = {
-    backgroundImage:
-      theme.palette.mode === 'dark'
-        ? 'url(/assets/partnerLogos/background-grey-rectangle.webp)'
-        : null,
-    backgroundRepeat: theme.palette.mode === 'dark' ? 'no-repeat' : null,
-    backgroundPosition: theme.palette.mode === 'dark' ? 'top' : null,
-    backgroundSize: theme.palette.mode === 'dark' ? (isMinMd ? '750px 200px' : '200% 130px') : null
-  };
   return (
     <Container
       sx={{
@@ -64,24 +54,39 @@ const PrimaryPartner = () => {
           theme.palette.mode === 'dark'
             ? `${theme.palette.primary.cardFill}`
             : 'linear-gradient(180deg, rgba(217, 217, 217, 0) 24.86%, rgba(217, 217, 217, 0.4) 70.55%)',
-        ...darkModeStyles
       }}
     >
       <a href={'https://www.oregonif.org/'} target="_blank" rel="noopener noreferrer">
-        <Box
-          component="img"
-          display={'flex'}
-          maxWidth={'100%'}
-          m={'auto'}
-          alt="technology association of oregon logo"
-          sx={{
-            zIndex: 2,
-            content: {
-              xs: 'url(/assets/partnerLogos/technology-association-of-oregon-logo-transparent-397x90.webp)',
-              md: 'url(/assets/partnerLogos/technology-association-of-oregon-logo-transparent-661x150.webp)'
-            }
-          }}
-        />
+        {theme.palette.mode === 'dark' ?
+          <Box
+            component="img"
+            display={'flex'}
+            maxWidth={'100%'}
+            m={'auto'}
+            alt="Oregon Innovation Foundation logo"
+            sx={{
+              zIndex: 2,
+              content: {
+                xs: 'url(/assets/partnerLogos/technology-association-of-oregon-logo-transparent-darkmode-397x90.png)',
+                md: 'url(/assets/partnerLogos/technology-association-of-oregon-logo-transparent-darkmode-661x150.png)'
+              }
+            }}
+          /> : 
+          <Box
+            component="img"
+            display={'flex'}
+            maxWidth={'100%'}
+            m={'auto'}
+            alt="Oregon Innovation Foundation logo"
+            sx={{
+              zIndex: 2,
+              content: {
+                xs: 'url(/assets/partnerLogos/technology-association-of-oregon-logo-transparent-397x90.png)',
+                md: 'url(/assets/partnerLogos/technology-association-of-oregon-logo-transparent-661x150.png)'
+              }
+            }}
+          />
+        }
       </a>
 
       <Typography
@@ -90,8 +95,8 @@ const PrimaryPartner = () => {
         p={{ xs: '50px 0 50px 0', md: '75px 15% 75px 15%' }}
         sx={{ typography: { xs: 'h5', sm: 'h4' } }}
       >
-        Empowering businesses and entrepreneurs, the OIF Foundation is creating and uniting a
-        world-class innovation economy in Oregon and beyond.
+        The Oregon Innovation Foundation takes a comprehensive approach to cultivating civic innovation 
+        and empowering communities through technology to drive sustainable development.
       </Typography>
       <Grid
         sx={{
