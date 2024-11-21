@@ -57,7 +57,7 @@ const PrimaryPartner = () => {
       sx={{
         mb: '100px',
         borderRadius: '30px',
-        paddingTop: theme.palette.mode === 'dark' ? '10px' : '0px',
+        paddingTop: theme.palette.mode === 'dark' ? '50px' : '0px',
         background:
           theme.palette.mode === 'dark'
             ? `${theme.palette.primary.cardFill}`
