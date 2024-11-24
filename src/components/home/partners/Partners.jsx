@@ -16,7 +16,7 @@ const Partners = () => {
         sx={{ typography: { xs: 'h4', sm: 'h3' } }}
       >
         Building a better tomorrow with a shared vision. Our mission would not be possible without
-        our partners
+        our partners:
       </Typography>
       <PrimaryPartner />
       <SecondaryPartners />
