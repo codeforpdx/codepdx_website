@@ -94,7 +94,6 @@ const LargeScreenComponent = ({
               alt={`${company} logo`}
               aria-label={`${company} logo`}
               src={partnerLogo}
-              mb={theme.palette.mode === 'dark' ? 0 : '150px'}
               width={'250px'}
             ></Box>
           </a>
