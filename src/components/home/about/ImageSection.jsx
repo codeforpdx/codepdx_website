@@ -10,20 +10,16 @@ import { imageList } from './imageList';
 const TopImages = () => {
   const theme = useTheme();
 
-  const isMediumSmallScreen = useMediaQuery(theme.breakpoints.down('mds'));
-  const isSmallerScreen = useMediaQuery(theme.breakpoints.down('es'));
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down('lsm'));
-  const isTinyScreen = useMediaQuery(theme.breakpoints.down('ti'));
+  const isMediumScreen = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
     <Grid
       container
-      spacing={isMediumSmallScreen ? 3 : 4}
-      columns={{ ti: 2 }}
+      spacing={4}
       sx={{
         justifyContent: 'center',
         alignItems: 'flex-end',
-        paddingBottom: isMediumSmallScreen ? '' : '10px'
+        paddingBottom: '10px'
       }}
     >
       {imageList.slice(0, 2).map(({ image, alt }) => (
@@ -33,22 +29,8 @@ const TopImages = () => {
             src={image}
             alt={alt}
             style={{
-              width: isTinyScreen
-                ? '50px'
-                : isSmallerScreen
-                ? '75px'
-                : isSmallScreen
-                ? '125px'
-                : '200px',
-              height: isTinyScreen
-                ? '50px'
-                : isSmallerScreen
-                ? '75px'
-                : isSmallScreen
-                ? '125px'
-                : isMediumSmallScreen
-                ? '206px'
-                : 'auto',
+              width: isMediumScreen ? '125px' : '200px',
+              height: isMediumScreen ? '125px' : 'auto',
               borderRadius: '10px'
             }}
           />
@@ -58,52 +40,27 @@ const TopImages = () => {
   );
 };
 
-const BottomImages = () => {
-  // Shuffle array
-  const shuffled = imageList.slice(2).sort(() => 0.5 - Math.random());
-
-  // Get sub-array of first 3 elements after shuffled
-  let selected = shuffled.slice(0, 3);
-
+const BottomImages = ({ shuffledImages }) => {
   const theme = useTheme();
 
-  const isSmallerScreen = useMediaQuery(theme.breakpoints.down('es'));
-  const isTinyScreen = useMediaQuery(theme.breakpoints.down('ti'));
-  const isMediumSmallScreen = useMediaQuery(theme.breakpoints.down('mds'));
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down('lsm'));
+  const isMediumScreen = useMediaQuery(theme.breakpoints.down('md'));
 
-  // Bottom images are rechosen when switching btw medium and large
   const heights = ['206px', '274px', '206px'];
   return (
     <Grid
       container
-      spacing={{ xs: 3, md: 4 }}
-      columns={{ ti: 2, xs: 2, md: 3 }}
-      sx={{ justifyContent: 'center', paddingTop: isSmallScreen ? '25px' : '20px' }}
+      spacing={4}
+      sx={{ justifyContent: 'center', paddingTop: '20px' }}
     >
-      {selected.map(({ image, alt }, index) => (
+      {shuffledImages.slice(0, 3).map(({ image, alt }, index) => (
         <Grid item key={alt}>
           <Box
             component="img"
             src={image}
             alt={alt}
             style={{
-              width: isTinyScreen
-                ? '50px'
-                : isSmallerScreen
-                ? '75px'
-                : isSmallScreen
-                ? '125px'
-                : '200px',
-              height: isTinyScreen
-                ? '50px'
-                : isSmallerScreen
-                ? '75px'
-                : isSmallScreen
-                ? '125px'
-                : isMediumSmallScreen
-                ? '206px'
-                : heights[index],
+              width: isMediumScreen ? '125px' : '200px',
+              height: isMediumScreen ? '125px' : heights[index],
               borderRadius: '10px',
               objectFit: 'cover',
               objectPosition: 'top'
@@ -115,11 +72,15 @@ const BottomImages = () => {
   );
 };
 
-const ImageSection = () => (
-  <Stack>
-    <TopImages />
-    <BottomImages />
-  </Stack>
-);
+const ImageSection = () => {
+  // Shuffle array, first two images will be shown in TopImages
+  const shuffledImages = imageList.slice(2).sort(() => 0.5 - Math.random());
+  return (
+    <Stack>
+      <TopImages />
+      <BottomImages shuffledImages={shuffledImages} />
+    </Stack>
+  )
+};
 
 export default ImageSection;

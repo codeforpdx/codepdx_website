@@ -3,23 +3,6 @@ import { createTheme } from '@mui/material/styles';
 const getTheme = (mode) =>
   createTheme({
     typography: { fontFamily: 'Mathilda, Monserrat, Roboto, sans-serif' },
-    breakpoints: {
-      values: {
-        xs: 0,
-        // Tiny
-        ti: 225,
-        // Even smaller
-        es: 306,
-        // A little smaller
-        lsm: 455,
-        sm: 600,
-        // medium small
-        mds: 711,
-        md: 900,
-        lg: 1200,
-        xl: 1536
-      }
-    },
     palette: {
       mode,
       primary: {
