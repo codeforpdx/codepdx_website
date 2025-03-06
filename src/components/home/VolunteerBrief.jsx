@@ -62,7 +62,8 @@ const volunteerGrid = [
 
 const VolunteerBrief = () => {
   const scrollToTop = () => {
-    window.scrollTo(0, 0);
+    // Allow page to change before scrolling to top
+    setTimeout(() => {window.scrollTo(0, 0)}, 400);
   };
   const theme = useTheme();
 
@@ -112,23 +113,17 @@ const VolunteerBrief = () => {
         </Grid>
         <Button
           variant="contained"
+          href="/volunteer"
+          aria-label="Volunteer for CODE PDX"
           color="senary"
           sx={{
             mt: { xs: '2em', md: '2em' },
             mb: { xs: '1em', md: 0 }
           }}
           onClick={scrollToTop}
+          onKeyDown={(event) => {event.key === 'Enter'? scrollToTop() : ""}}
         >
-          <Link
-            to="/volunteer"
-            style={{
-              textDecoration: 'none',
-              color: 'inherit'
-            }}
-            aria-label="Volunteer for CODE PDX"
-          >
-            Volunteer
-          </Link>
+          Volunteer
         </Button>
       </Card>
     </Stack>
