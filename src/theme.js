@@ -6,7 +6,7 @@ const getTheme = (mode) =>
     palette: {
       mode,
       primary: {
-        main: mode === 'dark' ? '#1D1B20' : '#56B6A1',
+        main: mode === 'dark' ? '#56B6A1' : '#56B6A1',
         contrastText: mode === 'dark' ? '#fff' : '#1D1B20',
         starkContrast: mode === 'dark' ? '#fff' : '#000',
         invertContrast: mode === 'dark' ? '#000' : '#fff',

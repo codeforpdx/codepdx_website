@@ -3,6 +3,39 @@ import { FaEarthAmericas, FaGithub } from 'react-icons/fa6';
 
 const projectsList = [
   {
+    index: 4,
+    title: 'Tenant First Aid',
+    description:
+      `Tenant First Aid is an AI-powered chatbot designed to help tenants navigate rental issues, answer questions, and provide legal advice related to housing and eviction. Users may utilize Tenant First Aid's 24/7 chat support to get immediate assistance and guidance with regards to tenant rights and landlord obligations.`,
+    status: 'Live',
+    logo: '/assets/codePdx/tenant-first-aid-logo-light.svg',
+    lightLogo: '/assets/codePdx/tenant-first-aid-logo.svg',
+    links: [
+      {
+        href: 'https://github.com/codeforpdx/tenantfirstaid',
+        icon: <FaGithub />
+      },
+      {
+        href: 'https://tenantfirstaid.com/',
+        icon: <FaEarthAmericas />
+      }
+    ],
+    techStack: [
+      'TypeScript',
+      'React',
+      'NPM',
+      'Flask',
+      'Python',
+      'Pytest',
+      'Valkey',
+      'Tailwind CSS',
+      'Gemini',
+      'ESLint',
+      'Makefile',
+      'Docker'
+    ]
+  },
+  {
     index: 1,
     title: 'RecordSponge',
     description:
