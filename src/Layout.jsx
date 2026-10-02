@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Navbar from './components/global/Navbar';
 import NoPageFound from './pages/NoPageFound';
 import Projects from './pages/Projects';
+import Board from './pages/Board';
 import Volunteer from './pages/Volunteer';
 // Props Types
 import PropTypes from 'prop-types';
@@ -18,6 +19,7 @@ const Layout = ({ darkMode, handleThemeChange }) => {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/board" element={<Board />} />
           <Route path="/volunteer" element={<Volunteer />} />
           <Route path="*" element={<NoPageFound />} />
         </Routes>

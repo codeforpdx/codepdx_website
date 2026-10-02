@@ -14,6 +14,10 @@ const Hero = ({ pageName, heroImage, mobileHeroImage, heroText }) => {
       h1Styles = heroStyles.projectsH1;
       containerStyles = [heroStyles.heroContainerAlt, heroStyles.heroRightAlign];
       break;
+    case 'board':
+      h1Styles = heroStyles.boardH1;
+      containerStyles = [heroStyles.heroContainerAlt, heroStyles.heroCenterAlign];
+      break;
     case 'volunteer':
       h1Styles = heroStyles.volunteerH1;
       containerStyles = [heroStyles.heroContainerAlt, heroStyles.heroCenterAlign];

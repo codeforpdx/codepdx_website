@@ -136,6 +136,14 @@ function NavBar({ darkMode, handleThemeChange }) {
       <ListItem
         sx={{ ...hamburgerMenuTextStyle, color: theme.palette.primary.contrastText }}
         component={Link}
+        to="/board"
+        onClick={handleClose}
+      >
+        Board
+      </ListItem>
+      <ListItem
+        sx={{ ...hamburgerMenuTextStyle, color: theme.palette.primary.contrastText }}
+        component={Link}
         to="/volunteer"
         onClick={handleClose}
       >
@@ -200,6 +208,21 @@ function NavBar({ darkMode, handleThemeChange }) {
             aria-label="Our Projects"
           >
             Projects
+          </Link>
+        </Typography>
+       	<Typography
+          variant="body1"
+          // ml={'auto'}
+          display={{ xs: 'none', sm: 'block' }}
+          marginRight={2}
+          sx={{ ...navTextStyle, color: theme.palette.primary.contrastText }}
+        >
+          <Link
+            to="/board"
+            style={{ ...navTextStyle, color: theme.palette.primary.contrastText }}
+            aria-label="Board"
+          >
+            Board
           </Link>
         </Typography>
         <Typography

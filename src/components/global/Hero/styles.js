@@ -48,6 +48,14 @@ export const heroStyles = {
     height: { xs: '50%', md: '50%' },
     textAlign: { xs: 'center', md: 'left' }
   },
+  boardH1: {
+    color: '#ffff',
+    textShadow: '0px 4px 4px #0000004D',
+    fontSize: { xs: '22px', md: '3vw' },
+    width: '80%',
+    height: '60%',
+    textAlign: 'center'
+  },  
   volunteerH1: {
     color: '#ffff',
     textShadow: '0px 4px 4px #0000004D',
