@@ -2,6 +2,7 @@
   "rewrites": [
     { "source": "/projects", "destination": "/" },
     { "source": "/volunteer", "destination": "/" },
+    { "source": "/planpdx", "destination": "/" },
     { "source": "/(.*)", "destination": "/" }
   ]
 }
