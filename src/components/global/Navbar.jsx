@@ -136,6 +136,14 @@ function NavBar({ darkMode, handleThemeChange }) {
       <ListItem
         sx={{ ...hamburgerMenuTextStyle, color: theme.palette.primary.contrastText }}
         component={Link}
+        to="/planpdx"
+        onClick={handleClose}
+      >
+        PlanPDX
+      </ListItem>
+      <ListItem
+        sx={{ ...hamburgerMenuTextStyle, color: theme.palette.primary.contrastText }}
+        component={Link}
         to="/volunteer"
         onClick={handleClose}
       >
@@ -209,6 +217,20 @@ function NavBar({ darkMode, handleThemeChange }) {
           sx={{ ...navTextStyle, color: theme.palette.primary.contrastText }}
         >
           <Link
+            to="/planpdx"
+            style={{ ...navTextStyle, color: theme.palette.primary.contrastText }}
+            aria-label="PlanPDX"
+          >
+            PlanPDX
+          </Link>
+        </Typography>
+        <Typography
+          variant="body1"
+          display={{ xs: 'none', sm: 'block' }}
+          marginRight={2}
+          sx={{ ...navTextStyle, color: theme.palette.primary.contrastText }}
+        >
+          <Link
             to="/volunteer"
             style={{ ...navTextStyle, color: theme.palette.primary.contrastText }}
             aria-label="Volunteer for CODE PDX"
@@ -255,7 +277,15 @@ function NavBar({ darkMode, handleThemeChange }) {
         </Popover>
         {/* dark mode toggle */}
         <FormControlLabel
-          control={<DarkModeToggle checked={darkMode} onChange={handleThemeChange} onKeyDown={(event) => {event.key === 'Enter'? handleThemeChange() : ""}}/>}
+          control={
+            <DarkModeToggle
+              checked={darkMode}
+              onChange={handleThemeChange}
+              onKeyDown={(event) => {
+                event.key === 'Enter' ? handleThemeChange() : '';
+              }}
+            />
+          }
         />
       </Toolbar>
     </AppBar>
