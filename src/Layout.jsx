@@ -5,6 +5,7 @@ import Footer from './components/global/Footer';
 import Home from './pages/Home';
 import Navbar from './components/global/Navbar';
 import NoPageFound from './pages/NoPageFound';
+import PlanPDX from './pages/PlanPDX';
 import Projects from './pages/Projects';
 import Volunteer from './pages/Volunteer';
 // Props Types
@@ -18,6 +19,7 @@ const Layout = ({ darkMode, handleThemeChange }) => {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/planpdx" element={<PlanPDX />} />
           <Route path="/volunteer" element={<Volunteer />} />
           <Route path="*" element={<NoPageFound />} />
         </Routes>

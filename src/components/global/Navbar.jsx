@@ -136,6 +136,14 @@ function NavBar({ darkMode, handleThemeChange }) {
       <ListItem
         sx={{ ...hamburgerMenuTextStyle, color: theme.palette.primary.contrastText }}
         component={Link}
+        to="/planpdx"
+        onClick={handleClose}
+      >
+        PlanPDX
+      </ListItem>
+      <ListItem
+        sx={{ ...hamburgerMenuTextStyle, color: theme.palette.primary.contrastText }}
+        component={Link}
         to="/volunteer"
         onClick={handleClose}
       >
@@ -200,6 +208,20 @@ function NavBar({ darkMode, handleThemeChange }) {
             aria-label="Our Projects"
           >
             Projects
+          </Link>
+        </Typography>
+        <Typography
+          variant="body1"
+          display={{ xs: 'none', sm: 'block' }}
+          marginRight={2}
+          sx={{ ...navTextStyle, color: theme.palette.primary.contrastText }}
+        >
+          <Link
+            to="/planpdx"
+            style={{ ...navTextStyle, color: theme.palette.primary.contrastText }}
+            aria-label="PlanPDX"
+          >
+            PlanPDX
           </Link>
         </Typography>
         <Typography
