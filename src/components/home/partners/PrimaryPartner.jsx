@@ -1,6 +1,5 @@
 // Material UI Imports
 import { useTheme } from '@emotion/react';
-import { useMediaQuery } from '@mui/material';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
@@ -53,11 +52,11 @@ const PrimaryPartner = () => {
         background:
           theme.palette.mode === 'dark'
             ? `${theme.palette.primary.cardFill}`
-            : 'linear-gradient(180deg, rgba(217, 217, 217, 0) 24.86%, rgba(217, 217, 217, 0.4) 70.55%)',
+            : 'linear-gradient(180deg, rgba(217, 217, 217, 0) 24.86%, rgba(217, 217, 217, 0.4) 70.55%)'
       }}
     >
       <a href={'https://www.oregonif.org/'} target="_blank" rel="noopener noreferrer">
-        {theme.palette.mode === 'dark' ?
+        {theme.palette.mode === 'dark' ? (
           <Box
             component="img"
             display={'flex'}
@@ -71,7 +70,8 @@ const PrimaryPartner = () => {
                 md: 'url(/assets/partnerLogos/technology-association-of-oregon-logo-transparent-darkmode-661x150.png)'
               }
             }}
-          /> : 
+          />
+        ) : (
           <Box
             component="img"
             display={'flex'}
@@ -86,7 +86,7 @@ const PrimaryPartner = () => {
               }
             }}
           />
-        }
+        )}
       </a>
 
       <Typography
@@ -95,8 +95,8 @@ const PrimaryPartner = () => {
         p={{ xs: '50px 0 50px 0', md: '75px 15% 75px 15%' }}
         sx={{ typography: { xs: 'h5', sm: 'h4' } }}
       >
-        The Oregon Innovation Foundation takes a comprehensive approach to cultivating civic innovation 
-        and empowering communities through technology to drive sustainable development.
+        The Oregon Innovation Foundation takes a comprehensive approach to cultivating civic
+        innovation and empowering communities through technology to drive sustainable development.
       </Typography>
       <Grid
         sx={{

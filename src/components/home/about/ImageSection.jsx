@@ -4,6 +4,8 @@ import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import { useMediaQuery } from '@mui/material';
 import { useTheme } from '@emotion/react';
+// Prop Types
+import PropTypes from 'prop-types';
 // Component Imports
 import { imageList } from './imageList';
 
@@ -47,11 +49,7 @@ const BottomImages = ({ shuffledImages }) => {
 
   const heights = ['206px', '274px', '206px'];
   return (
-    <Grid
-      container
-      spacing={4}
-      sx={{ justifyContent: 'center', paddingTop: '20px' }}
-    >
+    <Grid container spacing={4} sx={{ justifyContent: 'center', paddingTop: '20px' }}>
       {shuffledImages.slice(0, 3).map(({ image, alt }, index) => (
         <Grid item key={alt}>
           <Box
@@ -72,6 +70,15 @@ const BottomImages = ({ shuffledImages }) => {
   );
 };
 
+BottomImages.propTypes = {
+  shuffledImages: PropTypes.arrayOf(
+    PropTypes.shape({
+      image: PropTypes.string.isRequired,
+      alt: PropTypes.string.isRequired
+    })
+  ).isRequired
+};
+
 const ImageSection = () => {
   // Shuffle array, first two images will be shown in TopImages
   const shuffledImages = imageList.slice(2).sort(() => 0.5 - Math.random());
@@ -80,7 +87,7 @@ const ImageSection = () => {
       <TopImages />
       <BottomImages shuffledImages={shuffledImages} />
     </Stack>
-  )
+  );
 };
 
 export default ImageSection;

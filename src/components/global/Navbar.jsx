@@ -255,7 +255,15 @@ function NavBar({ darkMode, handleThemeChange }) {
         </Popover>
         {/* dark mode toggle */}
         <FormControlLabel
-          control={<DarkModeToggle checked={darkMode} onChange={handleThemeChange} onKeyDown={(event) => {event.key === 'Enter'? handleThemeChange() : ""}}/>}
+          control={
+            <DarkModeToggle
+              checked={darkMode}
+              onChange={handleThemeChange}
+              onKeyDown={(event) => {
+                event.key === 'Enter' ? handleThemeChange() : '';
+              }}
+            />
+          }
         />
       </Toolbar>
     </AppBar>

@@ -1,5 +1,3 @@
-// React Router Imports
-import { Link } from 'react-router-dom';
 // Material UI Imports
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
@@ -63,7 +61,9 @@ const volunteerGrid = [
 const VolunteerBrief = () => {
   const scrollToTop = () => {
     // Allow page to change before scrolling to top
-    setTimeout(() => {window.scrollTo(0, 0)}, 400);
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 400);
   };
   const theme = useTheme();
 
@@ -121,7 +121,9 @@ const VolunteerBrief = () => {
             mb: { xs: '1em', md: 0 }
           }}
           onClick={scrollToTop}
-          onKeyDown={(event) => {event.key === 'Enter'? scrollToTop() : ""}}
+          onKeyDown={(event) => {
+            event.key === 'Enter' ? scrollToTop() : '';
+          }}
         >
           Volunteer
         </Button>
