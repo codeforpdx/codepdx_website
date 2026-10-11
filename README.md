@@ -19,9 +19,10 @@ The website is currently live at www.codepdx.org. Detailed information for those
 - For Mac, Linux, and other POSIX users: [https://github.com/nvm-sh/nvm](https://github.com/nvm-sh/nvm)
 - For Windows users: [https://github.com/coreybutler/nvm-windows](https://github.com/coreybutler/nvm-windows)
 
-4. If you don't have node, install it using nvm by running:
+4. This project requires Node.js 24 or newer (pinned in `.nvmrc`). Install and switch to it using nvm by running:
    ```bash
-   nvm install node
+   nvm install
+   nvm use
    ```
 5. Install the package prerequisites for this project:
    ```bash

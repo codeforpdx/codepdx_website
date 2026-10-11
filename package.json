@@ -1,8 +1,11 @@
 {
   "homepage": "https://codeforpdx.github.io/codepdx_website/",
   "name": "codepdx_website",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
   "scripts": {
     "dev": "vite",
     "deploy": "gh-pages -d dist",
